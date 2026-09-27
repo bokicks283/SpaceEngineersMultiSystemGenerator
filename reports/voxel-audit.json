@@ -1,0 +1,4001 @@
+{
+  "existing": {
+    "vanilla": 62,
+    "effective_unique_subtypes": 193,
+    "headroom_to_128": -65,
+    "per_mod": [
+      {
+        "id": "2195637331",
+        "title": "Teralis - City Planet",
+        "definitions": 11,
+        "nonvanilla": [
+          "Concrete_01",
+          "Facade_02",
+          "Greeble_02",
+          "Greeble_02dark",
+          "Greeble_02green",
+          "Greeble_02white",
+          "Greeble_03",
+          "Greeble_04",
+          "Greeble_04dark",
+          "Greeble_04darkroof",
+          "Greeble_concrete"
+        ]
+      },
+      {
+        "id": "2644430625",
+        "title": "Teal - Water Mod",
+        "definitions": 15,
+        "nonvanilla": [
+          "TealBlack_Soil",
+          "TealBlack_Soil_bare",
+          "TealBlueGrass",
+          "TealGravel",
+          "TealIce",
+          "TealRiver",
+          "TealRocksGrass",
+          "TealSea",
+          "TealShore1",
+          "TealShore2",
+          "TealShore3",
+          "TealShore4",
+          "TealShore5",
+          "TealShore6",
+          "TealSnowGrass"
+        ]
+      },
+      {
+        "id": "3309805284",
+        "title": "Komorebi",
+        "definitions": 38,
+        "nonvanilla": [
+          "AcidLake_01",
+          "AcidLake_02",
+          "AcidLake_03",
+          "AcidLake_04",
+          "Desert_Dunes_01",
+          "Desert_Dunes_02",
+          "Desert_Rocks_01",
+          "Desert_Rocks_02",
+          "Desert_Soil_01",
+          "Desert_Soil_03",
+          "Fungi_01",
+          "Fungi_01_alt",
+          "Fungi_02",
+          "Fungi_11",
+          "Fungi_16",
+          "Fungi_17",
+          "Grass_var",
+          "Green_02",
+          "Green_02_bare",
+          "Green_02_var",
+          "Green_04",
+          "Green_05",
+          "Green_06",
+          "Green_07",
+          "Mold_01",
+          "Mold_11",
+          "Mold_11_alt",
+          "MossCarpet0",
+          "MossCarpet2",
+          "MossCarpet3",
+          "Mycel_02",
+          "Mycel_04",
+          "Mycel_07",
+          "Mycel_08",
+          "Salt_Flats_01",
+          "Salt_Flats_03",
+          "Underground_Ice",
+          "VolcanoRock"
+        ]
+      },
+      {
+        "id": "3489648084",
+        "title": "Planet Relicta",
+        "definitions": 4,
+        "nonvanilla": [
+          "RelBasalt",
+          "RelBedrock",
+          "RelMagma",
+          "RelRock"
+        ]
+      },
+      {
+        "id": "3515518898",
+        "title": "Moon Sulfate",
+        "definitions": 9,
+        "nonvanilla": [
+          "Sulfate_LavaFlows",
+          "Sulfate_Lava_01",
+          "Sulfate_Lava_Rock",
+          "Sulfate_LightStone",
+          "Sulfate_RedStone",
+          "Sulfate_RedStone_02",
+          "Sulfate_SulphurDioxide",
+          "Sulfate_SulphuricStone",
+          "Sulfate_SulphuricStone_02"
+        ]
+      },
+      {
+        "id": "3576683005",
+        "title": "Cauldron System",
+        "definitions": 22,
+        "nonvanilla": [
+          "Agni_Black_Lava_01",
+          "Agni_Black_Lava_02",
+          "Agni_Black_Sand_01",
+          "Agni_Black_Sand_02",
+          "Agni_Desert_Rocks",
+          "Agni_Lava_01",
+          "Agni_Lava_02",
+          "Cauldron",
+          "Kor_Ancient_Debris_01A",
+          "Kor_Ancient_Debris_01B",
+          "Kor_Ancient_Debris_02",
+          "Kor_Ancient_Debris_03",
+          "Kor_Black_Goo",
+          "Kor_Blue_Goo",
+          "Tellus_Forest",
+          "Tellus_Pillar",
+          "Tellus_Plains",
+          "Tellus_Plains_var",
+          "Tellus_Red_Ground",
+          "Tellus_Red_grass",
+          "Tellus_Sandy_grass",
+          "Tellus_VolcanoRock"
+        ]
+      },
+      {
+        "id": "3617496051",
+        "title": "Planet - Miasma",
+        "definitions": 9,
+        "nonvanilla": [
+          "IceMuddy",
+          "Moss",
+          "MossFlowers",
+          "MuddyDirt",
+          "MuddyDirtBare",
+          "PuddleStone",
+          "Roots",
+          "Roots2",
+          "StoneMoss"
+        ]
+      },
+      {
+        "id": "3618043241",
+        "title": "Planet - Jormun (Water)",
+        "definitions": 12,
+        "nonvanilla": [
+          "AlienSandGrass",
+          "Coral",
+          "CoralGrass",
+          "GrassRock2",
+          "GrassRock3",
+          "GrassRock4",
+          "GrassStone1",
+          "Moss",
+          "MossFlowers",
+          "StoneDesert",
+          "StoneMoss",
+          "StoneWhite"
+        ]
+      },
+      {
+        "id": "3684013414",
+        "title": "Planet Nivis",
+        "definitions": 8,
+        "nonvanilla": [
+          "Crev",
+          "FrostSurface",
+          "HRock",
+          "HRockBlend",
+          "IceCliff",
+          "SnowM",
+          "TorrLavaGravel",
+          "TorrLavaRock"
+        ]
+      },
+      {
+        "id": "3695766186",
+        "title": "Planet Zenitaia",
+        "definitions": 6,
+        "nonvanilla": [
+          "ZenitHotRock",
+          "ZenitLavaGravel",
+          "ZenitLavaRockOC",
+          "ZenitLavaRockSurface",
+          "Zenit_Grass",
+          "Zenit_OCSand"
+        ]
+      }
+    ],
+    "duplicates": {
+      "Moss": [
+        {
+          "mod": "3617496051",
+          "subtype": "Moss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "Moss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossFlowers": [
+        {
+          "mod": "3617496051",
+          "subtype": "MossFlowers",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "MossFlowers",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneMoss": [
+        {
+          "mod": "3617496051",
+          "subtype": "StoneMoss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "StoneMoss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ]
+    },
+    "definitions": {
+      "Stone_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_04": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_04",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_05": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_05",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Iron_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Iron_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Iron_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Iron_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Nickel_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Nickel_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Cobalt_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Cobalt_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Magnesium_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Magnesium_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Silicon_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Silicon_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Silver_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Silver_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Gold_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Gold_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Platinum_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Platinum_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Uraninite_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Uraninite_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SmallMoonRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "SmallMoonRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DebugMaterial": [
+        {
+          "mod": "vanilla",
+          "subtype": "DebugMaterial",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Soil": [
+        {
+          "mod": "vanilla",
+          "subtype": "Soil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Rocks_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Snow": [
+        {
+          "mod": "vanilla",
+          "subtype": "Snow",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sand_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Sand_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DesertRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "DesertRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienIce_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienIce_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockyTerrain": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockyTerrain",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockyMountain": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockyMountain",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSand": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSand",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienIce": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienIce",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSnow": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSnow",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienYellowGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienYellowGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienYellowGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienYellowGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MarsRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "MarsRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MarsSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "MarsSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MoonSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "MoonSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MoonRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "MoonRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "IceEuropa2": [
+        {
+          "mod": "vanilla",
+          "subtype": "IceEuropa2",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonStone": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonStone",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonBlend": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonBlend",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonIce": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonIce",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "CrackedSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "CrackedSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks2": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks2",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks3": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks3",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "PertamSand": [
+        {
+          "mod": "vanilla",
+          "subtype": "PertamSand",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Concrete_01": [
+        {
+          "mod": "2195637331",
+          "subtype": "Concrete_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02green": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02green",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02white": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02white",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02dark": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02dark",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_03": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04dark": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04dark",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04darkroof": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04darkroof",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_concrete": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_concrete",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Facade_02": [
+        {
+          "mod": "2195637331",
+          "subtype": "Facade_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealSea": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealSea",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore1": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore2": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore3": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore4": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore4",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore5": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore5",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore6": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore6",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealRiver": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealRiver",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlueGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlueGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealRocksGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealRocksGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealSnowGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealSnowGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealGravel": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlack_Soil": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlack_Soil",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlack_Soil_bare": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlack_Soil_bare",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealIce": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealIce",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "VolcanoRock": [
+        {
+          "mod": "3309805284",
+          "subtype": "VolcanoRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_var": [
+        {
+          "mod": "3309805284",
+          "subtype": "Grass_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02_var": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02_bare": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02_bare",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_05": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_05",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_06": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_06",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_07": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_07",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Rocks_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Rocks_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Rocks_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Rocks_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Soil_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Soil_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Soil_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Soil_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Dunes_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Dunes_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Dunes_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Dunes_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Salt_Flats_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Salt_Flats_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Salt_Flats_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "Salt_Flats_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Underground_Ice": [
+        {
+          "mod": "3309805284",
+          "subtype": "Underground_Ice",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet0": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet0",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet2": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet3": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_01_alt": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_01_alt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_11": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_11",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_16": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_16",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_17": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_17",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_11": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_11",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_11_alt": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_11_alt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_07": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_07",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_08": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_08",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelBasalt": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelBasalt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelBedrock": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelBedrock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelMagma": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelMagma",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelRock": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_Lava_01": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_LavaFlows": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_LavaFlows",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_Lava_Rock": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_Lava_Rock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_LightStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_LightStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphuricStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphuricStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphuricStone_02": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphuricStone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_RedStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_RedStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_RedStone_02": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_RedStone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphurDioxide": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphurDioxide",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Sand_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Sand_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Sand_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Sand_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Lava_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Lava_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Lava_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Lava_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Lava_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Lava_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Desert_Rocks": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Desert_Rocks",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Cauldron": [
+        {
+          "mod": "3576683005",
+          "subtype": "Cauldron",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Cauldron\\VoxelMaterials_Cauldron.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Blue_Goo": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Blue_Goo",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Black_Goo": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Black_Goo",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_01A": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_01A",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_01B": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_01B",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_03": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_VolcanoRock": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_VolcanoRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Plains": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Plains",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Plains_var": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Plains_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Red_grass": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Red_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Sandy_grass": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Sandy_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Forest": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Forest",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Red_Ground": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Red_Ground",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Pillar": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Pillar",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "IceMuddy": [
+        {
+          "mod": "3617496051",
+          "subtype": "IceMuddy",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Moss": [
+        {
+          "mod": "3617496051",
+          "subtype": "Moss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "Moss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossFlowers": [
+        {
+          "mod": "3617496051",
+          "subtype": "MossFlowers",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "MossFlowers",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MuddyDirt": [
+        {
+          "mod": "3617496051",
+          "subtype": "MuddyDirt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MuddyDirtBare": [
+        {
+          "mod": "3617496051",
+          "subtype": "MuddyDirtBare",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "PuddleStone": [
+        {
+          "mod": "3617496051",
+          "subtype": "PuddleStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Roots": [
+        {
+          "mod": "3617496051",
+          "subtype": "Roots",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Roots2": [
+        {
+          "mod": "3617496051",
+          "subtype": "Roots2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneMoss": [
+        {
+          "mod": "3617496051",
+          "subtype": "StoneMoss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "3618043241",
+          "subtype": "StoneMoss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneDesert": [
+        {
+          "mod": "3618043241",
+          "subtype": "StoneDesert",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Coral": [
+        {
+          "mod": "3618043241",
+          "subtype": "Coral",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "CoralGrass": [
+        {
+          "mod": "3618043241",
+          "subtype": "CoralGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSandGrass": [
+        {
+          "mod": "3618043241",
+          "subtype": "AlienSandGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneWhite": [
+        {
+          "mod": "3618043241",
+          "subtype": "StoneWhite",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassStone1": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassStone1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock2": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock3": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock4": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock4",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TorrLavaGravel": [
+        {
+          "mod": "3684013414",
+          "subtype": "TorrLavaGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TorrLavaRock": [
+        {
+          "mod": "3684013414",
+          "subtype": "TorrLavaRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "HRock": [
+        {
+          "mod": "3684013414",
+          "subtype": "HRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "HRockBlend": [
+        {
+          "mod": "3684013414",
+          "subtype": "HRockBlend",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Crev": [
+        {
+          "mod": "3684013414",
+          "subtype": "Crev",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "IceCliff": [
+        {
+          "mod": "3684013414",
+          "subtype": "IceCliff",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "FrostSurface": [
+        {
+          "mod": "3684013414",
+          "subtype": "FrostSurface",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SnowM": [
+        {
+          "mod": "3684013414",
+          "subtype": "SnowM",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Zenit_Grass": [
+        {
+          "mod": "3695766186",
+          "subtype": "Zenit_Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Zenit_OCSand": [
+        {
+          "mod": "3695766186",
+          "subtype": "Zenit_OCSand",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaGravel": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitHotRock": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitHotRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaRockOC": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaRockOC",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaRockSurface": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaRockSurface",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ]
+    }
+  },
+  "desired_with_existing_gameplay": {
+    "vanilla": 62,
+    "effective_unique_subtypes": 196,
+    "headroom_to_128": -68,
+    "per_mod": [
+      {
+        "id": "2195637331",
+        "title": "Teralis - City Planet",
+        "definitions": 11,
+        "nonvanilla": [
+          "Concrete_01",
+          "Facade_02",
+          "Greeble_02",
+          "Greeble_02dark",
+          "Greeble_02green",
+          "Greeble_02white",
+          "Greeble_03",
+          "Greeble_04",
+          "Greeble_04dark",
+          "Greeble_04darkroof",
+          "Greeble_concrete"
+        ]
+      },
+      {
+        "id": "2644430625",
+        "title": "Teal - Water Mod",
+        "definitions": 15,
+        "nonvanilla": [
+          "TealBlack_Soil",
+          "TealBlack_Soil_bare",
+          "TealBlueGrass",
+          "TealGravel",
+          "TealIce",
+          "TealRiver",
+          "TealRocksGrass",
+          "TealSea",
+          "TealShore1",
+          "TealShore2",
+          "TealShore3",
+          "TealShore4",
+          "TealShore5",
+          "TealShore6",
+          "TealSnowGrass"
+        ]
+      },
+      {
+        "id": "3309805284",
+        "title": "Komorebi",
+        "definitions": 38,
+        "nonvanilla": [
+          "AcidLake_01",
+          "AcidLake_02",
+          "AcidLake_03",
+          "AcidLake_04",
+          "Desert_Dunes_01",
+          "Desert_Dunes_02",
+          "Desert_Rocks_01",
+          "Desert_Rocks_02",
+          "Desert_Soil_01",
+          "Desert_Soil_03",
+          "Fungi_01",
+          "Fungi_01_alt",
+          "Fungi_02",
+          "Fungi_11",
+          "Fungi_16",
+          "Fungi_17",
+          "Grass_var",
+          "Green_02",
+          "Green_02_bare",
+          "Green_02_var",
+          "Green_04",
+          "Green_05",
+          "Green_06",
+          "Green_07",
+          "Mold_01",
+          "Mold_11",
+          "Mold_11_alt",
+          "MossCarpet0",
+          "MossCarpet2",
+          "MossCarpet3",
+          "Mycel_02",
+          "Mycel_04",
+          "Mycel_07",
+          "Mycel_08",
+          "Salt_Flats_01",
+          "Salt_Flats_03",
+          "Underground_Ice",
+          "VolcanoRock"
+        ]
+      },
+      {
+        "id": "3362332228",
+        "title": "Orlunda (Sideways)",
+        "definitions": 9,
+        "nonvanilla": [
+          "Mossy_Rock_Orlunda",
+          "OrlundaBeach",
+          "OrlundaIce",
+          "OrlundaLake",
+          "OrlundaRedSoil_1",
+          "OrlundaRedSoil_2",
+          "OrlundaRedSoil_3",
+          "OrlundaSnow",
+          "Woods_grass_long"
+        ]
+      },
+      {
+        "id": "3489648084",
+        "title": "Planet Relicta",
+        "definitions": 4,
+        "nonvanilla": [
+          "RelBasalt",
+          "RelBedrock",
+          "RelMagma",
+          "RelRock"
+        ]
+      },
+      {
+        "id": "3515518898",
+        "title": "Moon Sulfate",
+        "definitions": 9,
+        "nonvanilla": [
+          "Sulfate_LavaFlows",
+          "Sulfate_Lava_01",
+          "Sulfate_Lava_Rock",
+          "Sulfate_LightStone",
+          "Sulfate_RedStone",
+          "Sulfate_RedStone_02",
+          "Sulfate_SulphurDioxide",
+          "Sulfate_SulphuricStone",
+          "Sulfate_SulphuricStone_02"
+        ]
+      },
+      {
+        "id": "3576683005",
+        "title": "Cauldron System",
+        "definitions": 22,
+        "nonvanilla": [
+          "Agni_Black_Lava_01",
+          "Agni_Black_Lava_02",
+          "Agni_Black_Sand_01",
+          "Agni_Black_Sand_02",
+          "Agni_Desert_Rocks",
+          "Agni_Lava_01",
+          "Agni_Lava_02",
+          "Cauldron",
+          "Kor_Ancient_Debris_01A",
+          "Kor_Ancient_Debris_01B",
+          "Kor_Ancient_Debris_02",
+          "Kor_Ancient_Debris_03",
+          "Kor_Black_Goo",
+          "Kor_Blue_Goo",
+          "Tellus_Forest",
+          "Tellus_Pillar",
+          "Tellus_Plains",
+          "Tellus_Plains_var",
+          "Tellus_Red_Ground",
+          "Tellus_Red_grass",
+          "Tellus_Sandy_grass",
+          "Tellus_VolcanoRock"
+        ]
+      },
+      {
+        "id": "3618043241",
+        "title": "Planet - Jormun (Water)",
+        "definitions": 12,
+        "nonvanilla": [
+          "AlienSandGrass",
+          "Coral",
+          "CoralGrass",
+          "GrassRock2",
+          "GrassRock3",
+          "GrassRock4",
+          "GrassStone1",
+          "Moss",
+          "MossFlowers",
+          "StoneDesert",
+          "StoneMoss",
+          "StoneWhite"
+        ]
+      },
+      {
+        "id": "3684013414",
+        "title": "Planet Nivis",
+        "definitions": 8,
+        "nonvanilla": [
+          "Crev",
+          "FrostSurface",
+          "HRock",
+          "HRockBlend",
+          "IceCliff",
+          "SnowM",
+          "TorrLavaGravel",
+          "TorrLavaRock"
+        ]
+      },
+      {
+        "id": "3695766186",
+        "title": "Planet Zenitaia",
+        "definitions": 6,
+        "nonvanilla": [
+          "ZenitHotRock",
+          "ZenitLavaGravel",
+          "ZenitLavaRockOC",
+          "ZenitLavaRockSurface",
+          "Zenit_Grass",
+          "Zenit_OCSand"
+        ]
+      }
+    ],
+    "duplicates": {},
+    "definitions": {
+      "Stone_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_04": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_04",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone_05": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone_05",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Iron_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Iron_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Iron_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Iron_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Nickel_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Nickel_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Cobalt_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Cobalt_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Magnesium_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Magnesium_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Silicon_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Silicon_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Silver_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Silver_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Gold_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Gold_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Platinum_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Platinum_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Uraninite_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Uraninite_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_01": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_01",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SmallMoonRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "SmallMoonRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DebugMaterial": [
+        {
+          "mod": "vanilla",
+          "subtype": "DebugMaterial",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Soil": [
+        {
+          "mod": "vanilla",
+          "subtype": "Soil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Rocks_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Snow": [
+        {
+          "mod": "vanilla",
+          "subtype": "Snow",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Ice": [
+        {
+          "mod": "vanilla",
+          "subtype": "Ice",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sand_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Sand_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DesertRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "DesertRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Stone": [
+        {
+          "mod": "vanilla",
+          "subtype": "Stone",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienIce_03": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienIce_03",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockyTerrain": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockyTerrain",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockyMountain": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockyMountain",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSand": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSand",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienIce": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienIce",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSnow": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSnow",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienYellowGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienYellowGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienYellowGrass bare": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienYellowGrass bare",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MarsRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "MarsRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MarsSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "MarsSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MoonSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "MoonSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MoonRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "MoonRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "IceEuropa2": [
+        {
+          "mod": "vanilla",
+          "subtype": "IceEuropa2",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonStone": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonStone",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonBlend": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonBlend",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TritonIce": [
+        {
+          "mod": "vanilla",
+          "subtype": "TritonIce",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "CrackedSoil": [
+        {
+          "mod": "vanilla",
+          "subtype": "CrackedSoil",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks2": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks2",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "DustyRocks3": [
+        {
+          "mod": "vanilla",
+          "subtype": "DustyRocks3",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "PertamSand": [
+        {
+          "mod": "vanilla",
+          "subtype": "PertamSand",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Concrete_01": [
+        {
+          "mod": "2195637331",
+          "subtype": "Concrete_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02green": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02green",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02white": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02white",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_02dark": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_02dark",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_03": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04dark": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04dark",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_04darkroof": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_04darkroof",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Greeble_concrete": [
+        {
+          "mod": "2195637331",
+          "subtype": "Greeble_concrete",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Facade_02": [
+        {
+          "mod": "2195637331",
+          "subtype": "Facade_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealSea": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealSea",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore1": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore2": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore3": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore4": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore4",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore5": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore5",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealShore6": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealShore6",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealRiver": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealRiver",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlueGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlueGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealRocksGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealRocksGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealSnowGrass": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealSnowGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealGravel": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlack_Soil": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlack_Soil",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealBlack_Soil_bare": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealBlack_Soil_bare",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TealIce": [
+        {
+          "mod": "2644430625",
+          "subtype": "TealIce",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "VolcanoRock": [
+        {
+          "mod": "3309805284",
+          "subtype": "VolcanoRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_var": [
+        {
+          "mod": "3309805284",
+          "subtype": "Grass_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02_var": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_02_bare": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_02_bare",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_05": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_05",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_06": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_06",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Green_07": [
+        {
+          "mod": "3309805284",
+          "subtype": "Green_07",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Rocks_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Rocks_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Rocks_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Rocks_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Soil_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Soil_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Soil_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Soil_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Dunes_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Dunes_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Desert_Dunes_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Desert_Dunes_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Salt_Flats_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Salt_Flats_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Salt_Flats_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "Salt_Flats_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Underground_Ice": [
+        {
+          "mod": "3309805284",
+          "subtype": "Underground_Ice",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet0": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet0",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet2": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossCarpet3": [
+        {
+          "mod": "3309805284",
+          "subtype": "MossCarpet3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_01_alt": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_01_alt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_11": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_11",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_16": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_16",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Fungi_17": [
+        {
+          "mod": "3309805284",
+          "subtype": "Fungi_17",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_11": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_11",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mold_11_alt": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mold_11_alt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_07": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_07",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mycel_08": [
+        {
+          "mod": "3309805284",
+          "subtype": "Mycel_08",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_01": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_02": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_03": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AcidLake_04": [
+        {
+          "mod": "3309805284",
+          "subtype": "AcidLake_04",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\VoxelMaterials_Komorebi.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaRedSoil_1": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaRedSoil_2": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaRedSoil_3": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mossy_Rock_Orlunda": [
+        {
+          "mod": "3362332228",
+          "subtype": "Mossy_Rock_Orlunda",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass_long": [
+        {
+          "mod": "3362332228",
+          "subtype": "Woods_grass_long",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaBeach": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaBeach",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaSnow": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaSnow",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaIce": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaIce",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaLake": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaLake",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelBasalt": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelBasalt",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelBedrock": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelBedrock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelMagma": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelMagma",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "RelRock": [
+        {
+          "mod": "3489648084",
+          "subtype": "RelRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_Lava_01": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_LavaFlows": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_LavaFlows",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_Lava_Rock": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_Lava_Rock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_LightStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_LightStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphuricStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphuricStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphuricStone_02": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphuricStone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_RedStone": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_RedStone",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_RedStone_02": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_RedStone_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Sulfate_SulphurDioxide": [
+        {
+          "mod": "3515518898",
+          "subtype": "Sulfate_SulphurDioxide",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\VoxelMaterialsSulfate.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Sand_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Sand_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Sand_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Sand_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Lava_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Lava_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Lava_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Lava_01": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Lava_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Black_Lava_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Black_Lava_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Agni_Desert_Rocks": [
+        {
+          "mod": "3576683005",
+          "subtype": "Agni_Desert_Rocks",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\VoxelMaterials_Agni.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Cauldron": [
+        {
+          "mod": "3576683005",
+          "subtype": "Cauldron",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Cauldron\\VoxelMaterials_Cauldron.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Blue_Goo": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Blue_Goo",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Black_Goo": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Black_Goo",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_01A": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_01A",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_01B": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_01B",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_02": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Kor_Ancient_Debris_03": [
+        {
+          "mod": "3576683005",
+          "subtype": "Kor_Ancient_Debris_03",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\VoxelMaterials_Kor.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_VolcanoRock": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_VolcanoRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Plains": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Plains",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Plains_var": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Plains_var",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Red_grass": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Red_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Sandy_grass": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Sandy_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Forest": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Forest",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Red_Ground": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Red_Ground",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Tellus_Pillar": [
+        {
+          "mod": "3576683005",
+          "subtype": "Tellus_Pillar",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\VoxelMaterials_Tellus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Moss": [
+        {
+          "mod": "3618043241",
+          "subtype": "Moss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "MossFlowers": [
+        {
+          "mod": "3618043241",
+          "subtype": "MossFlowers",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneMoss": [
+        {
+          "mod": "3618043241",
+          "subtype": "StoneMoss",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneDesert": [
+        {
+          "mod": "3618043241",
+          "subtype": "StoneDesert",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Coral": [
+        {
+          "mod": "3618043241",
+          "subtype": "Coral",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "CoralGrass": [
+        {
+          "mod": "3618043241",
+          "subtype": "CoralGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienSandGrass": [
+        {
+          "mod": "3618043241",
+          "subtype": "AlienSandGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "StoneWhite": [
+        {
+          "mod": "3618043241",
+          "subtype": "StoneWhite",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassStone1": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassStone1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock2": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock3": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "GrassRock4": [
+        {
+          "mod": "3618043241",
+          "subtype": "GrassRock4",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TorrLavaGravel": [
+        {
+          "mod": "3684013414",
+          "subtype": "TorrLavaGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "TorrLavaRock": [
+        {
+          "mod": "3684013414",
+          "subtype": "TorrLavaRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "HRock": [
+        {
+          "mod": "3684013414",
+          "subtype": "HRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "HRockBlend": [
+        {
+          "mod": "3684013414",
+          "subtype": "HRockBlend",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Crev": [
+        {
+          "mod": "3684013414",
+          "subtype": "Crev",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "IceCliff": [
+        {
+          "mod": "3684013414",
+          "subtype": "IceCliff",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "FrostSurface": [
+        {
+          "mod": "3684013414",
+          "subtype": "FrostSurface",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SnowM": [
+        {
+          "mod": "3684013414",
+          "subtype": "SnowM",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Zenit_Grass": [
+        {
+          "mod": "3695766186",
+          "subtype": "Zenit_Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Zenit_OCSand": [
+        {
+          "mod": "3695766186",
+          "subtype": "Zenit_OCSand",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaGravel": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaGravel",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitHotRock": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitHotRock",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaRockOC": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaRockOC",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "ZenitLavaRockSurface": [
+        {
+          "mod": "3695766186",
+          "subtype": "ZenitLavaRockSurface",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ]
+    }
+  }
+}

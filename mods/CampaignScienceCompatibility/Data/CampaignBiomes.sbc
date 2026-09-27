@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityComponents>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Cauldron</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Northern Furnace
+ScienceReward: 50
+Latitude: (0.6, 1)
+
+Biome: Southern Furnace
+ScienceReward: 50
+Latitude: (-1, -0.6)
+
+Biome: Equatorial Furnace
+ScienceReward: 40
+Latitude: (-0.2, 0.2)
+
+Biome: Mantle Expanse
+ScienceReward: 30
+Ores: Cauldron
+</Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Relicta</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Polar Survey
+ScienceReward: 40
+Latitude: (0.8, 1)
+
+Biome: Southern Survey
+ScienceReward: 40
+Latitude: (-1, -0.8)
+
+Biome: Magma Fields
+ScienceReward: 60
+Ores: RelMagma
+
+Biome: Basalt Fields
+ScienceReward: 35
+Ores: RelBasalt
+
+Biome: Ancient Bedrock
+ScienceReward: 35
+Ores: RelBedrock
+
+Biome: Rocky Highlands
+ScienceReward: 30
+Ores: RelRock
+</Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Zenitaia</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Northern Survey
+ScienceReward: 40
+Latitude: (0.8, 1)
+
+Biome: Southern Survey
+ScienceReward: 40
+Latitude: (-1, -0.8)
+
+Biome: Grasslands
+ScienceReward: 30
+Ores: Zenit_Grass
+
+Biome: Ocean Sands
+ScienceReward: 35
+Ores: Zenit_OCSand
+
+Biome: Volcanic Gravel
+ScienceReward: 40
+Ores: ZenitLavaGravel
+
+Biome: Hot Rock Fields
+ScienceReward: 55
+Ores: ZenitHotRock, ZenitLavaRockOC, ZenitLavaRockSurface
+</Description>
+    </EntityComponent>
+  </EntityComponents>
+</Definitions>

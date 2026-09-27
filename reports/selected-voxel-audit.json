@@ -1,0 +1,429 @@
+{
+  "vanilla": 62,
+  "total": 118,
+  "headroom": 10,
+  "budget": 120,
+  "per_mod": [
+    {
+      "id": "3791989881",
+      "title": "Yoink!",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2200451495",
+      "title": "Water Mod",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3222232482",
+      "title": "Visual Overrides API",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "758597413",
+      "title": "Text HUD API",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2195637331",
+      "title": "Teralis - City Planet",
+      "count": 11,
+      "nonvanilla": [
+        "Concrete_01",
+        "Facade_02",
+        "Greeble_02",
+        "Greeble_02dark",
+        "Greeble_02green",
+        "Greeble_02white",
+        "Greeble_03",
+        "Greeble_04",
+        "Greeble_04dark",
+        "Greeble_04darkroof",
+        "Greeble_concrete"
+      ],
+      "incremental": 11
+    },
+    {
+      "id": "2644430625",
+      "title": "Teal - Water Mod",
+      "count": 15,
+      "nonvanilla": [
+        "TealBlack_Soil",
+        "TealBlack_Soil_bare",
+        "TealBlueGrass",
+        "TealGravel",
+        "TealIce",
+        "TealRiver",
+        "TealRocksGrass",
+        "TealSea",
+        "TealShore1",
+        "TealShore2",
+        "TealShore3",
+        "TealShore4",
+        "TealShore5",
+        "TealShore6",
+        "TealSnowGrass"
+      ],
+      "incremental": 15
+    },
+    {
+      "id": "3240629702",
+      "title": "Solar Blocks Override",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2841920953",
+      "title": "Shower Light",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3665099597",
+      "title": "Scientific Progress",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "1965654081",
+      "title": "Rich HUD Master",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3746220940",
+      "title": "Resource Node Miner",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3152436752",
+      "title": "Real Stars",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3351055036",
+      "title": "Real Solar Systems",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3232085677",
+      "title": "Real Gas Giants",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3695766186",
+      "title": "Planet Zenitaia",
+      "count": 6,
+      "nonvanilla": [
+        "ZenitHotRock",
+        "ZenitLavaGravel",
+        "ZenitLavaRockOC",
+        "ZenitLavaRockSurface",
+        "Zenit_Grass",
+        "Zenit_OCSand"
+      ],
+      "incremental": 6
+    },
+    {
+      "id": "3741238881",
+      "title": "Pipes Junctions",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3736894294",
+      "title": "Monorail Tracks",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "1521905890",
+      "title": "Modular Encounters Systems",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3731921987",
+      "title": "Malware's Docking Aid",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2839553181",
+      "title": "In Depth LCDs",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3770315903",
+      "title": "Humanoid's Retractable Solar Panels",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3767444521",
+      "title": "Handheld Hacker Grid Takeover (Version 1.6)",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3576683005",
+      "title": "Cauldron System",
+      "count": 22,
+      "nonvanilla": [
+        "Agni_Black_Lava_01",
+        "Agni_Black_Lava_02",
+        "Agni_Black_Sand_01",
+        "Agni_Black_Sand_02",
+        "Agni_Desert_Rocks",
+        "Agni_Lava_01",
+        "Agni_Lava_02",
+        "Cauldron",
+        "Kor_Ancient_Debris_01A",
+        "Kor_Ancient_Debris_01B",
+        "Kor_Ancient_Debris_02",
+        "Kor_Ancient_Debris_03",
+        "Kor_Black_Goo",
+        "Kor_Blue_Goo",
+        "Tellus_Forest",
+        "Tellus_Pillar",
+        "Tellus_Plains",
+        "Tellus_Plains_var",
+        "Tellus_Red_Ground",
+        "Tellus_Red_grass",
+        "Tellus_Sandy_grass",
+        "Tellus_VolcanoRock"
+      ],
+      "incremental": 22
+    },
+    {
+      "id": "2336089504",
+      "title": "Bot_spawner",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3218645300",
+      "title": "Asteroid Filter API",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2391318591",
+      "title": "Assertive Loot",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3155707452",
+      "title": "Assertive Combat Systems Dependency",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "1902970975",
+      "title": "Assertive Combat Systems",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3784633330",
+      "title": "AQD - LCD Color Profiles",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3472275442",
+      "title": "AQD - Conveyored Pipes",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2596208372",
+      "title": "AiEnabled v1.9",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2310821218",
+      "title": "Abandoned Settlements [v2]",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3690317665",
+      "title": "AquaExpansion",
+      "count": 2,
+      "nonvanilla": [
+        "Salt_01",
+        "SeaSoil_01"
+      ],
+      "incremental": 2
+    },
+    {
+      "id": "2899106264",
+      "title": "Terran Titans Naval Blocks",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    }
+  ],
+  "duplicates": {},
+  "subtypes": [
+    "Agni_Black_Lava_01",
+    "Agni_Black_Lava_02",
+    "Agni_Black_Sand_01",
+    "Agni_Black_Sand_02",
+    "Agni_Desert_Rocks",
+    "Agni_Lava_01",
+    "Agni_Lava_02",
+    "AlienGreenGrass",
+    "AlienGreenGrass bare",
+    "AlienIce",
+    "AlienIce_03",
+    "AlienOrangeGrass",
+    "AlienOrangeGrass bare",
+    "AlienRockGrass",
+    "AlienRockGrass bare",
+    "AlienRockyMountain",
+    "AlienRockyTerrain",
+    "AlienSand",
+    "AlienSnow",
+    "AlienSoil",
+    "AlienYellowGrass",
+    "AlienYellowGrass bare",
+    "Cauldron",
+    "Cobalt_01",
+    "Concrete_01",
+    "CrackedSoil",
+    "DebugMaterial",
+    "DesertRocks",
+    "DustyRocks",
+    "DustyRocks2",
+    "DustyRocks3",
+    "Facade_02",
+    "Gold_01",
+    "Grass",
+    "Grass bare",
+    "Grass_02",
+    "Grass_old",
+    "Grass_old bare",
+    "Greeble_02",
+    "Greeble_02dark",
+    "Greeble_02green",
+    "Greeble_02white",
+    "Greeble_03",
+    "Greeble_04",
+    "Greeble_04dark",
+    "Greeble_04darkroof",
+    "Greeble_concrete",
+    "Ice",
+    "IceEuropa2",
+    "Ice_01",
+    "Ice_02",
+    "Ice_03",
+    "Iron_01",
+    "Iron_02",
+    "Kor_Ancient_Debris_01A",
+    "Kor_Ancient_Debris_01B",
+    "Kor_Ancient_Debris_02",
+    "Kor_Ancient_Debris_03",
+    "Kor_Black_Goo",
+    "Kor_Blue_Goo",
+    "Magnesium_01",
+    "MarsRocks",
+    "MarsSoil",
+    "MoonRocks",
+    "MoonSoil",
+    "Nickel_01",
+    "PertamSand",
+    "Platinum_01",
+    "Rocks_grass",
+    "Salt_01",
+    "Sand_02",
+    "SeaSoil_01",
+    "Silicon_01",
+    "Silver_01",
+    "SmallMoonRocks",
+    "Snow",
+    "Soil",
+    "Stone",
+    "Stone_01",
+    "Stone_02",
+    "Stone_03",
+    "Stone_04",
+    "Stone_05",
+    "TealBlack_Soil",
+    "TealBlack_Soil_bare",
+    "TealBlueGrass",
+    "TealGravel",
+    "TealIce",
+    "TealRiver",
+    "TealRocksGrass",
+    "TealSea",
+    "TealShore1",
+    "TealShore2",
+    "TealShore3",
+    "TealShore4",
+    "TealShore5",
+    "TealShore6",
+    "TealSnowGrass",
+    "Tellus_Forest",
+    "Tellus_Pillar",
+    "Tellus_Plains",
+    "Tellus_Plains_var",
+    "Tellus_Red_Ground",
+    "Tellus_Red_grass",
+    "Tellus_Sandy_grass",
+    "Tellus_VolcanoRock",
+    "TritonBlend",
+    "TritonIce",
+    "TritonStone",
+    "Uraninite_01",
+    "Woods_grass",
+    "Woods_grass bare",
+    "ZenitHotRock",
+    "ZenitLavaGravel",
+    "ZenitLavaRockOC",
+    "ZenitLavaRockSurface",
+    "Zenit_Grass",
+    "Zenit_OCSand"
+  ],
+  "qualification": "Static local SBC union; runtime definition mutations, dependency expansion, load precedence and engine indexing still require in-game verification."
+}

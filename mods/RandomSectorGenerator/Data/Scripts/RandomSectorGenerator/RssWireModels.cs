@@ -75,6 +75,9 @@ namespace RandomSectorGenerator
 
     public sealed class PendingSectorState
     {
+        public bool InProgress;
+        public bool Failed;
+        public List<long> GeneratedEntityIds = new List<long>();
         public bool PendingApply;
         public bool Applied;
         public int Seed;

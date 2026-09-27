@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using VRage.Game.Components;
 using VRage.Game.ModAPI;
+using VRage.ModAPI;
 using VRage.Utils;
 using VRage.Voxels;
 using VRageMath;
@@ -18,13 +19,23 @@ namespace RandomSectorGenerator
     public sealed class RandomSectorGeneratorSession : MySessionComponentBase
     {
         private const string Author = "Random Sector Generator";
-        private const string Version = "0.1.0-alpha";
+        private const string Version = "0.2.0-audit";
         private const string CommandPrefix = "/rsg";
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
-        private const string RssSharedConfigKey = "RealSolarSystemsSettings_Config_xml";
+        private const string ArmKey = "RSG_DisposableBootstrap_v1";
+        private static readonly HashSet<string> AllowedPlanets = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "Cauldron", "Tellus", "Agni", "Kor", "Teal-WaterMod", "Teralis - City Planet", "Zenitaia",
+            "EarthLike", "Moon", "Mars", "Europa"
+        };
+        private static readonly HashSet<ulong> DeniedWorkshopIds = new HashSet<ulong>
+        {
+            2873186053UL, 2266665708UL, 2636128625UL, 2296726670UL, 2459246911UL,
+            3617008256UL, 3617040986UL, 3618093811UL, 3617496051UL, 3561998389UL,
+            2603627657UL, 2789619117UL
+        };
 
-        private const int DefaultStellarSystems = 4;
         private const int MaximumPlanetDefinitions = 24;
         private const double SystemSpacingMin = 6000000000d;   // 6 million km
         private const double SystemSpacingMax = 12000000000d;  // 12 million km
@@ -39,30 +50,23 @@ namespace RandomSectorGenerator
 
         private PendingSectorState _state = new PendingSectorState();
         private bool _chatRegistered;
-        private bool _injectedPendingConfigThisLoad;
+        private bool _pendingAdoptionCheck;
         private int _ticks;
         private bool _adoptionNoticeShown;
         private bool _startTeleportDone;
+        private bool _autoAttempted;
 
         public override void LoadData()
         {
             _state = ReadState();
 
-            // IMPORTANT: place this mod BELOW Real Solar Systems in the in-game Active Mods list (SE loads that list bottom-to-top).
-            // This runs before RSS LoadData and injects the pending protobuf payload into
-            // the same shared world variable RSS reads on startup.
+            // The offline handoff writes the pending payload to the checkpoint AFTER
+            // the first save and game exit. RSS then reads it normally on next load.
+            // Session component priority does not order LoadData in this game build.
             if (_state != null && _state.PendingApply && !string.IsNullOrWhiteSpace(_state.RssConfigBase64))
             {
-                try
-                {
-                    MyAPIGateway.Utilities.SetVariable(RssSharedConfigKey, _state.RssConfigBase64);
-                    _injectedPendingConfigThisLoad = true;
-                    MyLog.Default.WriteLineAndConsole("[RSG] Injected pending RSS sector config before startup.");
-                }
-                catch (Exception e)
-                {
-                    MyLog.Default.WriteLineAndConsole("[RSG] Failed to inject pending RSS config: " + e);
-                }
+                _pendingAdoptionCheck = true;
+                MyLog.Default.WriteLineAndConsole("[RSG] Checking pending sector adoption; offline handoff must precede reload.");
             }
 
             _realStars.Load();
@@ -87,8 +91,17 @@ namespace RandomSectorGenerator
                 if (!_rss.IsReady && !_rss.Compromised) _rss.Load();
             }
 
-            if (_injectedPendingConfigThisLoad && _state != null && _state.PendingApply)
+            if (_pendingAdoptionCheck && _state != null && _state.PendingApply)
                 CheckRssAdoptionAndFinishBootstrap();
+
+            string armed;
+            if (!_autoAttempted && IsServer() && _ticks >= 600 && _realStars.IsReady && _realGasGiants.IsReady && _rss.IsReady &&
+                !_state.PendingApply && !_state.Applied && !_state.InProgress && !_state.Failed &&
+                MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) && armed == "armed")
+            {
+                _autoAttempted = true;
+                GenerateSector(unchecked((int)DateTime.UtcNow.Ticks));
+            }
         }
 
         protected override void UnloadData()
@@ -143,10 +156,11 @@ namespace RandomSectorGenerator
                 {
                     GenerateSector(seed);
                 }
-                else
+                else if (tokens.Length <= 2)
                 {
                     GenerateSector(unchecked((int)DateTime.UtcNow.Ticks));
                 }
+                else Show("Seed must be a signed 32-bit integer.");
                 return;
             }
 
@@ -201,6 +215,32 @@ namespace RandomSectorGenerator
                 return;
             }
 
+            string armed;
+            if (!MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) || armed != "armed")
+            {
+                Show("Generation refused: only an offline-prepared disposable bootstrap world may generate.");
+                return;
+            }
+            if (_state.Applied || _state.InProgress || _state.Failed)
+            {
+                Show("Generation locked: completed or interrupted bootstrap. Restore the disposable baseline; do not retry in this save.");
+                return;
+            }
+            foreach (var mod in MyAPIGateway.Session.Mods)
+            {
+                if (DeniedWorkshopIds.Contains(mod.PublishedFileId))
+                {
+                    Show("Generation refused: a denylisted Workshop mod is active: " + mod.PublishedFileId);
+                    return;
+                }
+            }
+            int materialCount = MyDefinitionManager.Static.GetVoxelMaterialDefinitions().Select(x => x.Id.SubtypeName).Distinct().Count();
+            if (materialCount > 120)
+            {
+                Show("Generation refused: loaded voxel material count " + materialCount + " exceeds the safety budget of 120.");
+                return;
+            }
+
             if (_state != null && _state.PendingApply)
             {
                 Show("A generated sector is already waiting to be applied. Save, quit to menu, and reload this world first.");
@@ -235,6 +275,11 @@ namespace RandomSectorGenerator
                 definitions = definitions.Take(MaximumPlanetDefinitions).ToList();
 
             MyPlanetGeneratorDefinition starterDefinition = ChooseStarterDefinition(definitions);
+            if (starterDefinition == null)
+            {
+                Show("Generation refused: no approved starter (Tellus or EarthLike) is available.");
+                return;
+            }
             definitions.Remove(starterDefinition);
             definitions.Insert(0, starterDefinition);
 
@@ -244,30 +289,25 @@ namespace RandomSectorGenerator
 
             if (blackHoleSkin == null)
             {
-                Show("No known black-hole skin was found in Real Gas Giants. Generation will continue without a black hole. Run /rsg skins to inspect available skins.");
+                Show("Generation refused: the verified DefaultBlackHole skin is unavailable.");
+                return;
             }
 
             RssSettingsWire config = new RssSettingsWire();
             SectorBuildContext build = new SectorBuildContext(rng, config);
+            _usedTrueSpacePositions.Clear();
 
             try
             {
+                _state = new PendingSectorState { InProgress = true, Seed = seed };
+                WriteState(_state); // Durable lock before the first entity is spawned.
                 BuildSector(build, definitions, starterDefinition, normalGasSkins, blackHoleSkin);
-            }
-            catch (Exception e)
-            {
-                MyLog.Default.WriteLineAndConsole("[RSG] Sector generation failed: " + e);
-                RollbackGeneratedEntities(build);
-                Show("Sector generation failed. Generated bootstrap bodies were rolled back; check SpaceEngineers.log.");
-                return;
-            }
+                if (blackHoleSkin != null && build.BlackHole == null)
+                    throw new Exception("Required black hole failed to spawn.");
+                ValidateSector(config);
 
             if (build.StartPlanet == null)
-            {
-                RollbackGeneratedEntities(build);
-                Show("Sector generation could not create the starter planet. Generated bootstrap bodies were rolled back; check SpaceEngineers.log.");
-                return;
-            }
+                throw new Exception("Starter planet did not spawn.");
 
             byte[] bytes = MyAPIGateway.Utilities.SerializeToBinary(config);
             string encoded = Convert.ToBase64String(bytes);
@@ -288,19 +328,25 @@ namespace RandomSectorGenerator
                 RssConfigBase64 = encoded,
                 CreatedUtc = DateTime.UtcNow.ToString("o")
             };
+            _state.GeneratedEntityIds = build.GeneratedEntities.Select(x => x.EntityId).ToList();
 
             WriteState(_state);
             WriteManifest(build, definitions, seed, blackHoleSkin);
-
-            // Set it now as well. RSS will actually consume it on the NEXT world load.
-            // The pending file is authoritative and will inject again before RSS starts.
-            MyAPIGateway.Utilities.SetVariable(RssSharedConfigKey, encoded);
 
             TeleportCharacterToUnmanagedStarter(build.StartPlanet);
 
             Show("Random sector generated. Seed " + seed + ".");
             Show("Starter: " + build.StartPlanet.Name + " (" + starterDefinition.Id.SubtypeId + "). The rest of the sector layout is intentionally hidden.");
-            Show("NOW SAVE THE WORLD, quit to the main menu, and reload it. Keep Random Sector Generator BELOW Real Solar Systems in the in-game Active Mods list.");
+            Show("SAVE, then EXIT THE GAME. The local handoff tool will commit the pending RSS config before reload. Do not start survival yet.");
+            }
+            catch (Exception e)
+            {
+                MyLog.Default.WriteLineAndConsole("[RSG] Sector generation failed: " + e);
+                RollbackGeneratedEntities(build);
+                _state = new PendingSectorState { Failed = true, Seed = seed };
+                try { WriteState(_state); } catch { }
+                Show("Generation failed and this bootstrap is locked. Restore the disposable baseline before retrying; inspect SpaceEngineers.log.");
+            }
         }
 
         private void BuildSector(SectorBuildContext build, List<MyPlanetGeneratorDefinition> definitions, MyPlanetGeneratorDefinition starterDefinition, List<string> normalGasSkins, string blackHoleSkin)
@@ -308,9 +354,8 @@ namespace RandomSectorGenerator
             // Five physical stars gives us four logical root systems when two stars
             // are grouped under the guaranteed black-hole cluster. Without a known
             // black-hole skin, generate four independent stellar systems.
-            int stellarSystemCount = string.IsNullOrWhiteSpace(blackHoleSkin) ? DefaultStellarSystems : DefaultStellarSystems + 1;
-            if (definitions.Count > 18)
-                stellarSystemCount++;
+            int rootCount = build.Random.Next(3, 6);
+            int stellarSystemCount = string.IsNullOrWhiteSpace(blackHoleSkin) ? rootCount : rootCount + 1;
 
             // Spawn the physical Real Stars first. RSS will find them by StorageName after reload.
             for (int i = 0; i < stellarSystemCount; i++)
@@ -582,9 +627,7 @@ namespace RandomSectorGenerator
                 }
             }
 
-            Vector3D fallback = RandomUnitVector(rng) * TrueSpaceMaxRadius;
-            _usedTrueSpacePositions.Add(fallback);
-            return fallback;
+            throw new Exception("Unable to find a separated physical position.");
         }
 
         private static Vector3D RandomSystemPosition(Random rng, List<Vector3D> existing)
@@ -595,7 +638,7 @@ namespace RandomSectorGenerator
                 bool clear = true;
                 for (int i = 0; i < existing.Count; i++)
                 {
-                    if (Vector3D.DistanceSquared(candidate, existing[i]) < SystemSpacingMin * SystemSpacingMin * 0.4d)
+                    if (Vector3D.DistanceSquared(candidate, existing[i]) < SystemSpacingMin * SystemSpacingMin)
                     {
                         clear = false;
                         break;
@@ -604,7 +647,7 @@ namespace RandomSectorGenerator
                 if (clear)
                     return candidate;
             }
-            return RandomUnitVector(rng) * SystemSpacingMax;
+            throw new Exception("Unable to find a separated system position.");
         }
 
         private static Vector3D RandomUnitVector(Random rng)
@@ -634,7 +677,7 @@ namespace RandomSectorGenerator
             if (skins == null)
                 return null;
 
-            string[] preferred = { "Trithorne", "BlackHole", "Black Hole", "Singularity", "Terminus", "Colossus" };
+            string[] preferred = { "DefaultBlackHole" };
             for (int p = 0; p < preferred.Length; p++)
             {
                 string exact = skins.FirstOrDefault(x => string.Equals(x, preferred[p], StringComparison.OrdinalIgnoreCase));
@@ -642,29 +685,20 @@ namespace RandomSectorGenerator
                     return exact;
             }
 
-            return skins.FirstOrDefault(x =>
-                x.IndexOf("black", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                x.IndexOf("hole", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                x.IndexOf("singular", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                x.IndexOf("trithorne", StringComparison.OrdinalIgnoreCase) >= 0);
+            return null; // Only locally verified black-hole skins are eligible.
         }
 
         private static MyPlanetGeneratorDefinition ChooseStarterDefinition(List<MyPlanetGeneratorDefinition> defs)
         {
-            string[] preferred = { "Tellus", "Teal", "Zenitaia", "Teralis", "EarthLike" };
+            string[] preferred = { "Tellus", "EarthLike" };
             for (int i = 0; i < preferred.Length; i++)
             {
-                MyPlanetGeneratorDefinition match = defs.FirstOrDefault(d => d.Id.SubtypeId.ToString().IndexOf(preferred[i], StringComparison.OrdinalIgnoreCase) >= 0);
+                MyPlanetGeneratorDefinition match = defs.FirstOrDefault(d => string.Equals(d.Id.SubtypeId.ToString(), preferred[i], StringComparison.Ordinal));
                 if (match != null)
                     return match;
             }
 
-            MyPlanetGeneratorDefinition breathable = defs
-                .Where(d => d.HasAtmosphere && d.Atmosphere != null && d.Atmosphere.OxygenDensity > 0.1f)
-                .OrderBy(d => Math.Abs(d.SurfaceGravity - 1f))
-                .FirstOrDefault();
-
-            return breathable ?? defs[0];
+            return null;
         }
 
         private static List<MyPlanetGeneratorDefinition> GetUsablePlanetDefinitions()
@@ -693,7 +727,7 @@ namespace RandomSectorGenerator
             if (lowered.Contains("tutorial") || lowered.Contains("example") || lowered.Contains("systemtest") || lowered.Contains("testmap"))
                 return false;
 
-            return true;
+            return AllowedPlanets.Contains(name);
         }
 
         private static void Shuffle<T>(IList<T> list, Random rng)
@@ -705,6 +739,43 @@ namespace RandomSectorGenerator
                 list[i] = list[j];
                 list[j] = temp;
             }
+        }
+
+        private static double ValidateBody(RssBodyWire body)
+        {
+            double envelope = body.TerrestrialPlanetInfo == null ? 900000d : body.TerrestrialPlanetInfo.RadiusKm * 6000d;
+            var shells = new List<Vector2D>();
+            foreach (var child in body.Children)
+            {
+                double extent = ValidateBody(child);
+                if (child.OrbitInfo == null) throw new Exception("Child is missing an orbit.");
+                double a = child.OrbitInfo.SemimajorAxis;
+                double e = child.OrbitInfo.Eccentricity;
+                double inner = a * (1 - e) - extent;
+                double outer = a * (1 + e) + extent;
+                if (inner <= envelope && shells.Count == 0)
+                    throw new Exception("Child orbit intersects its parent.");
+                foreach (var shell in shells)
+                    if (inner < shell.Y && outer > shell.X)
+                        throw new Exception("Orbital envelopes overlap.");
+                shells.Add(new Vector2D(inner, outer));
+            }
+            foreach (var shell in shells) envelope = Math.Max(envelope, shell.Y);
+            body.PlanetOrbitZoneRadius = (float)Math.Max(body.PlanetOrbitZoneRadius, envelope * 1.05);
+            return body.PlanetOrbitZoneRadius;
+        }
+
+        private static void ValidateSector(RssSettingsWire config)
+        {
+            foreach (var system in config.SolarSystems) ValidateBody(system.RootBody);
+            for (int i = 0; i < config.SolarSystems.Count; i++)
+                for (int j = i + 1; j < config.SolarSystems.Count; j++)
+                {
+                    var a = config.SolarSystems[i];
+                    var b = config.SolarSystems[j];
+                    if (Vector3D.Distance(a.Position, b.Position) <= a.RootBody.PlanetOrbitZoneRadius + b.RootBody.PlanetOrbitZoneRadius)
+                        throw new Exception("System zones overlap.");
+                }
         }
 
         private static string GenerateName(Random rng)
@@ -748,25 +819,30 @@ namespace RandomSectorGenerator
             MyPlanet start = FindPlanetByEntityId(_state.StartPlanetEntityId);
             if (start != null && _rss.IsReady && _rss.IsManagedBody(start))
             {
+                foreach (long id in _state.GeneratedEntityIds)
+                {
+                    MyPlanet body = FindPlanetByEntityId(id);
+                    if (body == null || !_rss.IsManagedBody(body)) return;
+                }
+                if (!_startTeleportDone)
+                    _startTeleportDone = TeleportCharacterToRssStarter(start);
+                if (!_startTeleportDone) return;
                 if (!_adoptionNoticeShown)
                 {
                     _adoptionNoticeShown = true;
                     Show("RSS successfully adopted the generated sector. Bootstrap is complete.");
                 }
 
-                if (!_startTeleportDone)
-                    _startTeleportDone = TeleportCharacterToRssStarter(start);
-
                 _state.PendingApply = false;
                 _state.Applied = true;
                 WriteState(_state);
-                _injectedPendingConfigThisLoad = false;
+                _pendingAdoptionCheck = false;
                 return;
             }
 
             if (_ticks == 1800)
             {
-                Show("RSS has not adopted the generated starter after ~30 seconds. Verify Random Sector Generator is BELOW Real Solar Systems in the in-game Active Mods list, then reload again.");
+                Show("RSS has not adopted this sector. Exit the game and complete the local offline handoff before reloading.");
             }
         }
 
@@ -815,7 +891,7 @@ namespace RandomSectorGenerator
 
             Vector3D center = ((IMyEntity)planet).WorldAABB.Center;
             Vector3D radial = Vector3D.Up;
-            double radius = Math.Max(planet.WorldAABB.HalfExtents.X, Math.Max(planet.WorldAABB.HalfExtents.Y, planet.WorldAABB.HalfExtents.Z));
+            double radius = ((IMyEntity)planet).WorldAABB.HalfExtents.Max();
             Vector3D probe = center + radial * (radius + 5000d);
             Vector3D surface = planet.GetClosestSurfacePointGlobal(probe) + radial * 8d;
             Vector3D forward = Vector3D.CalculatePerpendicularVector(radial);
@@ -835,7 +911,7 @@ namespace RandomSectorGenerator
 
             Vector3D center = ((IMyEntity)planet).WorldAABB.Center;
             Vector3D radial = Vector3D.Up;
-            double radius = Math.Max(planet.WorldAABB.HalfExtents.X, Math.Max(planet.WorldAABB.HalfExtents.Y, planet.WorldAABB.HalfExtents.Z));
+            double radius = ((IMyEntity)planet).WorldAABB.HalfExtents.Max();
             Vector3D probe = center + radial * (radius + 5000d);
             Vector3D trueSurface = planet.GetClosestSurfacePointGlobal(probe) + radial * 8d;
             Vector3D proxySurface;
@@ -869,7 +945,7 @@ namespace RandomSectorGenerator
             catch (Exception e)
             {
                 MyLog.Default.WriteLineAndConsole("[RSG] Failed to read state: " + e);
-                return new PendingSectorState();
+                return new PendingSectorState { Failed = true };
             }
         }
 
@@ -884,6 +960,7 @@ namespace RandomSectorGenerator
             catch (Exception e)
             {
                 MyLog.Default.WriteLineAndConsole("[RSG] Failed to write state: " + e);
+                throw;
             }
         }
 
@@ -923,6 +1000,7 @@ namespace RandomSectorGenerator
             catch (Exception e)
             {
                 MyLog.Default.WriteLineAndConsole("[RSG] Failed to write manifest: " + e);
+                throw;
             }
         }
 

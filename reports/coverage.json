@@ -1,0 +1,178 @@
+[
+  {
+    "id": "3576683005",
+    "planet": "Agni",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3576683005",
+        "subtype": "PlanetProxyType_Agni",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Agni_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Agni_ng.dds\n\t\t\tPlanetTexture_add: Textures\\Planets\\PlanetProxy_Agni_add.dds\n\t\t\tAtmoColor: (0.9,0.7,0.4,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 0.5\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (1,0.7,0.2,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "3576683005",
+    "planet": "Cauldron",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3576683005",
+        "subtype": "PlanetProxyType_Cauldron",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Cauldron_cm.dds\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (1,0.7,0.2,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "3576683005",
+    "planet": "Kor",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3576683005",
+        "subtype": "PlanetProxyType_Kor",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Kor_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Kor_ng.dds\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (0.2,0.4,0.85,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "3576683005",
+    "planet": "Tellus",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3576683005",
+        "subtype": "PlanetProxyType_Tellus",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Tellus_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Tellus_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1\n\t\t\tAtmoColor: (0.6,0.85,0.9,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 1\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.1\n\t\t\tEditorIconColor: (0.7,0.9,0.85,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "2644430625",
+    "planet": "Teal-WaterMod",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "2195637331",
+    "planet": "Teralis - City Planet",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "3618043241",
+    "planet": "Jormun",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
+  },
+  {
+    "id": "3695766186",
+    "planet": "Zenitaia",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "3362332228",
+    "planet": "OrlundaSide",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "3309805284",
+    "planet": "Komorebi",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "3684013414",
+    "planet": "Nivis",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
+  },
+  {
+    "id": "3489648084",
+    "planet": "Relicta",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "3515518898",
+    "planet": "Sulfate",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
+  },
+  {
+    "id": "3486181518",
+    "planet": "unavailable",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "unavailable"
+  }
+]

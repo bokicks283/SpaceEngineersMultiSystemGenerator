@@ -1,0 +1,385 @@
+[
+  {
+    "id": "2195637331",
+    "title": "Teralis - City Planet",
+    "planets": [
+      {
+        "subtype": "Teralis - City Planet",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\Planet_Teralis.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "0.9",
+        "oxygen": "1"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "2644430625",
+    "title": "Teal - Water Mod",
+    "planets": [
+      {
+        "subtype": "Teal-WaterMod",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\Planet_TealW.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "1"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3152436752",
+    "title": "Real Stars",
+    "planets": [
+      {
+        "subtype": "RealStar",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3152436752\\Data\\PlanetGeneratorDefinitions_Star.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "false",
+        "gravity": "1",
+        "oxygen": null
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": false,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3232085677",
+    "title": "Real Gas Giants",
+    "planets": [
+      {
+        "subtype": "RealGasGiant",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3232085677\\Data\\PlanetGeneratorDefinitions_GasGiant.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "0.0"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": false,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3309805284",
+    "title": "Komorebi",
+    "planets": [
+      {
+        "subtype": "Komorebi",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\Planet_Komorebi.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.14",
+        "oxygen": "1"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3351055036",
+    "title": "Real Solar Systems",
+    "planets": [],
+    "proxies": [
+      {
+        "subtype": "PlanetProxyType_EarthLike",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_EarthLikeSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_EarthLikeSL_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1.9\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 1.03\n\t\t\tAtmoColorMult: 2.2\n\t\t\tEditorIconColor: (0.5,0.9,1.0,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_EarthLike(Vanilla)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_EarthLike_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_EarthLike_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1.9\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 1.03\n\t\t\tAtmoColorMult: 2.2\n\t\t\tEditorIconColor: (0.5,0.9,1.0,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Moon",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Moon_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Moon_ng.dds\n\t\t\tEditorIconColor: (0.9,0.9,0.9,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Mars",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Mars_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Mars_ng.dds\n\t\t\tCloudTexture: Mars\n\t\t\tCloudSizeMult: 0.7\n\t\t\tAtmoColor: (1.0,0.6,0.3,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 0.5\n\t\t\tEditorIconColor: (1.0,0.7,0.4,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Europa",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Europa_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Europa_ng.dds\n\t\t\tAtmoColor: (0.5,0.7,1.0,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.0\n\t\t\tEditorIconColor: (0.7,0.9,1.0,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Alien",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_AlienSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_AlienSL_ng.dds\n\t\t\tCloudTexture: Alien\n\t\t\tAtmoColor: (0.2,1.0,0.5,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.3\n\t\t\tEditorIconColor: (0.7,1.0,0.7,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Alien(Vanilla)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Alien_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Alien_ng.dds\n\t\t\tCloudTexture: Alien\n\t\t\tAtmoColor: (0.2,1.0,0.5,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.3\n\t\t\tEditorIconColor: (0.7,1.0,0.7,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Titan",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Titan_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Titan_ng.dds\n\t\t\tCloudTexture: Titan\n\t\t\tAtmoColor: (1.0,0.45,0.25,1.0)\n\t\t\tAtmoThickness: 0.96\n\t\t\tAtmoColorMult: 1.8\n\t\t\tEditorIconColor: (1.0,0.6,0.3,1.0)\n\t "
+      },
+      {
+        "subtype": "PlanetProxyType_Triton",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Triton_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Triton_ng.dds\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 1.5\n\t\t\tScale: 1.035\n\t\t\tScaleFadeMin: 0.87\n\t\t\tEditorIconColor: (0.95,0.95,1.0,1.0)\n\t "
+      },
+      {
+        "subtype": "PlanetProxyType_Pertam",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Pertam_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Pertam_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.6\n\t\t\tAtmoColor: (0.5,0.8,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 8.0\n\t\t\tEditorIconColor: (1.0,1.0,0.7,1.0)\n\t "
+      }
+    ],
+    "denylisted": false,
+    "desired_planet": false,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3362332228",
+    "title": "Orlunda (Sideways)",
+    "planets": [
+      {
+        "subtype": "OrlundaSide",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.12",
+        "oxygen": "1"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": false
+  },
+  {
+    "id": "3489648084",
+    "title": "Planet Relicta",
+    "planets": [
+      {
+        "subtype": "Relicta",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084\\Data\\Planet_Relicta.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "0.45"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3515518898",
+    "title": "Moon Sulfate",
+    "planets": [
+      {
+        "subtype": "Sulfate",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\Sulfate.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "0.4",
+        "oxygen": "0.0"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3576683005",
+    "title": "Cauldron System",
+    "planets": [
+      {
+        "subtype": "Agni",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Agni\\Planet_Agni.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.27",
+        "oxygen": "1.8"
+      },
+      {
+        "subtype": "Cauldron",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Cauldron\\Planet_Cauldron.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.58",
+        "oxygen": "0.1"
+      },
+      {
+        "subtype": "Kor",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Kor\\Planet_Kor.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "false",
+        "gravity": "0.74",
+        "oxygen": null
+      },
+      {
+        "subtype": "Tellus",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Tellus\\Planet_Tellus.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "1"
+      }
+    ],
+    "proxies": [
+      {
+        "subtype": "PlanetProxyType_Agni",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Agni_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Agni_ng.dds\n\t\t\tPlanetTexture_add: Textures\\Planets\\PlanetProxy_Agni_add.dds\n\t\t\tAtmoColor: (0.9,0.7,0.4,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 0.5\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (1,0.7,0.2,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Kor",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Kor_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Kor_ng.dds\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (0.2,0.4,0.85,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Tellus",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Tellus_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Tellus_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1\n\t\t\tAtmoColor: (0.6,0.85,0.9,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 1\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.1\n\t\t\tEditorIconColor: (0.7,0.9,0.85,1.0)\n\t  "
+      },
+      {
+        "subtype": "PlanetProxyType_Cauldron",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Cauldron_cm.dds\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (1,0.7,0.2,1.0)\n\t  "
+      }
+    ],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3617496051",
+    "title": "Planet - Miasma",
+    "planets": [
+      {
+        "subtype": "Miasma",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\Planet_Miasma.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.2",
+        "oxygen": "0.9"
+      }
+    ],
+    "proxies": [],
+    "denylisted": true,
+    "desired_planet": false,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3618043241",
+    "title": "Planet - Jormun (Water)",
+    "planets": [
+      {
+        "subtype": "Jormun",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1.00",
+        "oxygen": "0.9"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3684013414",
+    "title": "Planet Nivis",
+    "planets": [
+      {
+        "subtype": "Nivis",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Planet_Nivis.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "0.8"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  },
+  {
+    "id": "3695766186",
+    "title": "Planet Zenitaia",
+    "planets": [
+      {
+        "subtype": "Zenitaia",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186\\Data\\Planet_Zenitaia.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "1",
+        "oxygen": "1.1"
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": true,
+    "active_in_existing_world": true
+  }
+]
