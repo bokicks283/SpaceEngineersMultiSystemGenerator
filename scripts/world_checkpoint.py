@@ -14,8 +14,14 @@ def ensure_closed():
         '(Get-Process -Name SpaceEngineers -ErrorAction SilentlyContinue | Measure-Object).Count'],text=True).strip()
     if result!='0': raise RuntimeError('Space Engineers is running; exit the game before save changes.')
 
+def plan():
+    return json.loads((ROOT/'reports/pack-plan.json').read_text(encoding='utf-8'))
+
 def active_mods():
-    return json.loads((ROOT/'reports/pack-plan.json').read_text(encoding='utf-8'))['selected_workshop']
+    return plan()['selected_workshop']
+
+def local_mods():
+    return plan().get('local', ['RandomSectorGenerator','CampaignScienceCompatibility'])
 
 def config(world):
     return [world/'Sandbox.sbc',world/'Sandbox_config.sbc']
@@ -70,7 +76,7 @@ def check_sources():
     selected=active_mods()
     for m in selected:
         if not Path(m['path']).is_dir():raise RuntimeError(f"Missing Workshop directory: {m['id']}")
-    for name in ['RandomSectorGenerator','CampaignScienceCompatibility']:
+    for name in local_mods():
         if not (Path(os.environ['APPDATA'])/'SpaceEngineers'/'Mods'/name).is_dir():
             raise RuntimeError('Install local mod before preparing world: '+name)
     voxel=json.loads((ROOT/'reports/selected-voxel-audit.json').read_text(encoding='utf-8'))
@@ -107,7 +113,7 @@ def sync(world):
             ET.SubElement(node,'Name').text=item['id']+'.sbm'
             ET.SubElement(node,'PublishedFileId').text=item['id']
             ET.SubElement(node,'PublishedServiceName').text='Steam'
-        for name_local in ['CampaignScienceCompatibility','RandomSectorGenerator']:
+        for name_local in local_mods():
             node=ET.SubElement(mods,'ModItem')
             ET.SubElement(node,'Name').text=name_local
         if file.name=='Sandbox.sbc':
@@ -144,7 +150,7 @@ def prepare(source,name):
             ET.SubElement(node,'Name').text=item['id']+'.sbm'
             ET.SubElement(node,'PublishedFileId').text=item['id']
             ET.SubElement(node,'PublishedServiceName').text='Steam'
-        for name_local in ['CampaignScienceCompatibility','RandomSectorGenerator']:
+        for name_local in local_mods():
             node=ET.SubElement(mods,'ModItem')
             ET.SubElement(node,'Name').text=name_local
         if file.name=='Sandbox.sbc':
@@ -172,16 +178,21 @@ def arm(world):
     missing=[]
     for row in coverage:
         if not row['selected']:continue
-        candidates=[p for p in row['proxy_candidates'] if p['mod'] in {m['id'] for m in active_mods()}]
+        enabled={m['id'] for m in active_mods()} | {'local:'+name for name in local_mods()}
+        candidates=[p for p in row['proxy_candidates'] if p['mod'] in enabled]
         if len(candidates)!=1:missing.append(row['planet'])
         else:
             candidate=candidates[0]
             textures=re.findall(r'^\s*PlanetTexture_(?:cm|ng|add):\s*(\S+)',candidate.get('description') or '',re.MULTILINE)
             if not textures:missing.append(row['planet']+' (no texture paths)')
             for relative in textures:
-                # RSS resolves these paths from the providing mod root.
-                source=next((m['path'] for m in active_mods() if m['id']==candidate['mod']))
-                texture=Path(source)/Path(relative.replace('\\','/'))
+                # Validate the exact source that the prepared world will load.
+                if candidate['mod'].startswith('local:'):
+                    local_name=candidate['mod'].split(':',1)[1]
+                    source=Path(os.environ['APPDATA'])/'SpaceEngineers'/'Mods'/local_name
+                else:
+                    source=Path(next((m['path'] for m in active_mods() if m['id']==candidate['mod'])))
+                texture=source/Path(relative.replace('\\','/'))
                 if not texture.is_file():missing.append(row['planet']+' (missing '+relative+')')
     if missing:raise RuntimeError('Missing or duplicate selected RSS proxies: '+', '.join(missing))
     file=world/'Sandbox.sbc';tree=ET.parse(file)
