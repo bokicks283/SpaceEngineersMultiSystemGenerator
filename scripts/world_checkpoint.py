@@ -6,6 +6,13 @@ ROOT=Path(__file__).resolve().parents[1]
 SAVE_ROOT=Path(os.environ['APPDATA'])/'SpaceEngineers'/'Saves'
 RSG_KEY='RSG_DisposableBootstrap_v1'
 RSS_KEY='RealSolarSystemsSettings_Config_xml'
+PRE_ACTIVATION_SETTINGS={
+    'EnableEconomy':'false',
+    'CargoShipsEnabled':'false',
+    'EnableEncounters':'false',
+    'EnablePlanetaryEncounters':'false',
+    'GlobalEncounterCap':'0',
+}
 XSI='http://www.w3.org/2001/XMLSchema-instance'; XSD='http://www.w3.org/2001/XMLSchema'
 ET.register_namespace('xsi',XSI);ET.register_namespace('xsd',XSD)
 
@@ -25,6 +32,30 @@ def local_mods():
 
 def config(world):
     return [world/'Sandbox.sbc',world/'Sandbox_config.sbc']
+
+
+def set_pre_activation_settings(tree):
+    settings=tree.getroot().find('Settings')
+    if settings is None:raise RuntimeError('World has no session settings')
+    for key,value in PRE_ACTIVATION_SETTINGS.items():
+        node=settings.find(key)
+        if node is None:node=ET.SubElement(settings,key)
+        node.text=value
+
+
+def check_pre_activation(world):
+    for file in config(world):
+        settings=ET.parse(file).getroot().find('Settings')
+        if settings is None:raise RuntimeError('World has no settings: '+str(file))
+        for key,value in PRE_ACTIVATION_SETTINGS.items():
+            if settings.findtext(key)!=value:
+                raise RuntimeError(f'Pre-activation setting {key} must be {value} in {file}')
+    checkpoint=ET.parse(world/'Sandbox.sbc').getroot()
+    stations=checkpoint.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station')
+    if stations:raise RuntimeError(f'World already has {len(stations)} NPC economy station records')
+    for component in checkpoint.findall('./SessionComponents/MyObjectBuilder_SessionComponent'):
+        if component.get(f'{{{XSI}}}type')=='MyObjectBuilder_SessionComponentEconomy' and component.findtext('GenerateFactionsOnStart')=='false':
+            raise RuntimeError('World has an already-initialized Economy component')
 
 def checkpoint_variables(tree):
     dictionary=tree.find('./ScriptManagerData/variables/dictionary')
@@ -99,6 +130,10 @@ def sync(world):
     objects=ET.parse(sector[0]).findall('.//SectorObjects/*')
     if any('Planet' in (o.get(f'{{{XSI}}}type') or '') for o in objects):
         raise RuntimeError('Disposable world already contains planet/star entities')
+    # A prior Economy initialization cannot be undone by toggling settings.
+    existing=ET.parse(world/'Sandbox.sbc').getroot()
+    if existing.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station'):
+        raise RuntimeError('Disposable world already contains NPC economy stations; use a clean stock Empty World')
     backup=archive(world,'World-before-disposable-sync')
     for file in config(world):
         tree=ET.parse(file);root=tree.getroot()
@@ -116,24 +151,36 @@ def sync(world):
         for name_local in local_mods():
             node=ET.SubElement(mods,'ModItem')
             ET.SubElement(node,'Name').text=name_local
+        set_pre_activation_settings(tree)
         if file.name=='Sandbox.sbc':
             remove_variable(tree,RSG_KEY)
             remove_variable(tree,RSS_KEY)
             put_variable(tree,RSG_KEY,'blocked-proxies')
         write_atomic(tree,file)
+    check_pre_activation(world)
     print(json.dumps({'world':str(world),'backup':str(backup),'workshop_mods':len(selected),
                       'synced':True,'armed':False,'reason':'Proxy assets pending'},indent=2))
 
-def prepare(source,name):
+def prepare(source,name,dest_parent=None,stock=False):
     ensure_closed();selected=check_sources()
     source=source.resolve();root=SAVE_ROOT.resolve()
-    if root not in source.parents or 'Backup' in source.parts:raise RuntimeError('Source must be a direct Space Engineers save')
+    if stock:
+        inventory=json.loads((ROOT/'reports/inventory.json').read_text(encoding='utf-8'))
+        expected=(Path(inventory['games'][0]['path'])/'Content/CustomWorlds/Empty World').resolve()
+        if source!=expected:raise RuntimeError('Stock source must be the installed Empty World template')
+        if dest_parent is None or root not in dest_parent.resolve().parents:
+            raise RuntimeError('Destination must be under the Space Engineers Saves directory')
+    elif root not in source.parents or 'Backup' in source.parts:
+        raise RuntimeError('Source must be a direct Space Engineers save')
     if any(not p.is_file() for p in config(source)):raise RuntimeError('Source world is incomplete')
     sector=list(source.glob('SANDBOX_*.sbs'))
     if len(sector)!=1:raise RuntimeError('Expected one sector file')
     objects=ET.parse(sector[0]).findall('.//SectorObjects/*')
     if any('Planet' in (o.get(f'{{{XSI}}}type') or '') for o in objects):raise RuntimeError('Source is not an empty planet-free world')
-    dest=source.parent/name
+    source_checkpoint=ET.parse(source/'Sandbox.sbc').getroot()
+    if source_checkpoint.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station'):
+        raise RuntimeError('Source already contains NPC economy stations')
+    dest=(dest_parent or source.parent)/name
     if dest.exists():raise RuntimeError('Destination already exists: '+str(dest))
     backup=archive(source,'World-before-disposable-clone')
     shutil.copytree(source,dest,ignore=shutil.ignore_patterns('Backup','Storage'))
@@ -153,6 +200,7 @@ def prepare(source,name):
         for name_local in local_mods():
             node=ET.SubElement(mods,'ModItem')
             ET.SubElement(node,'Name').text=name_local
+        set_pre_activation_settings(tree)
         if file.name=='Sandbox.sbc':
             # Preserve unrelated script variables from the RSS template. Only remove
             # stale bootstrap/system payloads that could contaminate the disposable copy.
@@ -160,6 +208,7 @@ def prepare(source,name):
             remove_variable(tree,RSS_KEY)
             put_variable(tree,RSG_KEY,'blocked-proxies')
         write_atomic(tree,file)
+    check_pre_activation(dest)
     print(json.dumps({'world':str(dest),'source_backup':str(backup),'workshop_mods':len(selected),
                       'armed':False,'reason':'Proxy assets pending'},indent=2))
 
@@ -174,6 +223,7 @@ def arm(world):
         raise RuntimeError('Only a prepared disposable world may be armed')
     if (world/'Storage').exists() and list((world/'Storage').rglob('RandomSectorGenerator.State.xml')):
         raise RuntimeError('This world already has an RSG bootstrap state')
+    check_pre_activation(world)
     coverage=json.loads((ROOT/'reports/coverage.json').read_text(encoding='utf-8'))
     missing=[]
     for row in coverage:
@@ -211,6 +261,7 @@ def commit(world):
     ensure_closed();world=world.resolve()
     if SAVE_ROOT.resolve() not in world.parents or not world.name.startswith('RSG Disposable'):
         raise RuntimeError('World is not a prepared disposable save')
+    check_pre_activation(world)
     state=ET.parse(state_file(world)).getroot()
     get=lambda k: state.findtext(k)
     if get('PendingApply')!='true' or get('Applied')=='true' or get('InProgress')=='true' or get('Failed')=='true':
@@ -248,10 +299,19 @@ def main():
     b=sub.add_parser('commit');b.add_argument('world',type=Path)
     c=sub.add_parser('arm');c.add_argument('world',type=Path)
     d=sub.add_parser('sync');d.add_argument('world',type=Path)
+    e=sub.add_parser('prepare-stock');e.add_argument('reference_world',type=Path)
+    e.add_argument('--name',default='RSG Disposable Clean 2026-09-27')
     args=p.parse_args()
     if args.command=='prepare':prepare(args.source,args.name)
     elif args.command=='arm':arm(args.world)
     elif args.command=='sync':sync(args.world)
+    elif args.command=='prepare-stock':
+        reference=args.reference_world.resolve()
+        if SAVE_ROOT.resolve() not in reference.parents or not reference.name.startswith('RSG Disposable'):
+            raise RuntimeError('Reference must be an existing disposable save')
+        inventory=json.loads((ROOT/'reports/inventory.json').read_text(encoding='utf-8'))
+        template=Path(inventory['games'][0]['path'])/'Content/CustomWorlds/Empty World'
+        prepare(template,args.name,dest_parent=reference.parent,stock=True)
     else:commit(args.world)
 
 if __name__=='__main__':main()

@@ -3,7 +3,7 @@ import json, os, re, xml.etree.ElementTree as ET, zipfile
 from pathlib import Path
 from audit import ROOT, OUT, ALLOW, DENY
 from prepare_pack import CUTS
-from world_checkpoint import RSG_KEY, get_variable
+from world_checkpoint import RSG_KEY, get_variable, check_pre_activation
 
 def main():
     inv=json.loads((OUT/'inventory.json').read_text(encoding='utf-8'))
@@ -37,7 +37,8 @@ def main():
     for el in science.findall('.//EntityComponent'):
         desc=el.findtext('Description','')
         assert 'Biome:' in desc and 'ScienceReward:' in desc
-    world=Path(os.environ['APPDATA'])/'SpaceEngineers/Saves/76561198045624840/RSG Disposable Audit 2026-09-27'
+    world=Path(os.environ['APPDATA'])/'SpaceEngineers/Saves/76561198045624840/RSG Disposable Clean 2026-09-27'
+    check_pre_activation(world)
     trees=[ET.parse(world/name) for name in ['Sandbox.sbc','Sandbox_config.sbc']]
     world_sync_pending=False
     for t in trees:

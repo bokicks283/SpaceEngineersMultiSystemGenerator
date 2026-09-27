@@ -67,7 +67,9 @@ RSG no longer relies on session-component load order.
 
 The supported bootstrap flow is:
 
-1. Prepare/sync a disposable RSS Empty World while **disarmed**.
+1. Prepare a clean disposable RSS Empty World while **disarmed**, with Economy,
+   Cargo Ships, Random Encounters, and Planetary Encounters off and the global
+   encounter cap at zero. Do not use a save that already has economy stations.
 2. After proxy coverage is complete, arm it offline.
 3. Load the world. RSG generates once after the RSS/Real Stars/Real Gas Giants APIs are ready.
 4. Save and **exit Space Engineers**.
@@ -79,22 +81,25 @@ This avoids modifying/forking RSS.
 
 ## Disposable-world commands
 
-The existing disposable world can be refreshed to the latest audited pack without recreating it:
+The earlier disposable world inherited generated NPC economy stations from its
+source save and must not be used for sector generation. A clean disposable
+world is prepared from the installed stock Empty World template with the
+audited mod list and pre-activation settings. To recreate it under a new name:
 
 ```powershell
-py scripts\world_checkpoint.py sync "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+py scripts\world_checkpoint.py prepare-stock "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27" --name "RSG Disposable Clean 2026-09-27"
 ```
 
 When proxy coverage is complete:
 
 ```powershell
-py scripts\world_checkpoint.py arm "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+py scripts\world_checkpoint.py arm "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Clean 2026-09-27"
 ```
 
 After generation, saving, and fully exiting the game:
 
 ```powershell
-py scripts\world_checkpoint.py commit "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+py scripts\world_checkpoint.py commit "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Clean 2026-09-27"
 ```
 
 Every write operation checks that Space Engineers is closed and archives the disposable world before changing it.
@@ -108,7 +113,7 @@ py scripts\audit.py
 py scripts\prepare_pack.py
 pwsh .\Install-RandomSectorGenerator.ps1
 pwsh .\scripts\Build-RSG.ps1
-py scripts\world_checkpoint.py sync "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+py scripts\world_checkpoint.py sync "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Clean 2026-09-27"
 py scripts\verify_local.py
 ```
 
