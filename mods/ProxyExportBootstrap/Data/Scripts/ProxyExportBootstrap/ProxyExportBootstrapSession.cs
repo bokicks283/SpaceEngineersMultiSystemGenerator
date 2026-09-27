@@ -76,7 +76,7 @@ namespace ProxyExportBootstrap
 
                     MyPlanetGeneratorDefinition def = definitions[name];
                     Vector3D spawnPosition = CalculateSpawnPosition(def, DiameterMeters, Centers[name]);
-                    int seed = (name.GetHashCode() & 0x7fffffff) + 1;
+                    int seed = (name.GetHashCode() & 0x7ffffffe) + 1;
                     IMyVoxelBase voxel = MyAPIGateway.Session.VoxelMaps.SpawnPlanet(
                         name, DiameterMeters, seed, spawnPosition);
                     MyPlanet planet = voxel as MyPlanet;
