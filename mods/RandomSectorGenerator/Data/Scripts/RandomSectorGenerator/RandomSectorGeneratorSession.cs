@@ -24,6 +24,8 @@ namespace RandomSectorGenerator
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
         private const string ArmKey = "RSG_DisposableBootstrap_v1";
+        private const string RssConfigKey = "RealSolarSystemsSettings_Config_xml";
+        private const string TemplateArmValue = "random-sector-template-v1";
         private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(
             CampaignPlanetPool.RequiredCustom, StringComparer.Ordinal);
 
@@ -68,13 +70,13 @@ namespace RandomSectorGenerator
         {
             _state = ReadState();
 
-            // The offline handoff writes the pending payload to the checkpoint AFTER
-            // the first save and game exit. RSS then reads it normally on next load.
-            // Session component priority does not order LoadData in this game build.
+            // RSG persists the pending payload through the same session variable RSS
+            // uses itself. RSS reads it normally on the next load; component priority
+            // does not need to order LoadData in the generation session.
             if (_state != null && _state.PendingApply && !string.IsNullOrWhiteSpace(_state.RssConfigBase64))
             {
                 _pendingAdoptionCheck = true;
-                MyLog.Default.WriteLineAndConsole("[RSG] Checking pending sector adoption; offline handoff must precede reload.");
+                MyLog.Default.WriteLineAndConsole("[RSG] Checking pending sector adoption from the persisted RSS handoff.");
             }
 
             _realStars.Load();
@@ -111,7 +113,7 @@ namespace RandomSectorGenerator
             string armed;
             if (!_autoAttempted && IsServer() && _ticks >= 600 && _realStars.IsReady && _realGasGiants.IsReady && _rss.IsReady &&
                 !_state.PendingApply && !_state.Applied && !_state.InProgress && !_state.Failed &&
-                MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) && armed == "armed")
+                MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) && IsGenerationArmValue(armed))
             {
                 _autoAttempted = true;
                 GenerateSector(unchecked((int)DateTime.UtcNow.Ticks));
@@ -275,9 +277,9 @@ namespace RandomSectorGenerator
             }
 
             string armed;
-            if (!MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) || armed != "armed")
+            if (!MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) || !IsGenerationArmValue(armed))
             {
-                Show("Generation refused: only an offline-prepared disposable bootstrap world may generate.");
+                Show("Generation refused: this save is not an eligible fresh Random Sector bootstrap.");
                 return;
             }
             if (_state.Applied || _state.InProgress || _state.Failed)
@@ -369,6 +371,7 @@ namespace RandomSectorGenerator
 
             try
             {
+                MyAPIGateway.Utilities.SetVariable(ArmKey, "in-progress");
                 _state = new PendingSectorState { InProgress = true, Seed = seed };
                 WriteState(_state); // Durable lock before the first entity is spawned.
                 BuildSector(build, definitions, starterDefinition, normalGasSkins, blackHoleSkin);
@@ -400,19 +403,30 @@ namespace RandomSectorGenerator
             };
             _state.GeneratedEntityIds = build.GeneratedEntities.Select(x => x.EntityId).ToList();
 
-            WriteState(_state);
             WriteManifest(build, definitions, seed, blackHoleSkin);
+            WriteState(_state);
+
+            // Persist through RSS's own checkpoint variable contract. RSS has already
+            // initialized this session, so it adopts the payload on the next load.
+            MyAPIGateway.Utilities.SetVariable(RssConfigKey, encoded);
+            string persistedPayload;
+            if (!MyAPIGateway.Utilities.GetVariable(RssConfigKey, out persistedPayload) ||
+                !string.Equals(persistedPayload, encoded, StringComparison.Ordinal))
+                throw new Exception("RSS handoff payload readback failed.");
+            MyAPIGateway.Utilities.SetVariable(ArmKey, "handoff-pending");
 
             TeleportCharacterToUnmanagedStarter(build.StartPlanet);
 
             Show("Random sector generated. Seed " + seed + ".");
             Show("Starter: " + build.StartPlanet.Name + " (" + starterDefinition.Id.SubtypeId + "). The rest of the sector layout is intentionally hidden.");
-            Show("SAVE, then EXIT THE GAME. The local handoff tool will commit the pending RSS config before reload. Do not start survival yet.");
+            Show("SAVE, then EXIT TO MENU and reload this world. RSS will adopt the generated sector on reload. Do not start survival yet.");
             }
             catch (Exception e)
             {
                 MyLog.Default.WriteLineAndConsole("[RSG] Sector generation failed: " + e);
                 RollbackGeneratedEntities(build);
+                MyAPIGateway.Utilities.SetVariable(ArmKey, "failed");
+                MyAPIGateway.Utilities.SetVariable(RssConfigKey, string.Empty);
                 _state = new PendingSectorState { Failed = true, Seed = seed };
                 try { WriteState(_state); } catch { }
                 Show("Generation failed and this bootstrap is locked. Restore the disposable baseline before retrying; inspect SpaceEngineers.log.");
@@ -906,14 +920,22 @@ namespace RandomSectorGenerator
                 _state.PendingApply = false;
                 _state.Applied = true;
                 WriteState(_state);
+                MyAPIGateway.Utilities.SetVariable(ArmKey, "complete");
                 _pendingAdoptionCheck = false;
                 return;
             }
 
             if (_ticks == 1800)
             {
-                Show("RSS has not adopted this sector. Exit the game and complete the local offline handoff before reloading.");
+                Show("RSS has not adopted this sector yet. Save, exit to menu, and reload once; inspect the log if this persists.");
             }
+        }
+
+        private static bool IsGenerationArmValue(string value)
+        {
+            // "armed" remains supported for disposable developer/recovery worlds.
+            return string.Equals(value, "armed", StringComparison.Ordinal) ||
+                string.Equals(value, TemplateArmValue, StringComparison.Ordinal);
         }
 
         private static void RollbackGeneratedEntities(SectorBuildContext build)

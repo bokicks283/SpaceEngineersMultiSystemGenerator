@@ -2,7 +2,7 @@
 
 Experimental one-shot bootstrap mod for **Space Engineers + Real Solar Systems**.
 
-This build generates a randomized multi-system sector without manually placing planets in TSE. It is intentionally guarded so it only runs in an offline-prepared disposable world.
+This build generates a randomized multi-system sector without manually placing planets in TSE. The normal entry point is the repository-installed `Random Sector` Custom Game; disposable worlds remain supported for developer recovery.
 
 ## Current campaign pool
 
@@ -44,13 +44,15 @@ The runtime allowlist is deliberate. Loaded planet mods outside this list are no
 
 ## Safety gate
 
-RSG will not generate unless the checkpoint variable:
+RSG will not generate unless the checkpoint variable contains either the
+reusable-template marker:
 
 ```text
-RSG_DisposableBootstrap_v1 = armed
+RSG_DisposableBootstrap_v1 = random-sector-template-v1
 ```
 
-was written by the offline `scripts/world_checkpoint.py arm` command.
+or the legacy developer/recovery value `armed`. The template marker is written
+by `Install-RandomSector.ps1`; players do not run an arm command.
 
 It also refuses generation when:
 - a denylisted Workshop mod is active,
@@ -63,17 +65,16 @@ It also refuses generation when:
 
 ## RSS handoff
 
-Do **not** rely on mod load order to inject RSS configuration.
-
 After RSG generates:
 
-1. Save the disposable world.
-2. Exit Space Engineers completely.
-3. Run the repository's offline `world_checkpoint.py commit` command.
-4. The tool verifies RSG state and saved entity IDs, archives the world, writes the pending protobuf config to RSS's normal checkpoint variable, and disarms RSG.
-5. Reload the world.
-6. RSS adopts/spawns the configured bodies.
-7. RSG verifies all pre-spawned bodies are RSS-managed, moves the player to the starter proxy, and marks the bootstrap applied.
+1. RSG writes the pending protobuf config to RSS's own checkpoint variable and
+   changes its arm value to `handoff-pending`.
+2. Save and exit to the menu.
+3. Reload the world.
+4. RSS adopts/spawns the configured bodies.
+5. RSG verifies all pre-spawned bodies are RSS-managed, moves the player to the
+   starter proxy, marks the bootstrap applied, and changes the arm value to
+   `complete`.
 
 RSG should remain in the save until adoption has been verified. Removing it afterward is a later acceptance test, not an assumption.
 
