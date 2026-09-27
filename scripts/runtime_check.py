@@ -70,12 +70,20 @@ def main():
                 context_indexes.add(j)
     context = [{"line": i + 1, "text": lines[i]} for i in sorted(context_indexes)]
 
+    error_context_indexes = set()
+    for row in errors:
+        idx = row["line"] - 1
+        for j in range(max(0, idx - 4), min(len(lines), idx + 8)):
+            error_context_indexes.add(j)
+    error_context = [{"line": i + 1, "text": lines[i]} for i in sorted(error_context_indexes)]
+
     result = {
         "log": str(log),
         "modified": log.stat().st_mtime,
         "relevant_count": len(relevant),
         "error_count": len(errors),
         "errors": errors[-200:],
+        "error_context": error_context[-1200:],
         "relevant": relevant[-1000:],
         "rsg_context": context[-400:],
     }
@@ -88,6 +96,7 @@ def main():
         "error_count": len(errors),
         "report": str(out),
         "last_relevant": relevant[-20:],
+        "last_error_context": error_context[-80:],
     }, indent=2))
 
 if __name__ == "__main__":
