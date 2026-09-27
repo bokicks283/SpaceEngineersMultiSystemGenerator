@@ -3,7 +3,7 @@ import json, itertools, collections, xml.etree.ElementTree as ET
 from pathlib import Path
 from audit import ROOT, OUT, ALLOW, DENY, dump
 
-CUTS = {'2195637331','2644430625','3309805284','3515518898','3684013414'}
+CUTS = {'2195637331','2644430625','3309805284','3486181518','3515518898','3684013414'}
 EXTRA = {'3690317665':'AquaExpansion', '2899106264':'Terran Titans Naval Blocks'}
 PROXY_PACKS = {
     '3361803398':'RSS Proxy Pack: Orlunda and Komorebi (SD)',
@@ -107,11 +107,11 @@ def main():
             '', '## Local mods', '', '- RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.',
             '- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.',
             '', '## Water and encounters', '',
-            'The local Teal-WaterMod, Teralis - City Planet, and Zenitaia packages each define their own WaterConfig planet entry. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry was added.',
+            'The selected water worlds are Jormun and Zenitaia. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry is added to planets that were not designed for it.',
             'MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.',
             '', '## Limits', '',
-            'The selected cut is the only six-mod cut under 120 materials that retains Cauldron plus Water Teal, Teralis, and Zenitaia among the locally available requested planets. Excluded: Komorebi, Orlunda Sideways, Relicta, Sulfate, Jormun, and Nivis. Acribus is not installed.',
-            'Cauldron bundles four exact RSS proxy definitions. Teal-WaterMod, Teralis - City Planet, and Zenitaia still lack active exact proxies. Alkurah SD proxy pack and RSS Planet Exporter were identified as candidates but their Workshop downloads and runtime coverage remain unverified. The prepared world is disarmed until coverage is exact.',
+            'The selected cut prioritizes varied exploration while staying at or below the conservative 120-material budget: Cauldron System, Jormun, Zenitaia, Orlunda Sideways, and Relicta are retained. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are excluded for this campaign.',
+            'Cauldron bundles four exact RSS proxy definitions. Orlunda Sideways uses the Orlunda/Komorebi SD proxy pack and Jormun uses its dedicated SD proxy. Zenitaia and Relicta require locally exported proxies unless exact compatible Workshop proxies are discovered during a later audit. The prepared world remains disarmed until coverage is exact.',
             'Voxel modifiers are excluded. No subtype duplicates were found in the selected local definitions. Unique subtype union is independent of override precedence. The old test save contained stale Workshop entries and was not edited; its static voxel estimate is a lower bound. The original was preserved in timestamped ZIPs.',
             'The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.']
     (OUT/'PACK-AUDIT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
