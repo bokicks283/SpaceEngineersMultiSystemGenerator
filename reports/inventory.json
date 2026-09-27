@@ -22,10 +22,10 @@
         "LastOwner": "76561198045624840",
         "DownloadType": "2",
         "UpdateResult": "0",
-        "BytesToDownload": "1036064",
-        "BytesDownloaded": "1036064",
-        "BytesToStage": "3072368",
-        "BytesStaged": "3072368",
+        "BytesToDownload": "310496",
+        "BytesDownloaded": "310496",
+        "BytesToStage": "451003",
+        "BytesStaged": "451003",
         "TargetBuildID": "0",
         "AutoUpdateBehavior": "0",
         "AllowOtherDownloadsWhileRunning": "0",
@@ -570,10 +570,10 @@
     "S:\\SteamLibrary\\steamapps\\workshop\\appworkshop_244850.acf": {
       "AppWorkshop": {
         "appid": "244850",
-        "SizeOnDisk": "11111350607",
+        "SizeOnDisk": "11196592988",
         "NeedsUpdate": "0",
         "NeedsDownload": "0",
-        "TimeLastUpdated": "1790542932",
+        "TimeLastUpdated": "1790545726",
         "TimeLastFullCheck": "1790526958",
         "TimeLastAppRan": "1790541663",
         "LastBuildID": "24675677",
@@ -677,6 +677,11 @@
             "size": "37990919",
             "timeupdated": "1768104167",
             "manifest": "344933508815538535"
+          },
+          "2609118808": {
+            "size": "451003",
+            "timeupdated": "1757447489",
+            "manifest": "1770221276592596632"
           },
           "2640137506": {
             "size": "62065341",
@@ -953,6 +958,11 @@
             "timeupdated": "1787215282",
             "manifest": "6552576263556833690"
           },
+          "3763900368": {
+            "size": "396518",
+            "timeupdated": "1785312050",
+            "manifest": "4519924770431686775"
+          },
           "3767444521": {
             "size": "665699479",
             "timeupdated": "1787343912",
@@ -962,6 +972,11 @@
             "size": "18940505",
             "timeupdated": "1788377929",
             "manifest": "4785492020190127840"
+          },
+          "3768484204": {
+            "size": "84394860",
+            "timeupdated": "1785172785",
+            "manifest": "6731614803095481625"
           },
           "3770315903": {
             "size": "3798544",
@@ -1139,6 +1154,14 @@
             "subscribedby": "85359112",
             "latest_timeupdated": "1768104167",
             "latest_manifest": "344933508815538535"
+          },
+          "2609118808": {
+            "manifest": "1770221276592596632",
+            "timeupdated": "1757447489",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1757447489",
+            "latest_manifest": "1770221276592596632"
           },
           "2640137506": {
             "manifest": "4632826284850001454",
@@ -1580,6 +1603,14 @@
             "latest_timeupdated": "1787215282",
             "latest_manifest": "6552576263556833690"
           },
+          "3763900368": {
+            "manifest": "4519924770431686775",
+            "timeupdated": "1785312050",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1785312050",
+            "latest_manifest": "4519924770431686775"
+          },
           "3767444521": {
             "manifest": "4180830671179822467",
             "timeupdated": "1787343912",
@@ -1595,6 +1626,14 @@
             "subscribedby": "85359112",
             "latest_timeupdated": "1788377929",
             "latest_manifest": "4785492020190127840"
+          },
+          "3768484204": {
+            "manifest": "6731614803095481625",
+            "timeupdated": "1785172785",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1785172785",
+            "latest_manifest": "6731614803095481625"
           },
           "3770315903": {
             "manifest": "6048234901374581415",
@@ -1659,7 +1698,7 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1359618037",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -1944,6 +1983,20 @@
       "id": "2596208372",
       "title": "AiEnabled v1.9",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2596208372",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": true,
+      "voxels": [],
+      "planets": [],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "2609118808",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2609118808",
       "desired_planet": false,
       "denylisted": false,
       "active_in_existing_world": true,
@@ -4045,6 +4098,20 @@
       "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
     },
     {
+      "id": "3763900368",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3763900368",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
       "id": "3767444521",
       "title": "Handheld Hacker Grid Takeover (Version 1.6)",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3767444521",
@@ -4085,6 +4152,20 @@
       "errors": [],
       "dependencies": [],
       "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>2.1.1</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "3768484204",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3768484204",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
     },
     {
       "id": "3770315903",
@@ -6066,7 +6147,7 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\571920453",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -7360,6 +7441,21 @@
           "PublishedServiceName": "Steam"
         },
         {
+          "Name": "1359618037.sbm",
+          "PublishedFileId": "1359618037",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "571920453.sbm",
+          "PublishedFileId": "571920453",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2609118808.sbm",
+          "PublishedFileId": "2609118808",
+          "PublishedServiceName": "Steam"
+        },
+        {
           "Name": "2941085186.sbm",
           "PublishedFileId": "2941085186",
           "PublishedServiceName": "Steam"
@@ -7367,11 +7463,6 @@
         {
           "Name": "2961923776.sbm",
           "PublishedFileId": "2961923776",
-          "PublishedServiceName": "Steam"
-        },
-        {
-          "Name": "2961924256.sbm",
-          "PublishedFileId": "2961924256",
           "PublishedServiceName": "Steam"
         },
         {

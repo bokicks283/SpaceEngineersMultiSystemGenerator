@@ -9,6 +9,7 @@ EXTRA = {
     '2899106264':'Terran Titans Naval Blocks',
     '1359618037':'Relative Top Speed',
     '571920453':'Aerodynamic Physics',
+    '2609118808':'Real Orbits',
 }
 TITLES = {'2941085186':'Kerbin', '2961923776':'Aulden', '2961924256':'Seren'}
 PROXY_PACKS = {

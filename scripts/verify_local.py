@@ -13,7 +13,7 @@ def main():
     ids=[m['id'] for m in plan['selected_workshop']]
     assert len(ids)==len(set(ids)) and not set(ids)&set(DENY)
     assert not set(ids)&CUTS
-    assert {'1359618037','571920453'}<=set(ids)
+    assert {'1359618037','571920453','2609118808','3351055036'}<=set(ids)
     assert not {'570767699','570766507'}&set(ids)
     assert vox['total'] <= vox['budget'] and vox['headroom'] == 128 - vox['total']
     assert vox['headroom'] >= 8
