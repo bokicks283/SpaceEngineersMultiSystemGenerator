@@ -7,8 +7,18 @@ if (Get-Process -Name SpaceEngineers -ErrorAction SilentlyContinue) { throw 'Exi
 $modRoot=Join-Path $env:APPDATA 'SpaceEngineers\Mods'
 $backupRoot=Join-Path $PSScriptRoot 'backups'
 New-Item -ItemType Directory -Force -Path $modRoot,$backupRoot | Out-Null
-foreach ($name in @('RandomSectorGenerator','CampaignScienceCompatibility')) {
-    $source=Join-Path $PSScriptRoot "mods\$name"
+$sources = [ordered]@{
+    'RandomSectorGenerator' = (Join-Path $PSScriptRoot 'mods\RandomSectorGenerator')
+    'CampaignScienceCompatibility' = (Join-Path $PSScriptRoot 'mods\CampaignScienceCompatibility')
+}
+$generatedProxy = Join-Path $PSScriptRoot 'generated\CampaignPlanetProxies'
+if (Test-Path -LiteralPath (Join-Path $generatedProxy 'Data\PlanetProxyDefaults.sbc')) {
+    $sources['CampaignPlanetProxies'] = $generatedProxy
+}
+
+foreach ($entry in $sources.GetEnumerator()) {
+    $name=$entry.Key
+    $source=$entry.Value
     $dest=Join-Path $modRoot $name
     if (-not (Test-Path -LiteralPath $source -PathType Container)) { throw "Missing source: $source" }
     if (Test-Path -LiteralPath $dest) {
