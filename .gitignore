@@ -2,3 +2,5 @@ backups/
 build/
 __pycache__/
 *.user
+
+generated/
