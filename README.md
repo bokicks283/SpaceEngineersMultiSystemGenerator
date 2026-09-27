@@ -27,6 +27,21 @@ Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded 
 
 Do not arm a disposable world until `reports/coverage.json` reports exactly one active proxy for every selected custom body and every referenced proxy texture exists.
 
+### Building the Zenitaia/Relicta local proxies
+
+After exporting each planet at 120 km with the RSS Planet Exporter, run:
+
+```powershell
+py scripts\build_exported_proxies.py status
+py scripts\build_exported_proxies.py build
+py scripts\prepare_pack.py
+pwsh .\Install-RandomSectorGenerator.ps1
+```
+
+The builder finds the newest `PlanetProxy_<Planet>_cm/ng/add.tga` files under `%APPDATA%\SpaceEngineers\Storage`, locates `texconv.exe`, converts CM/ADD as BC7 sRGB and NG as BC7 Linear with mipmaps, and stages one generated local mod at `generated/CampaignPlanetProxies`. The normal installer then installs it as `%APPDATA%\SpaceEngineers\Mods\CampaignPlanetProxies`.
+
+`/ExportADD` is optional at the file level; if the exporter produces an additive map, the builder includes it automatically.
+
 ## Local mods
 
 - `mods/RandomSectorGenerator`
