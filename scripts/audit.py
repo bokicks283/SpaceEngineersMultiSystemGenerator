@@ -47,8 +47,15 @@ def scan(path):
             if 'PlanetGenerator' in kind or 'PlanetGeneratorDefinition' in xtype or el.tag == 'PlanetGeneratorDefinition':
                 item.update(atmosphere=el.findtext('HasAtmosphere'), gravity=el.findtext('SurfaceGravity'), oxygen=el.findtext('Atmosphere/OxygenDensity'))
                 result['planets'].append(item)
-            if subtype.startswith('PlanetProxyType_'):
-                item['description'] = el.findtext('Description')
+            description = el.findtext('Description') or ''
+            is_proxy = (
+                subtype.startswith('PlanetProxyType_')
+                or 'PlanetDefaults:' in description
+                or 'PlanetTexture_cm:' in description
+                or 'PlanetTexture_ng:' in description
+            )
+            if is_proxy:
+                item['description'] = description
                 result['proxies'].append(item)
     return result
 
