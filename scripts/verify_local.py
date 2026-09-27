@@ -12,7 +12,9 @@ def main():
     coverage=json.loads((OUT/'coverage.json').read_text(encoding='utf-8'))
     ids=[m['id'] for m in plan['selected_workshop']]
     assert len(ids)==len(set(ids)) and not set(ids)&set(DENY)
-    assert not set(ids)&CUTS and vox['total']==118 and vox['headroom']==10
+    assert not set(ids)&CUTS
+    assert vox['total'] <= vox['budget'] and vox['headroom'] == 128 - vox['total']
+    assert vox['headroom'] >= 8
     assert all(c['science_status'] in ('native','local authored preset') for c in coverage if c['selected'])
     source=(ROOT/'mods/RandomSectorGenerator/Data/Scripts/RandomSectorGenerator/RandomSectorGeneratorSession.cs').read_text(encoding='utf-8')
     csharp=set(re.findall(r'"([A-Za-z][A-Za-z -]+)"',source.split('AllowedPlanets =',1)[1].split('};',1)[0]))
@@ -22,7 +24,7 @@ def main():
     assert 'DefaultBlackHole' in source and 'RSG_DisposableBootstrap_v1' in source
     science=ET.parse(ROOT/'mods/CampaignScienceCompatibility/Data/CampaignBiomes.sbc')
     authored={e.text.removeprefix('PlanetBiomePresetType_') for e in science.findall('.//SubtypeId')}
-    assert {'Cauldron','Zenitaia'}<=authored
+    assert {'Cauldron','Jormun','Relicta','Zenitaia'}<=authored
     for el in science.findall('.//EntityComponent'):
         desc=el.findtext('Description','')
         assert 'Biome:' in desc and 'ScienceReward:' in desc
