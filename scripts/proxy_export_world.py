@@ -13,6 +13,8 @@ import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 
+from world_checkpoint import write_atomic
+
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
 SAVE_ROOT = Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves"
@@ -96,6 +98,73 @@ def save_files(world: Path):
     return [world / "Sandbox.sbc", world / "Sandbox_config.sbc"]
 
 
+def validate_xml_types(path: Path):
+    """Check QName values too: a normal XML parse misses undeclared xsi:type prefixes."""
+    scopes = [{}]
+    pending = {}
+    for event, value in ET.iterparse(path, events=("start-ns", "start", "end")):
+        if event == "start-ns":
+            prefix, uri = value
+            pending[prefix] = uri
+        elif event == "start":
+            scope = dict(scopes[-1])
+            scope.update(pending)
+            pending.clear()
+            scopes.append(scope)
+            type_name = value.get(f"{{{XSI}}}type", "")
+            if ":" in type_name:
+                prefix = type_name.split(":", 1)[0]
+                if prefix not in scope:
+                    raise RuntimeError(f"{path.name}: undeclared xsi:type prefix: {type_name}")
+                if prefix == "xsd" and scope[prefix] != "http://www.w3.org/2001/XMLSchema":
+                    raise RuntimeError(f"{path.name}: incorrect xsd namespace")
+        else:
+            scopes.pop()
+
+
+def validate_world(world: Path):
+    expected = [(wid + ".sbm", wid, "Steam") for wid in WORKSHOP_IDS]
+    expected.append((LOCAL_MOD, "0", ""))
+    for file in save_files(world):
+        validate_xml_types(file)
+        root = ET.parse(file).getroot()
+        actual = [(m.findtext("Name"), m.findtext("PublishedFileId", "0"),
+                   m.findtext("PublishedServiceName", "")) for m in root.findall("./Mods/ModItem")]
+        if actual != expected:
+            raise RuntimeError(f"{file.name}: unexpected workbench mod list: {actual}")
+        if root.findtext("./Settings/GameMode") != "Creative":
+            raise RuntimeError(f"{file.name}: workbench must be Creative")
+    if ET.parse(world / "Sandbox.sbc").findtext("SessionName") != WORLD_NAME:
+        raise RuntimeError("Unexpected workbench session name")
+    sectors = list(world.glob("SANDBOX_*.sbs"))
+    if len(sectors) != 1:
+        raise RuntimeError("Expected exactly one workbench sector")
+    validate_xml_types(sectors[0])
+    for wid in WORKSHOP_IDS:
+        if not Path(workshop_map()[wid]["path"]).is_dir():
+            raise RuntimeError("Missing Workshop mod: " + wid)
+    if not list((MOD_ROOT / LOCAL_MOD / "Data" / "Scripts").rglob("*.cs")):
+        raise RuntimeError("Installed ProxyExportBootstrap scripts are missing")
+    return {"world": str(world), "static_validation": "passed",
+            "checked": ["checkpoint/config XML and xsi:type namespaces", "sector XML",
+                        "exact mod lists", "Creative mode", "installed mod paths"],
+            "runtime_validation": "requires an in-game launch"}
+
+
+def repair():
+    """Repair saves written before the namespace-preserving writer was used."""
+    ensure_closed()
+    world = (source_world().parent / WORLD_NAME).resolve()
+    if SAVE_ROOT.resolve() not in world.parents or not world.is_dir():
+        raise RuntimeError("Workbench save is missing or outside the save root")
+    backup = archive(world, "ProxyExportWorkbench-before-namespace-repair")
+    for file in save_files(world):
+        write_atomic(ET.parse(file), file)
+    result = validate_world(world)
+    result["backup"] = str(backup)
+    print(json.dumps(result, indent=2))
+
+
 def has_planet_entities(world: Path) -> bool:
     sectors = list(world.glob("SANDBOX_*.sbs"))
     if len(sectors) != 1:
@@ -160,7 +229,11 @@ def prepare(reset: bool):
         for game_mode in root.findall(".//GameMode"):
             game_mode.text = "Creative"
 
-        tree.write(file, encoding="utf-8", xml_declaration=True)
+        # xsi:type="xsd:string" values need an explicit xmlns:xsd declaration.
+        # ElementTree drops it unless the namespace-preserving writer restores it.
+        write_atomic(tree, file)
+
+    validate_world(dest)
 
     print(json.dumps({
         "world": str(dest),
@@ -289,6 +362,8 @@ def main():
     sub.add_parser("reset")
     sub.add_parser("configure")
     sub.add_parser("status")
+    sub.add_parser("validate")
+    sub.add_parser("repair")
     args = p.parse_args()
 
     if args.command == "prepare":
@@ -297,6 +372,10 @@ def main():
         prepare(True)
     elif args.command == "configure":
         configure()
+    elif args.command == "repair":
+        repair()
+    elif args.command == "validate":
+        print(json.dumps(validate_world(source_world().parent / WORLD_NAME), indent=2))
     else:
         status()
 
