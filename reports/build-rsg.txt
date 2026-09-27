@@ -1,2 +1,4 @@
 
-Offline CLR compilation passed. In-game script whitelist and runtime validation are still required.
+RandomSectorGenerator offline CLR compilation passed.
+ProxyExportBootstrap offline CLR compilation passed.
+In-game script whitelist and runtime validation are still required.
