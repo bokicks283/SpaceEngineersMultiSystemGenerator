@@ -10,16 +10,79 @@
     "rts": [
       {
         "path": "Storage\\1359618037.sbm_RelativeTopSpeed\\RelativeTopSpeed.cfg",
-        "parse_error": "encoding specified in XML declaration is incorrect: line 1, column 30",
-        "values": {}
+        "parse_error": null,
+        "values": {
+          "Settings/EnableBoosting": "true",
+          "Settings/SpeedLimit": "1500",
+          "Settings/RemoteControlSpeedLimit": "1000",
+          "Settings/LargeGrid/CruiseCurve/Point[Mass=200000]": {
+            "Mass": "200000",
+            "Speed": "1200"
+          },
+          "Settings/LargeGrid/CruiseCurve/Point[Mass=5000000]": {
+            "Mass": "5000000",
+            "Speed": "850"
+          },
+          "Settings/LargeGrid/CruiseCurve/Point[Mass=8000000]": {
+            "Mass": "8000000",
+            "Speed": "650"
+          },
+          "Settings/LargeGrid/MaxBoostSpeed": "1500",
+          "Settings/LargeGrid/ResistanceMultiplier": "1.5",
+          "Settings/SmallGrid/CruiseCurve/Point[Mass=10000]": {
+            "Mass": "10000",
+            "Speed": "1200"
+          },
+          "Settings/SmallGrid/CruiseCurve/Point[Mass=300000]": {
+            "Mass": "300000",
+            "Speed": "1000"
+          },
+          "Settings/SmallGrid/CruiseCurve/Point[Mass=400000]": {
+            "Mass": "400000",
+            "Speed": "950"
+          },
+          "Settings/SmallGrid/MaxBoostSpeed": "1500",
+          "Settings/SmallGrid/ResistanceMultiplier": "1"
+        }
       }
     ],
-    "aero": [],
+    "aero": [
+      {
+        "path": "Storage\\571920453.sbm_SEDrag\\dragsettings.xml",
+        "parse_error": null,
+        "values": {
+          "DragSettings/SmallShipMaxSpeed": "1500",
+          "DragSettings/LargeShipMaxSpeed": "1500",
+          "DragSettings/EnableCharacterDrag": "true",
+          "DragSettings/RotationalDragMultiplier": "100",
+          "DragSettings/heat": "true",
+          "DragSettings/DisableReEntry": "false",
+          "DragSettings/SimulationMaxSpeed": "1000",
+          "DragSettings/GlobalWindSpeedMultiplier": "1"
+        }
+      }
+    ],
     "real_orbits": [
       {
         "path": "Storage\\2609118808.sbm_RealisticGravity\\Config.xml",
-        "parse_error": "encoding specified in XML declaration is incorrect: line 1, column 30",
-        "values": {}
+        "parse_error": null,
+        "values": {
+          "OrbitSettingsConfig/GlobalMaxSpeedMultiplier_LargeGrid": "-1",
+          "OrbitSettingsConfig/GlobalMaxSpeedMultiplier_SmallGrid": "-1",
+          "OrbitSettingsConfig/CharacterGravityMultiplier": "2",
+          "OrbitSettingsConfig/OverridePlanetGravityFalloff": "true",
+          "OrbitSettingsConfig/EnforceSingleGravityWell": "true",
+          "OrbitSettingsConfig/EnforceStableOrbits": "true",
+          "OrbitSettingsConfig/ShowCharacterOrbitInfo": "false",
+          "OrbitSettingsConfig/ShowCharacterOrbitPath": "false",
+          "OrbitSettingsConfig/ShowGridOrbitInfo": "true",
+          "OrbitSettingsConfig/ShowGridOrbitPath": "true",
+          "OrbitSettingsConfig/ShowGridOrbitPathEnemy": "false",
+          "OrbitSettingsConfig/GridOrbitPathMaxDrawDistance": "1000000",
+          "OrbitSettingsConfig/ShowGridOrbitGps": "true",
+          "OrbitSettingsConfig/OrbitPathLineThickness": "1",
+          "OrbitSettingsConfig/OrbitRenderDivisions": "60"
+        }
       }
     ]
   },
