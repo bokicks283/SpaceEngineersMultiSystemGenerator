@@ -120,8 +120,14 @@ def main():
            '| Body | Selected | Active RSS proxies | Science |','|---|---|---:|---|']
     lines += [f"| {c['planet']} | {'yes' if c['selected'] else 'no'} | {c['active_proxy_count']} | {c['science_status']} |" for c in coverage]
     lines+=['','## Workshop load-list membership','',*['- '+i+' — '+str(mods[i]['title'] or EXTRA.get(i) or 'title unavailable locally') for i in selected],
-            '', '## Local mods', '', '- RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.',
-            '- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.',
+            '', '## Local mods', '', *[
+                '- '+name+(
+                    ': one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.' if name=='RandomSectorGenerator'
+                    else ': authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.' if name=='CampaignScienceCompatibility'
+                    else ': generated RSS proxy definitions/assets for campaign planets.'
+                )
+                for name in local
+            ],
             '', '## Water and encounters', '',
             'The selected water worlds are Jormun and Zenitaia. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry is added to planets that were not designed for it.',
             'MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.',
