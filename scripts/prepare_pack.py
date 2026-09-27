@@ -1,7 +1,7 @@
 """Derive the selected pack and original science presets from audited local definitions."""
 import json, itertools, collections, xml.etree.ElementTree as ET
 from pathlib import Path
-from audit import ROOT, OUT, ALLOW, DENY, dump
+from audit import ROOT, OUT, ALLOW, DENY, dump, scan
 
 CUTS = {'2195637331','2644430625','3309805284','3486181518','3515518898','3684013414'}
 EXTRA = {'3690317665':'AquaExpansion', '2899106264':'Terran Titans Naval Blocks'}
@@ -37,8 +37,12 @@ def main():
          'duplicates':{k:v for k,v in owners.items() if len(v)>1},'subtypes':sorted(union),
          'qualification':'Static local SBC union; runtime definition mutations, dependency expansion, load precedence and engine indexing still require in-game verification.'}
     dump('selected-voxel-audit.json',vox)
+    local=['RandomSectorGenerator','CampaignScienceCompatibility']
+    generated_proxy=ROOT/'generated/CampaignPlanetProxies'
+    if (generated_proxy/'Data/PlanetProxyDefaults.sbc').is_file():
+        local.append('CampaignPlanetProxies')
     plan={'selected_workshop':[{'id':i,'title':mods[i]['title'] or EXTRA.get(i),'path':mods[i]['path']} for i in selected],
-          'local':['RandomSectorGenerator','CampaignScienceCompatibility'],
+          'local':local,
           'cut_for_budget':sorted(CUTS),'missing_requested':[i for i in ALLOW if i not in mods],
           'stale_missing_world_entries':[i for i in original if i not in mods],
           'denylisted_installed':[i for i in DENY if i in mods],
@@ -69,17 +73,25 @@ def main():
     dest=ROOT/'mods/CampaignScienceCompatibility/Data';dest.mkdir(parents=True,exist_ok=True)
     ET.indent(root);ET.ElementTree(root).write(dest/'CampaignBiomes.sbc',encoding='utf-8',xml_declaration=True)
     proxy=collections.defaultdict(list)
-    for m in mods.values():
+    proxy_sources=list(mods.values())
+    if (generated_proxy/'Data/PlanetProxyDefaults.sbc').is_file():
+        local_scan=scan(generated_proxy)
+        proxy_sources.append(dict(id='local:CampaignPlanetProxies',path=str(generated_proxy),**local_scan))
+    for m in proxy_sources:
         for p in m['proxies']:
             names=[p['subtype'].removeprefix('PlanetProxyType_')]
             import re
             names+=re.findall(r'PlanetDefaults:\s*([^\n\r]+)',p.get('description') or '')
-            for name in [n.strip() for s in names for n in s.split(',')]:proxy[name].append(dict(mod=m['id'],**p))
+            for name in [n.strip() for s in names for n in s.split(',')]:
+                proxy[name].append(dict(mod=m['id'],root=m['path'],**p))
+    active_proxy_sources=set(selected)
+    if 'CampaignPlanetProxies' in local:
+        active_proxy_sources.add('local:CampaignPlanetProxies')
     coverage=[]
     for id,title in ALLOW.items():
         for p in mods.get(id,{}).get('planets',[{'subtype':'unavailable'}]):
             name=p['subtype']; candidates=proxy.get(name,[])
-            chosen=[c for c in candidates if c['mod'] in selected]
+            chosen=[c for c in candidates if c['mod'] in active_proxy_sources]
             coverage.append({'id':id,'planet':name,'selected':id in selected,'proxy_candidates':candidates,'active_proxy_count':len(chosen),
                              'science_native':native.get(name),'science_compatibility':name in presets,
                              'science_status':'native' if name in native else 'local authored preset' if name in presets else 'unavailable' if name=='unavailable' else 'generic fallback'})
