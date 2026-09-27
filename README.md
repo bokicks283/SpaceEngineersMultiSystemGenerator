@@ -79,6 +79,11 @@ The supported bootstrap flow is:
 
 This avoids modifying/forking RSS.
 
+After adoption and final-body verification, a separate
+[Campaign Activation](reports/CAMPAIGN-ACTIVATION.md) phase must test Economy,
+encounters, MES/PvE, and respawn behavior in a QA clone before enabling them
+in the real campaign. The generated sector alone is not campaign-ready.
+
 ## Disposable-world commands
 
 The earlier disposable world inherited generated NPC economy stations from its

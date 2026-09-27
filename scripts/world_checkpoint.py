@@ -43,6 +43,14 @@ def set_pre_activation_settings(tree):
         node.text=value
 
 
+def check_no_economy_history(checkpoint):
+    stations=checkpoint.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station')
+    if stations:raise RuntimeError(f'World already has {len(stations)} NPC economy station records')
+    for component in checkpoint.findall('./SessionComponents/MyObjectBuilder_SessionComponent'):
+        if component.get(f'{{{XSI}}}type')=='MyObjectBuilder_SessionComponentEconomy' and component.findtext('GenerateFactionsOnStart')=='false':
+            raise RuntimeError('World has an already-initialized Economy component')
+
+
 def check_pre_activation(world):
     for file in config(world):
         settings=ET.parse(file).getroot().find('Settings')
@@ -51,11 +59,7 @@ def check_pre_activation(world):
             if settings.findtext(key)!=value:
                 raise RuntimeError(f'Pre-activation setting {key} must be {value} in {file}')
     checkpoint=ET.parse(world/'Sandbox.sbc').getroot()
-    stations=checkpoint.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station')
-    if stations:raise RuntimeError(f'World already has {len(stations)} NPC economy station records')
-    for component in checkpoint.findall('./SessionComponents/MyObjectBuilder_SessionComponent'):
-        if component.get(f'{{{XSI}}}type')=='MyObjectBuilder_SessionComponentEconomy' and component.findtext('GenerateFactionsOnStart')=='false':
-            raise RuntimeError('World has an already-initialized Economy component')
+    check_no_economy_history(checkpoint)
 
 def checkpoint_variables(tree):
     dictionary=tree.find('./ScriptManagerData/variables/dictionary')
@@ -131,9 +135,7 @@ def sync(world):
     if any('Planet' in (o.get(f'{{{XSI}}}type') or '') for o in objects):
         raise RuntimeError('Disposable world already contains planet/star entities')
     # A prior Economy initialization cannot be undone by toggling settings.
-    existing=ET.parse(world/'Sandbox.sbc').getroot()
-    if existing.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station'):
-        raise RuntimeError('Disposable world already contains NPC economy stations; use a clean stock Empty World')
+    check_no_economy_history(ET.parse(world/'Sandbox.sbc').getroot())
     backup=archive(world,'World-before-disposable-sync')
     for file in config(world):
         tree=ET.parse(file);root=tree.getroot()
@@ -159,7 +161,7 @@ def sync(world):
         write_atomic(tree,file)
     check_pre_activation(world)
     print(json.dumps({'world':str(world),'backup':str(backup),'workshop_mods':len(selected),
-                      'synced':True,'armed':False,'reason':'Proxy assets pending'},indent=2))
+                      'synced':True,'armed':False,'reason':'Awaiting explicit arm'},indent=2))
 
 def prepare(source,name,dest_parent=None,stock=False):
     ensure_closed();selected=check_sources()
@@ -178,8 +180,7 @@ def prepare(source,name,dest_parent=None,stock=False):
     objects=ET.parse(sector[0]).findall('.//SectorObjects/*')
     if any('Planet' in (o.get(f'{{{XSI}}}type') or '') for o in objects):raise RuntimeError('Source is not an empty planet-free world')
     source_checkpoint=ET.parse(source/'Sandbox.sbc').getroot()
-    if source_checkpoint.findall('./Factions/Factions/MyObjectBuilder_Faction/Stations/MyObjectBuilder_Station'):
-        raise RuntimeError('Source already contains NPC economy stations')
+    check_no_economy_history(source_checkpoint)
     dest=(dest_parent or source.parent)/name
     if dest.exists():raise RuntimeError('Destination already exists: '+str(dest))
     backup=archive(source,'World-before-disposable-clone')
@@ -210,7 +211,7 @@ def prepare(source,name,dest_parent=None,stock=False):
         write_atomic(tree,file)
     check_pre_activation(dest)
     print(json.dumps({'world':str(dest),'source_backup':str(backup),'workshop_mods':len(selected),
-                      'armed':False,'reason':'Proxy assets pending'},indent=2))
+                      'armed':False,'reason':'Awaiting explicit arm'},indent=2))
 
 def state_file(world):
     matches=list((world/'Storage').rglob('RandomSectorGenerator.State.xml'))
