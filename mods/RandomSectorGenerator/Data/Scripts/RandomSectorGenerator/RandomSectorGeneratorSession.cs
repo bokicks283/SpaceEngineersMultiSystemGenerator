@@ -24,11 +24,19 @@ namespace RandomSectorGenerator
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
         private const string ArmKey = "RSG_DisposableBootstrap_v1";
-        private static readonly HashSet<string> AllowedPlanets = new HashSet<string>(StringComparer.Ordinal)
+        private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(StringComparer.Ordinal)
         {
-            "Cauldron", "Tellus", "Agni", "Kor", "Jormun", "Zenitaia", "OrlundaSide", "Relicta",
+            "Cauldron", "Tellus", "Agni", "Kor", "Jormun", "Zenitaia", "OrlundaSide", "Relicta"
+        };
+
+        private static readonly HashSet<string> OptionalVanillaPlanets = new HashSet<string>(StringComparer.Ordinal)
+        {
             "EarthLike", "Moon", "Mars", "Europa"
         };
+
+        private static readonly HashSet<string> AllowedPlanets = new HashSet<string>(
+            RequiredCustomPlanets.Concat(OptionalVanillaPlanets),
+            StringComparer.Ordinal);
         private static readonly HashSet<ulong> DeniedWorkshopIds = new HashSet<ulong>
         {
             2873186053UL, 2266665708UL, 2636128625UL, 2296726670UL, 2459246911UL,
@@ -59,6 +67,23 @@ namespace RandomSectorGenerator
         public override void LoadData()
         {
             _state = ReadState();
+
+            try
+            {
+                List<MyPlanetGeneratorDefinition> startupDefs = GetUsablePlanetDefinitions();
+                HashSet<string> startupNames = new HashSet<string>(
+                    startupDefs.Select(x => x.Id.SubtypeId.ToString()),
+                    StringComparer.Ordinal);
+                List<string> startupMissing = RequiredCustomPlanets.Where(x => !startupNames.Contains(x)).OrderBy(x => x).ToList();
+                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions loaded: " +
+                    string.Join(", ", RequiredCustomPlanets.Where(startupNames.Contains).OrderBy(x => x)));
+                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions missing: " +
+                    (startupMissing.Count == 0 ? "<none>" : string.Join(", ", startupMissing)));
+            }
+            catch (Exception e)
+            {
+                MyLog.Default.WriteLineAndConsole("[RSG] Failed to audit runtime planet definitions: " + e);
+            }
 
             // The offline handoff writes the pending payload to the checkpoint AFTER
             // the first save and game exit. RSS then reads it normally on next load.
@@ -204,7 +229,20 @@ namespace RandomSectorGenerator
         private void ShowPlanetDefinitions()
         {
             List<MyPlanetGeneratorDefinition> defs = GetUsablePlanetDefinitions();
-            Show("Enabled usable planet definitions (" + defs.Count + "): " + string.Join(", ", defs.Select(x => x.Id.SubtypeId.ToString())));
+            HashSet<string> loaded = new HashSet<string>(
+                defs.Select(x => x.Id.SubtypeId.ToString()),
+                StringComparer.Ordinal);
+
+            List<string> requiredLoaded = RequiredCustomPlanets.Where(loaded.Contains).OrderBy(x => x).ToList();
+            List<string> requiredMissing = RequiredCustomPlanets.Where(x => !loaded.Contains(x)).OrderBy(x => x).ToList();
+            List<string> optionalLoaded = OptionalVanillaPlanets.Where(loaded.Contains).OrderBy(x => x).ToList();
+
+            Show("Required custom loaded (" + requiredLoaded.Count + "/" + RequiredCustomPlanets.Count + "): " +
+                (requiredLoaded.Count == 0 ? "<none>" : string.Join(", ", requiredLoaded)));
+            Show("Required custom missing: " +
+                (requiredMissing.Count == 0 ? "<none>" : string.Join(", ", requiredMissing)));
+            Show("Optional vanilla loaded: " +
+                (optionalLoaded.Count == 0 ? "<none>" : string.Join(", ", optionalLoaded)));
         }
 
         private void GenerateSector(int seed)
@@ -263,9 +301,20 @@ namespace RandomSectorGenerator
             }
 
             List<MyPlanetGeneratorDefinition> definitions = GetUsablePlanetDefinitions();
-            if (definitions.Count < 4)
+            HashSet<string> loadedDefinitionNames = new HashSet<string>(
+                definitions.Select(x => x.Id.SubtypeId.ToString()),
+                StringComparer.Ordinal);
+            List<string> missingRequired = RequiredCustomPlanets
+                .Where(x => !loadedDefinitionNames.Contains(x))
+                .OrderBy(x => x)
+                .ToList();
+
+            if (missingRequired.Count > 0)
             {
-                Show("Not enough usable planet definitions are enabled. Found " + definitions.Count + ".");
+                Show("Generation refused: required custom planet definitions are missing: " +
+                    string.Join(", ", missingRequired));
+                MyLog.Default.WriteLineAndConsole("[RSG] Required planet definitions missing at generation time: " +
+                    string.Join(", ", missingRequired));
                 return;
             }
 
