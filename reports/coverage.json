@@ -103,8 +103,18 @@
     "id": "3618043241",
     "planet": "Jormun",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Jormun",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Jormun_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Jormun_ng.dds\n\t\t\tAtmoColor: (0.62,0.80,1.0,1.0)\n\t\t\tAtmoThickness: 1.0\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.45,0.75,1.0,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"

@@ -10,7 +10,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 | Tellus | yes | 1 | native |
 | Teal-WaterMod | no | 0 | native |
 | Teralis - City Planet | no | 0 | native |
-| Jormun | yes | 0 | local authored preset |
+| Jormun | yes | 1 | local authored preset |
 | Zenitaia | yes | 0 | local authored preset |
 | OrlundaSide | yes | 1 | native |
 | Komorebi | no | 1 | native |
@@ -57,7 +57,6 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3690317665 — AquaExpansion
 - 2899106264 — Terran Titans Naval Blocks
 - 3361803398 — title unavailable locally
-- 3663505475 — title unavailable locally
 
 ## Local mods
 

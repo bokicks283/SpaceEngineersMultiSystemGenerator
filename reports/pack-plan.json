@@ -179,16 +179,12 @@
       "id": "3361803398",
       "title": null,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398"
-    },
-    {
-      "id": "3663505475",
-      "title": null,
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3663505475"
     }
   ],
   "local": [
     "RandomSectorGenerator",
-    "CampaignScienceCompatibility"
+    "CampaignScienceCompatibility",
+    "CampaignPlanetProxies"
   ],
   "cut_for_budget": [
     "2195637331",
@@ -220,7 +216,10 @@
   ],
   "proxy_download_required": [],
   "proxy_pack_ids": [
-    "3361803398",
+    "3361803398"
+  ],
+  "proxy_asset_source_required": [],
+  "proxy_asset_source_ids": [
     "3663505475"
   ],
   "exporter_download_required": []
