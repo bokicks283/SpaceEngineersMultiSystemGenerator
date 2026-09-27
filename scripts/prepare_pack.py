@@ -165,7 +165,7 @@ def main():
     lines+=['','## Workshop load-list membership','',*['- '+i+' — '+str(mods[i]['title'] or EXTRA.get(i) or TITLES.get(i) or 'title unavailable locally') for i in selected],
             '', '## Local mods', '', *[
                 '- '+name+(
-                    ': one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.' if name=='RandomSectorGenerator'
+                    ': one-shot Random Sector bootstrap, direct persisted RSS handoff, spoiler manifest.' if name=='RandomSectorGenerator'
                     else ': authored Cauldron, Jormun, Relicta, Zenitaia, Kerbin, and Aulden biome presets.' if name=='CampaignScienceCompatibility'
                     else ': generated RSS proxy definitions/assets for campaign planets.'
                 )

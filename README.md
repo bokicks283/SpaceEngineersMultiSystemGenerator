@@ -1,6 +1,35 @@
 # Space Engineers Multi-System Generator
 
-Status: **all selected RSS proxies are built and installed; disposable-world runtime validation is next. Generation remains disarmed.**
+Status: **Phase A installs a reusable `Random Sector` Custom Game; its first in-game generation/adoption test is next.**
+
+## Phase A player install
+
+Close Space Engineers, open PowerShell in this repository, and run:
+
+```powershell
+pwsh .\Install-RandomSector.ps1
+```
+
+The installer discovers the Steam library, audits the fixed 18-body pack,
+compiles and installs the local mods, installs the locked RTS profile, and
+creates `Content\CustomWorlds\Random Sector` from the root files of the stock
+Empty World. It deliberately excludes the stock template's `Storage` and
+`Backup` directories. The installed template starts in Survival with Economy,
+Cargo Ships, Random Encounters, Planetary Encounters, and the global encounter
+cap disabled.
+
+The normal player workflow is:
+
+1. Launch Space Engineers and choose **New Game > Custom Game > Random Sector**.
+2. Start the world and wait for RSG to report that generation finished.
+3. Save and exit to the menu once, then reload the same world.
+4. Run `/rsg status`. When it reports `applied=True`, run
+   `/SetupRealOrbits` once and save.
+
+RSG writes RSS's normal persisted configuration variable directly. The normal
+workflow does not use `world_checkpoint.py prepare`, `sync`, `arm`, or `commit`.
+Those commands remain developer/recovery tools. Economy remains disabled for
+Phase A.
 
 This repository owns the local compatibility/configuration work for a heavily modded Space Engineers survival campaign built around Real Solar Systems (RSS), Real Stars, Real Gas Giants, Scientific Progress, Water Mod, MES, and a one-shot Random Sector Generator (RSG).
 
@@ -61,21 +90,16 @@ The builder finds the newest `PlanetProxy_<Planet>_cm/ng/add.tga` files under `%
 - `mods/CampaignScienceCompatibility`
   - authored Scientific Progress presets for Cauldron, Jormun, Relicta, and Zenitaia
 
-## RSS handoff
+## RSS handoff internals
 
 RSG no longer relies on session-component load order.
 
-The supported bootstrap flow is:
-
-1. Prepare a clean disposable RSS Empty World while **disarmed**, with Economy,
-   Cargo Ships, Random Encounters, and Planetary Encounters off and the global
-   encounter cap at zero. Do not use a save that already has economy stations.
-2. After proxy coverage is complete, arm it offline.
-3. Load the world. RSG generates once after the RSS/Real Stars/Real Gas Giants APIs are ready.
-4. Save and **exit Space Engineers**.
-5. Run the offline checkpoint `commit` command. It validates the pending RSG state and saved entity IDs, archives the world, writes the RSS protobuf payload into `RealSolarSystemsSettings_Config_xml`, and permanently disarms RSG.
-6. Reload. RSS reads its normal persisted configuration and adopts the generated bodies.
-7. RSG marks bootstrap complete only after all pre-spawned bodies are RSS-managed and the player can be moved to the starter proxy.
+After generation validates, RSG writes its durable pending state and the
+wire-compatible RSS payload to `RealSolarSystemsSettings_Config_xml`, then
+permanently disarms generation. On the next load, RSS reads its normal
+persisted variable and adopts the bodies. RSG marks bootstrap complete only
+after every generated body is RSS-managed and the player can be moved to the
+starter proxy.
 
 This avoids modifying/forking RSS.
 

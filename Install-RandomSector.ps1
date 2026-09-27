@@ -1,0 +1,197 @@
+#Requires -Version 7.0
+[CmdletBinding()]
+param()
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+$repoRoot = $PSScriptRoot
+$backupRoot = Join-Path $repoRoot 'backups'
+$spaceEngineersRoot = Join-Path $env:APPDATA 'SpaceEngineers'
+$localModRoot = Join-Path $spaceEngineersRoot 'Mods'
+$globalStorageRoot = Join-Path $spaceEngineersRoot 'Storage'
+
+function Invoke-Checked([string]$Label, [scriptblock]$Command) {
+    Write-Host "[$Label]"
+    & $Command
+    if ($LASTEXITCODE -ne 0) { throw "$Label failed with exit code $LASTEXITCODE" }
+}
+
+function Get-SteamRoots {
+    $roots = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    $candidates = @(
+        (Join-Path ${env:ProgramFiles(x86)} 'Steam'),
+        (Join-Path $env:ProgramFiles 'Steam')
+    )
+    foreach ($key in @('HKCU:\Software\Valve\Steam', 'HKLM:\SOFTWARE\WOW6432Node\Valve\Steam')) {
+        try {
+            $item = Get-ItemProperty -LiteralPath $key -ErrorAction Stop
+            if ($item.SteamPath) { $candidates += $item.SteamPath }
+            if ($item.InstallPath) { $candidates += $item.InstallPath }
+        } catch { }
+    }
+    foreach ($candidate in $candidates) {
+        if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Container)) {
+            [void]$roots.Add((Resolve-Path -LiteralPath $candidate).Path)
+        }
+    }
+    foreach ($steam in @($roots)) {
+        $vdf = Join-Path $steam 'steamapps\libraryfolders.vdf'
+        if (-not (Test-Path -LiteralPath $vdf -PathType Leaf)) { continue }
+        $text = Get-Content -LiteralPath $vdf -Raw
+        foreach ($match in [regex]::Matches($text, '"path"\s+"([^"]+)"')) {
+            $path = $match.Groups[1].Value -replace '\\\\', '\'
+            if (Test-Path -LiteralPath $path -PathType Container) {
+                [void]$roots.Add((Resolve-Path -LiteralPath $path).Path)
+            }
+        }
+    }
+    return @($roots)
+}
+
+function Find-SpaceEngineers {
+    $matches = foreach ($root in Get-SteamRoots) {
+        $candidate = Join-Path $root 'steamapps\common\SpaceEngineers'
+        if (Test-Path -LiteralPath (Join-Path $candidate 'Bin64\SpaceEngineers.exe') -PathType Leaf) {
+            (Resolve-Path -LiteralPath $candidate).Path
+        }
+    }
+    $matches = @($matches | Sort-Object -Unique)
+    if ($matches.Count -ne 1) {
+        throw "Expected exactly one Space Engineers installation; found $($matches.Count): $($matches -join ', ')"
+    }
+    return $matches[0]
+}
+
+function Get-TreeManifest([string]$Root) {
+    $resolved = (Resolve-Path -LiteralPath $Root).Path
+    return @(Get-ChildItem -LiteralPath $resolved -Recurse -File | Sort-Object FullName | ForEach-Object {
+        $relative = [IO.Path]::GetRelativePath($resolved, $_.FullName).Replace('\', '/')
+        "$relative|$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash)"
+    })
+}
+
+function Test-TreesEqual([string]$Left, [string]$Right) {
+    if (-not (Test-Path -LiteralPath $Left -PathType Container) -or
+        -not (Test-Path -LiteralPath $Right -PathType Container)) { return $false }
+    return -not (Compare-Object (Get-TreeManifest $Left) (Get-TreeManifest $Right))
+}
+
+function Install-Directory([string]$Name, [string]$Source, [string]$Destination, [string]$StageRoot, [string]$AllowedRoot) {
+    if (-not (Test-Path -LiteralPath $Source -PathType Container)) { throw "Missing source: $Source" }
+    $allowed = [IO.Path]::GetFullPath($AllowedRoot).TrimEnd([IO.Path]::DirectorySeparatorChar) + [IO.Path]::DirectorySeparatorChar
+    $target = [IO.Path]::GetFullPath($Destination)
+    if (-not $target.StartsWith($allowed, [StringComparison]::OrdinalIgnoreCase)) {
+        throw "Refusing to replace a directory outside $AllowedRoot`: $Destination"
+    }
+    if ((Test-Path -LiteralPath $Destination) -and (Test-TreesEqual $Source $Destination)) {
+        Write-Host "Unchanged: $Destination"
+        return
+    }
+    if (Test-Path -LiteralPath $Destination) {
+        $zip = Join-Path $backupRoot "$Name-before-phase-a-$(Get-Date -Format yyyyMMdd-HHmmss).zip"
+        Compress-Archive -LiteralPath $Destination -DestinationPath $zip -CompressionLevel Optimal
+        Write-Host "Backed up $Name to $zip"
+    }
+    $staged = Join-Path $StageRoot $Name
+    Copy-Item -LiteralPath $Source -Destination $staged -Recurse
+    if (-not (Test-TreesEqual $Source $staged)) { throw "Staging verification failed: $Name" }
+    if (Test-Path -LiteralPath $Destination) { Remove-Item -LiteralPath $Destination -Recurse -Force }
+    Move-Item -LiteralPath $staged -Destination $Destination
+    if (-not (Test-TreesEqual $Source $Destination)) { throw "Install verification failed: $Name" }
+    Write-Host "Installed $Name to $Destination"
+}
+
+if (Get-Process -Name SpaceEngineers -ErrorAction SilentlyContinue) {
+    throw 'Exit Space Engineers before installing Random Sector.'
+}
+
+$gameRoot = Find-SpaceEngineers
+$customWorldRoot = Join-Path $gameRoot 'Content\CustomWorlds'
+$randomSectorDest = Join-Path $customWorldRoot 'Random Sector'
+New-Item -ItemType Directory -Force -Path $backupRoot, $localModRoot, $globalStorageRoot | Out-Null
+
+Invoke-Checked 'Audit installed content' { py scripts\audit.py }
+Invoke-Checked 'Prepare selected pack' { py scripts\prepare_pack.py }
+
+$plan = Get-Content (Join-Path $repoRoot 'reports\pack-plan.json') -Raw | ConvertFrom-Json
+$voxel = Get-Content (Join-Path $repoRoot 'reports\selected-voxel-audit.json') -Raw | ConvertFrom-Json
+$coverage = Get-Content (Join-Path $repoRoot 'reports\coverage.json') -Raw | ConvertFrom-Json
+if ([int]$voxel.total -gt 120) { throw "Voxel material count $($voxel.total) exceeds 120" }
+$selectedCoverage = @($coverage | Where-Object selected)
+if ($selectedCoverage.Count -ne 18) { throw "Expected 18 selected planets; found $($selectedCoverage.Count)" }
+$badCoverage = @($selectedCoverage | Where-Object { [int]$_.active_proxy_count -ne 1 })
+if ($badCoverage.Count) { throw "Proxy coverage is not exactly one for: $($badCoverage.planet -join ', ')" }
+foreach ($mod in $plan.selected_workshop) {
+    if (-not (Test-Path -LiteralPath $mod.path -PathType Container)) {
+        throw "Required Workshop mod is not installed: $($mod.id) $($mod.title)"
+    }
+}
+
+Invoke-Checked 'Offline compile' { pwsh -NoProfile -File scripts\Build-RSG.ps1 }
+
+$stageRoot = Join-Path $env:TEMP ("RandomSectorInstaller-" + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $stageRoot | Out-Null
+try {
+    $localSources = [ordered]@{
+        RandomSectorGenerator = Join-Path $repoRoot 'mods\RandomSectorGenerator'
+        CampaignScienceCompatibility = Join-Path $repoRoot 'mods\CampaignScienceCompatibility'
+        CampaignPlanetProxies = Join-Path $repoRoot 'generated\CampaignPlanetProxies'
+    }
+    foreach ($entry in $localSources.GetEnumerator()) {
+        Install-Directory $entry.Key $entry.Value (Join-Path $localModRoot $entry.Key) $stageRoot $localModRoot
+    }
+
+    $rtsSource = Join-Path $repoRoot 'profiles\RelativeTopSpeed.cfg'
+    [xml]$rts = Get-Content -LiteralPath $rtsSource -Raw
+    if ($rts.Settings.SpeedLimit -ne '1500' -or $rts.Settings.RemoteControlSpeedLimit -ne '1000') {
+        throw 'Locked RTS profile is not 1500/1000'
+    }
+    $rtsDestDir = Join-Path $globalStorageRoot '1359618037.sbm_RelativeTopSpeed'
+    $rtsDest = Join-Path $rtsDestDir 'RelativeTopSpeed.cfg'
+    New-Item -ItemType Directory -Force -Path $rtsDestDir | Out-Null
+    if ((Test-Path -LiteralPath $rtsDest) -and
+        ((Get-FileHash $rtsDest).Hash -ne (Get-FileHash $rtsSource).Hash)) {
+        Copy-Item -LiteralPath $rtsDest -Destination (Join-Path $backupRoot "RelativeTopSpeed-before-phase-a-$(Get-Date -Format yyyyMMdd-HHmmss).cfg")
+    }
+    Copy-Item -LiteralPath $rtsSource -Destination $rtsDest -Force
+    if ((Get-FileHash $rtsDest).Hash -ne (Get-FileHash $rtsSource).Hash) { throw 'RTS profile install verification failed' }
+
+    $templateStage = Join-Path $stageRoot 'Random Sector'
+    Invoke-Checked 'Build Random Sector CustomWorld' {
+        py scripts\random_sector_custom_world.py build --game-root $gameRoot --output $templateStage
+    }
+    Install-Directory 'Random-Sector-CustomWorld' $templateStage $randomSectorDest $stageRoot $customWorldRoot
+    Invoke-Checked 'Validate installed Random Sector' {
+        py scripts\random_sector_custom_world.py validate $randomSectorDest
+    }
+
+    # Exercise two independent copies and prove the reusable source is unchanged.
+    $sourceManifestBefore = Get-TreeManifest $randomSectorDest
+    $copyOne = Join-Path $stageRoot 'FreshWorldOne'
+    $copyTwo = Join-Path $stageRoot 'FreshWorldTwo'
+    Copy-Item -LiteralPath $randomSectorDest -Destination $copyOne -Recurse
+    Copy-Item -LiteralPath $randomSectorDest -Destination $copyTwo -Recurse
+    if (-not (Test-TreesEqual $copyOne $copyTwo)) { throw 'Fresh template copy comparison failed' }
+    Invoke-Checked 'Validate first fresh copy' { py scripts\random_sector_custom_world.py validate $copyOne }
+    Invoke-Checked 'Validate second fresh copy' { py scripts\random_sector_custom_world.py validate $copyTwo }
+    if (Compare-Object $sourceManifestBefore (Get-TreeManifest $randomSectorDest)) {
+        throw 'Installed Random Sector changed while testing fresh copies'
+    }
+}
+finally {
+    $resolvedTemp = (Resolve-Path -LiteralPath $env:TEMP).Path
+    $resolvedStage = (Resolve-Path -LiteralPath $stageRoot -ErrorAction SilentlyContinue).Path
+    if ($resolvedStage -and $resolvedStage.StartsWith($resolvedTemp + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+        Remove-Item -LiteralPath $resolvedStage -Recurse -Force
+    }
+}
+
+Write-Host ''
+Write-Host 'Random Sector Phase A is installed.' -ForegroundColor Green
+Write-Host 'Next:'
+Write-Host '1. Launch Space Engineers.'
+Write-Host '2. New Game > Custom Game > Random Sector > Start.'
+Write-Host '3. Wait for the Random Sector Generator completion message.'
+Write-Host '4. Save and Exit to Menu once, then reload the same world.'
+Write-Host '5. Run /rsg status. After it reports applied=True, run /SetupRealOrbits once and save.'
+Write-Host 'Economy remains OFF for Phase A.'
