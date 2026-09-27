@@ -1,0 +1,33 @@
+{
+  "world": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\RSG Disposable Clean 2026-09-27",
+  "mods_present": {
+    "rts": true,
+    "aero": true,
+    "real_orbits": true,
+    "rss": true
+  },
+  "configs": {
+    "rts": [
+      {
+        "path": "Storage\\1359618037.sbm_RelativeTopSpeed\\RelativeTopSpeed.cfg",
+        "parse_error": "encoding specified in XML declaration is incorrect: line 1, column 30",
+        "values": {}
+      }
+    ],
+    "aero": [],
+    "real_orbits": [
+      {
+        "path": "Storage\\2609118808.sbm_RealisticGravity\\Config.xml",
+        "parse_error": "encoding specified in XML declaration is incorrect: line 1, column 30",
+        "values": {}
+      }
+    ]
+  },
+  "expectations": {
+    "rts_config_after_first_load": "expected",
+    "aero_config_after_first_load": "optional on listen host",
+    "real_orbits_config_after_first_load": "expected"
+  },
+  "ready_for_tuning_review": true,
+  "writes_performed": false
+}
