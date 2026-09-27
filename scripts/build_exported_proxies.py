@@ -35,6 +35,24 @@ EXPORTED_PLANETS = {
         "atmo_mult": "1.0",
         "icon": "(1.0,0.35,0.15,1.0)",
     },
+    "Kerbin - Water Mod Ready": {
+        "atmo_color": "(0.55,0.76,1.0,1.0)",
+        "atmo_thickness": "1.0",
+        "atmo_mult": "1.0",
+        "icon": "(0.35,0.70,0.95,1.0)",
+    },
+    "Aulden": {
+        "atmo_color": "(0.65,0.78,0.9,1.0)",
+        "atmo_thickness": "1.0",
+        "atmo_mult": "1.0",
+        "icon": "(0.7,0.85,0.95,1.0)",
+    },
+    "Seren": {
+        "atmo_color": "(0.55,0.35,0.8,1.0)",
+        "atmo_thickness": "0.7",
+        "atmo_mult": "1.0",
+        "icon": "(0.55,0.55,0.9,1.0)",
+    },
 }
 PACKAGED_PLANETS = {
     "Jormun": {
@@ -49,6 +67,15 @@ PLANETS = {**PACKAGED_PLANETS, **EXPORTED_PLANETS}
 
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
 ET.register_namespace("xsi", XSI)
+
+
+def selected_targets() -> list[str]:
+    coverage = json.loads((REPORTS / "coverage.json").read_text(encoding="utf-8"))
+    missing = [c["planet"] for c in coverage if c["selected"] and c["active_proxy_count"] == 0]
+    unsupported = sorted(set(missing) - set(EXPORTED_PLANETS))
+    if unsupported:
+        raise RuntimeError("Selected proxy export has no visual profile: " + ", ".join(unsupported))
+    return list(PACKAGED_PLANETS) + missing
 
 
 def newest_export(planet: str, kind: str) -> Path | None:
@@ -227,8 +254,8 @@ def build(args) -> None:
         raise RuntimeError(
             "The Jormun proxy Workshop item 3663505475 is missing its CM/NG DDS files locally."
         )
-    if not ready:
-        raise RuntimeError("No proxy targets have complete CM/NG assets.")
+    if missing:
+        raise RuntimeError("Incomplete proxy export batch: " + ", ".join(missing))
 
     needs_texconv = any(p in EXPORTED_PLANETS for p in ready)
     texconv = find_texconv(args.texconv) if needs_texconv else None
@@ -294,11 +321,13 @@ def main():
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="command", required=True)
     s = sub.add_parser("status")
-    s.add_argument("--planets", nargs="+", choices=sorted(PLANETS), default=sorted(PLANETS))
+    s.add_argument("--planets", nargs="+", choices=sorted(PLANETS), default=None)
     b = sub.add_parser("build")
-    b.add_argument("--planets", nargs="+", choices=sorted(PLANETS), default=sorted(PLANETS))
+    b.add_argument("--planets", nargs="+", choices=sorted(PLANETS), default=None)
     b.add_argument("--texconv")
     args = parser.parse_args()
+    if args.planets is None:
+        args.planets = selected_targets()
     if args.command == "status":
         raise SystemExit(status(args.planets))
     build(args)

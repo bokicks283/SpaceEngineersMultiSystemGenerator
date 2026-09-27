@@ -24,18 +24,17 @@ namespace RandomSectorGenerator
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
         private const string ArmKey = "RSG_DisposableBootstrap_v1";
-        private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(StringComparer.Ordinal)
-        {
-            "Cauldron", "Tellus", "Agni", "Kor", "Jormun", "Zenitaia", "OrlundaSide", "Relicta"
-        };
+        private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(
+            CampaignPlanetPool.RequiredCustom, StringComparer.Ordinal);
 
-        private static readonly HashSet<string> OptionalVanillaPlanets = new HashSet<string>(StringComparer.Ordinal)
-        {
-            "EarthLike", "Moon", "Mars", "Europa"
-        };
+        private static readonly HashSet<string> OptionalVanillaPlanets = new HashSet<string>(
+            CampaignPlanetPool.Vanilla, StringComparer.Ordinal);
+
+        private static readonly HashSet<string> OptionalCustomPlanets = new HashSet<string>(
+            CampaignPlanetPool.OptionalCustom, StringComparer.Ordinal);
 
         private static readonly HashSet<string> AllowedPlanets = new HashSet<string>(
-            RequiredCustomPlanets.Concat(OptionalVanillaPlanets),
+            RequiredCustomPlanets.Concat(OptionalVanillaPlanets).Concat(OptionalCustomPlanets),
             StringComparer.Ordinal);
         private static readonly HashSet<ulong> DeniedWorkshopIds = new HashSet<ulong>
         {
@@ -234,6 +233,10 @@ namespace RandomSectorGenerator
                     string.Join(", ", RequiredCustomPlanets.Where(loaded.Contains).OrderBy(x => x)));
                 MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions missing: " +
                     (missing.Count == 0 ? "<none>" : string.Join(", ", missing)));
+                MyLog.Default.WriteLineAndConsole("[RSG] Optional vanilla planet definitions loaded: " +
+                    string.Join(", ", OptionalVanillaPlanets.Where(loaded.Contains).OrderBy(x => x)));
+                MyLog.Default.WriteLineAndConsole("[RSG] Optional custom planet definitions loaded: " +
+                    string.Join(", ", OptionalCustomPlanets.Where(loaded.Contains).OrderBy(x => x)));
             }
             catch (Exception e)
             {
@@ -251,6 +254,7 @@ namespace RandomSectorGenerator
             List<string> requiredLoaded = RequiredCustomPlanets.Where(loaded.Contains).OrderBy(x => x).ToList();
             List<string> requiredMissing = RequiredCustomPlanets.Where(x => !loaded.Contains(x)).OrderBy(x => x).ToList();
             List<string> optionalLoaded = OptionalVanillaPlanets.Where(loaded.Contains).OrderBy(x => x).ToList();
+            List<string> optionalCustomLoaded = OptionalCustomPlanets.Where(loaded.Contains).OrderBy(x => x).ToList();
 
             Show("Required custom loaded (" + requiredLoaded.Count + "/" + RequiredCustomPlanets.Count + "): " +
                 (requiredLoaded.Count == 0 ? "<none>" : string.Join(", ", requiredLoaded)));
@@ -258,6 +262,8 @@ namespace RandomSectorGenerator
                 (requiredMissing.Count == 0 ? "<none>" : string.Join(", ", requiredMissing)));
             Show("Optional vanilla loaded: " +
                 (optionalLoaded.Count == 0 ? "<none>" : string.Join(", ", optionalLoaded)));
+            Show("Optional custom loaded: " +
+                (optionalCustomLoaded.Count == 0 ? "<none>" : string.Join(", ", optionalCustomLoaded)));
         }
 
         private void GenerateSector(int seed)

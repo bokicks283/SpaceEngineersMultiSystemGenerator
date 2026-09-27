@@ -15,12 +15,19 @@ Custom definitions:
 - Zenitaia
 - OrlundaSide
 - Relicta
+- Kerbin - Water Mod Ready
+- Aulden
+- Seren
 
 Vanilla definitions:
 - EarthLike
 - Moon
 - Mars
 - Europa
+- Alien
+- Titan
+- Triton
+- Pertam
 
 The runtime allowlist is deliberate. Loaded planet mods outside this list are not silently included.
 

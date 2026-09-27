@@ -23,8 +23,15 @@ MOD_ROOT = Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Mods"
 BACKUPS = ROOT / "backups"
 
 WORLD_NAME = "Proxy Export Workbench 2026-09-27"
-WORKSHOP_IDS = ["3350589349", "2200451495", "3695766186", "3489648084"]
+WORKSHOP_IDS = ["3350589349", "2200451495", "3695766186", "3489648084"] + list(
+    json.loads((ROOT / "campaign-planets.json").read_text(encoding="utf-8"))["additional_workshop"]
+)
 LOCAL_MOD = "ProxyExportBootstrap"
+
+
+def export_targets():
+    coverage = json.loads((REPORTS / "coverage.json").read_text(encoding="utf-8"))
+    return [row["planet"] for row in coverage if row["selected"] and row["active_proxy_count"] == 0]
 
 # Base colors approximate the installed CM textures sampled at 64x64. Glow is
 # authored for hot/lava materials because the exporter uses a single scalar per
@@ -136,11 +143,12 @@ def validate_world(world: Path):
         root = ET.parse(file).getroot()
         actual = [(m.findtext("Name"), m.findtext("PublishedFileId"),
                    m.findtext("PublishedServiceName", "")) for m in root.findall("./Mods/ModItem")]
-        if (actual[:len(expected)] != expected or
-                len(actual) not in (len(expected) + 1, len(expected) + 2) or
-                actual[len(expected)][0:2] != (LOCAL_MOD, None) or
-                actual[len(expected)][2] not in ("", "Steam") or
-                (len(actual) == len(expected) + 2 and actual[-1] != loaded_dependency)):
+        tail = actual[len(expected):]
+        helpers = [entry for entry in tail if entry[0:2] == (LOCAL_MOD, None)
+                   and entry[2] in ("", "Steam")]
+        dependencies = [entry for entry in tail if entry == loaded_dependency]
+        if (actual[:len(expected)] != expected or len(helpers) != 1 or
+                len(dependencies) not in (0, 1) or len(tail) != len(helpers) + len(dependencies)):
             raise RuntimeError(f"{file.name}: unexpected workbench mod list: {actual}")
         if root.findtext("./Settings/GameMode") != "Creative":
             raise RuntimeError(f"{file.name}: workbench must be Creative")
@@ -173,6 +181,42 @@ def repair():
     result = validate_world(world)
     result["backup"] = str(backup)
     print(json.dumps(result, indent=2))
+
+
+def sync():
+    """Expand the existing workbench without discarding spawned planets or Storage."""
+    ensure_closed()
+    world = (source_world().parent / WORLD_NAME).resolve()
+    if SAVE_ROOT.resolve() not in world.parents or not world.is_dir():
+        raise RuntimeError("Expected an existing isolated proxy workbench")
+    for f in save_files(world):
+        validate_xml_types(f)
+    mods = workshop_map()
+    missing = [wid for wid in WORKSHOP_IDS if wid not in mods or not Path(mods[wid]["path"]).is_dir()]
+    if missing:
+        raise RuntimeError("Missing workbench Workshop mod(s): " + ", ".join(missing))
+    backup = archive(world, "ProxyExportWorkbench-before-pool-sync")
+    install_bootstrap()
+    for file in save_files(world):
+        tree = ET.parse(file)
+        node = tree.getroot().find("Mods")
+        if node is None:
+            raise RuntimeError(f"{file.name}: missing Mods node")
+        node.clear()
+        for wid in WORKSHOP_IDS + ["758597413"]:
+            item = ET.SubElement(node, "ModItem")
+            title = mods[wid].get("title")
+            if title:
+                item.set("FriendlyName", title)
+            ET.SubElement(item, "Name").text = wid + ".sbm"
+            ET.SubElement(item, "PublishedFileId").text = wid
+            ET.SubElement(item, "PublishedServiceName").text = "Steam"
+        item = ET.SubElement(node, "ModItem")
+        ET.SubElement(item, "Name").text = LOCAL_MOD
+        write_atomic(tree, file)
+    print(json.dumps({"workbench": str(world), "backup": str(backup),
+                      "helper": str(MOD_ROOT / LOCAL_MOD), "mods": WORKSHOP_IDS,
+                      "export_targets": export_targets()}, indent=2))
 
 
 def has_planet_entities(world: Path) -> bool:
@@ -387,20 +431,10 @@ def configure():
         "backup": str(backup),
         "sampling": "4096x2048 SD",
         "configured_voxels": sorted(VOXELS),
-        "next": [
-            f"Reload {WORLD_NAME}",
-            "/ReloadConfig",
-            "/pex zenitaia",
-            "/ExportCM",
-            "/ExportNG",
-            "/ExportADD",
-            "/pex relicta",
-            "/ExportCM",
-            "/ExportNG",
-            "/ExportADD",
-            "SAVE and EXIT",
-            "py scripts\\build_exported_proxies.py build",
-        ],
+        "next": [f"Reload {WORLD_NAME}", "/ReloadConfig", "/pex status"] + [
+            command for name in export_targets()
+            for command in ("/pex " + name, "/ExportCM", "/ExportNG", "/ExportADD")
+        ] + ["SAVE and EXIT", "py scripts\\build_exported_proxies.py build"],
     }, indent=2))
 
 
@@ -410,6 +444,7 @@ def status():
         "world_exists": world.is_dir(),
         "world": str(world),
         "bootstrap_installed": (MOD_ROOT / LOCAL_MOD).is_dir(),
+        "export_targets": export_targets(),
     }
     if world.is_dir():
         try:
@@ -430,6 +465,7 @@ def main():
     sub.add_parser("status")
     sub.add_parser("validate")
     sub.add_parser("repair")
+    sub.add_parser("sync")
     args = p.parse_args()
 
     if args.command == "prepare":
@@ -440,6 +476,8 @@ def main():
         configure()
     elif args.command == "repair":
         repair()
+    elif args.command == "sync":
+        sync()
     elif args.command == "validate":
         print(json.dumps(validate_world(source_world().parent / WORLD_NAME), indent=2))
     else:

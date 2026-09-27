@@ -16,19 +16,26 @@ namespace ProxyExportBootstrap
     public sealed class ProxyExportBootstrapSession : MySessionComponentBase
     {
         private const string Author = "Proxy Export Bootstrap";
-        private const string SpawnKey = "PEX_BootstrapSpawned_v1";
+        private const string SpawnKey = "PEX_BootstrapSpawned_v2";
         private const float DiameterMeters = 120000f;
 
         private int _ticks;
         private bool _chatRegistered;
         private bool _spawnAttempted;
 
-        private static readonly Dictionary<string, Vector3D> Centers =
-            new Dictionary<string, Vector3D>(StringComparer.OrdinalIgnoreCase)
+        private static readonly Dictionary<string, Vector3D> Centers = BuildCenters();
+
+        private static Dictionary<string, Vector3D> BuildCenters()
+        {
+            var result = new Dictionary<string, Vector3D>(StringComparer.OrdinalIgnoreCase);
+            for (int i = 0; i < ProxyExportTargets.Names.Length; i++)
             {
-                { "Zenitaia", new Vector3D(400000d, 0d, 0d) },
-                { "Relicta", new Vector3D(-400000d, 0d, 0d) }
-            };
+                double distance = 400000d * (i / 2 + 1);
+                double x = i % 2 == 0 ? distance : -distance;
+                result.Add(ProxyExportTargets.Names[i], new Vector3D(x, 0d, 0d));
+            }
+            return result;
+        }
 
         public override void UpdateAfterSimulation()
         {
@@ -61,6 +68,11 @@ namespace ProxyExportBootstrap
         {
             try
             {
+                if (Centers.Count == 0)
+                {
+                    Show("Every selected planet already has an active proxy.");
+                    return;
+                }
                 var definitions = MyDefinitionManager.Static.GetPlanetsGeneratorsDefinitions()
                     .Where(x => Centers.ContainsKey(x.Id.SubtypeId.ToString()))
                     .ToDictionary(x => x.Id.SubtypeId.ToString(), StringComparer.OrdinalIgnoreCase);
@@ -86,8 +98,8 @@ namespace ProxyExportBootstrap
                 }
 
                 MyAPIGateway.Utilities.SetVariable(SpawnKey, "spawned");
-                Show("Zenitaia and Relicta spawned at 120 km. Use /pex zenitaia or /pex relicta to move near either planet.");
-                Focus("Zenitaia");
+                Show("Export planets ready: " + string.Join(", ", Centers.Keys) + ". Use /pex status and /pex <name>.");
+                Focus(ProxyExportTargets.Names[0]);
             }
             catch (Exception e)
             {
@@ -102,27 +114,24 @@ namespace ProxyExportBootstrap
                 return;
 
             sendToOthers = false;
-            string[] parts = messageText.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length == 1 || string.Equals(parts[1], "status", StringComparison.OrdinalIgnoreCase))
+            string command = messageText.Trim().Substring(4).Trim();
+            if (command.Length == 0 || string.Equals(command, "status", StringComparison.OrdinalIgnoreCase))
             {
-                Show("Zenitaia=" + (FindPlanet("Zenitaia") != null ? "ready" : "missing") +
-                     " | Relicta=" + (FindPlanet("Relicta") != null ? "ready" : "missing"));
+                Show(string.Join(" | ", Centers.Keys.Select(name =>
+                    name + "=" + (FindPlanet(name) != null ? "ready" : "missing"))));
                 return;
             }
 
-            if (string.Equals(parts[1], "zenitaia", StringComparison.OrdinalIgnoreCase))
+            string[] matches = Centers.Keys.Where(name =>
+                string.Equals(name, command, StringComparison.OrdinalIgnoreCase) ||
+                name.StartsWith(command + " ", StringComparison.OrdinalIgnoreCase)).ToArray();
+            if (matches.Length == 1)
             {
-                Focus("Zenitaia");
+                Focus(matches[0]);
                 return;
             }
 
-            if (string.Equals(parts[1], "relicta", StringComparison.OrdinalIgnoreCase))
-            {
-                Focus("Relicta");
-                return;
-            }
-
-            Show("Commands: /pex status | /pex zenitaia | /pex relicta");
+            Show("Commands: /pex status | /pex <name>. Targets: " + string.Join(", ", Centers.Keys));
         }
 
         private void Focus(string name)

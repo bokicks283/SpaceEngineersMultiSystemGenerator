@@ -1,0 +1,195 @@
+[
+  {
+    "id": "2941085186",
+    "title": "Kerbin",
+    "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186",
+    "installed": true,
+    "planet_subtypes": [
+      "Kerbin - Vanilla Version",
+      "Kerbin - Water Mod Ready"
+    ],
+    "defined_custom_voxels": [],
+    "incremental_voxels": [],
+    "incremental_cost": 0,
+    "referenced_voxel_materials": [
+      "Cobalt_01",
+      "DesertRocks",
+      "Gold_01",
+      "Grass",
+      "Grass_old",
+      "Ice_03",
+      "Iron_02",
+      "Magnesium_01",
+      "MoonRocks",
+      "MoonSoil",
+      "Nickel_01",
+      "Platinum_01",
+      "Rocks_grass",
+      "Sand_02",
+      "Silicon_01",
+      "Silver_01",
+      "Snow",
+      "Soil",
+      "Stone",
+      "Stone_01",
+      "TritonIce",
+      "TritonStone",
+      "Uraninite_01",
+      "Woods_grass"
+    ],
+    "existing_material_overlap": [
+      "Cobalt_01",
+      "DesertRocks",
+      "Gold_01",
+      "Grass",
+      "Grass_old",
+      "Ice_03",
+      "Iron_02",
+      "Magnesium_01",
+      "MoonRocks",
+      "MoonSoil",
+      "Nickel_01",
+      "Platinum_01",
+      "Rocks_grass",
+      "Sand_02",
+      "Silicon_01",
+      "Silver_01",
+      "Snow",
+      "Soil",
+      "Stone",
+      "Stone_01",
+      "TritonIce",
+      "TritonStone",
+      "Uraninite_01",
+      "Woods_grass"
+    ],
+    "unresolved_material_references": [],
+    "cost_class": "FREE",
+    "dependencies_in_metadata": [],
+    "water_mod_terrain_variant": {
+      "Kerbin - Vanilla Version": false,
+      "Kerbin - Water Mod Ready": true
+    },
+    "science": {
+      "Kerbin - Vanilla Version": "missing",
+      "Kerbin - Water Mod Ready": "local"
+    },
+    "proxies": {
+      "Kerbin - Vanilla Version": [],
+      "Kerbin - Water Mod Ready": []
+    },
+    "proxy_count": {
+      "Kerbin - Vanilla Version": 0,
+      "Kerbin - Water Mod Ready": 0
+    },
+    "export_required": {
+      "Kerbin - Vanilla Version": true,
+      "Kerbin - Water Mod Ready": true
+    },
+    "scan_errors": []
+  },
+  {
+    "id": "2961923776",
+    "title": "Aulden",
+    "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
+    "installed": true,
+    "planet_subtypes": [
+      "Aulden"
+    ],
+    "defined_custom_voxels": [],
+    "incremental_voxels": [],
+    "incremental_cost": 0,
+    "referenced_voxel_materials": [
+      "Cobalt_01",
+      "Grass",
+      "Ice",
+      "Ice_03",
+      "Iron_02",
+      "Magnesium_01",
+      "Nickel_01",
+      "Rocks_grass",
+      "Silicon_01",
+      "Snow",
+      "Soil",
+      "Stone_01",
+      "TritonIce",
+      "TritonStone",
+      "Uraninite_01",
+      "Woods_grass"
+    ],
+    "existing_material_overlap": [
+      "Cobalt_01",
+      "Grass",
+      "Ice",
+      "Ice_03",
+      "Iron_02",
+      "Magnesium_01",
+      "Nickel_01",
+      "Rocks_grass",
+      "Silicon_01",
+      "Snow",
+      "Soil",
+      "Stone_01",
+      "TritonIce",
+      "TritonStone",
+      "Uraninite_01",
+      "Woods_grass"
+    ],
+    "unresolved_material_references": [],
+    "cost_class": "FREE",
+    "dependencies_in_metadata": [],
+    "water_mod_terrain_variant": {
+      "Aulden": false
+    },
+    "science": {
+      "Aulden": "local"
+    },
+    "proxies": {
+      "Aulden": []
+    },
+    "proxy_count": {
+      "Aulden": 0
+    },
+    "export_required": {
+      "Aulden": true
+    },
+    "scan_errors": []
+  },
+  {
+    "id": "2961924256",
+    "title": "Seren",
+    "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256",
+    "installed": true,
+    "planet_subtypes": [
+      "Seren"
+    ],
+    "defined_custom_voxels": [],
+    "incremental_voxels": [],
+    "incremental_cost": 0,
+    "referenced_voxel_materials": [
+      "Ice_03"
+    ],
+    "existing_material_overlap": [
+      "Ice_03"
+    ],
+    "unresolved_material_references": [],
+    "cost_class": "FREE",
+    "dependencies_in_metadata": [],
+    "water_mod_terrain_variant": {
+      "Seren": false
+    },
+    "science": {
+      "Seren": "local"
+    },
+    "proxies": {
+      "Seren": []
+    },
+    "proxy_count": {
+      "Seren": 0
+    },
+    "export_required": {
+      "Seren": true
+    },
+    "scan_errors": []
+  }
+]

@@ -13,7 +13,9 @@ The current campaign cut intentionally favors variety rather than maximizing wat
 - **Zenitaia** — tropical/deep-ocean world
 - **Orlunda (Sideways)** — RSS-friendly tidally locked world
 - **Relicta** — hostile volcanic/radiation world
-- Vanilla EarthLike, Moon, Mars, and Europa remain eligible without adding Workshop voxel materials.
+- All eight vanilla planets (EarthLike, Moon, Mars, Europa, Alien, Titan, Triton,
+  Pertam) are eligible without adding Workshop voxel materials.
+- Phase 2A also selects the zero-material Kerbin water variant, Aulden, and Seren.
 
 Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded from this campaign cut. The expected static budget is about **117 unique voxel-material subtypes** after AquaExpansion, but `scripts/audit.py` and `scripts/prepare_pack.py` are authoritative and must be rerun on the actual machine.
 
@@ -22,14 +24,18 @@ Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded 
 - Cauldron System bundles exact proxies for its four bodies.
 - Orlunda Sideways: Workshop proxy pack **3361803398**.
 - Jormun: Workshop proxy **3663505475**.
-- Zenitaia and Relicta currently require exported/local RSS proxies unless the local audit finds an exact compatible Workshop proxy.
+- Zenitaia, Relicta, Kerbin - Water Mod Ready, Aulden, and Seren currently
+  require exported/local RSS proxies. `reports/coverage.json` is authoritative.
+- RSS itself includes one proxy for each vanilla planet. The installed vanilla
+  HD pack 3381681547 stays inactive because it would duplicate those proxies.
 - RSS Planet Exporter: **3350589349**.
 
 Do not arm a disposable world until `reports/coverage.json` reports exactly one active proxy for every selected custom body and every referenced proxy texture exists.
 
-### Building the Zenitaia/Relicta local proxies
+### Building the missing local proxies
 
-After exporting each planet at 120 km with the RSS Planet Exporter, run:
+The isolated workbench and generated helper take their export targets from
+`reports/coverage.json`. After exporting each missing planet at 120 km, run:
 
 ```powershell
 py scripts\build_exported_proxies.py status

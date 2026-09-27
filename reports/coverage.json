@@ -208,5 +208,277 @@
     "science_native": null,
     "science_compatibility": false,
     "science_status": "unavailable"
+  },
+  {
+    "id": "2941085186",
+    "planet": "Kerbin - Vanilla Version",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
+  },
+  {
+    "id": "2941085186",
+    "planet": "Kerbin - Water Mod Ready",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "2961923776",
+    "planet": "Aulden",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "2961924256",
+    "planet": "Seren",
+    "selected": true,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": true,
+    "science_status": "local authored preset"
+  },
+  {
+    "id": "vanilla",
+    "planet": "EarthLike",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_EarthLike",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_EarthLikeSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_EarthLikeSL_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1.9\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 1.03\n\t\t\tAtmoColorMult: 2.2\n\t\t\tEditorIconColor: (0.5,0.9,1.0,1.0)\n\t  "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_EarthLike(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: EarthLike\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_EarthLikeSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_EarthLikeSL_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1.9\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 1.03\n\t\t\tAtmoColorMult: 2.2\n\t\t\tEditorIconColor: (0.5,0.9,1.0,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Moon",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Moon",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Moon_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Moon_ng.dds\n\t\t\tEditorIconColor: (0.9,0.9,0.9,1.0)\n\t  "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Moon(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Moon\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Moon_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Moon_ng.dds\n\t\t\tEditorIconColor: (0.9,0.9,0.9,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Mars",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Mars",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Mars_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Mars_ng.dds\n\t\t\tCloudTexture: Mars\n\t\t\tCloudSizeMult: 0.7\n\t\t\tAtmoColor: (1.0,0.6,0.3,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 0.5\n\t\t\tEditorIconColor: (1.0,0.7,0.4,1.0)\n\t  "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Mars(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Mars\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Mars_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Mars_ng.dds\n\t\t\tCloudTexture: Mars\n\t\t\tCloudSizeMult: 0.7\n\t\t\tAtmoColor: (1.0,0.6,0.3,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 0.5\n\t\t\tEditorIconColor: (1.0,0.7,0.4,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Europa",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Europa",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Europa_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Europa_ng.dds\n\t\t\tAtmoColor: (0.5,0.7,1.0,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.0\n\t\t\tEditorIconColor: (0.7,0.9,1.0,1.0)\n\t  "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Europa(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Europa\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Europa_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Europa_ng.dds\n\t\t\tAtmoColor: (0.5,0.7,1.0,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.0\n\t\t\tEditorIconColor: (0.7,0.9,1.0,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Alien",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Alien",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_AlienSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_AlienSL_ng.dds\n\t\t\tCloudTexture: Alien\n\t\t\tAtmoColor: (0.2,1.0,0.5,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.3\n\t\t\tEditorIconColor: (0.7,1.0,0.7,1.0)\n\t  "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Alien(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Alien\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_AlienSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_AlienSL_ng.dds\n\t\t\tCloudTexture: Alien\n\t\t\tAtmoColor: (0.2,1.0,0.5,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.3\n\t\t\tEditorIconColor: (0.7,1.0,0.7,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Titan",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Titan",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Titan_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Titan_ng.dds\n\t\t\tCloudTexture: Titan\n\t\t\tAtmoColor: (1.0,0.45,0.25,1.0)\n\t\t\tAtmoThickness: 0.96\n\t\t\tAtmoColorMult: 1.8\n\t\t\tEditorIconColor: (1.0,0.6,0.3,1.0)\n\t "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Titan(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Titan\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Titan_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Titan_ng.dds\n\t\t\tCloudTexture: Titan\n\t\t\tAtmoColor: (1.0,0.45,0.25,1.0)\n\t\t\tAtmoThickness: 0.96\n\t\t\tAtmoColorMult: 1.8\n\t\t\tEditorIconColor: (1.0,0.6,0.3,1.0)\n\t "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Triton",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Triton",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Triton_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Triton_ng.dds\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 1.5\n\t\t\tScale: 1.035\n\t\t\tScaleFadeMin: 0.87\n\t\t\tEditorIconColor: (0.95,0.95,1.0,1.0)\n\t "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Triton(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Triton\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Triton_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Triton_ng.dds\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 1.5\n\t\t\tScale: 1.035\n\t\t\tScaleFadeMin: 0.87\n\t\t\tEditorIconColor: (0.95,0.95,1.0,1.0)\n\t "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
+  },
+  {
+    "id": "vanilla",
+    "planet": "Pertam",
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3351055036",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
+        "subtype": "PlanetProxyType_Pertam",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Pertam_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Pertam_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.6\n\t\t\tAtmoColor: (0.5,0.8,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 8.0\n\t\t\tEditorIconColor: (1.0,1.0,0.7,1.0)\n\t "
+      },
+      {
+        "mod": "3381681547",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+        "subtype": "PlanetProxyType_Pertam(HD)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetDefaults: Pertam\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Pertam_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Pertam_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.6\n\t\t\tAtmoColor: (0.5,0.8,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 8.0\n\t\t\tEditorIconColor: (1.0,1.0,0.7,1.0)\n\t "
+      }
+    ],
+    "active_proxy_count": 1,
+    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_Vanilla.sbc",
+    "science_compatibility": false,
+    "science_status": "native"
   }
 ]

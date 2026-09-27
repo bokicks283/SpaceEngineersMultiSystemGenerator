@@ -109,5 +109,61 @@ ScienceReward: 55
 Ores: ZenitHotRock, ZenitLavaRockOC, ZenitLavaRockSurface
 </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Kerbin - Water Mod Ready</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Coastal Survey
+ScienceReward: 35
+Ores: Sand_02, MoonSoil, MoonRocks
+
+Biome: Temperate Highlands
+ScienceReward: 35
+Ores: Soil, Grass, Woods_grass
+
+Biome: Polar Cap
+ScienceReward: 45
+Ores: Snow, TritonIce
+</Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Aulden</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Frost Fields
+ScienceReward: 45
+Ores: Snow, Ice_03, TritonIce
+
+Biome: Wooded Basin
+ScienceReward: 35
+Ores: Woods_grass, Grass, Soil
+
+Biome: Stone Ridges
+ScienceReward: 40
+Ores: Stone_01, Rocks_grass, TritonStone
+</Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Seren</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: Frozen Expanse
+ScienceReward: 50
+Ores: Ice_03
+
+Biome: High Gravity Traverse
+ScienceReward: 60
+Latitude: (-0.7, 0.7)
+</Description>
+    </EntityComponent>
   </EntityComponents>
 </Definitions>

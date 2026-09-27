@@ -1,6 +1,8 @@
 # Selected pack audit
 
-Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against 128 and 3 below the conservative budget of 120. Runtime validation pending.
+Selected planet definitions: **19 / 24** (8 vanilla, 11 custom).
+
+Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against 128 and 3 below the conservative budget of 120. Expanded-pool runtime validation pending.
 
 | Body | Selected | Active RSS proxies | Science |
 |---|---|---:|---|
@@ -18,6 +20,18 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 | Relicta | yes | 0 | local authored preset |
 | Sulfate | no | 0 | generic fallback |
 | unavailable | no | 0 | unavailable |
+| Kerbin - Vanilla Version | no | 0 | generic fallback |
+| Kerbin - Water Mod Ready | yes | 0 | local authored preset |
+| Aulden | yes | 0 | local authored preset |
+| Seren | yes | 0 | local authored preset |
+| EarthLike | yes | 1 | native |
+| Moon | yes | 1 | native |
+| Mars | yes | 1 | native |
+| Europa | yes | 1 | native |
+| Alien | yes | 1 | native |
+| Titan | yes | 1 | native |
+| Triton | yes | 1 | native |
+| Pertam | yes | 1 | native |
 
 ## Workshop load-list membership
 
@@ -55,22 +69,26 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 2310821218 — Abandoned Settlements [v2]
 - 3362332228 — Orlunda (Sideways)
 - 3690317665 — AquaExpansion
-- 2899106264 — Terran Titans Naval Blocks
-- 3361803398 — title unavailable locally
+- 2899106264 — Terran Titans - Naval Blocks
+- 2941085186 — Kerbin
+- 2961923776 — Aulden
+- 2961924256 — Seren
+- 3361803398 — "Real Solar Systems" Proxy Pack: Orlunda and Komorebi
 
 ## Local mods
 
 - RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.
-- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.
+- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, Zenitaia, Kerbin, Aulden, and Seren biome presets.
+- CampaignPlanetProxies: generated RSS proxy definitions/assets for campaign planets.
 
 ## Water and encounters
 
-The selected water worlds are Jormun and Zenitaia. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry is added to planets that were not designed for it.
+Jormun and Zenitaia remain the verified intended water worlds. The selected Kerbin subtype uses water-ready terrain, but actual Water Mod behavior needs a runtime check. No global water entry is added to other planets.
 MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.
 
 ## Limits
 
-The selected cut prioritizes varied exploration while staying at or below the conservative 120-material budget: Cauldron System, Jormun, Zenitaia, Orlunda Sideways, and Relicta are retained. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are excluded for this campaign.
-Cauldron bundles four exact RSS proxy definitions. Orlunda Sideways uses the Orlunda/Komorebi SD proxy pack and Jormun uses its dedicated SD proxy. Zenitaia and Relicta require locally exported proxies unless exact compatible Workshop proxies are discovered during a later audit. The prepared world remains disarmed until coverage is exact.
+Phase 2A adds all four omitted vanilla planets plus the verified zero-material Kerbin water variant, Aulden, and Seren. No installed distinct +1/+2 candidate was found. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus remain excluded for the material budget.
+RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and Jormun uses its dedicated source. Zenitaia, Relicta, Kerbin, Aulden, and Seren require one batch export. The campaign world remains disarmed until coverage is exact.
 Voxel modifiers are excluded. No subtype duplicates were found in the selected local definitions. Unique subtype union is independent of override precedence. The old test save contained stale Workshop entries and was not edited; its static voxel estimate is a lower bound. The original was preserved in timestamped ZIPs.
 The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.

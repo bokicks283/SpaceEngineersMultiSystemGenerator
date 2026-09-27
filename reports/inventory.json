@@ -15,17 +15,17 @@
         "StateFlags": "4",
         "installdir": "SpaceEngineers",
         "LastUpdated": "1786907475",
-        "LastPlayed": "1790483832",
+        "LastPlayed": "1790536092",
         "SizeOnDisk": "44818048736",
         "StagingSize": "0",
         "buildid": "24675677",
         "LastOwner": "76561198045624840",
         "DownloadType": "2",
         "UpdateResult": "0",
-        "BytesToDownload": "17093632",
-        "BytesDownloaded": "17093632",
-        "BytesToStage": "117073746",
-        "BytesStaged": "117073746",
+        "BytesToDownload": "12004768",
+        "BytesDownloaded": "12004768",
+        "BytesToStage": "91685025",
+        "BytesStaged": "91685025",
         "TargetBuildID": "0",
         "AutoUpdateBehavior": "0",
         "AllowOtherDownloadsWhileRunning": "0",
@@ -570,12 +570,12 @@
     "S:\\SteamLibrary\\steamapps\\workshop\\appworkshop_244850.acf": {
       "AppWorkshop": {
         "appid": "244850",
-        "SizeOnDisk": "10587487596",
+        "SizeOnDisk": "11107258159",
         "NeedsUpdate": "0",
         "NeedsDownload": "0",
-        "TimeLastUpdated": "1790489912",
-        "TimeLastFullCheck": "1790468440",
-        "TimeLastAppRan": "1790483832",
+        "TimeLastUpdated": "1790537064",
+        "TimeLastFullCheck": "1790526958",
+        "TimeLastAppRan": "1790536092",
         "LastBuildID": "24675677",
         "WorkshopItemsInstalled": {
           "514062285": {
@@ -599,9 +599,9 @@
             "manifest": "2941675460263081767"
           },
           "1521905890": {
-            "size": "31404720",
-            "timeupdated": "1790346218",
-            "manifest": "8665161227391594971"
+            "size": "31418488",
+            "timeupdated": "1790497402",
+            "manifest": "4630850694432945299"
           },
           "1697184408": {
             "size": "2112480",
@@ -629,9 +629,9 @@
             "manifest": "266993798679746580"
           },
           "2111400196": {
-            "size": "736384123",
-            "timeupdated": "1789166587",
-            "manifest": "3411029246429257996"
+            "size": "736384122",
+            "timeupdated": "1790511058",
+            "manifest": "8233354353130538255"
           },
           "2195637331": {
             "size": "361034005",
@@ -753,6 +753,21 @@
             "timeupdated": "1788567598",
             "manifest": "2885210262766778228"
           },
+          "2941085186": {
+            "size": "114082998",
+            "timeupdated": "1780142964",
+            "manifest": "5139271581256677673"
+          },
+          "2961923776": {
+            "size": "91685025",
+            "timeupdated": "1681420980",
+            "manifest": "1973380583509266548"
+          },
+          "2961924256": {
+            "size": "134709778",
+            "timeupdated": "1681421035",
+            "manifest": "1043784451292866565"
+          },
           "3152436752": {
             "size": "1170407",
             "timeupdated": "1789437060",
@@ -823,6 +838,11 @@
             "timeupdated": "1758326799",
             "manifest": "3397757138131943930"
           },
+          "3381681547": {
+            "size": "179261640",
+            "timeupdated": "1733783987",
+            "manifest": "164967871615511487"
+          },
           "3382116691": {
             "size": "1010565",
             "timeupdated": "1740905826",
@@ -884,9 +904,9 @@
             "manifest": "2115365630919180717"
           },
           "3690317665": {
-            "size": "700455473",
-            "timeupdated": "1790450004",
-            "manifest": "1303891523423232183"
+            "size": "700472828",
+            "timeupdated": "1790519875",
+            "manifest": "7177730067797974940"
           },
           "3695766186": {
             "size": "168951092",
@@ -953,7 +973,7 @@
           "514062285": {
             "manifest": "3124347231687462034",
             "timeupdated": "1758292178",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1758292178",
             "latest_manifest": "3124347231687462034"
@@ -961,7 +981,7 @@
           "516770964": {
             "manifest": "5580171766170752376",
             "timeupdated": "1740294068",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1740294068",
             "latest_manifest": "5580171766170752376"
@@ -969,7 +989,7 @@
           "758597413": {
             "manifest": "8144833970592824204",
             "timeupdated": "1645658032",
-            "timetouched": "1790483691",
+            "timetouched": "1790529985",
             "subscribedby": "85359112",
             "latest_timeupdated": "1645658032",
             "latest_manifest": "8144833970592824204"
@@ -983,17 +1003,17 @@
             "latest_manifest": "2941675460263081767"
           },
           "1521905890": {
-            "manifest": "8665161227391594971",
-            "timeupdated": "1790346218",
-            "timetouched": "1790483691",
+            "manifest": "4630850694432945299",
+            "timeupdated": "1790497402",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
-            "latest_timeupdated": "1790346218",
-            "latest_manifest": "8665161227391594971"
+            "latest_timeupdated": "1790497402",
+            "latest_manifest": "4630850694432945299"
           },
           "1697184408": {
             "manifest": "2397714212309875076",
             "timeupdated": "1765104681",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1765104681",
             "latest_manifest": "2397714212309875076"
@@ -1001,7 +1021,7 @@
           "1902970975": {
             "manifest": "310538505680153076",
             "timeupdated": "1707286964",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1707286964",
             "latest_manifest": "310538505680153076"
@@ -1009,7 +1029,7 @@
           "1939935505": {
             "manifest": "6221337361396193414",
             "timeupdated": "1780731642",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1780731642",
             "latest_manifest": "6221337361396193414"
@@ -1017,7 +1037,7 @@
           "1965654081": {
             "manifest": "7484952797562693667",
             "timeupdated": "1781131326",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781131326",
             "latest_manifest": "7484952797562693667"
@@ -1025,23 +1045,23 @@
           "2111073562": {
             "manifest": "266993798679746580",
             "timeupdated": "1781006170",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781006170",
             "latest_manifest": "266993798679746580"
           },
           "2111400196": {
-            "manifest": "3411029246429257996",
-            "timeupdated": "1789166587",
-            "timetouched": "0",
+            "manifest": "8233354353130538255",
+            "timeupdated": "1790511058",
+            "timetouched": "1790492670",
             "subscribedby": "85359112",
-            "latest_timeupdated": "1789166587",
-            "latest_manifest": "3411029246429257996"
+            "latest_timeupdated": "1790511058",
+            "latest_manifest": "8233354353130538255"
           },
           "2195637331": {
             "manifest": "1106203101328667620",
             "timeupdated": "1766272041",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1766272041",
             "latest_manifest": "1106203101328667620"
@@ -1049,7 +1069,7 @@
           "2200451495": {
             "manifest": "2741414223314794091",
             "timeupdated": "1786901983",
-            "timetouched": "1790483691",
+            "timetouched": "1790529985",
             "subscribedby": "85359112",
             "latest_timeupdated": "1786901983",
             "latest_manifest": "2741414223314794091"
@@ -1057,7 +1077,7 @@
           "2298956701": {
             "manifest": "9050338640202541002",
             "timeupdated": "1753905732",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1753905732",
             "latest_manifest": "9050338640202541002"
@@ -1065,7 +1085,7 @@
           "2310821218": {
             "manifest": "2788547210435434460",
             "timeupdated": "1656713095",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1656713095",
             "latest_manifest": "2788547210435434460"
@@ -1073,7 +1093,7 @@
           "2336089504": {
             "manifest": "782100663735002106",
             "timeupdated": "1717147457",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1717147457",
             "latest_manifest": "782100663735002106"
@@ -1081,7 +1101,7 @@
           "2391318591": {
             "manifest": "4034709890756492085",
             "timeupdated": "1781696505",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781696505",
             "latest_manifest": "4034709890756492085"
@@ -1089,7 +1109,7 @@
           "2596208372": {
             "manifest": "344933508815538535",
             "timeupdated": "1768104167",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1768104167",
             "latest_manifest": "344933508815538535"
@@ -1097,7 +1117,7 @@
           "2640137506": {
             "manifest": "4632826284850001454",
             "timeupdated": "1785250272",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1785250272",
             "latest_manifest": "4632826284850001454"
@@ -1105,7 +1125,7 @@
           "2644430625": {
             "manifest": "4378348707912997268",
             "timeupdated": "1766271864",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1766271864",
             "latest_manifest": "4378348707912997268"
@@ -1113,7 +1133,7 @@
           "2671376862": {
             "manifest": "6937954168334899860",
             "timeupdated": "1702839500",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1702839500",
             "latest_manifest": "6937954168334899860"
@@ -1121,7 +1141,7 @@
           "2678657382": {
             "manifest": "2400464878252289431",
             "timeupdated": "1777996152",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1777996152",
             "latest_manifest": "2400464878252289431"
@@ -1129,7 +1149,7 @@
           "2687324923": {
             "manifest": "7181046498593113603",
             "timeupdated": "1770007129",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1770007129",
             "latest_manifest": "7181046498593113603"
@@ -1137,7 +1157,7 @@
           "2711430394": {
             "manifest": "8184888642239104391",
             "timeupdated": "1645280972",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1645280972",
             "latest_manifest": "8184888642239104391"
@@ -1145,7 +1165,7 @@
           "2754014019": {
             "manifest": "6336919021344352164",
             "timeupdated": "1668297708",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1668297708",
             "latest_manifest": "6336919021344352164"
@@ -1153,7 +1173,7 @@
           "2756894170": {
             "manifest": "6577106617031406808",
             "timeupdated": "1706481483",
-            "timetouched": "0",
+            "timetouched": "1790492670",
             "subscribedby": "85359112",
             "latest_timeupdated": "1706481483",
             "latest_manifest": "6577106617031406808"
@@ -1161,7 +1181,7 @@
           "2802625870": {
             "manifest": "9146771311650773106",
             "timeupdated": "1713581322",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1713581322",
             "latest_manifest": "9146771311650773106"
@@ -1169,7 +1189,7 @@
           "2803081060": {
             "manifest": "5378952767476792182",
             "timeupdated": "1743182628",
-            "timetouched": "0",
+            "timetouched": "1790492670",
             "subscribedby": "85359112",
             "latest_timeupdated": "1743182628",
             "latest_manifest": "5378952767476792182"
@@ -1177,7 +1197,7 @@
           "2816464979": {
             "manifest": "6075692985230973298",
             "timeupdated": "1738666568",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1738666568",
             "latest_manifest": "6075692985230973298"
@@ -1185,7 +1205,7 @@
           "2825087802": {
             "manifest": "1470513976240543652",
             "timeupdated": "1656784027",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1656784027",
             "latest_manifest": "1470513976240543652"
@@ -1193,7 +1213,7 @@
           "2826996861": {
             "manifest": "7142245168287187860",
             "timeupdated": "1656466982",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1656466982",
             "latest_manifest": "7142245168287187860"
@@ -1201,7 +1221,7 @@
           "2839553181": {
             "manifest": "2347446847716228533",
             "timeupdated": "1740126001",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1740126001",
             "latest_manifest": "2347446847716228533"
@@ -1209,7 +1229,7 @@
           "2841920953": {
             "manifest": "3763551835488781720",
             "timeupdated": "1660983814",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1660983814",
             "latest_manifest": "3763551835488781720"
@@ -1217,7 +1237,7 @@
           "2899106264": {
             "manifest": "8757177408897277947",
             "timeupdated": "1776624939",
-            "timetouched": "0",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1776624939",
             "latest_manifest": "8757177408897277947"
@@ -1225,15 +1245,39 @@
           "2915780227": {
             "manifest": "2885210262766778228",
             "timeupdated": "1788567598",
-            "timetouched": "0",
+            "timetouched": "1790492670",
             "subscribedby": "85359112",
             "latest_timeupdated": "1788567598",
             "latest_manifest": "2885210262766778228"
           },
+          "2941085186": {
+            "manifest": "5139271581256677673",
+            "timeupdated": "1780142964",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1780142964",
+            "latest_manifest": "5139271581256677673"
+          },
+          "2961923776": {
+            "manifest": "1973380583509266548",
+            "timeupdated": "1681420980",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1681420980",
+            "latest_manifest": "1973380583509266548"
+          },
+          "2961924256": {
+            "manifest": "1043784451292866565",
+            "timeupdated": "1681421035",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1681421035",
+            "latest_manifest": "1043784451292866565"
+          },
           "3152436752": {
             "manifest": "6849314283325612300",
             "timeupdated": "1789437060",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789437060",
             "latest_manifest": "6849314283325612300"
@@ -1241,7 +1285,7 @@
           "3154379105": {
             "manifest": "9189103782677668945",
             "timeupdated": "1764004120",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1764004120",
             "latest_manifest": "9189103782677668945"
@@ -1249,7 +1293,7 @@
           "3155707452": {
             "manifest": "4435772518236600376",
             "timeupdated": "1759026630",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1759026630",
             "latest_manifest": "4435772518236600376"
@@ -1257,7 +1301,7 @@
           "3170315974": {
             "manifest": "2493485392786000784",
             "timeupdated": "1709639981",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1709639981",
             "latest_manifest": "2493485392786000784"
@@ -1265,7 +1309,7 @@
           "3218645300": {
             "manifest": "660258419898439794",
             "timeupdated": "1722841159",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1722841159",
             "latest_manifest": "660258419898439794"
@@ -1273,7 +1317,7 @@
           "3222232482": {
             "manifest": "3858324822946197786",
             "timeupdated": "1731709387",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731709387",
             "latest_manifest": "3858324822946197786"
@@ -1281,7 +1325,7 @@
           "3232085677": {
             "manifest": "7309797073453642140",
             "timeupdated": "1769754138",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1769754138",
             "latest_manifest": "7309797073453642140"
@@ -1289,7 +1333,7 @@
           "3240629702": {
             "manifest": "3634428776801030349",
             "timeupdated": "1785189141",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1785189141",
             "latest_manifest": "3634428776801030349"
@@ -1297,7 +1341,7 @@
           "3309805284": {
             "manifest": "8674091537472965326",
             "timeupdated": "1766271999",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1766271999",
             "latest_manifest": "8674091537472965326"
@@ -1305,7 +1349,7 @@
           "3350589349": {
             "manifest": "5820018629382818640",
             "timeupdated": "1731178740",
-            "timetouched": "0",
+            "timetouched": "1790529985",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731178740",
             "latest_manifest": "5820018629382818640"
@@ -1313,7 +1357,7 @@
           "3351055036": {
             "manifest": "654691035657927225",
             "timeupdated": "1789429180",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789429180",
             "latest_manifest": "654691035657927225"
@@ -1321,7 +1365,7 @@
           "3357218025": {
             "manifest": "8625229000477229641",
             "timeupdated": "1768285115",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1768285115",
             "latest_manifest": "8625229000477229641"
@@ -1329,7 +1373,7 @@
           "3361803398": {
             "manifest": "6119685640767316233",
             "timeupdated": "1731106835",
-            "timetouched": "0",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731106835",
             "latest_manifest": "6119685640767316233"
@@ -1337,15 +1381,23 @@
           "3362332228": {
             "manifest": "3397757138131943930",
             "timeupdated": "1758326799",
-            "timetouched": "0",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1758326799",
             "latest_manifest": "3397757138131943930"
           },
+          "3381681547": {
+            "manifest": "164967871615511487",
+            "timeupdated": "1733783987",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1733783987",
+            "latest_manifest": "164967871615511487"
+          },
           "3382116691": {
             "manifest": "6445243941526492565",
             "timeupdated": "1740905826",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1740905826",
             "latest_manifest": "6445243941526492565"
@@ -1353,7 +1405,7 @@
           "3437815208": {
             "manifest": "833062381107938120",
             "timeupdated": "1742193799",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1742193799",
             "latest_manifest": "833062381107938120"
@@ -1361,7 +1413,7 @@
           "3472275442": {
             "manifest": "770371675746351761",
             "timeupdated": "1745859890",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1745859890",
             "latest_manifest": "770371675746351761"
@@ -1369,7 +1421,7 @@
           "3489648084": {
             "manifest": "9203020772835891881",
             "timeupdated": "1772035396",
-            "timetouched": "1790483691",
+            "timetouched": "1790529985",
             "subscribedby": "85359112",
             "latest_timeupdated": "1772035396",
             "latest_manifest": "9203020772835891881"
@@ -1377,7 +1429,7 @@
           "3515518898": {
             "manifest": "2506064414403045822",
             "timeupdated": "1772034521",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1772034521",
             "latest_manifest": "2506064414403045822"
@@ -1385,7 +1437,7 @@
           "3576683005": {
             "manifest": "6445329570615327690",
             "timeupdated": "1766271661",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1766271661",
             "latest_manifest": "6445329570615327690"
@@ -1393,7 +1445,7 @@
           "3617496051": {
             "manifest": "357387465583054995",
             "timeupdated": "1764819647",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1764819647",
             "latest_manifest": "357387465583054995"
@@ -1401,7 +1453,7 @@
           "3618043241": {
             "manifest": "6011129296201092341",
             "timeupdated": "1764910968",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1764910968",
             "latest_manifest": "6011129296201092341"
@@ -1409,7 +1461,7 @@
           "3663505475": {
             "manifest": "8570360910632488760",
             "timeupdated": "1770694101",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1770694101",
             "latest_manifest": "8570360910632488760"
@@ -1417,7 +1469,7 @@
           "3665099597": {
             "manifest": "8315911484051020153",
             "timeupdated": "1786676420",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1786676420",
             "latest_manifest": "8315911484051020153"
@@ -1425,7 +1477,7 @@
           "3672452327": {
             "manifest": "1462121759156030960",
             "timeupdated": "1789069490",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789069490",
             "latest_manifest": "1462121759156030960"
@@ -1433,23 +1485,23 @@
           "3684013414": {
             "manifest": "2115365630919180717",
             "timeupdated": "1774114729",
-            "timetouched": "1790483691",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1774114729",
             "latest_manifest": "2115365630919180717"
           },
           "3690317665": {
-            "manifest": "1303891523423232183",
-            "timeupdated": "1790450004",
-            "timetouched": "0",
+            "manifest": "7177730067797974940",
+            "timeupdated": "1790519875",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
-            "latest_timeupdated": "1790450004",
-            "latest_manifest": "1303891523423232183"
+            "latest_timeupdated": "1790519875",
+            "latest_manifest": "7177730067797974940"
           },
           "3695766186": {
             "manifest": "5474360216637276388",
             "timeupdated": "1776682073",
-            "timetouched": "1790483691",
+            "timetouched": "1790529985",
             "subscribedby": "85359112",
             "latest_timeupdated": "1776682073",
             "latest_manifest": "5474360216637276388"
@@ -1457,7 +1509,7 @@
           "3706927250": {
             "manifest": "5202300668134011602",
             "timeupdated": "1782561326",
-            "timetouched": "0",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1782561326",
             "latest_manifest": "5202300668134011602"
@@ -1465,7 +1517,7 @@
           "3719498498": {
             "manifest": "1099050311327557855",
             "timeupdated": "1779475005",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1779475005",
             "latest_manifest": "1099050311327557855"
@@ -1473,7 +1525,7 @@
           "3731921987": {
             "manifest": "301856979576999737",
             "timeupdated": "1782032329",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1782032329",
             "latest_manifest": "301856979576999737"
@@ -1481,7 +1533,7 @@
           "3736894294": {
             "manifest": "7251214043632587668",
             "timeupdated": "1780400086",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1780400086",
             "latest_manifest": "7251214043632587668"
@@ -1489,7 +1541,7 @@
           "3741238881": {
             "manifest": "4360658005300696358",
             "timeupdated": "1781298137",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781298137",
             "latest_manifest": "4360658005300696358"
@@ -1497,7 +1549,7 @@
           "3746220940": {
             "manifest": "6552576263556833690",
             "timeupdated": "1787215282",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787215282",
             "latest_manifest": "6552576263556833690"
@@ -1505,7 +1557,7 @@
           "3767444521": {
             "manifest": "4180830671179822467",
             "timeupdated": "1787343912",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787343912",
             "latest_manifest": "4180830671179822467"
@@ -1513,7 +1565,7 @@
           "3768473558": {
             "manifest": "4785492020190127840",
             "timeupdated": "1788377929",
-            "timetouched": "0",
+            "timetouched": "1790492669",
             "subscribedby": "85359112",
             "latest_timeupdated": "1788377929",
             "latest_manifest": "4785492020190127840"
@@ -1521,7 +1573,7 @@
           "3770315903": {
             "manifest": "6048234901374581415",
             "timeupdated": "1789291883",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789291883",
             "latest_manifest": "6048234901374581415"
@@ -1529,7 +1581,7 @@
           "3784633330": {
             "manifest": "3288109282359364240",
             "timeupdated": "1787071054",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787071054",
             "latest_manifest": "3288109282359364240"
@@ -1537,7 +1589,7 @@
           "3791989881": {
             "manifest": "8664544747371685708",
             "timeupdated": "1789932475",
-            "timetouched": "1790483691",
+            "timetouched": "1790492693",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789932475",
             "latest_manifest": "8664544747371685708"
@@ -2189,7 +2241,7 @@
     },
     {
       "id": "2899106264",
-      "title": null,
+      "title": "Terran Titans - Naval Blocks",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264",
       "desired_planet": false,
       "denylisted": false,
@@ -2214,6 +2266,87 @@
       "errors": [],
       "dependencies": [],
       "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "2941085186",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [
+        {
+          "subtype": "Kerbin - Vanilla Version",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc",
+          "type": "PlanetGeneratorDefinition",
+          "enabled": "true",
+          "atmosphere": "true",
+          "gravity": "1.0",
+          "oxygen": "0.9"
+        },
+        {
+          "subtype": "Kerbin - Water Mod Ready",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc",
+          "type": "PlanetGeneratorDefinition",
+          "enabled": "true",
+          "atmosphere": "true",
+          "gravity": "1.0",
+          "oxygen": "0.9"
+        }
+      ],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "2961923776",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [
+        {
+          "subtype": "Aulden",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776\\Data\\PlanetAulden.sbc",
+          "type": "PlanetGeneratorDefinition",
+          "enabled": "true",
+          "atmosphere": "true",
+          "gravity": "0.82",
+          "oxygen": "0.3"
+        }
+      ],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "2961924256",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [
+        {
+          "subtype": "Seren",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc",
+          "type": "PlanetGeneratorDefinition",
+          "enabled": "true",
+          "atmosphere": "true",
+          "gravity": "2.80",
+          "oxygen": "0.05"
+        }
+      ],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
     },
     {
       "id": "304787878",
@@ -2644,11 +2777,11 @@
     },
     {
       "id": "3350589349",
-      "title": null,
+      "title": "Planet Exporter (Real Solar Systems)",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3350589349",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -2757,7 +2890,7 @@
     },
     {
       "id": "3361803398",
-      "title": null,
+      "title": "\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
       "desired_planet": false,
       "denylisted": false,
@@ -2866,6 +2999,77 @@
         }
       ],
       "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
+      "id": "3381681547",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [],
+      "proxies": [
+        {
+          "subtype": "PlanetProxyType_EarthLike(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: EarthLike\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_EarthLikeSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_EarthLikeSL_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 1.9\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 1.03\n\t\t\tAtmoColorMult: 2.2\n\t\t\tEditorIconColor: (0.5,0.9,1.0,1.0)\n\t  "
+        },
+        {
+          "subtype": "PlanetProxyType_Moon(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Moon\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Moon_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Moon_ng.dds\n\t\t\tEditorIconColor: (0.9,0.9,0.9,1.0)\n\t  "
+        },
+        {
+          "subtype": "PlanetProxyType_Mars(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Mars\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Mars_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Mars_ng.dds\n\t\t\tCloudTexture: Mars\n\t\t\tCloudSizeMult: 0.7\n\t\t\tAtmoColor: (1.0,0.6,0.3,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 0.5\n\t\t\tEditorIconColor: (1.0,0.7,0.4,1.0)\n\t  "
+        },
+        {
+          "subtype": "PlanetProxyType_Europa(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Europa\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Europa_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Europa_ng.dds\n\t\t\tAtmoColor: (0.5,0.7,1.0,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.0\n\t\t\tEditorIconColor: (0.7,0.9,1.0,1.0)\n\t  "
+        },
+        {
+          "subtype": "PlanetProxyType_Alien(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Alien\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_AlienSL_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_AlienSL_ng.dds\n\t\t\tCloudTexture: Alien\n\t\t\tAtmoColor: (0.2,1.0,0.5,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.3\n\t\t\tEditorIconColor: (0.7,1.0,0.7,1.0)\n\t  "
+        },
+        {
+          "subtype": "PlanetProxyType_Titan(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Titan\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Titan_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Titan_ng.dds\n\t\t\tCloudTexture: Titan\n\t\t\tAtmoColor: (1.0,0.45,0.25,1.0)\n\t\t\tAtmoThickness: 0.96\n\t\t\tAtmoColorMult: 1.8\n\t\t\tEditorIconColor: (1.0,0.6,0.3,1.0)\n\t "
+        },
+        {
+          "subtype": "PlanetProxyType_Triton(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Triton\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Triton_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Triton_ng.dds\n\t\t\tAtmoColor: (0.2,0.5,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 1.5\n\t\t\tScale: 1.035\n\t\t\tScaleFadeMin: 0.87\n\t\t\tEditorIconColor: (0.95,0.95,1.0,1.0)\n\t "
+        },
+        {
+          "subtype": "PlanetProxyType_Pertam(HD)",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547\\Data\\PlanetProxyDefaults.sbc",
+          "type": "Inventory",
+          "enabled": "true",
+          "description": "\n\t\t\tPlanetDefaults: Pertam\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Pertam_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Pertam_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.6\n\t\t\tAtmoColor: (0.5,0.8,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 8.0\n\t\t\tEditorIconColor: (1.0,1.0,0.7,1.0)\n\t "
+        }
+      ],
       "errors": [],
       "dependencies": [],
       "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
@@ -3477,7 +3681,7 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3663505475",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": true,
+      "active_in_existing_world": false,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -3602,7 +3806,7 @@
     },
     {
       "id": "3690317665",
-      "title": null,
+      "title": "AquaExpansion",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665",
       "desired_planet": false,
       "denylisted": false,
@@ -3704,11 +3908,11 @@
     },
     {
       "id": "3706927250",
-      "title": null,
+      "title": "Terran Titans - Naval Advanced Systems",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3706927250",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -6663,6 +6867,42 @@
       ]
     },
     {
+      "file": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox.sbc",
+      "name": "Proxy Export Workbench 2026-09-27",
+      "mods": [
+        {
+          "Name": "3350589349.sbm",
+          "PublishedFileId": "3350589349",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2200451495.sbm",
+          "PublishedFileId": "2200451495",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3695766186.sbm",
+          "PublishedFileId": "3695766186",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3489648084.sbm",
+          "PublishedFileId": "3489648084",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "ProxyExportBootstrap",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "758597413.sbm",
+          "PublishedFileId": "758597413",
+          "PublishedServiceName": "Steam",
+          "IsDependency": "true"
+        }
+      ]
+    },
+    {
       "file": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\RSG Disposable Audit 2026-09-27\\Sandbox.sbc",
       "name": "RSG Disposable Audit 2026-09-27",
       "mods": [
@@ -6847,15 +7087,22 @@
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "3663505475.sbm",
-          "PublishedFileId": "3663505475",
+          "Name": "RandomSectorGenerator",
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "RandomSectorGenerator"
+          "Name": "CampaignScienceCompatibility",
+          "PublishedServiceName": "Steam"
         },
         {
-          "Name": "CampaignScienceCompatibility"
+          "Name": "CampaignPlanetProxies",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3706927250.sbm",
+          "PublishedFileId": "3706927250",
+          "PublishedServiceName": "Steam",
+          "IsDependency": "true"
         }
       ]
     }
