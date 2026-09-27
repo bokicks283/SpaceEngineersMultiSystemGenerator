@@ -40,6 +40,12 @@ def get_variable(tree,key):
         if item.findtext('Key')==key:return item.findtext('Value')
     return None
 
+def remove_variable(tree,key):
+    dictionary=checkpoint_variables(tree)
+    for item in list(dictionary.findall('item')):
+        if item.findtext('Key')==key:
+            dictionary.remove(item)
+
 def write_atomic(tree,path):
     # ElementTree cannot see namespace prefixes embedded in xsi:type values.
     # Keep the xsd prefix declared for the game's XML serializer.
@@ -101,7 +107,10 @@ def prepare(source,name):
             node=ET.SubElement(mods,'ModItem')
             ET.SubElement(node,'Name').text=name_local
         if file.name=='Sandbox.sbc':
-            checkpoint_variables(tree).clear()
+            # Preserve unrelated script variables from the RSS template. Only remove
+            # stale bootstrap/system payloads that could contaminate the disposable copy.
+            remove_variable(tree,RSG_KEY)
+            remove_variable(tree,RSS_KEY)
             put_variable(tree,RSG_KEY,'blocked-proxies')
         write_atomic(tree,file)
     print(json.dumps({'world':str(dest),'source_backup':str(backup),'workshop_mods':len(selected),
@@ -171,9 +180,15 @@ def commit(world):
         print('Handoff already committed: '+str(world));return
     backup=archive(world,'World-before-RSS-handoff')
     put_variable(tree,RSS_KEY,payload)
+    # Permanently disarm generation before the adoption reload. The pending state
+    # is still the primary guard, but this prevents an accidental second bootstrap
+    # if world-storage state is ever lost or removed.
+    put_variable(tree,RSG_KEY,'handoff-committed')
     write_atomic(tree,checkpoint)
-    if get_variable(ET.parse(checkpoint),RSS_KEY)!=payload:raise RuntimeError('RSS handoff readback mismatch')
-    print(json.dumps({'world':str(world),'backup':str(backup),'rss_handoff':'committed'},indent=2))
+    check=ET.parse(checkpoint)
+    if get_variable(check,RSS_KEY)!=payload:raise RuntimeError('RSS handoff readback mismatch')
+    if get_variable(check,RSG_KEY)!='handoff-committed':raise RuntimeError('RSG disarm readback mismatch')
+    print(json.dumps({'world':str(world),'backup':str(backup),'rss_handoff':'committed','armed':False},indent=2))
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)
