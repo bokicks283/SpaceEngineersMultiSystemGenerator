@@ -240,7 +240,85 @@ def arm(world):
         if len(candidates)!=1:missing.append(row['planet'])
         else:
             candidate=candidates[0]
-            textures=re.findall(r'^\s*PlanetTexture_(?:cm|ng|add):\s*(\S+)',candidate.get('description') or '',re.MULTILINE)
+            textures=re.findall(r'^\s*PlanetTexture_(?:cm|ng|add):\s*(.+?)\s*
+            if not textures:missing.append(row['planet']+' (no texture paths)')
+            for relative in textures:
+                # Validate the exact source that the prepared world will load.
+                if candidate['mod'].startswith('local:'):
+                    local_name=candidate['mod'].split(':',1)[1]
+                    source=Path(os.environ['APPDATA'])/'SpaceEngineers'/'Mods'/local_name
+                else:
+                    source=Path(next((m['path'] for m in active_mods() if m['id']==candidate['mod'])))
+                texture=source/Path(relative.replace('\\','/'))
+                if not texture.is_file():missing.append(row['planet']+' (missing '+relative+')')
+    if missing:raise RuntimeError('Missing or duplicate selected RSS proxies: '+', '.join(missing))
+    file=world/'Sandbox.sbc';tree=ET.parse(file)
+    if get_variable(tree,RSG_KEY)!='blocked-proxies':raise RuntimeError('World is not in disarmed prepared state')
+    selected=[m['id'] for m in active_mods()]
+    actual=[e.findtext('PublishedFileId') for e in tree.findall('./Mods/ModItem') if e.find('PublishedFileId') is not None]
+    if actual!=selected:raise RuntimeError('World mod list differs from current audited pack')
+    sector=list(world.glob('SANDBOX_*.sbs'))
+    if len(sector)!=1 or any('Planet' in (e.get(f'{{{XSI}}}type') or '') for e in ET.parse(sector[0]).findall('.//SectorObjects/*')):
+        raise RuntimeError('World has existing planets')
+    backup=archive(world,'World-before-RSG-arm')
+    put_variable(tree,RSG_KEY,'armed');write_atomic(tree,file)
+    print(json.dumps({'world':str(world),'backup':str(backup),'armed':True},indent=2))
+
+def commit(world):
+    ensure_closed();world=world.resolve()
+    if SAVE_ROOT.resolve() not in world.parents or not world.name.startswith('RSG Disposable'):
+        raise RuntimeError('World is not a prepared disposable save')
+    check_pre_activation(world)
+    state=ET.parse(state_file(world)).getroot()
+    get=lambda k: state.findtext(k)
+    if get('PendingApply')!='true' or get('Applied')=='true' or get('InProgress')=='true' or get('Failed')=='true':
+        raise RuntimeError('RSG state is not safely pending')
+    payload=get('RssConfigBase64')
+    if not payload or len(base64.b64decode(payload,validate=True))<100:raise RuntimeError('Invalid RSS payload')
+    if get('GeneratedBlackHole')!='true' or int(get('StellarSystemCount','0'))<3:
+        raise RuntimeError('Generated sector lacks required hierarchy')
+    ids=[e.text for e in state.findall('./GeneratedEntityIds/long')]
+    if not ids or get('StartPlanetEntityId') not in ids:raise RuntimeError('Incomplete generated entity record')
+    sectors=list(world.glob('SANDBOX_*.sbs'))
+    if len(sectors)!=1:raise RuntimeError('Expected one saved sector file')
+    saved_ids={e.text for e in ET.parse(sectors[0]).iter('EntityId')}
+    if not set(ids).issubset(saved_ids):raise RuntimeError('Saved sector is missing generated entities')
+    checkpoint=world/'Sandbox.sbc';tree=ET.parse(checkpoint)
+    if get_variable(tree,RSG_KEY)!='armed':raise RuntimeError('This is not an armed disposable world')
+    backup=archive(world,'World-before-RSS-handoff')
+    # Permanently disarm generation before the adoption reload. The pending state
+    # is still the primary guard, but this prevents an accidental second bootstrap
+    # if world-storage state is ever lost or removed.
+    apply_handoff_variables(tree,payload)
+    write_atomic(tree,checkpoint)
+    check=ET.parse(checkpoint)
+    if get_variable(check,RSS_KEY)!=payload:raise RuntimeError('RSS handoff readback mismatch')
+    if get_variable(check,RSG_KEY)!='handoff-committed':raise RuntimeError('RSG disarm readback mismatch')
+    print(json.dumps({'world':str(world),'backup':str(backup),'rss_handoff':'committed','armed':False},indent=2))
+
+def main():
+    p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)
+    a=sub.add_parser('prepare');a.add_argument('source',type=Path);a.add_argument('--name',default='RSG Disposable Audit 2026-09-27')
+    b=sub.add_parser('commit');b.add_argument('world',type=Path)
+    c=sub.add_parser('arm');c.add_argument('world',type=Path)
+    d=sub.add_parser('sync');d.add_argument('world',type=Path)
+    e=sub.add_parser('prepare-stock');e.add_argument('reference_world',type=Path)
+    e.add_argument('--name',default='RSG Disposable Clean 2026-09-27')
+    args=p.parse_args()
+    if args.command=='prepare':prepare(args.source,args.name)
+    elif args.command=='arm':arm(args.world)
+    elif args.command=='sync':sync(args.world)
+    elif args.command=='prepare-stock':
+        reference=args.reference_world.resolve()
+        if SAVE_ROOT.resolve() not in reference.parents or not reference.name.startswith('RSG Disposable'):
+            raise RuntimeError('Reference must be an existing disposable save')
+        inventory=json.loads((ROOT/'reports/inventory.json').read_text(encoding='utf-8'))
+        template=Path(inventory['games'][0]['path'])/'Content/CustomWorlds/Empty World'
+        prepare(template,args.name,dest_parent=reference.parent,stock=True)
+    else:commit(args.world)
+
+if __name__=='__main__':main()
+,candidate.get('description') or '',re.MULTILINE)
             if not textures:missing.append(row['planet']+' (no texture paths)')
             for relative in textures:
                 # Validate the exact source that the prepared world will load.
