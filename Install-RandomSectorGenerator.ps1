@@ -16,6 +16,9 @@ foreach ($name in @('RandomSectorGenerator','CampaignScienceCompatibility')) {
         Compress-Archive -LiteralPath $dest -DestinationPath $zip -CompressionLevel Optimal
         Write-Host "Backed up $name to $zip"
     }
+    if (Test-Path -LiteralPath $dest) {
+        Remove-Item -LiteralPath $dest -Recurse -Force
+    }
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
     foreach ($file in Get-ChildItem -LiteralPath $source -Recurse -File) {
         $relative=[IO.Path]::GetRelativePath($source,$file.FullName)
