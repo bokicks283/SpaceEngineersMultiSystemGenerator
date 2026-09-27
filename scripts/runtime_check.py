@@ -31,6 +31,13 @@ KEYWORDS = [
     "PlanetGeneratorDefinition",
     "DefinitionErrors",
     "Definition error",
+    "ProxyExportBootstrap",
+    "Proxy Export Bootstrap",
+    "[PEX]",
+    "PEX_",
+    "Proxy Export Workbench",
+    "Failed to load",
+    "world load",
 ]
 
 ERROR_PATTERNS = [
@@ -40,6 +47,9 @@ ERROR_PATTERNS = [
     re.compile(r"\berror\b.*RandomSectorGenerator", re.I),
     re.compile(r"RandomSectorGenerator.*\berror\b", re.I),
     re.compile(r"\b(definition|mod).*\b(error|failed|failure)\b", re.I),
+    re.compile(r"ProxyExportBootstrap.*\b(error|failed|exception)\b", re.I),
+    re.compile(r"\[PEX\].*\b(error|failed|exception)\b", re.I),
+    re.compile(r"\b(load|loading).*\b(world|save).*\b(error|failed|exception)\b", re.I),
 ]
 
 def latest_log():
