@@ -26,7 +26,7 @@ namespace RandomSectorGenerator
         private const string ArmKey = "RSG_DisposableBootstrap_v1";
         private static readonly HashSet<string> AllowedPlanets = new HashSet<string>(StringComparer.Ordinal)
         {
-            "Cauldron", "Tellus", "Agni", "Kor", "Teal-WaterMod", "Teralis - City Planet", "Zenitaia",
+            "Cauldron", "Tellus", "Agni", "Kor", "Jormun", "Zenitaia", "OrlundaSide", "Relicta",
             "EarthLike", "Moon", "Mars", "Europa"
         };
         private static readonly HashSet<ulong> DeniedWorkshopIds = new HashSet<ulong>
