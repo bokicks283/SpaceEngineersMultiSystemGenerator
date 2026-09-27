@@ -1,6 +1,6 @@
 # Selected pack audit
 
-Static voxel total: **118** = 62 vanilla + 56 additions; **10** headroom against 128 and 2 below the conservative budget of 120. Runtime validation pending.
+Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against 128 and 3 below the conservative budget of 120. Runtime validation pending.
 
 | Body | Selected | Active RSS proxies | Science |
 |---|---|---:|---|
@@ -8,14 +8,14 @@ Static voxel total: **118** = 62 vanilla + 56 additions; **10** headroom against
 | Cauldron | yes | 1 | local authored preset |
 | Kor | yes | 1 | native |
 | Tellus | yes | 1 | native |
-| Teal-WaterMod | yes | 0 | native |
-| Teralis - City Planet | yes | 0 | native |
-| Jormun | no | 0 | generic fallback |
+| Teal-WaterMod | no | 0 | native |
+| Teralis - City Planet | no | 0 | native |
+| Jormun | yes | 0 | local authored preset |
 | Zenitaia | yes | 0 | local authored preset |
-| OrlundaSide | no | 0 | native |
-| Komorebi | no | 0 | native |
+| OrlundaSide | yes | 1 | native |
+| Komorebi | no | 1 | native |
 | Nivis | no | 0 | generic fallback |
-| Relicta | no | 0 | local authored preset |
+| Relicta | yes | 0 | local authored preset |
 | Sulfate | no | 0 | generic fallback |
 | unavailable | no | 0 | unavailable |
 
@@ -25,8 +25,6 @@ Static voxel total: **118** = 62 vanilla + 56 additions; **10** headroom against
 - 2200451495 — Water Mod
 - 3222232482 — Visual Overrides API
 - 758597413 — Text HUD API
-- 2195637331 — Teralis - City Planet
-- 2644430625 — Teal - Water Mod
 - 3240629702 — Solar Blocks Override
 - 2841920953 — Shower Light
 - 3665099597 — Scientific Progress
@@ -36,6 +34,8 @@ Static voxel total: **118** = 62 vanilla + 56 additions; **10** headroom against
 - 3351055036 — Real Solar Systems
 - 3232085677 — Real Gas Giants
 - 3695766186 — Planet Zenitaia
+- 3489648084 — Planet Relicta
+- 3618043241 — Planet - Jormun (Water)
 - 3741238881 — Pipes Junctions
 - 3736894294 — Monorail Tracks
 - 1521905890 — Modular Encounters Systems
@@ -53,22 +53,25 @@ Static voxel total: **118** = 62 vanilla + 56 additions; **10** headroom against
 - 3472275442 — AQD - Conveyored Pipes
 - 2596208372 — AiEnabled v1.9
 - 2310821218 — Abandoned Settlements [v2]
+- 3362332228 — Orlunda (Sideways)
 - 3690317665 — AquaExpansion
 - 2899106264 — Terran Titans Naval Blocks
+- 3361803398 — title unavailable locally
+- 3663505475 — title unavailable locally
 
 ## Local mods
 
 - RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.
-- CampaignScienceCompatibility: authored Cauldron and Zenitaia biomes; Relicta is prepared but excluded from this pack.
+- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.
 
 ## Water and encounters
 
-The local Teal-WaterMod, Teralis - City Planet, and Zenitaia packages each define their own WaterConfig planet entry. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry was added.
+The selected water worlds are Jormun and Zenitaia. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry is added to planets that were not designed for it.
 MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.
 
 ## Limits
 
-The selected cut is the only six-mod cut under 120 materials that retains Cauldron plus Water Teal, Teralis, and Zenitaia among the locally available requested planets. Excluded: Komorebi, Orlunda Sideways, Relicta, Sulfate, Jormun, and Nivis. Acribus is not installed.
-Cauldron bundles four exact RSS proxy definitions. Teal-WaterMod, Teralis - City Planet, and Zenitaia still lack active exact proxies. Alkurah SD proxy pack and RSS Planet Exporter were identified as candidates but their Workshop downloads and runtime coverage remain unverified. The prepared world is disarmed until coverage is exact.
+The selected cut prioritizes varied exploration while staying at or below the conservative 120-material budget: Cauldron System, Jormun, Zenitaia, Orlunda Sideways, and Relicta are retained. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are excluded for this campaign.
+Cauldron bundles four exact RSS proxy definitions. Orlunda Sideways uses the Orlunda/Komorebi SD proxy pack and Jormun uses its dedicated SD proxy. Zenitaia and Relicta require locally exported proxies unless exact compatible Workshop proxies are discovered during a later audit. The prepared world remains disarmed until coverage is exact.
 Voxel modifiers are excluded. No subtype duplicates were found in the selected local definitions. Unique subtype union is independent of override precedence. The old test save contained stale Workshop entries and was not edited; its static voxel estimate is a lower bound. The original was preserved in timestamped ZIPs.
 The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.

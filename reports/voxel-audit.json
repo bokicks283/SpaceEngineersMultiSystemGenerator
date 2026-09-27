@@ -1,8 +1,8 @@
 {
   "existing": {
     "vanilla": 62,
-    "effective_unique_subtypes": 193,
-    "headroom_to_128": -65,
+    "effective_unique_subtypes": 204,
+    "headroom_to_128": -76,
     "per_mod": [
       {
         "id": "2195637331",
@@ -87,6 +87,22 @@
           "Salt_Flats_03",
           "Underground_Ice",
           "VolcanoRock"
+        ]
+      },
+      {
+        "id": "3362332228",
+        "title": "Orlunda (Sideways)",
+        "definitions": 9,
+        "nonvanilla": [
+          "Mossy_Rock_Orlunda",
+          "OrlundaBeach",
+          "OrlundaIce",
+          "OrlundaLake",
+          "OrlundaRedSoil_1",
+          "OrlundaRedSoil_2",
+          "OrlundaRedSoil_3",
+          "OrlundaSnow",
+          "Woods_grass_long"
         ]
       },
       {
@@ -193,6 +209,15 @@
           "SnowM",
           "TorrLavaGravel",
           "TorrLavaRock"
+        ]
+      },
+      {
+        "id": "3690317665",
+        "title": null,
+        "definitions": 2,
+        "nonvanilla": [
+          "Salt_01",
+          "SeaSoil_01"
         ]
       },
       {
@@ -1394,6 +1419,87 @@
           "enabled": "true"
         }
       ],
+      "OrlundaRedSoil_1": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_1",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaRedSoil_2": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_2",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaRedSoil_3": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaRedSoil_3",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Mossy_Rock_Orlunda": [
+        {
+          "mod": "3362332228",
+          "subtype": "Mossy_Rock_Orlunda",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass_long": [
+        {
+          "mod": "3362332228",
+          "subtype": "Woods_grass_long",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaBeach": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaBeach",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaSnow": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaSnow",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaIce": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaIce",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "OrlundaLake": [
+        {
+          "mod": "3362332228",
+          "subtype": "OrlundaLake",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
       "RelBasalt": [
         {
           "mod": "3489648084",
@@ -1964,6 +2070,24 @@
           "enabled": "true"
         }
       ],
+      "Salt_01": [
+        {
+          "mod": "3690317665",
+          "subtype": "Salt_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665\\Data\\AquaComponents\\VoxelMaterials_Aqua.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SeaSoil_01": [
+        {
+          "mod": "3690317665",
+          "subtype": "SeaSoil_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665\\Data\\AquaComponents\\VoxelMaterials_Aqua.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
       "Zenit_Grass": [
         {
           "mod": "3695766186",
@@ -2022,8 +2146,8 @@
   },
   "desired_with_existing_gameplay": {
     "vanilla": 62,
-    "effective_unique_subtypes": 196,
-    "headroom_to_128": -68,
+    "effective_unique_subtypes": 198,
+    "headroom_to_128": -70,
     "per_mod": [
       {
         "id": "2195637331",
@@ -2214,6 +2338,15 @@
           "SnowM",
           "TorrLavaGravel",
           "TorrLavaRock"
+        ]
+      },
+      {
+        "id": "3690317665",
+        "title": null,
+        "definitions": 2,
+        "nonvanilla": [
+          "Salt_01",
+          "SeaSoil_01"
         ]
       },
       {
@@ -3938,6 +4071,24 @@
           "mod": "3684013414",
           "subtype": "SnowM",
           "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Salt_01": [
+        {
+          "mod": "3690317665",
+          "subtype": "Salt_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665\\Data\\AquaComponents\\VoxelMaterials_Aqua.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "SeaSoil_01": [
+        {
+          "mod": "3690317665",
+          "subtype": "SeaSoil_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665\\Data\\AquaComponents\\VoxelMaterials_Aqua.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }

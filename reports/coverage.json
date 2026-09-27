@@ -6,6 +6,7 @@
     "proxy_candidates": [
       {
         "mod": "3576683005",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
         "subtype": "PlanetProxyType_Agni",
         "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
         "type": "Inventory",
@@ -25,6 +26,7 @@
     "proxy_candidates": [
       {
         "mod": "3576683005",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
         "subtype": "PlanetProxyType_Cauldron",
         "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
         "type": "Inventory",
@@ -44,6 +46,7 @@
     "proxy_candidates": [
       {
         "mod": "3576683005",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
         "subtype": "PlanetProxyType_Kor",
         "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
         "type": "Inventory",
@@ -63,6 +66,7 @@
     "proxy_candidates": [
       {
         "mod": "3576683005",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
         "subtype": "PlanetProxyType_Tellus",
         "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\PlanetProxyDefaults.sbc",
         "type": "Inventory",
@@ -78,7 +82,7 @@
   {
     "id": "2644430625",
     "planet": "Teal-WaterMod",
-    "selected": true,
+    "selected": false,
     "proxy_candidates": [],
     "active_proxy_count": 0,
     "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
@@ -88,7 +92,7 @@
   {
     "id": "2195637331",
     "planet": "Teralis - City Planet",
-    "selected": true,
+    "selected": false,
     "proxy_candidates": [],
     "active_proxy_count": 0,
     "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
@@ -98,12 +102,12 @@
   {
     "id": "3618043241",
     "planet": "Jormun",
-    "selected": false,
+    "selected": true,
     "proxy_candidates": [],
     "active_proxy_count": 0,
     "science_native": null,
-    "science_compatibility": false,
-    "science_status": "generic fallback"
+    "science_compatibility": true,
+    "science_status": "local authored preset"
   },
   {
     "id": "3695766186",
@@ -118,9 +122,19 @@
   {
     "id": "3362332228",
     "planet": "OrlundaSide",
-    "selected": false,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "selected": true,
+    "proxy_candidates": [
+      {
+        "mod": "3361803398",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
+        "subtype": "PlanetProxyType_OrlundaSide",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_OrlundaSide_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_OrlundaSide_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.7\n\t\t\tCloudShowInOrbit: true\n\t\t\tAtmoColor: (0.4,0.85,0.9,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 2.5\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (0.7,0.9,0.85,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
     "science_compatibility": false,
     "science_status": "native"
@@ -129,8 +143,18 @@
     "id": "3309805284",
     "planet": "Komorebi",
     "selected": false,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "3361803398",
+        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
+        "subtype": "PlanetProxyType_Komorebi",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Komorebi_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Komorebi_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.9\n\t\t\tAtmoColor: (0.5,0.85,0.9,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 5.5\n\t\t\tAtmoInZoneMult: 0.5\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (0.7,0.9,0.85,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
     "science_compatibility": false,
     "science_status": "native"
@@ -148,7 +172,7 @@
   {
     "id": "3489648084",
     "planet": "Relicta",
-    "selected": false,
+    "selected": true,
     "proxy_candidates": [],
     "active_proxy_count": 0,
     "science_native": null,

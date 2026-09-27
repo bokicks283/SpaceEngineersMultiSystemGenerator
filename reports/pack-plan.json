@@ -21,16 +21,6 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\758597413"
     },
     {
-      "id": "2195637331",
-      "title": "Teralis - City Planet",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331"
-    },
-    {
-      "id": "2644430625",
-      "title": "Teal - Water Mod",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625"
-    },
-    {
       "id": "3240629702",
       "title": "Solar Blocks Override",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3240629702"
@@ -74,6 +64,16 @@
       "id": "3695766186",
       "title": "Planet Zenitaia",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186"
+    },
+    {
+      "id": "3489648084",
+      "title": "Planet Relicta",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084"
+    },
+    {
+      "id": "3618043241",
+      "title": "Planet - Jormun (Water)",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241"
     },
     {
       "id": "3741238881",
@@ -161,6 +161,11 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2310821218"
     },
     {
+      "id": "3362332228",
+      "title": "Orlunda (Sideways)",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228"
+    },
+    {
       "id": "3690317665",
       "title": "AquaExpansion",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665"
@@ -169,6 +174,16 @@
       "id": "2899106264",
       "title": "Terran Titans Naval Blocks",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264"
+    },
+    {
+      "id": "3361803398",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398"
+    },
+    {
+      "id": "3663505475",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3663505475"
     }
   ],
   "local": [
@@ -176,11 +191,11 @@
     "CampaignScienceCompatibility"
   ],
   "cut_for_budget": [
+    "2195637331",
+    "2644430625",
     "3309805284",
-    "3362332228",
-    "3489648084",
+    "3486181518",
     "3515518898",
-    "3618043241",
     "3684013414"
   ],
   "missing_requested": [
@@ -203,10 +218,10 @@
   "denylisted_installed": [
     "3617496051"
   ],
-  "proxy_download_required": [
-    "3357964376"
+  "proxy_download_required": [],
+  "proxy_pack_ids": [
+    "3361803398",
+    "3663505475"
   ],
-  "exporter_download_required": [
-    "3350589349"
-  ]
+  "exporter_download_required": []
 }
