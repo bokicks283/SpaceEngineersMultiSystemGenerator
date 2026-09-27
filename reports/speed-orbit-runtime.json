@@ -57,7 +57,7 @@
           "DragSettings/RotationalDragMultiplier": "100",
           "DragSettings/heat": "true",
           "DragSettings/DisableReEntry": "false",
-          "DragSettings/SimulationMaxSpeed": "1000",
+          "DragSettings/SimulationMaxSpeed": "400",
           "DragSettings/GlobalWindSpeedMultiplier": "1"
         }
       }
