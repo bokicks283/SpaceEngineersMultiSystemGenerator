@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using VRage.Game.Components;
 using VRage.Game.ModAPI;
+using VRage.ModAPI;
 using VRageMath;
 using VRage.Voxels;
 
@@ -90,8 +91,7 @@ namespace ProxyExportBootstrap
             }
             catch (Exception e)
             {
-                MyLog.Default.WriteLineAndConsole("[PEX] Bootstrap failed: " + e);
-                Show("Bootstrap failed. Exit and inspect SpaceEngineers.log.");
+                Show("Bootstrap failed: " + e.Message + ". Exit and inspect SpaceEngineers.log.");
             }
         }
 
