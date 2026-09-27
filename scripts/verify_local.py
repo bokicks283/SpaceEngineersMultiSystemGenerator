@@ -3,7 +3,7 @@ import json, os, re, xml.etree.ElementTree as ET, zipfile
 from pathlib import Path
 from audit import ROOT, OUT, ALLOW, DENY
 from prepare_pack import CUTS
-from world_checkpoint import RSG_KEY, get_variable, check_pre_activation
+from world_checkpoint import RSG_KEY, RSS_KEY, get_variable, put_variable, apply_handoff_variables, check_pre_activation
 
 def main():
     inv=json.loads((OUT/'inventory.json').read_text(encoding='utf-8'))
@@ -33,7 +33,8 @@ def main():
     assert 'DefaultBlackHole' in source and 'RSG_DisposableBootstrap_v1' in source
     science=ET.parse(ROOT/'mods/CampaignScienceCompatibility/Data/CampaignBiomes.sbc')
     authored={e.text.removeprefix('PlanetBiomePresetType_') for e in science.findall('.//SubtypeId')}
-    assert {'Cauldron','Jormun','Relicta','Zenitaia','Kerbin - Water Mod Ready','Aulden','Seren'}<=authored
+    assert {'Cauldron','Jormun','Relicta','Zenitaia','Kerbin - Water Mod Ready','Aulden'}<=authored
+    assert 'Seren' not in authored
     for el in science.findall('.//EntityComponent'):
         desc=el.findtext('Description','')
         assert 'Biome:' in desc and 'ScienceReward:' in desc
@@ -48,6 +49,12 @@ def main():
     raw=(world/'Sandbox.sbc').read_text(encoding='utf-8')
     assert 'xmlns:xsd="http://www.w3.org/2001/XMLSchema"' in raw and 'xsi:type="xsd:string"' in raw
     assert not list((world/'Storage').rglob('RandomSectorGenerator.State.xml'))
+    # Regression guard: an already-matching RSS payload must not leave RSG armed.
+    probe=ET.ElementTree(ET.fromstring('<MyObjectBuilder_Checkpoint><ScriptManagerData><variables><dictionary /></variables></ScriptManagerData></MyObjectBuilder_Checkpoint>'))
+    put_variable(probe,RSS_KEY,'matching-payload');put_variable(probe,RSG_KEY,'armed')
+    apply_handoff_variables(probe,'matching-payload')
+    assert get_variable(probe,RSS_KEY)=='matching-payload'
+    assert get_variable(probe,RSG_KEY)=='handoff-committed'
     originals=list((ROOT/'backups').glob('World-before-disposable-clone-*.zip'))
     assert originals
     with zipfile.ZipFile(sorted(originals)[-1]) as archive:

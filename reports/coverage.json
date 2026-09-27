@@ -280,26 +280,6 @@
     "science_status": "local authored preset"
   },
   {
-    "id": "2961924256",
-    "planet": "Seren",
-    "selected": true,
-    "proxy_candidates": [
-      {
-        "mod": "local:CampaignPlanetProxies",
-        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
-        "subtype": "PlanetProxyType_Seren",
-        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
-        "type": "Inventory",
-        "enabled": "true",
-        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Seren_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Seren_ng.dds\n\t\t\tAtmoColor: (0.55,0.35,0.8,1.0)\n\t\t\tAtmoThickness: 0.7\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.55,0.55,0.9,1.0)\n\t  "
-      }
-    ],
-    "active_proxy_count": 1,
-    "science_native": null,
-    "science_compatibility": true,
-    "science_status": "local authored preset"
-  },
-  {
     "id": "vanilla",
     "planet": "EarthLike",
     "selected": true,

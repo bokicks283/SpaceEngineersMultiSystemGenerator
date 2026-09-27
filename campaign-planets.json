@@ -1,11 +1,10 @@
 {
   "vanilla": ["EarthLike", "Moon", "Mars", "Europa", "Alien", "Titan", "Triton", "Pertam"],
   "required_custom": ["Cauldron", "Tellus", "Agni", "Kor", "Jormun", "Zenitaia", "OrlundaSide", "Relicta"],
-  "optional_custom": ["Kerbin - Water Mod Ready", "Aulden", "Seren"],
+  "optional_custom": ["Kerbin - Water Mod Ready", "Aulden"],
   "additional_workshop": {
     "2941085186": ["Kerbin - Water Mod Ready"],
-    "2961923776": ["Aulden"],
-    "2961924256": ["Seren"]
+    "2961923776": ["Aulden"]
   },
   "vanilla_proxy_workshop": "3381681547"
 }

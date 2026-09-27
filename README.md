@@ -15,7 +15,7 @@ The current campaign cut intentionally favors variety rather than maximizing wat
 - **Relicta** — hostile volcanic/radiation world
 - All eight vanilla planets (EarthLike, Moon, Mars, Europa, Alien, Titan, Triton,
   Pertam) are eligible without adding Workshop voxel materials.
-- Phase 2A also selects the zero-material Kerbin water variant, Aulden, and Seren.
+- Phase 2A also selects the zero-material Kerbin water variant and Aulden.
 
 Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded from this campaign cut. The expected static budget is about **117 unique voxel-material subtypes** after AquaExpansion, but `scripts/audit.py` and `scripts/prepare_pack.py` are authoritative and must be rerun on the actual machine.
 
@@ -24,7 +24,7 @@ Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded 
 - Cauldron System bundles exact proxies for its four bodies.
 - Orlunda Sideways: Workshop proxy pack **3361803398**.
 - Jormun: local proxy built from Workshop texture source **3663505475**.
-- Zenitaia, Relicta, Kerbin - Water Mod Ready, Aulden, and Seren use the
+- Zenitaia, Relicta, Kerbin - Water Mod Ready, and Aulden use the
   generated local RSS proxy mod. `reports/coverage.json` is authoritative.
 - RSS itself includes one proxy for each vanilla planet. The installed vanilla
   HD pack 3381681547 stays inactive because it would duplicate those proxies.
@@ -126,7 +126,7 @@ The generated files under `reports/` are machine-specific evidence. Re-run the a
 
 ## Remaining acceptance risks
 
-- Zenitaia/Relicta proxy export and visual validation.
+- In-game proxy visual validation.
 - Space Engineers in-game script whitelist/runtime compilation.
 - RSS adoption after the offline checkpoint handoff.
 - Water Mod behavior on Jormun/Zenitaia.

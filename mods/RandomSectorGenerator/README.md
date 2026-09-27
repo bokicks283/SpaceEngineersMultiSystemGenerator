@@ -17,7 +17,6 @@ Custom definitions:
 - Relicta
 - Kerbin - Water Mod Ready
 - Aulden
-- Seren
 
 Vanilla definitions:
 - EarthLike

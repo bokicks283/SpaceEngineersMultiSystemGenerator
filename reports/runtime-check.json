@@ -3,6 +3,57 @@
   "modified": 1790541652.7630644,
   "relevant_count": 156,
   "error_count": 18,
+  "campaign_issue_count": 8,
+  "campaign_issues": [
+    {
+      "line": 1320,
+      "issue": "water_texture_fallback",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:20.611 - Thread:   1 ->  WaterMod: Planet config MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia has a malformed texture! Setting to default."
+    },
+    {
+      "line": 1418,
+      "issue": "planet_heightmap_fallback",
+      "severity": "blocking",
+      "text": "2026-09-27 16:37:20.784 - Thread:  15 ->  Error loading heightmap Seren, using fallback instead. See rest of log for details."
+    },
+    {
+      "line": 1421,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.228 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_front!"
+    },
+    {
+      "line": 1423,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.233 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_back!"
+    },
+    {
+      "line": 1425,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.233 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_left!"
+    },
+    {
+      "line": 1427,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.233 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_right!"
+    },
+    {
+      "line": 1429,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.233 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_up!"
+    },
+    {
+      "line": 1431,
+      "issue": "heightmap_pruning_optimization",
+      "severity": "warning",
+      "text": "2026-09-27 16:37:21.233 - Thread:  14 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_down!"
+    }
+  ],
   "errors": [
     {
       "line": 1066,

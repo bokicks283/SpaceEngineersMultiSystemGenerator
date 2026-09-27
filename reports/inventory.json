@@ -15,17 +15,17 @@
         "StateFlags": "4",
         "installdir": "SpaceEngineers",
         "LastUpdated": "1786907475",
-        "LastPlayed": "1790536092",
+        "LastPlayed": "1790541663",
         "SizeOnDisk": "44818048736",
         "StagingSize": "0",
         "buildid": "24675677",
         "LastOwner": "76561198045624840",
         "DownloadType": "2",
         "UpdateResult": "0",
-        "BytesToDownload": "12004768",
-        "BytesDownloaded": "12004768",
-        "BytesToStage": "91685025",
-        "BytesStaged": "91685025",
+        "BytesToDownload": "1036064",
+        "BytesDownloaded": "1036064",
+        "BytesToStage": "3072368",
+        "BytesStaged": "3072368",
         "TargetBuildID": "0",
         "AutoUpdateBehavior": "0",
         "AllowOtherDownloadsWhileRunning": "0",
@@ -570,12 +570,12 @@
     "S:\\SteamLibrary\\steamapps\\workshop\\appworkshop_244850.acf": {
       "AppWorkshop": {
         "appid": "244850",
-        "SizeOnDisk": "11107258159",
+        "SizeOnDisk": "11111350607",
         "NeedsUpdate": "0",
         "NeedsDownload": "0",
-        "TimeLastUpdated": "1790537064",
+        "TimeLastUpdated": "1790542932",
         "TimeLastFullCheck": "1790526958",
-        "TimeLastAppRan": "1790536092",
+        "TimeLastAppRan": "1790541663",
         "LastBuildID": "24675677",
         "WorkshopItemsInstalled": {
           "514062285": {
@@ -588,6 +588,11 @@
             "timeupdated": "1740294068",
             "manifest": "5580171766170752376"
           },
+          "571920453": {
+            "size": "3072368",
+            "timeupdated": "1729664646",
+            "manifest": "2994852692838573870"
+          },
           "758597413": {
             "size": "1118852",
             "timeupdated": "1645658032",
@@ -597,6 +602,11 @@
             "size": "691671",
             "timeupdated": "1758277784",
             "manifest": "2941675460263081767"
+          },
+          "1359618037": {
+            "size": "1020080",
+            "timeupdated": "1790300511",
+            "manifest": "6308461083459712307"
           },
           "1521905890": {
             "size": "31418488",
@@ -986,10 +996,18 @@
             "latest_timeupdated": "1740294068",
             "latest_manifest": "5580171766170752376"
           },
+          "571920453": {
+            "manifest": "2994852692838573870",
+            "timeupdated": "1729664646",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1729664646",
+            "latest_manifest": "2994852692838573870"
+          },
           "758597413": {
             "manifest": "8144833970592824204",
             "timeupdated": "1645658032",
-            "timetouched": "1790529985",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1645658032",
             "latest_manifest": "8144833970592824204"
@@ -1001,6 +1019,14 @@
             "subscribedby": "85359112",
             "latest_timeupdated": "1758277784",
             "latest_manifest": "2941675460263081767"
+          },
+          "1359618037": {
+            "manifest": "6308461083459712307",
+            "timeupdated": "1790300511",
+            "timetouched": "0",
+            "subscribedby": "85359112",
+            "latest_timeupdated": "1790300511",
+            "latest_manifest": "6308461083459712307"
           },
           "1521905890": {
             "manifest": "4630850694432945299",
@@ -1069,7 +1095,7 @@
           "2200451495": {
             "manifest": "2741414223314794091",
             "timeupdated": "1786901983",
-            "timetouched": "1790529985",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1786901983",
             "latest_manifest": "2741414223314794091"
@@ -1253,7 +1279,7 @@
           "2941085186": {
             "manifest": "5139271581256677673",
             "timeupdated": "1780142964",
-            "timetouched": "0",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1780142964",
             "latest_manifest": "5139271581256677673"
@@ -1261,7 +1287,7 @@
           "2961923776": {
             "manifest": "1973380583509266548",
             "timeupdated": "1681420980",
-            "timetouched": "0",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1681420980",
             "latest_manifest": "1973380583509266548"
@@ -1269,7 +1295,7 @@
           "2961924256": {
             "manifest": "1043784451292866565",
             "timeupdated": "1681421035",
-            "timetouched": "0",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1681421035",
             "latest_manifest": "1043784451292866565"
@@ -1349,7 +1375,7 @@
           "3350589349": {
             "manifest": "5820018629382818640",
             "timeupdated": "1731178740",
-            "timetouched": "1790529985",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731178740",
             "latest_manifest": "5820018629382818640"
@@ -1421,7 +1447,7 @@
           "3489648084": {
             "manifest": "9203020772835891881",
             "timeupdated": "1772035396",
-            "timetouched": "1790529985",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1772035396",
             "latest_manifest": "9203020772835891881"
@@ -1501,7 +1527,7 @@
           "3695766186": {
             "manifest": "5474360216637276388",
             "timeupdated": "1776682073",
-            "timetouched": "1790529985",
+            "timetouched": "1790541434",
             "subscribedby": "85359112",
             "latest_timeupdated": "1776682073",
             "latest_manifest": "5474360216637276388"
@@ -1626,6 +1652,20 @@
       "errors": [],
       "dependencies": [],
       "metadata": null
+    },
+    {
+      "id": "1359618037",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1359618037",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
     },
     {
       "id": "1401481091",
@@ -2269,11 +2309,11 @@
     },
     {
       "id": "2941085186",
-      "title": null,
+      "title": "Kerbin",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [
         {
@@ -2302,11 +2342,11 @@
     },
     {
       "id": "2961923776",
-      "title": null,
+      "title": "Planet Aulden",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [
         {
@@ -2326,11 +2366,11 @@
     },
     {
       "id": "2961924256",
-      "title": null,
+      "title": "Planet Seren",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [
         {
@@ -3912,7 +3952,7 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3706927250",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": true,
+      "active_in_existing_world": false,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -6021,6 +6061,20 @@
       "metadata": null
     },
     {
+      "id": "571920453",
+      "title": null,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\571920453",
+      "desired_planet": false,
+      "denylisted": false,
+      "active_in_existing_world": false,
+      "voxels": [],
+      "planets": [],
+      "proxies": [],
+      "errors": [],
+      "dependencies": [],
+      "metadata": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetadata xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ModVersion>1.0</ModVersion>\n</ModMetadata>"
+    },
+    {
       "id": "575193448",
       "title": null,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\575193448",
@@ -6891,14 +6945,28 @@
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "ProxyExportBootstrap",
+          "Name": "2941085186.sbm",
+          "PublishedFileId": "2941085186",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961923776.sbm",
+          "PublishedFileId": "2961923776",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961924256.sbm",
+          "PublishedFileId": "2961924256",
           "PublishedServiceName": "Steam"
         },
         {
           "Name": "758597413.sbm",
           "PublishedFileId": "758597413",
-          "PublishedServiceName": "Steam",
-          "IsDependency": "true"
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "ProxyExportBootstrap",
+          "PublishedServiceName": "Steam"
         }
       ]
     },
@@ -7082,27 +7150,243 @@
           "PublishedServiceName": "Steam"
         },
         {
+          "Name": "2941085186.sbm",
+          "PublishedFileId": "2941085186",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961923776.sbm",
+          "PublishedFileId": "2961923776",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961924256.sbm",
+          "PublishedFileId": "2961924256",
+          "PublishedServiceName": "Steam"
+        },
+        {
           "Name": "3361803398.sbm",
           "PublishedFileId": "3361803398",
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "RandomSectorGenerator",
+          "Name": "RandomSectorGenerator"
+        },
+        {
+          "Name": "CampaignScienceCompatibility"
+        },
+        {
+          "Name": "CampaignPlanetProxies"
+        }
+      ]
+    },
+    {
+      "file": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\RSG Disposable Clean 2026-09-27\\Sandbox.sbc",
+      "name": "RSG Disposable Clean 2026-09-27",
+      "mods": [
+        {
+          "Name": "3791989881.sbm",
+          "PublishedFileId": "3791989881",
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "CampaignScienceCompatibility",
+          "Name": "2200451495.sbm",
+          "PublishedFileId": "2200451495",
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "CampaignPlanetProxies",
+          "Name": "3222232482.sbm",
+          "PublishedFileId": "3222232482",
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "3706927250.sbm",
-          "PublishedFileId": "3706927250",
-          "PublishedServiceName": "Steam",
-          "IsDependency": "true"
+          "Name": "758597413.sbm",
+          "PublishedFileId": "758597413",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3240629702.sbm",
+          "PublishedFileId": "3240629702",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2841920953.sbm",
+          "PublishedFileId": "2841920953",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3665099597.sbm",
+          "PublishedFileId": "3665099597",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "1965654081.sbm",
+          "PublishedFileId": "1965654081",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3746220940.sbm",
+          "PublishedFileId": "3746220940",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3152436752.sbm",
+          "PublishedFileId": "3152436752",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3351055036.sbm",
+          "PublishedFileId": "3351055036",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3232085677.sbm",
+          "PublishedFileId": "3232085677",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3695766186.sbm",
+          "PublishedFileId": "3695766186",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3489648084.sbm",
+          "PublishedFileId": "3489648084",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3618043241.sbm",
+          "PublishedFileId": "3618043241",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3741238881.sbm",
+          "PublishedFileId": "3741238881",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3736894294.sbm",
+          "PublishedFileId": "3736894294",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "1521905890.sbm",
+          "PublishedFileId": "1521905890",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3731921987.sbm",
+          "PublishedFileId": "3731921987",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2839553181.sbm",
+          "PublishedFileId": "2839553181",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3770315903.sbm",
+          "PublishedFileId": "3770315903",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3767444521.sbm",
+          "PublishedFileId": "3767444521",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3576683005.sbm",
+          "PublishedFileId": "3576683005",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2336089504.sbm",
+          "PublishedFileId": "2336089504",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3218645300.sbm",
+          "PublishedFileId": "3218645300",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2391318591.sbm",
+          "PublishedFileId": "2391318591",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3155707452.sbm",
+          "PublishedFileId": "3155707452",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "1902970975.sbm",
+          "PublishedFileId": "1902970975",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3784633330.sbm",
+          "PublishedFileId": "3784633330",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3472275442.sbm",
+          "PublishedFileId": "3472275442",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2596208372.sbm",
+          "PublishedFileId": "2596208372",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2310821218.sbm",
+          "PublishedFileId": "2310821218",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3362332228.sbm",
+          "PublishedFileId": "3362332228",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3690317665.sbm",
+          "PublishedFileId": "3690317665",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2899106264.sbm",
+          "PublishedFileId": "2899106264",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2941085186.sbm",
+          "PublishedFileId": "2941085186",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961923776.sbm",
+          "PublishedFileId": "2961923776",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2961924256.sbm",
+          "PublishedFileId": "2961924256",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "3361803398.sbm",
+          "PublishedFileId": "3361803398",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "RandomSectorGenerator"
+        },
+        {
+          "Name": "CampaignScienceCompatibility"
+        },
+        {
+          "Name": "CampaignPlanetProxies"
         }
       ]
     }

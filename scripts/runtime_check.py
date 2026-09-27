@@ -45,6 +45,10 @@ KEYWORDS = [
     "Proxy Export Workbench",
     "Failed to load",
     "world load",
+    "Error loading heightmap",
+    "malformed texture",
+    "Cannot build prunning tree",
+    "max velocity",
 ]
 
 ERROR_PATTERNS = [
@@ -57,6 +61,13 @@ ERROR_PATTERNS = [
     re.compile(r"ProxyExportBootstrap.*\b(error|failed|exception)\b", re.I),
     re.compile(r"\[PEX\].*\b(error|failed|exception)\b", re.I),
     re.compile(r"\b(load|loading).*\b(world|save).*\b(error|failed|exception)\b", re.I),
+]
+
+CAMPAIGN_ISSUES = [
+    ("planet_heightmap_fallback", "blocking", re.compile(r"Error loading heightmap", re.I)),
+    ("water_texture_fallback", "warning", re.compile(r"WaterMod: Planet config .* malformed texture", re.I)),
+    ("heightmap_pruning_optimization", "warning", re.compile(r"Cannot build prunning tree for heightmap face", re.I)),
+    ("speed_definition_conflict", "blocking", re.compile(r"(?:max(?:imum)?\s+(?:grid\s+)?velocity|speed.definition).*(?:conflict|duplicate|failed|error)", re.I)),
 ]
 
 def latest_log():
@@ -72,11 +83,16 @@ def main():
 
     relevant = []
     errors = []
+    campaign_issues = []
     for i, line in enumerate(lines):
         if any(k.lower() in line.lower() for k in KEYWORDS):
             relevant.append({"line": i + 1, "text": line})
         if any(p.search(line) for p in ERROR_PATTERNS):
             errors.append({"line": i + 1, "text": line})
+        for issue, severity, pattern in CAMPAIGN_ISSUES:
+            if pattern.search(line):
+                campaign_issues.append({"line": i + 1, "issue": issue,
+                                        "severity": severity, "text": line})
 
     # Add small context around any RSG-specific line so startup/handshake sequences are visible.
     context_indexes = set()
@@ -99,6 +115,8 @@ def main():
         "modified": log.stat().st_mtime,
         "relevant_count": len(relevant),
         "error_count": len(errors),
+        "campaign_issue_count": len(campaign_issues),
+        "campaign_issues": campaign_issues[-200:],
         "errors": errors[-200:],
         "error_context": error_context[-1200:],
         "relevant": relevant[-1000:],
@@ -111,6 +129,7 @@ def main():
         "log": str(log),
         "relevant_count": len(relevant),
         "error_count": len(errors),
+        "campaign_issue_count": len(campaign_issues),
         "report": str(out),
         "last_relevant": relevant[-20:],
         "last_error_context": error_context[-80:],

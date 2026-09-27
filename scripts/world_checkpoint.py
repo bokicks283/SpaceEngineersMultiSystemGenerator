@@ -87,6 +87,12 @@ def remove_variable(tree,key):
         if item.findtext('Key')==key:
             dictionary.remove(item)
 
+
+def apply_handoff_variables(tree,payload):
+    if get_variable(tree,RSS_KEY)!=payload:
+        put_variable(tree,RSS_KEY,payload)
+    put_variable(tree,RSG_KEY,'handoff-committed')
+
 def write_atomic(tree,path):
     # ElementTree cannot see namespace prefixes embedded in xsi:type values.
     # Keep the xsd prefix declared for the game's XML serializer.
@@ -279,15 +285,11 @@ def commit(world):
     if not set(ids).issubset(saved_ids):raise RuntimeError('Saved sector is missing generated entities')
     checkpoint=world/'Sandbox.sbc';tree=ET.parse(checkpoint)
     if get_variable(tree,RSG_KEY)!='armed':raise RuntimeError('This is not an armed disposable world')
-    before=get_variable(tree,RSS_KEY)
-    if before==payload:
-        print('Handoff already committed: '+str(world));return
     backup=archive(world,'World-before-RSS-handoff')
-    put_variable(tree,RSS_KEY,payload)
     # Permanently disarm generation before the adoption reload. The pending state
     # is still the primary guard, but this prevents an accidental second bootstrap
     # if world-storage state is ever lost or removed.
-    put_variable(tree,RSG_KEY,'handoff-committed')
+    apply_handoff_variables(tree,payload)
     write_atomic(tree,checkpoint)
     check=ET.parse(checkpoint)
     if get_variable(check,RSS_KEY)!=payload:raise RuntimeError('RSS handoff readback mismatch')

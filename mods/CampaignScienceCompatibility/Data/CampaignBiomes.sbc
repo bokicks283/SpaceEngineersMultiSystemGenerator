@@ -149,21 +149,5 @@ ScienceReward: 40
 Ores: Stone_01, Rocks_grass, TritonStone
 </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>PlanetBiomePresetType_Seren</SubtypeId>
-      </Id>
-      <Description>
-SlopeCheckDist: 100
-Biome: Frozen Expanse
-ScienceReward: 50
-Ores: Ice_03
-
-Biome: High Gravity Traverse
-ScienceReward: 60
-Latitude: (-0.7, 0.7)
-</Description>
-    </EntityComponent>
   </EntityComponents>
 </Definitions>

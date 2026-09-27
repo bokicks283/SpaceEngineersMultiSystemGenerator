@@ -1,5 +1,9 @@
 # Phase 2A planet expansion — 2026-09-27
 
+Current launch pool: **18 / 24**. Seren was removed after the runtime test
+confirmed fallback terrain; the earlier 19-body export record below is retained
+as historical evidence.
+
 The selected pool has **19 / 24** RSG planet definitions: 8 vanilla and 11
 custom. The static voxel material union remains **117 / 128** (62 vanilla,
 55 additions, 11 spare). The runtime safety budget remains 120. No new voxel
@@ -73,3 +77,13 @@ proxy coverage is now **19 / 19**, with no duplicate active definitions.
 The selected voxel union remains **117 / 128**. The disposable audit world
 was synced and remains disarmed; in-game RSG, RSS, water, science, and MES
 validation has not yet occurred.
+
+## Launch-policy update
+
+The 2026-09-27 workbench runtime log confirms that Seren could not load its
+heightmap and used fallback terrain. Seren is therefore removed from the
+campaign rather than repaired for launch. Aulden loaded its intended six PNG
+heightmap faces and initialized successfully; its pruning-tree messages state
+that optimizations are disabled, so it remains selected. Water Mod loaded
+Zenitaia's planet configuration, replaced one malformed texture with its
+default, and completed water-config loading; Zenitaia remains selected.

@@ -9,7 +9,6 @@ namespace ProxyExportBootstrap
             "Relicta",
             "Kerbin - Water Mod Ready",
             "Aulden",
-            "Seren",
         };
     }
 }

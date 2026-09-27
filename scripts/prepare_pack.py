@@ -82,8 +82,7 @@ def main():
         'Jormun':[('River Lowlands',45,'Ores: Moss, MossFlowers, StoneMoss, Coral, CoralGrass'),('Dry Highlands',40,'Ores: StoneDesert, AlienSandGrass, StoneWhite'),('Rocky Ridges',35,'Ores: GrassStone1, GrassRock2, GrassRock3, GrassRock4')],
         'Zenitaia':[('Northern Survey',40,'Latitude: (0.8, 1)'),('Southern Survey',40,'Latitude: (-1, -0.8)'),('Grasslands',30,'Ores: Zenit_Grass'),('Ocean Sands',35,'Ores: Zenit_OCSand'),('Volcanic Gravel',40,'Ores: ZenitLavaGravel'),('Hot Rock Fields',55,'Ores: ZenitHotRock, ZenitLavaRockOC, ZenitLavaRockSurface')],
         'Kerbin - Water Mod Ready':[('Coastal Survey',35,'Ores: Sand_02, MoonSoil, MoonRocks'),('Temperate Highlands',35,'Ores: Soil, Grass, Woods_grass'),('Polar Cap',45,'Ores: Snow, TritonIce')],
-        'Aulden':[('Frost Fields',45,'Ores: Snow, Ice_03, TritonIce'),('Wooded Basin',35,'Ores: Woods_grass, Grass, Soil'),('Stone Ridges',40,'Ores: Stone_01, Rocks_grass, TritonStone')],
-        'Seren':[('Frozen Expanse',50,'Ores: Ice_03'),('High Gravity Traverse',60,'Latitude: (-0.7, 0.7)')]
+        'Aulden':[('Frost Fields',45,'Ores: Snow, Ice_03, TritonIce'),('Wooded Basin',35,'Ores: Woods_grass, Grass, Soil'),('Stone Ridges',40,'Ores: Stone_01, Rocks_grass, TritonStone')]
     }
     xsi='http://www.w3.org/2001/XMLSchema-instance'; ET.register_namespace('xsi',xsi)
     root=ET.Element('Definitions'); components=ET.SubElement(root,'EntityComponents')
@@ -161,7 +160,7 @@ def main():
             '', '## Local mods', '', *[
                 '- '+name+(
                     ': one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.' if name=='RandomSectorGenerator'
-                    else ': authored Cauldron, Jormun, Relicta, Zenitaia, Kerbin, Aulden, and Seren biome presets.' if name=='CampaignScienceCompatibility'
+                    else ': authored Cauldron, Jormun, Relicta, Zenitaia, Kerbin, and Aulden biome presets.' if name=='CampaignScienceCompatibility'
                     else ': generated RSS proxy definitions/assets for campaign planets.'
                 )
                 for name in local
@@ -170,7 +169,7 @@ def main():
             'Jormun and Zenitaia remain the verified intended water worlds. The selected Kerbin subtype uses water-ready terrain, but actual Water Mod behavior needs a runtime check. No global water entry is added to other planets.',
             'MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.',
             '', '## Limits', '',
-            'Phase 2A adds all four omitted vanilla planets plus the verified zero-material Kerbin water variant, Aulden, and Seren. No installed distinct +1/+2 candidate was found. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus remain excluded for the material budget.',
+            'Phase 2A adds all four omitted vanilla planets plus the verified zero-material Kerbin water variant and Aulden. Seren was removed after runtime loading fell back from its missing heightmap. No installed distinct +1/+2 candidate was found. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus remain excluded for the material budget.',
             'RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and Jormun uses its dedicated texture source. The exported local proxies bring selected static coverage to '+str(sum(c['active_proxy_count']==1 for c in selected_bodies))+'/'+str(len(selected_bodies))+'; the campaign world remains disarmed pending in-game validation.',
             'Voxel modifiers are excluded. No subtype duplicates were found in the selected local definitions. Unique subtype union is independent of override precedence. The old test save contained stale Workshop entries and was not edited; its static voxel estimate is a lower bound. The original was preserved in timestamped ZIPs.',
             'The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.']

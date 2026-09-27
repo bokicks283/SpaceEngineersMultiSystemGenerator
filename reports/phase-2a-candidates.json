@@ -96,7 +96,7 @@
   },
   {
     "id": "2961923776",
-    "title": "Aulden",
+    "title": "Planet Aulden",
     "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
     "installed": true,
     "planet_subtypes": [
@@ -169,7 +169,7 @@
   },
   {
     "id": "2961924256",
-    "title": "Seren",
+    "title": "Planet Seren",
     "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256",
     "installed": true,
     "planet_subtypes": [
@@ -191,22 +191,16 @@
       "Seren": false
     },
     "science": {
-      "Seren": "local"
+      "Seren": "missing"
     },
     "proxies": {
-      "Seren": [
-        {
-          "mod": "local:CampaignPlanetProxies",
-          "subtype": "PlanetProxyType_Seren",
-          "active": true
-        }
-      ]
+      "Seren": []
     },
     "proxy_count": {
-      "Seren": 1
+      "Seren": 0
     },
     "export_required": {
-      "Seren": false
+      "Seren": true
     },
     "scan_errors": []
   }

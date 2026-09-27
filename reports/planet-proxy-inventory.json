@@ -39,7 +39,7 @@
   },
   {
     "id": "2941085186",
-    "title": null,
+    "title": "Kerbin",
     "planets": [
       {
         "subtype": "Kerbin - Vanilla Version",
@@ -63,11 +63,11 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": false,
-    "active_in_existing_world": false
+    "active_in_existing_world": true
   },
   {
     "id": "2961923776",
-    "title": null,
+    "title": "Planet Aulden",
     "planets": [
       {
         "subtype": "Aulden",
@@ -82,11 +82,11 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": false,
-    "active_in_existing_world": false
+    "active_in_existing_world": true
   },
   {
     "id": "2961924256",
-    "title": null,
+    "title": "Planet Seren",
     "planets": [
       {
         "subtype": "Seren",
@@ -101,7 +101,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": false,
-    "active_in_existing_world": false
+    "active_in_existing_world": true
   },
   {
     "id": "3152436752",

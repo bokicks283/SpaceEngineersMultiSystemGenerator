@@ -29,7 +29,6 @@ namespace RandomSectorGenerator
         {
             "Kerbin - Water Mod Ready",
             "Aulden",
-            "Seren",
         };
     }
 }
