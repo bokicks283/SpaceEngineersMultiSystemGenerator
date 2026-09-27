@@ -60,6 +60,26 @@ Ores: RelRock
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>PlanetBiomePresetType_Jormun</SubtypeId>
+      </Id>
+      <Description>
+SlopeCheckDist: 100
+Biome: River Lowlands
+ScienceReward: 45
+Ores: Moss, MossFlowers, StoneMoss, Coral, CoralGrass
+
+Biome: Dry Highlands
+ScienceReward: 40
+Ores: StoneDesert, AlienSandGrass, StoneWhite
+
+Biome: Rocky Ridges
+ScienceReward: 35
+Ores: GrassStone1, GrassRock2, GrassRock3, GrassRock4
+</Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>PlanetBiomePresetType_Zenitaia</SubtypeId>
       </Id>
       <Description>
