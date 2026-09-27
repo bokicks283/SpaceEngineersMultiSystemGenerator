@@ -22,6 +22,15 @@ KEYWORDS = [
     "Compilation",
     "compile",
     "Exception",
+    "Jormun",
+    "OrlundaSide",
+    "Kor",
+    "3618043241",
+    "3362332228",
+    "3576683005",
+    "PlanetGeneratorDefinition",
+    "DefinitionErrors",
+    "Definition error",
 ]
 
 ERROR_PATTERNS = [
@@ -30,6 +39,7 @@ ERROR_PATTERNS = [
     re.compile(r"\bexception\b", re.I),
     re.compile(r"\berror\b.*RandomSectorGenerator", re.I),
     re.compile(r"RandomSectorGenerator.*\berror\b", re.I),
+    re.compile(r"\b(definition|mod).*\b(error|failed|failure)\b", re.I),
 ]
 
 def latest_log():
