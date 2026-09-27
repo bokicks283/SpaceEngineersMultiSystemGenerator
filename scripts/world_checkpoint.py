@@ -77,6 +77,47 @@ def check_sources():
     if voxel['total']>voxel['budget']:raise RuntimeError('Voxel audit exceeds budget')
     return selected
 
+
+def sync(world):
+    """Refresh an existing disposable empty world to the current audited pack."""
+    ensure_closed();selected=check_sources();world=world.resolve()
+    if SAVE_ROOT.resolve() not in world.parents or not world.name.startswith('RSG Disposable'):
+        raise RuntimeError('Only a prepared disposable world may be synchronized')
+    if any(not p.is_file() for p in config(world)):
+        raise RuntimeError('Disposable world is incomplete')
+    if (world/'Storage').exists() and list((world/'Storage').rglob('RandomSectorGenerator.State.xml')):
+        raise RuntimeError('Disposable world already has RSG state; restore/rebuild it instead of syncing')
+    sector=list(world.glob('SANDBOX_*.sbs'))
+    if len(sector)!=1:
+        raise RuntimeError('Expected one sector file')
+    objects=ET.parse(sector[0]).findall('.//SectorObjects/*')
+    if any('Planet' in (o.get(f'{{{XSI}}}type') or '') for o in objects):
+        raise RuntimeError('Disposable world already contains planet/star entities')
+    backup=archive(world,'World-before-disposable-sync')
+    for file in config(world):
+        tree=ET.parse(file);root=tree.getroot()
+        mods=root.find('Mods')
+        if mods is None:
+            raise RuntimeError('World is missing mod list')
+        mods.clear()
+        for item in selected:
+            node=ET.SubElement(mods,'ModItem')
+            if item['title']:
+                node.set('FriendlyName',item['title'])
+            ET.SubElement(node,'Name').text=item['id']+'.sbm'
+            ET.SubElement(node,'PublishedFileId').text=item['id']
+            ET.SubElement(node,'PublishedServiceName').text='Steam'
+        for name_local in ['CampaignScienceCompatibility','RandomSectorGenerator']:
+            node=ET.SubElement(mods,'ModItem')
+            ET.SubElement(node,'Name').text=name_local
+        if file.name=='Sandbox.sbc':
+            remove_variable(tree,RSG_KEY)
+            remove_variable(tree,RSS_KEY)
+            put_variable(tree,RSG_KEY,'blocked-proxies')
+        write_atomic(tree,file)
+    print(json.dumps({'world':str(world),'backup':str(backup),'workshop_mods':len(selected),
+                      'synced':True,'armed':False,'reason':'Proxy assets pending'},indent=2))
+
 def prepare(source,name):
     ensure_closed();selected=check_sources()
     source=source.resolve();root=SAVE_ROOT.resolve()
@@ -195,9 +236,11 @@ def main():
     a=sub.add_parser('prepare');a.add_argument('source',type=Path);a.add_argument('--name',default='RSG Disposable Audit 2026-09-27')
     b=sub.add_parser('commit');b.add_argument('world',type=Path)
     c=sub.add_parser('arm');c.add_argument('world',type=Path)
+    d=sub.add_parser('sync');d.add_argument('world',type=Path)
     args=p.parse_args()
     if args.command=='prepare':prepare(args.source,args.name)
     elif args.command=='arm':arm(args.world)
+    elif args.command=='sync':sync(args.world)
     else:commit(args.world)
 
 if __name__=='__main__':main()
