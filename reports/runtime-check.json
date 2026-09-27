@@ -1,768 +1,1390 @@
 {
-  "log": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers_20260927_030308730.log",
-  "modified": 1790493074.1974144,
-  "relevant_count": 120,
+  "log": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers_20260927_032222295.log",
+  "modified": 1790493908.5923347,
+  "relevant_count": 119,
   "error_count": 27,
   "errors": [
     {
-      "line": 4768,
-      "text": "2026-09-27 03:05:31.861 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 4725,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 4794,
-      "text": "2026-09-27 03:05:31.863 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 4751,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5474,
-      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5431,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5478,
-      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5435,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5482,
-      "text": "2026-09-27 03:05:31.907 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5439,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5564,
-      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5521,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5568,
-      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5525,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5572,
-      "text": "2026-09-27 03:05:31.911 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5529,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 5829,
-      "text": "2026-09-27 03:05:31.922 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 5786,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 6882,
-      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6839,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6885,
-      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6842,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6888,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6845,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6891,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6848,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6894,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6851,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6897,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6854,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6900,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6857,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6903,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6860,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 6906,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 6863,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 7709,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7541,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7712,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7544,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7715,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7547,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7718,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7550,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7721,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7553,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7724,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7556,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7727,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7559,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7730,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7562,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7733,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+      "line": 7565,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
+    }
+  ],
+  "error_context": [
+    {
+      "line": 4721,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_CubeBlock/TTBridgeWindowCorner2x1x1Base"
+    },
+    {
+      "line": 4722,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ExhaustBlock/TTBURKESTACKRear"
+    },
+    {
+      "line": 4723,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ExhaustBlock/TTBURKESTACKFront"
+    },
+    {
+      "line": 4724,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube blocks"
+    },
+    {
+      "line": 4725,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 4726,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTCarrier_Catapult.sbc"
+    },
+    {
+      "line": 4727,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->       Resource not found, setting to error model. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Models\\Cubes\\large\\TTCarrier_Catapult.mwm"
+    },
+    {
+      "line": 4728,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Created definition for: Carrier Catapult"
+    },
+    {
+      "line": 4729,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Created block definitions"
+    },
+    {
+      "line": 4730,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette5x5"
+    },
+    {
+      "line": 4731,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette3x3"
+    },
+    {
+      "line": 4732,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette1x1"
+    },
+    {
+      "line": 4747,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ExhaustBlock/TTBURKESTACKRear"
+    },
+    {
+      "line": 4748,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ExhaustBlock/TTBURKESTACKFront"
+    },
+    {
+      "line": 4749,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube block: MyObjectBuilder_AdvancedDoor/TTCarrier_Catapult"
+    },
+    {
+      "line": 4750,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     Loading cube blocks"
+    },
+    {
+      "line": 4751,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 4752,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTCarrier_Catapult_100m.sbc"
+    },
+    {
+      "line": 4753,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->       Resource not found, setting to error model. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Models\\Cubes\\large\\TTCarrier_Catapult_100m.mwm"
+    },
+    {
+      "line": 4754,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     Created definition for: Carrier Catapult 100m"
+    },
+    {
+      "line": 4755,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     Created block definitions"
+    },
+    {
+      "line": 4756,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette5x5"
+    },
+    {
+      "line": 4757,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette3x3"
+    },
+    {
+      "line": 4758,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette1x1"
+    },
+    {
+      "line": 5427,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorsg"
+    },
+    {
+      "line": 5428,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorhalfsg"
+    },
+    {
+      "line": 5429,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     Loading cube block: MyObjectBuilder_LandingGear/TTMagplateBlockHalfsg"
+    },
+    {
+      "line": 5430,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     Loading cube blocks"
+    },
+    {
+      "line": 5431,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5432,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsLP.sbc"
+    },
+    {
+      "line": 5433,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TT1x1slope2x1basepropLP.dds"
+    },
+    {
+      "line": 5434,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     Created definition for: Slope 2x1x1 Base Maneuvering Propeller (50MT)"
+    },
+    {
+      "line": 5435,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5436,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsLP.sbc"
+    },
+    {
+      "line": 5437,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TTfullblockpropLP.dds"
+    },
+    {
+      "line": 5438,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Created definition for: Block 1x1 Maneuvering Propeller (50MT)"
+    },
+    {
+      "line": 5439,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5440,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsLP.sbc"
+    },
+    {
+      "line": 5441,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TThalfblockpropLP.dds"
+    },
+    {
+      "line": 5442,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Created definition for: Half-Block Maneuvering Propeller (50MT)"
+    },
+    {
+      "line": 5443,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Created block definitions"
+    },
+    {
+      "line": 5444,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette5x5"
+    },
+    {
+      "line": 5445,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette3x3"
+    },
+    {
+      "line": 5446,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette1x1"
+    },
+    {
+      "line": 5517,
+      "text": "2026-09-27 03:23:22.896 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorsg"
+    },
+    {
+      "line": 5518,
+      "text": "2026-09-27 03:23:22.896 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorhalfsg"
+    },
+    {
+      "line": 5519,
+      "text": "2026-09-27 03:23:22.896 - Thread:   1 ->     Loading cube block: MyObjectBuilder_LandingGear/TTMagplateBlockHalfsg"
+    },
+    {
+      "line": 5520,
+      "text": "2026-09-27 03:23:22.896 - Thread:   1 ->     Loading cube blocks"
+    },
+    {
+      "line": 5521,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5522,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsMP.sbc"
+    },
+    {
+      "line": 5523,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TT1x1slope2x1basepropMP.dds"
+    },
+    {
+      "line": 5524,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     Created definition for: Slope 2x1x1 Base Maneuvering Propeller (100MT)"
+    },
+    {
+      "line": 5525,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5526,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsMP.sbc"
+    },
+    {
+      "line": 5527,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TTfullblockpropMP.dds"
+    },
+    {
+      "line": 5528,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     Created definition for: Block 1x1 Maneuvering Propeller (100MT)"
+    },
+    {
+      "line": 5529,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5530,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTManeuveringPropsMP.sbc"
+    },
+    {
+      "line": 5531,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->       Resource not found, setting to null. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Textures\\GUI\\Icons\\TThalfblockpropMP.dds"
+    },
+    {
+      "line": 5532,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     Created definition for: Half-Block Maneuvering Propeller (100MT)"
+    },
+    {
+      "line": 5533,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     Created block definitions"
+    },
+    {
+      "line": 5534,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette5x5"
+    },
+    {
+      "line": 5535,
+      "text": "2026-09-27 03:23:22.899 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette3x3"
+    },
+    {
+      "line": 5536,
+      "text": "2026-09-27 03:23:22.899 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette1x1"
+    },
+    {
+      "line": 5782,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorsg"
+    },
+    {
+      "line": 5783,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     Loading cube block: MyObjectBuilder_ShipConnector/TTConveyorConnectorhalfsg"
+    },
+    {
+      "line": 5784,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     Loading cube block: MyObjectBuilder_LandingGear/TTMagplateBlockHalfsg"
+    },
+    {
+      "line": 5785,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     Loading cube blocks"
+    },
+    {
+      "line": 5786,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5787,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Data\\CubeBlocks\\TTRNDCatapult.sbc"
+    },
+    {
+      "line": 5788,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->       Resource not found, setting to error model. Resource path: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264\\Models\\Cubes\\large\\TTRNDCatapult.mwm"
+    },
+    {
+      "line": 5789,
+      "text": "2026-09-27 03:23:22.909 - Thread:   1 ->     Created definition for: Catapult test"
+    },
+    {
+      "line": 5790,
+      "text": "2026-09-27 03:23:22.909 - Thread:   1 ->     Created block definitions"
+    },
+    {
+      "line": 5791,
+      "text": "2026-09-27 03:23:22.909 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette5x5"
+    },
+    {
+      "line": 5792,
+      "text": "2026-09-27 03:23:22.909 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette3x3"
+    },
+    {
+      "line": 5793,
+      "text": "2026-09-27 03:23:22.909 - Thread:   1 ->     Loading cube block: MyObjectBuilder_Conveyor/TTBarbette1x1"
+    },
+    {
+      "line": 6835,
+      "text": "2026-09-27 03:23:23.350 - Thread:   1 ->     MyAudio.UnloadData - START"
+    },
+    {
+      "line": 6836,
+      "text": "2026-09-27 03:23:23.352 - Thread:   1 ->     MyAudio.UnloadData - END"
+    },
+    {
+      "line": 6837,
+      "text": "2026-09-27 03:23:23.352 - Thread:   1 ->     MyAudio.LoadData - START"
+    },
+    {
+      "line": 6838,
+      "text": "2026-09-27 03:23:23.377 - Thread:   1 ->        MyAudio.CreateX3DAudio - Device: default - Channels #: 2 - Sample rate: 48000"
+    },
+    {
+      "line": 6839,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6840,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6841,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          Unable to find audio file: 'MusConcert_2', 'MUS\\MusConcert\\10YA_Track2_mix2.wav'"
+    },
+    {
+      "line": 6842,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6843,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6844,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          Unable to find audio file: 'MusConcert_3', 'MUS\\MusConcert\\10YA_Track3_mix1.wav'"
+    },
+    {
+      "line": 6845,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6846,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6847,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          Unable to find audio file: 'MusConcert_4', 'MUS\\MusConcert\\10YA_Track4_mix1.wav'"
+    },
+    {
+      "line": 6848,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6849,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6850,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          Unable to find audio file: 'MusConcert_5', 'MUS\\MusConcert\\10YA_Track5_mix1.wav'"
+    },
+    {
+      "line": 6851,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6852,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6853,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->          Unable to find audio file: 'MusConcert_6', 'MUS\\MusConcert\\10YA_Track6_mix1.wav'"
+    },
+    {
+      "line": 6854,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6855,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6856,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          Unable to find audio file: 'MusConcert_7', 'MUS\\MusConcert\\10YA_Track7_mix1.wav'"
+    },
+    {
+      "line": 6857,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6858,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6859,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          Unable to find audio file: 'MusConcert_8', 'MUS\\MusConcert\\10YA_Track8_mix1.wav'"
+    },
+    {
+      "line": 6860,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6861,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6862,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          Unable to find audio file: 'MusConcert_9', 'MUS\\MusConcert\\10YA_Track9_mix1.wav'"
+    },
+    {
+      "line": 6863,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6864,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 6865,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->          Unable to find audio file: 'MusConcert_10', 'MUS\\MusConcert\\10YA_Track10_mix1.wav'"
+    },
+    {
+      "line": 6866,
+      "text": "2026-09-27 03:23:23.510 - Thread:   1 ->     MyAudio.LoadData - END"
+    },
+    {
+      "line": 6867,
+      "text": "2026-09-27 03:23:23.516 - Thread:   1 ->  MyDefinitionManager.LoadData() - END"
+    },
+    {
+      "line": 6868,
+      "text": "2026-09-27 03:23:23.519 - Thread:   1 ->  Registered modules from: VRage.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6869,
+      "text": "2026-09-27 03:23:23.539 - Thread:   1 ->  Registered modules from: Sandbox.Graphics, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6870,
+      "text": "2026-09-27 03:23:23.539 - Thread:   1 ->  Registered modules from: Sandbox.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7537,
+      "text": "2026-09-27 03:25:04.206 - Thread:   1 ->  MyAudio.UnloadData - START"
+    },
+    {
+      "line": 7538,
+      "text": "2026-09-27 03:25:04.210 - Thread:   1 ->  MyAudio.UnloadData - END"
+    },
+    {
+      "line": 7539,
+      "text": "2026-09-27 03:25:04.210 - Thread:   1 ->  MyAudio.LoadData - START"
+    },
+    {
+      "line": 7540,
+      "text": "2026-09-27 03:25:04.237 - Thread:   1 ->     MyAudio.CreateX3DAudio - Device: default - Channels #: 2 - Sample rate: 48000"
+    },
+    {
+      "line": 7541,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7542,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7543,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       Unable to find audio file: 'MusConcert_2', 'MUS\\MusConcert\\10YA_Track2_mix2.wav'"
+    },
+    {
+      "line": 7544,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7545,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7546,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       Unable to find audio file: 'MusConcert_3', 'MUS\\MusConcert\\10YA_Track3_mix1.wav'"
+    },
+    {
+      "line": 7547,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7548,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7549,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       Unable to find audio file: 'MusConcert_4', 'MUS\\MusConcert\\10YA_Track4_mix1.wav'"
+    },
+    {
+      "line": 7550,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7551,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7552,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       Unable to find audio file: 'MusConcert_5', 'MUS\\MusConcert\\10YA_Track5_mix1.wav'"
+    },
+    {
+      "line": 7553,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7554,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7555,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->       Unable to find audio file: 'MusConcert_6', 'MUS\\MusConcert\\10YA_Track6_mix1.wav'"
+    },
+    {
+      "line": 7556,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7557,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7558,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       Unable to find audio file: 'MusConcert_7', 'MUS\\MusConcert\\10YA_Track7_mix1.wav'"
+    },
+    {
+      "line": 7559,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7560,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7561,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       Unable to find audio file: 'MusConcert_8', 'MUS\\MusConcert\\10YA_Track8_mix1.wav'"
+    },
+    {
+      "line": 7562,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7563,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7564,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       Unable to find audio file: 'MusConcert_9', 'MUS\\MusConcert\\10YA_Track9_mix1.wav'"
+    },
+    {
+      "line": 7565,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7566,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 7567,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->       Unable to find audio file: 'MusConcert_10', 'MUS\\MusConcert\\10YA_Track10_mix1.wav'"
+    },
+    {
+      "line": 7568,
+      "text": "2026-09-27 03:25:04.400 - Thread:   1 ->  MyAudio.LoadData - END"
+    },
+    {
+      "line": 7569,
+      "text": "2026-09-27 03:25:04.400 - Thread:   1 ->  MyConfig.Save() - START"
+    },
+    {
+      "line": 7570,
+      "text": "2026-09-27 03:25:04.400 - Thread:   1 ->     Path: C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers.cfg"
+    },
+    {
+      "line": 7571,
+      "text": "2026-09-27 03:25:04.401 - Thread:   1 ->  MyConfig.Save() - END"
+    },
+    {
+      "line": 7572,
+      "text": "2026-09-27 03:25:04.404 - Thread:   1 ->  Unloading Procedural World Generator"
     }
   ],
   "relevant": [
     {
-      "line": 590,
-      "text": "2026-09-27 03:04:53.244 - Thread:  11 ->     Up to date mod: Id = 3618043241, title = 'Planet - Jormun (Water)'"
+      "line": 548,
+      "text": "2026-09-27 03:22:54.222 - Thread:  11 ->     Up to date mod: Id = 3618043241, title = 'Planet - Jormun (Water)'"
     },
     {
-      "line": 591,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3576683005, title = 'Cauldron System'"
+      "line": 549,
+      "text": "2026-09-27 03:22:54.222 - Thread:  11 ->     Up to date mod: Id = 3576683005, title = 'Cauldron System'"
     },
     {
-      "line": 594,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3362332228, title = 'Orlunda (Sideways)'"
+      "line": 552,
+      "text": "2026-09-27 03:22:54.223 - Thread:  11 ->     Up to date mod: Id = 3362332228, title = 'Orlunda (Sideways)'"
     },
     {
-      "line": 595,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3361803398, title = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+      "line": 553,
+      "text": "2026-09-27 03:22:54.223 - Thread:  11 ->     Up to date mod: Id = 3361803398, title = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
     },
     {
-      "line": 596,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3351055036, title = 'Real Solar Systems'"
+      "line": 554,
+      "text": "2026-09-27 03:22:54.223 - Thread:  11 ->     Up to date mod: Id = 3351055036, title = 'Real Solar Systems'"
     },
     {
-      "line": 598,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3232085677, title = 'Real Gas Giants'"
+      "line": 556,
+      "text": "2026-09-27 03:22:54.223 - Thread:  11 ->     Up to date mod: Id = 3232085677, title = 'Real Gas Giants'"
     },
     {
-      "line": 602,
-      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3152436752, title = 'Real Stars'"
+      "line": 560,
+      "text": "2026-09-27 03:22:54.223 - Thread:  11 ->     Up to date mod: Id = 3152436752, title = 'Real Stars'"
+    },
+    {
+      "line": 776,
+      "text": "2026-09-27 03:23:18.433 - Thread:   1 ->     Script loaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 777,
+      "text": "2026-09-27 03:23:18.433 - Thread:   1 ->     Script loaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 788,
+      "text": "2026-09-27 03:23:18.437 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 806,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3152436752, Filename = '3152436752.sbm', Name = 'Real Stars'"
+    },
+    {
+      "line": 807,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3351055036, Filename = '3351055036.sbm', Name = 'Real Solar Systems'"
+    },
+    {
+      "line": 808,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3232085677, Filename = '3232085677.sbm', Name = 'Real Gas Giants'"
+    },
+    {
+      "line": 811,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3618043241, Filename = '3618043241.sbm', Name = 'Planet - Jormun (Water)'"
     },
     {
       "line": 819,
-      "text": "2026-09-27 03:05:27.113 - Thread:   1 ->     Script loaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3576683005, Filename = '3576683005.sbm', Name = 'Cauldron System'"
     },
     {
-      "line": 820,
-      "text": "2026-09-27 03:05:27.114 - Thread:   1 ->     Script loaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 829,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3362332228, Filename = '3362332228.sbm', Name = 'Orlunda (Sideways)'"
     },
     {
-      "line": 831,
-      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 832,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
     },
     {
-      "line": 849,
-      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3152436752, Filename = '3152436752.sbm', Name = 'Real Stars'"
+      "line": 833,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
     },
     {
-      "line": 850,
-      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3351055036, Filename = '3351055036.sbm', Name = 'Real Solar Systems'"
+      "line": 868,
+      "text": "2026-09-27 03:23:20.917 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Prefabs\\"
     },
     {
-      "line": 851,
-      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3232085677, Filename = '3232085677.sbm', Name = 'Real Gas Giants'"
+      "line": 884,
+      "text": "2026-09-27 03:23:21.119 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Prefabs\\"
     },
     {
-      "line": 854,
-      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3618043241, Filename = '3618043241.sbm', Name = 'Planet - Jormun (Water)'"
+      "line": 904,
+      "text": "2026-09-27 03:23:21.855 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Prefabs\\"
     },
     {
-      "line": 862,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3576683005, Filename = '3576683005.sbm', Name = 'Cauldron System'"
+      "line": 912,
+      "text": "2026-09-27 03:23:21.983 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
     },
     {
-      "line": 872,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3362332228, Filename = '3362332228.sbm', Name = 'Orlunda (Sideways)'"
+      "line": 1033,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 875,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+      "line": 1036,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 876,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
+      "line": 1039,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 911,
-      "text": "2026-09-27 03:05:29.925 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Prefabs\\"
+      "line": 1042,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 927,
-      "text": "2026-09-27 03:05:30.111 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005\\Data\\Prefabs\\"
+      "line": 1045,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 947,
-      "text": "2026-09-27 03:05:30.863 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Prefabs\\"
+      "line": 1048,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
     },
     {
-      "line": 955,
-      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
+      "line": 1051,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 1054,
+      "text": "2026-09-27 03:23:22.073 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 1070,
+      "text": "2026-09-27 03:23:22.085 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+    },
+    {
+      "line": 1071,
+      "text": "2026-09-27 03:23:22.085 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+    },
+    {
+      "line": 1072,
+      "text": "2026-09-27 03:23:22.085 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds4_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+    },
+    {
+      "line": 1073,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+    },
+    {
+      "line": 1074,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+    },
+    {
+      "line": 1075,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds4_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
     },
     {
       "line": 1076,
-      "text": "2026-09-27 03:05:31.080 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+    },
+    {
+      "line": 1077,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+    },
+    {
+      "line": 1078,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds5_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
     },
     {
       "line": 1079,
-      "text": "2026-09-27 03:05:31.080 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+    },
+    {
+      "line": 1080,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+    },
+    {
+      "line": 1081,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds6_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
     },
     {
       "line": 1082,
-      "text": "2026-09-27 03:05:31.080 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
     },
     {
-      "line": 1085,
-      "text": "2026-09-27 03:05:31.080 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "line": 1083,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
     },
     {
-      "line": 1088,
-      "text": "2026-09-27 03:05:31.081 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "line": 1084,
+      "text": "2026-09-27 03:23:22.086 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds7_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
     },
     {
-      "line": 1091,
-      "text": "2026-09-27 03:05:31.081 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "line": 1228,
+      "text": "2026-09-27 03:23:22.126 - Thread:   1 ->     Loaded voxel material: Kor_Blue_Goo"
     },
     {
-      "line": 1094,
-      "text": "2026-09-27 03:05:31.081 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "line": 1229,
+      "text": "2026-09-27 03:23:22.126 - Thread:   1 ->     Loaded voxel material: Kor_Black_Goo"
     },
     {
-      "line": 1097,
-      "text": "2026-09-27 03:05:31.081 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+      "line": 1230,
+      "text": "2026-09-27 03:23:22.126 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_01A"
     },
     {
-      "line": 1113,
-      "text": "2026-09-27 03:05:31.090 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+      "line": 1231,
+      "text": "2026-09-27 03:23:22.127 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_01B"
     },
     {
-      "line": 1114,
-      "text": "2026-09-27 03:05:31.090 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+      "line": 1232,
+      "text": "2026-09-27 03:23:22.127 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_02"
     },
     {
-      "line": 1115,
-      "text": "2026-09-27 03:05:31.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds4_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+      "line": 1233,
+      "text": "2026-09-27 03:23:22.127 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_03"
     },
     {
-      "line": 1116,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+      "line": 1450,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1117,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+      "line": 1451,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1118,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds4_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+      "line": 1453,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1119,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+      "line": 1454,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1120,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+      "line": 1456,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1121,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds5_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+      "line": 1457,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1122,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+      "line": 1459,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1123,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+      "line": 1460,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1124,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds6_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+      "line": 1462,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1125,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->     mod_warning: Planet - Jormun (Water)"
+      "line": 1463,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1126,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\Planet_Jormun.sbc"
+      "line": 1465,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1127,
-      "text": "2026-09-27 03:05:31.091 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Clouds7_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Jormun"
+      "line": 1466,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1271,
-      "text": "2026-09-27 03:05:31.131 - Thread:   1 ->     Loaded voxel material: Kor_Blue_Goo"
+      "line": 1468,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1272,
-      "text": "2026-09-27 03:05:31.132 - Thread:   1 ->     Loaded voxel material: Kor_Black_Goo"
+      "line": 1469,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1273,
-      "text": "2026-09-27 03:05:31.132 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_01A"
+      "line": 1471,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
     },
     {
-      "line": 1274,
-      "text": "2026-09-27 03:05:31.132 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_01B"
+      "line": 1472,
+      "text": "2026-09-27 03:23:22.242 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
     },
     {
-      "line": 1275,
-      "text": "2026-09-27 03:05:31.132 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_02"
+      "line": 4725,
+      "text": "2026-09-27 03:23:22.847 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1276,
-      "text": "2026-09-27 03:05:31.132 - Thread:   1 ->     Loaded voxel material: Kor_Ancient_Debris_03"
+      "line": 4751,
+      "text": "2026-09-27 03:23:22.849 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1493,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 5431,
+      "text": "2026-09-27 03:23:22.893 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1494,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 5435,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1496,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 5439,
+      "text": "2026-09-27 03:23:22.894 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1497,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 5521,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1499,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 5525,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1500,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 5529,
+      "text": "2026-09-27 03:23:22.897 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1502,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 5786,
+      "text": "2026-09-27 03:23:22.908 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
     },
     {
-      "line": 1503,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 6839,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1505,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 6842,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1506,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 6845,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1508,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 6848,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1509,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 6851,
+      "text": "2026-09-27 03:23:23.413 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1511,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 6854,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1512,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 6857,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1514,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\Planet_Orlunda.sbc"
+      "line": 6860,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 1515,
-      "text": "2026-09-27 03:05:31.251 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/OrlundaSide"
+      "line": 6863,
+      "text": "2026-09-27 03:23:23.414 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 4768,
-      "text": "2026-09-27 03:05:31.861 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 6880,
+      "text": "2026-09-27 03:23:23.558 - Thread:   1 ->  Registered modules from: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 4794,
-      "text": "2026-09-27 03:05:31.863 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 6881,
+      "text": "2026-09-27 03:23:23.559 - Thread:   1 ->  Registered modules from: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 5474,
-      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 6892,
+      "text": "2026-09-27 03:23:23.625 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 5478,
-      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7030,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLike'"
     },
     {
-      "line": 5482,
-      "text": "2026-09-27 03:05:31.907 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7031,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeModExample'"
     },
     {
-      "line": 5564,
-      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7032,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeTutorial'"
     },
     {
-      "line": 5568,
-      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7033,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Pertam'"
     },
     {
-      "line": 5572,
-      "text": "2026-09-27 03:05:31.911 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7034,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Triton'"
     },
     {
-      "line": 5829,
-      "text": "2026-09-27 03:05:31.922 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+      "line": 7035,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/WaterWorld'"
     },
     {
-      "line": 6882,
-      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7036,
+      "text": "2026-09-27 03:23:23.768 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Planet Agaris'"
     },
     {
-      "line": 6885,
-      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7113,
+      "text": "2026-09-27 03:23:23.775 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia'"
     },
     {
-      "line": 6888,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7114,
+      "text": "2026-09-27 03:23:23.775 - Thread:   1 ->  WaterMod: Planet config MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia has a malformed texture! Setting to default."
     },
     {
-      "line": 6891,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7115,
+      "text": "2026-09-27 03:23:23.775 - Thread:   1 ->  WaterMod: Found Water Config for mod 'Planet - Jormun (Water)'"
     },
     {
-      "line": 6894,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7117,
+      "text": "2026-09-27 03:23:23.776 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Jormun'"
     },
     {
-      "line": 6897,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7119,
+      "text": "2026-09-27 03:23:23.776 - Thread:   1 ->  WaterMod: Loaded Water Material 'JormunWater'"
     },
     {
-      "line": 6900,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7258,
+      "text": "2026-09-27 03:23:25.071 - Thread:   1 ->      Init ExceptionHandler"
     },
     {
-      "line": 6903,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7266,
+      "text": "2026-09-27 03:23:25.849 - Thread:   1 ->      Init RealSolarSystemsCore"
     },
     {
-      "line": 6906,
-      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+      "line": 7267,
+      "text": "2026-09-27 03:23:25.849 - Thread:   1 ->      Init RealGasGiantsCore"
     },
     {
-      "line": 6923,
-      "text": "2026-09-27 03:05:35.688 - Thread:   1 ->  Registered modules from: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7294,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init RandomSectorGeneratorSession"
     },
     {
-      "line": 6924,
-      "text": "2026-09-27 03:05:35.690 - Thread:   1 ->  Registered modules from: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7386,
+      "text": "2026-09-27 03:23:26.721 - Thread:   1 ->  Registering WaterAPI for Mod 'RealSolarSystems'"
     },
     {
-      "line": 6935,
-      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7420,
+      "text": "2026-09-27 03:23:30.302 - Thread:   1 ->  [RSG] Required custom planet definitions loaded (8/8): Agni, Cauldron, Jormun, Kor, OrlundaSide, Relicta, Tellus, Zenitaia"
     },
     {
-      "line": 7073,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLike'"
+      "line": 7421,
+      "text": "2026-09-27 03:23:30.302 - Thread:   1 ->  [RSG] Required custom planet definitions missing: <none>"
     },
     {
-      "line": 7074,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeModExample'"
+      "line": 7541,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7075,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeTutorial'"
+      "line": 7544,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7076,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Pertam'"
+      "line": 7547,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7077,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Triton'"
+      "line": 7550,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7078,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/WaterWorld'"
+      "line": 7553,
+      "text": "2026-09-27 03:25:04.281 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7079,
-      "text": "2026-09-27 03:05:35.903 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Planet Agaris'"
+      "line": 7556,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7156,
-      "text": "2026-09-27 03:05:35.909 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia'"
+      "line": 7559,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7157,
-      "text": "2026-09-27 03:05:35.909 - Thread:   1 ->  WaterMod: Planet config MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia has a malformed texture! Setting to default."
+      "line": 7562,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7158,
-      "text": "2026-09-27 03:05:35.909 - Thread:   1 ->  WaterMod: Found Water Config for mod 'Planet - Jormun (Water)'"
+      "line": 7565,
+      "text": "2026-09-27 03:25:04.282 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 7160,
-      "text": "2026-09-27 03:05:35.910 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Jormun'"
+      "line": 7591,
+      "text": "2026-09-27 03:25:04.564 - Thread:   1 ->  Script unloaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 7162,
-      "text": "2026-09-27 03:05:35.910 - Thread:   1 ->  WaterMod: Loaded Water Material 'JormunWater'"
+      "line": 7592,
+      "text": "2026-09-27 03:25:04.565 - Thread:   1 ->  Script unloaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 7237,
-      "text": "   at RealSolarSystems.RealSolarSystemsCore.LoadData() : "
-    },
-    {
-      "line": 7239,
-      "text": "   at RealSolarSystems.RealSolarSystemsCore.LoadData() : "
-    },
-    {
-      "line": 7241,
-      "text": "   at RealGasGiants.RealGasGiantsCore.LoadData() : "
-    },
-    {
-      "line": 7302,
-      "text": "2026-09-27 03:05:37.134 - Thread:   1 ->      Init ExceptionHandler"
-    },
-    {
-      "line": 7310,
-      "text": "2026-09-27 03:05:37.937 - Thread:   1 ->      Init RealSolarSystemsCore"
-    },
-    {
-      "line": 7311,
-      "text": "2026-09-27 03:05:37.937 - Thread:   1 ->      Init RealGasGiantsCore"
-    },
-    {
-      "line": 7338,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init RandomSectorGeneratorSession"
-    },
-    {
-      "line": 7426,
-      "text": "2026-09-27 03:05:40.279 - Thread:   1 ->  Registering WaterAPI for Mod 'RealSolarSystems'"
-    },
-    {
-      "line": 7709,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7712,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7715,
-      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7718,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7721,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7724,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7727,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7730,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7733,
-      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
-    },
-    {
-      "line": 7759,
-      "text": "2026-09-27 03:11:13.354 - Thread:   1 ->  Script unloaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
-    },
-    {
-      "line": 7760,
-      "text": "2026-09-27 03:11:13.354 - Thread:   1 ->  Script unloaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
-    },
-    {
-      "line": 7771,
-      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7603,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     }
   ],
   "rsg_context": [
     {
-      "line": 828,
-      "text": "2026-09-27 03:05:27.117 - Thread:   1 ->     Script loaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 785,
+      "text": "2026-09-27 03:23:18.436 - Thread:   1 ->     Script loaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 829,
-      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 786,
+      "text": "2026-09-27 03:23:18.437 - Thread:   1 ->     Script loaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 787,
+      "text": "2026-09-27 03:23:18.437 - Thread:   1 ->     Script loaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 788,
+      "text": "2026-09-27 03:23:18.437 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 789,
+      "text": "2026-09-27 03:23:18.437 - Thread:   1 ->     Script loaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 790,
+      "text": "2026-09-27 03:23:18.448 - Thread:   1 ->  MyScriptManager.LoadData() - END"
+    },
+    {
+      "line": 791,
+      "text": "2026-09-27 03:23:18.448 - Thread:   1 ->  MyDefinitionManager.LoadData() - START"
     },
     {
       "line": 830,
-      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3690317665, Filename = '3690317665.sbm', Name = 'AquaExpansion'"
     },
     {
       "line": 831,
-      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:2899106264, Filename = '2899106264.sbm', Name = 'Terran Titans - Naval Blocks'"
     },
     {
       "line": 832,
-      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
     },
     {
       "line": 833,
-      "text": "2026-09-27 03:05:27.130 - Thread:   1 ->  MyScriptManager.LoadData() - END"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
     },
     {
       "line": 834,
-      "text": "2026-09-27 03:05:27.130 - Thread:   1 ->  MyDefinitionManager.LoadData() - START"
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignScienceCompatibility', Name = 'CampaignScienceCompatibility'"
     },
     {
-      "line": 873,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3690317665, Filename = '3690317665.sbm', Name = 'AquaExpansion'"
+      "line": 835,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignPlanetProxies', Name = 'CampaignPlanetProxies'"
     },
     {
-      "line": 874,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:2899106264, Filename = '2899106264.sbm', Name = 'Terran Titans - Naval Blocks'"
+      "line": 836,
+      "text": "2026-09-27 03:23:18.602 - Thread:   1 ->        Id = Steam:3706927250, Filename = '3706927250.sbm', Name = 'Terran Titans - Naval Advanced Systems'"
     },
     {
-      "line": 875,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+      "line": 909,
+      "text": "2026-09-27 03:23:21.942 - Thread:   1 ->     DefinitionManager - Loading 42 file(s)"
     },
     {
-      "line": 876,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
+      "line": 910,
+      "text": "2026-09-27 03:23:21.981 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\Prefabs\\"
     },
     {
-      "line": 877,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignScienceCompatibility', Name = 'CampaignScienceCompatibility'"
+      "line": 911,
+      "text": "2026-09-27 03:23:21.981 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
     },
     {
-      "line": 878,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignPlanetProxies', Name = 'CampaignPlanetProxies'"
+      "line": 912,
+      "text": "2026-09-27 03:23:21.983 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
     },
     {
-      "line": 879,
-      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3706927250, Filename = '3706927250.sbm', Name = 'Terran Titans - Naval Advanced Systems'"
+      "line": 913,
+      "text": "2026-09-27 03:23:21.983 - Thread:   1 ->     DefinitionManager - Loading 0 file(s)"
     },
     {
-      "line": 952,
-      "text": "2026-09-27 03:05:30.952 - Thread:   1 ->     DefinitionManager - Loading 42 file(s)"
+      "line": 914,
+      "text": "2026-09-27 03:23:21.983 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\CampaignScienceCompatibility\\Data\\Prefabs\\"
     },
     {
-      "line": 953,
-      "text": "2026-09-27 03:05:30.991 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\Prefabs\\"
+      "line": 915,
+      "text": "2026-09-27 03:23:21.983 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
     },
     {
-      "line": 954,
-      "text": "2026-09-27 03:05:30.991 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
+      "line": 6889,
+      "text": "2026-09-27 03:23:23.567 - Thread:   1 ->  Registered modules from: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 955,
-      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
+      "line": 6890,
+      "text": "2026-09-27 03:23:23.622 - Thread:   1 ->  Registered modules from: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 956,
-      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     DefinitionManager - Loading 0 file(s)"
+      "line": 6891,
+      "text": "2026-09-27 03:23:23.625 - Thread:   1 ->  Registered modules from: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 957,
-      "text": "2026-09-27 03:05:30.993 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\CampaignScienceCompatibility\\Data\\Prefabs\\"
+      "line": 6892,
+      "text": "2026-09-27 03:23:23.625 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 958,
-      "text": "2026-09-27 03:05:30.993 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
+      "line": 6893,
+      "text": "2026-09-27 03:23:23.625 - Thread:   1 ->  Registered modules from: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 6932,
-      "text": "2026-09-27 03:05:35.694 - Thread:   1 ->  Registered modules from: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 6894,
+      "text": "2026-09-27 03:23:23.627 - Thread:   1 ->  Registered modules from: SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 6933,
-      "text": "2026-09-27 03:05:35.753 - Thread:   1 ->  Registered modules from: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 6895,
+      "text": "2026-09-27 03:23:23.631 - Thread:   1 ->  Registered modules from: Sandbox.Game, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 6934,
-      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7291,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init WaterModAPI"
     },
     {
-      "line": 6935,
-      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7292,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init NAS_Cable_Session"
     },
     {
-      "line": 6936,
-      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7293,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init NAS_Catapult_Session"
     },
     {
-      "line": 6937,
-      "text": "2026-09-27 03:05:35.758 - Thread:   1 ->  Registered modules from: SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7294,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init RandomSectorGeneratorSession"
     },
     {
-      "line": 6938,
-      "text": "2026-09-27 03:05:35.764 - Thread:   1 ->  Registered modules from: Sandbox.Game, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7295,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init WaterModAPI"
     },
     {
-      "line": 7335,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init WaterModAPI"
+      "line": 7296,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init AfterburnerManager"
     },
     {
-      "line": 7336,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NAS_Cable_Session"
+      "line": 7297,
+      "text": "2026-09-27 03:23:25.852 - Thread:   1 ->      Init NASApiSession"
     },
     {
-      "line": 7337,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NAS_Catapult_Session"
+      "line": 7417,
+      "text": "2026-09-27 03:23:28.331 - Thread:   1 ->  OnEntityInitialized Stone (MyFloatingObject, 101295316562203618)"
     },
     {
-      "line": 7338,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init RandomSectorGeneratorSession"
+      "line": 7418,
+      "text": "2026-09-27 03:23:28.335 - Thread:   1 ->  MyGuiScreenLoading MyGuiScreenBase.UnloadContent"
     },
     {
-      "line": 7339,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init WaterModAPI"
+      "line": 7419,
+      "text": "2026-09-27 03:23:28.335 - Thread:   1 ->  MyGuiScreenHudSpace MyGuiScreenBase.LoadContent"
     },
     {
-      "line": 7340,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init AfterburnerManager"
+      "line": 7420,
+      "text": "2026-09-27 03:23:30.302 - Thread:   1 ->  [RSG] Required custom planet definitions loaded (8/8): Agni, Cauldron, Jormun, Kor, OrlundaSide, Relicta, Tellus, Zenitaia"
     },
     {
-      "line": 7341,
-      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NASApiSession"
+      "line": 7421,
+      "text": "2026-09-27 03:23:30.302 - Thread:   1 ->  [RSG] Required custom planet definitions missing: <none>"
     },
     {
-      "line": 7768,
-      "text": "2026-09-27 03:11:13.356 - Thread:   1 ->  Script unloaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7422,
+      "text": "2026-09-27 03:23:31.984 - Thread:   1 ->  [Assertive Loot] - 144115188075855921 has no blocks to unlock"
     },
     {
-      "line": 7769,
-      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7423,
+      "text": "2026-09-27 03:23:32.007 - Thread:   1 ->  [Assertive Loot] - Player spawned (). Attaching inventory and death monitor"
     },
     {
-      "line": 7770,
-      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7424,
+      "text": "2026-09-27 03:23:32.016 - Thread:   1 ->  [Assertive Loot] - 144115188075855922 has no blocks to unlock"
     },
     {
-      "line": 7771,
-      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7600,
+      "text": "2026-09-27 03:25:04.568 - Thread:   1 ->  Script unloaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 7772,
-      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+      "line": 7601,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Script unloaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 7773,
-      "text": "2026-09-27 03:11:13.358 - Thread:   1 ->  Network readers disposed"
+      "line": 7602,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Script unloaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 7774,
-      "text": "2026-09-27 03:11:13.358 - Thread:   1 ->  MyDefinitionManager.PreloadDefinitions() - START"
+      "line": 7603,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7604,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Script unloaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7605,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  Network readers disposed"
+    },
+    {
+      "line": 7606,
+      "text": "2026-09-27 03:25:04.569 - Thread:   1 ->  MyDefinitionManager.PreloadDefinitions() - START"
     }
   ]
 }
