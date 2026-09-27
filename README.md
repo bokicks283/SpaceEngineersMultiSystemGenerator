@@ -1,21 +1,103 @@
-# Space Engineers survival campaign workspace
+# Space Engineers Multi-System Generator
 
-Status: **prepared for a disposable compile/load check; sector generation remains disarmed.** The selected pack has 118 static unique voxel material subtypes against a conservative budget of 120. The original save and installed RSG prototype have timestamped ZIP backups under `backups/`.
+Status: **bootstrap implementation is ready for local re-audit and disposable-world testing; generation remains disarmed until proxy coverage is complete.**
 
-`reports/PACK-AUDIT.md` lists every selected Workshop ID, planet cut, proxy status, science status, and current risk. `reports/inventory.json` is the local inventory from the three Steam libraries; `reports/selected-voxel-audit.json`, `reports/coverage.json`, and `reports/planet-cut-options.json` hold the detailed machine-readable evidence.
+This repository owns the local compatibility/configuration work for a heavily modded Space Engineers survival campaign built around Real Solar Systems (RSS), Real Stars, Real Gas Giants, Scientific Progress, Water Mod, MES, and a one-shot Random Sector Generator (RSG).
 
-The local source is `mods/RandomSectorGenerator`. `mods/CampaignScienceCompatibility` adds authored science definitions for Cauldron and Zenitaia (and an unused Relicta preset) without touching Workshop files. `Install-RandomSectorGenerator.ps1` backs up the installed RSG and installs these local mods. `scripts/Build-RSG.ps1` compiles RSG against the installed game assemblies. `scripts/verify_local.py` checks the pack, wire tags, saved mod list, original backup, and safety arm state.
+## Selected planet pack
 
-The disposable world is `%APPDATA%\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27`. It was cloned from the existing RSS Empty World, with stale Workshop entries and prior mod storage removed. Its checkpoint arm variable is `blocked-proxies`, so it cannot generate by accident. The original world was never changed.
+The current campaign cut intentionally favors variety rather than maximizing water worlds:
 
-## Required asset work
+- **Cauldron System** — Cauldron, Tellus, Agni, Kor
+- **Jormun** — water/river world
+- **Zenitaia** — tropical/deep-ocean world
+- **Orlunda (Sideways)** — RSS-friendly tidally locked world
+- **Relicta** — hostile volcanic/radiation world
+- Vanilla EarthLike, Moon, Mars, and Europa remain eligible without adding Workshop voxel materials.
 
-The selected Cauldron System already provides its four RSS proxies. Teal-WaterMod, Teralis - City Planet, and Zenitaia still have no active exact proxy. Steam subscriptions/downloads are the user's part of this work. The [Alkurah SD proxy pack](https://steamcommunity.com/sharedfiles/filedetails/?id=3357964376) may cover Teal and Teralis, subject to checking its actual installed definitions. The [RSS Planet Exporter](https://steamcommunity.com/sharedfiles/filedetails/?id=3350589349) is the upstream tool for producing Zenitaia proxy textures in game. Avoid the Alkurah HD duplicate. Do not arm this world until `reports/coverage.json` shows exactly one selected proxy for every selected body and the proxy textures load.
+Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded from this campaign cut. The expected static budget is about **117 unique voxel-material subtypes** after AquaExpansion, but `scripts/audit.py` and `scripts/prepare_pack.py` are authoritative and must be rerun on the actual machine.
 
-The exporter requires in-game rendering of the planet; its current instructions list `/ExportCM` and `/ExportNG` and BC7 DDS conversion. Once installed, the agent can prepare a separate local proxy mod definition, convert the exported files with the game's `texconv.exe`, and validate it. No protected Workshop planet assets should be copied.
+## Proxy requirements
 
-## Runtime sequence after proxy coverage
+- Cauldron System bundles exact proxies for its four bodies.
+- Orlunda Sideways: Workshop proxy pack **3361803398**.
+- Jormun: Workshop proxy **3663505475**.
+- Zenitaia and Relicta currently require exported/local RSS proxies unless the local audit finds an exact compatible Workshop proxy.
+- RSS Planet Exporter: **3350589349**.
 
-The agent reruns `python scripts/audit.py` and `python scripts/prepare_pack.py`, updates the disposable mod list if needed, installs any local proxy mod, then runs `python scripts/world_checkpoint.py arm <disposable-world-path>`. The user loads the disposable world. RSG generates once automatically after its APIs are ready; `/rsg status` shows state. The user saves and **exits the game**. The agent runs `python scripts/world_checkpoint.py commit <disposable-world-path>`, which checks all generated entities, archives the world, and writes the pending RSS config to the checkpoint. On reload, RSS should adopt all saved bodies. RSG marks bootstrap complete only after its starter and all pre-spawned celestial bodies are managed and the player reaches the starter proxy.
+Do not arm a disposable world until `reports/coverage.json` reports exactly one active proxy for every selected custom body and every referenced proxy texture exists.
 
-Runtime acceptance still needs checks for script compilation, exact proxy rendering, three-to-five roots, a black-hole root, a breathable Tellus starter, Water Mod on the selected water worlds, Scientific Progress discoveries, MES/Assertive/Abandoned/AiEnabled encounter spawning, and a clean `SpaceEngineers.log`. The mod must remain in the save until RSS adoption is verified; removal afterward is not yet validated. The MES physical-voxel precision issue documented in the audit has no proven setting-only fix.
+## Local mods
+
+- `mods/RandomSectorGenerator`
+  - explicit planet allowlist/Workshop denylist
+  - 3–5 randomized root systems
+  - guaranteed `DefaultBlackHole` hierarchy when the verified Real Gas Giants skin is available
+  - random stars, gas giants, planets, and moons
+  - safe Tellus/EarthLike starter selection
+  - spoiler/debug manifest only; sector layout is not revealed in normal play
+  - one-shot bootstrap with rollback and durable state
+- `mods/CampaignScienceCompatibility`
+  - authored Scientific Progress presets for Cauldron, Jormun, Relicta, and Zenitaia
+
+## RSS handoff
+
+RSG no longer relies on session-component load order.
+
+The supported bootstrap flow is:
+
+1. Prepare/sync a disposable RSS Empty World while **disarmed**.
+2. After proxy coverage is complete, arm it offline.
+3. Load the world. RSG generates once after the RSS/Real Stars/Real Gas Giants APIs are ready.
+4. Save and **exit Space Engineers**.
+5. Run the offline checkpoint `commit` command. It validates the pending RSG state and saved entity IDs, archives the world, writes the RSS protobuf payload into `RealSolarSystemsSettings_Config_xml`, and permanently disarms RSG.
+6. Reload. RSS reads its normal persisted configuration and adopts the generated bodies.
+7. RSG marks bootstrap complete only after all pre-spawned bodies are RSS-managed and the player can be moved to the starter proxy.
+
+This avoids modifying/forking RSS.
+
+## Disposable-world commands
+
+The existing disposable world can be refreshed to the latest audited pack without recreating it:
+
+```powershell
+py scripts\world_checkpoint.py sync "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+```
+
+When proxy coverage is complete:
+
+```powershell
+py scripts\world_checkpoint.py arm "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+```
+
+After generation, saving, and fully exiting the game:
+
+```powershell
+py scripts\world_checkpoint.py commit "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+```
+
+Every write operation checks that Space Engineers is closed and archives the disposable world before changing it.
+
+## Local validation
+
+From the repository root:
+
+```powershell
+py scripts\audit.py
+py scripts\prepare_pack.py
+pwsh .\Install-RandomSectorGenerator.ps1
+pwsh .\scripts\Build-RSG.ps1
+py scripts\world_checkpoint.py sync "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Disposable Audit 2026-09-27"
+py scripts\verify_local.py
+```
+
+The generated files under `reports/` are machine-specific evidence. Re-run the audit after subscribing/unsubscribing planet or proxy mods instead of trusting stale committed report values.
+
+## Remaining acceptance risks
+
+- Zenitaia/Relicta proxy export and visual validation.
+- Space Engineers in-game script whitelist/runtime compilation.
+- RSS adoption after the offline checkpoint handoff.
+- Water Mod behavior on Jormun/Zenitaia.
+- Scientific Progress discovery behavior on all selected bodies.
+- MES/Assertive/Abandoned/AiEnabled planetary spawning around RSS physical voxel planets. RSS places physical voxel planets far enough from origin that MES precision remains a known acceptance risk; no untested range tweak is presented here as a fix.
