@@ -3,8 +3,13 @@ import json, itertools, collections, xml.etree.ElementTree as ET
 from pathlib import Path
 from audit import ROOT, OUT, ALLOW, DENY, dump
 
-CUTS = {'3309805284','3362332228','3515518898','3618043241','3684013414','3489648084'}
+CUTS = {'2195637331','2644430625','3309805284','3515518898','3684013414'}
 EXTRA = {'3690317665':'AquaExpansion', '2899106264':'Terran Titans Naval Blocks'}
+PROXY_PACKS = {
+    '3361803398':'RSS Proxy Pack: Orlunda and Komorebi (SD)',
+    '3663505475':'Planet Jormun RSS Proxy (SD)',
+}
+EXPORTER = '3350589349'
 
 def main():
     inventory=json.loads((OUT/'inventory.json').read_text(encoding='utf-8'))
@@ -13,8 +18,11 @@ def main():
     selected=[i for i in original if i in mods and i not in DENY and i not in CUTS]
     for i in list(ALLOW)+list(EXTRA):
         if i in mods and i not in CUTS and i not in selected: selected.append(i)
-    # Only the SD pack, never both proxy variants. Optional until downloaded/audited.
-    if '3357964376' in mods: selected.append('3357964376')
+    # Select only the audited SD proxy packs required by the retained planets.
+    # Never add HD duplicates alongside these.
+    for i in PROXY_PACKS:
+        if i in mods and i not in selected:
+            selected.append(i)
     base={d['subtype'] for g in inventory['games'] for d in g['definitions']['voxels']}
     union=set(base); contributions=[]; owners=collections.defaultdict(list)
     for g in inventory['games']:
@@ -34,7 +42,9 @@ def main():
           'cut_for_budget':sorted(CUTS),'missing_requested':[i for i in ALLOW if i not in mods],
           'stale_missing_world_entries':[i for i in original if i not in mods],
           'denylisted_installed':[i for i in DENY if i in mods],
-          'proxy_download_required':['3357964376'],'exporter_download_required':['3350589349']}
+          'proxy_download_required':[i for i in PROXY_PACKS if i not in mods],
+          'proxy_pack_ids':list(PROXY_PACKS),
+          'exporter_download_required':[] if EXPORTER in mods else [EXPORTER]}
     dump('pack-plan.json',plan)
     # Read native presets; exact names matter for variants.
     native={}
@@ -46,6 +56,7 @@ def main():
     presets={
         'Cauldron':[('Northern Furnace',50,'Latitude: (0.6, 1)'),('Southern Furnace',50,'Latitude: (-1, -0.6)'),('Equatorial Furnace',40,'Latitude: (-0.2, 0.2)'),('Mantle Expanse',30,'Ores: Cauldron')],
         'Relicta':[('Polar Survey',40,'Latitude: (0.8, 1)'),('Southern Survey',40,'Latitude: (-1, -0.8)'),('Magma Fields',60,'Ores: RelMagma'),('Basalt Fields',35,'Ores: RelBasalt'),('Ancient Bedrock',35,'Ores: RelBedrock'),('Rocky Highlands',30,'Ores: RelRock')],
+        'Jormun':[('River Lowlands',45,'Ores: Moss, MossFlowers, StoneMoss, Coral, CoralGrass'),('Dry Highlands',40,'Ores: StoneDesert, AlienSandGrass, StoneWhite'),('Rocky Ridges',35,'Ores: GrassStone1, GrassRock2, GrassRock3, GrassRock4')],
         'Zenitaia':[('Northern Survey',40,'Latitude: (0.8, 1)'),('Southern Survey',40,'Latitude: (-1, -0.8)'),('Grasslands',30,'Ores: Zenit_Grass'),('Ocean Sands',35,'Ores: Zenit_OCSand'),('Volcanic Gravel',40,'Ores: ZenitLavaGravel'),('Hot Rock Fields',55,'Ores: ZenitHotRock, ZenitLavaRockOC, ZenitLavaRockSurface')]
     }
     xsi='http://www.w3.org/2001/XMLSchema-instance'; ET.register_namespace('xsi',xsi)
@@ -94,7 +105,7 @@ def main():
     lines += [f"| {c['planet']} | {'yes' if c['selected'] else 'no'} | {c['active_proxy_count']} | {c['science_status']} |" for c in coverage]
     lines+=['','## Workshop load-list membership','',*['- '+i+' — '+str(mods[i]['title'] or EXTRA.get(i) or 'title unavailable locally') for i in selected],
             '', '## Local mods', '', '- RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.',
-            '- CampaignScienceCompatibility: authored Cauldron and Zenitaia biomes; Relicta is prepared but excluded from this pack.',
+            '- CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, and Zenitaia biome presets.',
             '', '## Water and encounters', '',
             'The local Teal-WaterMod, Teralis - City Planet, and Zenitaia packages each define their own WaterConfig planet entry. AquaExpansion and Terran Titans Naval Blocks are selected alongside Water Mod. No global water entry was added.',
             'MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained. MES warns about NPC grid precision beyond 6,500 km from origin; RSS clamps its physical voxel spawn range to at least 10,000 km. No confirmed safe configuration-only repair was found. Planetary NPC spawning near RSS physical planets remains an acceptance risk.',
