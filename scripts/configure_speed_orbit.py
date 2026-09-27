@@ -21,6 +21,8 @@ from world_checkpoint import (
 WORLD = (Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves" /
          "76561198045624840" / "RSG Disposable Clean 2026-09-27")
 
+AERO_SIMULATION_MAX_SPEED = 400
+
 PROFILE = {
     "SpeedLimit": 1500,
     "RemoteControlSpeedLimit": 1000,
@@ -67,7 +69,7 @@ def replace_tag(text, tag, value):
         count=1,
     )
     if count != 1:
-        raise RuntimeError(f"Expected exactly one <{tag}> in RTS config; found {count}")
+        raise RuntimeError(f"Expected exactly one <{tag}> in config; found {count}")
     return updated
 
 
@@ -177,6 +179,14 @@ def main():
 
     rts = find_one(WORLD, "RelativeTopSpeed.cfg")
     ro_path, ro_values = verify_real_orbits(WORLD)
+
+    aero_matches = list((WORLD / "Storage").rglob("dragsettings.xml"))
+    if len(aero_matches) > 1:
+        raise RuntimeError(
+            f"Expected at most one Aerodynamic Physics dragsettings.xml; found {len(aero_matches)}"
+        )
+    aero = aero_matches[0] if aero_matches else None
+
     text, encoding = read_mod_text(rts)
 
     original = {
@@ -190,14 +200,46 @@ def main():
     text = update_grid(text, "LargeGrid", PROFILE["LargeGrid"])
     text = update_grid(text, "SmallGrid", PROFILE["SmallGrid"])
 
-    backup = archive(WORLD, "World-before-RTS-1500-profile")
+    aero_previous = None
+    aero_text = None
+    aero_encoding = None
+    if aero is not None:
+        aero_text, aero_encoding = read_mod_text(aero)
+        aero_previous = read_tag(aero_text, "SimulationMaxSpeed")
+        if aero_previous is None:
+            raise RuntimeError("Aerodynamic Physics config is missing SimulationMaxSpeed")
+        aero_text = replace_tag(
+            aero_text, "SimulationMaxSpeed", AERO_SIMULATION_MAX_SPEED
+        )
+
+    backup = archive(WORLD, "World-before-speed-orbit-profile")
     write_atomic(rts, text, encoding)
+    if aero is not None:
+        write_atomic(aero, aero_text, aero_encoding)
 
     reread, _ = read_mod_text(rts)
     if int(read_tag(reread, "SpeedLimit")) != PROFILE["SpeedLimit"]:
         raise RuntimeError("RTS SpeedLimit readback mismatch")
     if int(read_tag(reread, "RemoteControlSpeedLimit")) != PROFILE["RemoteControlSpeedLimit"]:
         raise RuntimeError("RTS RemoteControlSpeedLimit readback mismatch")
+
+    aero_result = {
+        "config": None,
+        "previous_simulation_max_speed": None,
+        "simulation_max_speed": None,
+        "state": "not generated yet; rerun after Aero creates dragsettings.xml",
+    }
+    if aero is not None:
+        aero_reread, _ = read_mod_text(aero)
+        actual_aero_speed = float(read_tag(aero_reread, "SimulationMaxSpeed"))
+        if actual_aero_speed != float(AERO_SIMULATION_MAX_SPEED):
+            raise RuntimeError("Aero SimulationMaxSpeed readback mismatch")
+        aero_result = {
+            "config": str(aero.relative_to(WORLD)),
+            "previous_simulation_max_speed": aero_previous,
+            "simulation_max_speed": AERO_SIMULATION_MAX_SPEED,
+            "state": "configured",
+        }
 
     print(json.dumps({
         "world": str(WORLD),
@@ -207,13 +249,11 @@ def main():
         "profile": PROFILE,
         "real_orbits_config": ro_path,
         "real_orbits_speed_multipliers": ro_values,
-        "aero": (
-            "No Aero config is created here. On the next load RTS initializes first; "
-            "Aero should adopt the higher engine ceiling. Inspect after reload."
-        ),
+        "aero": aero_result,
         "next": [
             "Load the clean disposable world once; do not arm or generate.",
             "Run /rts config and confirm SpeedLimit 1500 and RemoteControlSpeedLimit 1000.",
+            "Confirm Aero SimulationMaxSpeed remains 400 after save/exit.",
             "Save and fully exit Space Engineers.",
             r"py scripts\speed_orbit_runtime.py",
             r"py scripts\runtime_check.py",
