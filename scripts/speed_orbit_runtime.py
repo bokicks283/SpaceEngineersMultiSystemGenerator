@@ -1,9 +1,12 @@
-"""Inspect RTS/Aero/Real Orbits runtime config after the clean world's first load.
+"""Inspect RTS/Aero/Real Orbits runtime config for the clean disposable world.
 
-This script is intentionally read-only. It does not tune or create config files.
+This script is intentionally read-only. It tolerates the false UTF-16/UTF-32
+XML declarations emitted by some Space Engineers mod serializers when the
+actual file bytes are UTF-8.
 """
 import json
 import os
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -25,24 +28,64 @@ INTERESTING = (
     "falloff", "orbit",
 )
 
+FALSE_WIDE_DECL = re.compile(
+    r'(<\?xml[^>]*\bencoding=["\'])utf-(?:16|32)(["\'])',
+    re.IGNORECASE,
+)
+
 
 def local_name(tag):
     return tag.rsplit("}", 1)[-1]
 
 
-def relevant_xml_values(path):
+def parse_xml_compat(path):
+    raw = path.read_bytes()
     try:
-        root = ET.parse(path).getroot()
-    except Exception as exc:
-        return {"parse_error": str(exc), "values": {}}
+        return ET.fromstring(raw), None
+    except Exception as first:
+        # Several SE mods serialize XML to a .NET string (which declares
+        # UTF-16) and then write that string as UTF-8. The game accepts the
+        # text because its storage API deserializes strings, but a byte-aware
+        # XML parser correctly rejects the mismatched declaration.
+        try:
+            text = raw.decode("utf-8-sig")
+            repaired = FALSE_WIDE_DECL.sub(r"\1utf-8\2", text, count=1)
+            if repaired == text:
+                raise first
+            return ET.fromstring(repaired), None
+        except Exception:
+            return None, str(first)
+
+
+def relevant_xml_values(path):
+    root, error = parse_xml_compat(path)
+    if root is None:
+        return {"parse_error": error, "values": {}}
+
     values = {}
-    for element in root.iter():
-        if list(element):
-            continue
+
+    def walk(element, parent=""):
         name = local_name(element.tag)
-        value = (element.text or "").strip()
-        if value and any(token in name.lower() for token in INTERESTING):
-            values[name] = value
+        current = f"{parent}/{name}" if parent else name
+
+        if name == "Point":
+            mass = element.get("Mass")
+            speed = element.get("Speed")
+            if mass is not None or speed is not None:
+                values[f"{current}[Mass={mass}]"] = {
+                    "Mass": mass,
+                    "Speed": speed,
+                }
+
+        if not list(element):
+            value = (element.text or "").strip()
+            if value and any(token in name.lower() for token in INTERESTING):
+                values[current] = value
+
+        for child in element:
+            walk(child, current)
+
+    walk(root)
     return {"parse_error": None, "values": values}
 
 
@@ -95,6 +138,10 @@ def main():
 
     mods = checkpoint_mods()
     found = candidates()
+    configs_parse = [
+        row for group in ("rts", "real_orbits")
+        for row in found[group]
+    ]
     result = {
         "world": str(WORLD),
         "mods_present": {name: wid in mods for name, wid in MOD_IDS.items()},
@@ -104,7 +151,10 @@ def main():
             "aero_config_after_first_load": "optional on listen host",
             "real_orbits_config_after_first_load": "expected",
         },
-        "ready_for_tuning_review": bool(found["rts"] and found["real_orbits"]),
+        "ready_for_tuning_review": bool(
+            found["rts"] and found["real_orbits"] and
+            all(row["parse_error"] is None for row in configs_parse)
+        ),
         "writes_performed": False,
     }
     REPORTS.mkdir(exist_ok=True)
