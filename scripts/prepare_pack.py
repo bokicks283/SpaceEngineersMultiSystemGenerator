@@ -7,7 +7,9 @@ CUTS = {'2195637331','2644430625','3309805284','3486181518','3515518898','368401
 EXTRA = {'3690317665':'AquaExpansion', '2899106264':'Terran Titans Naval Blocks'}
 PROXY_PACKS = {
     '3361803398':'RSS Proxy Pack: Orlunda and Komorebi (SD)',
-    '3663505475':'Planet Jormun RSS Proxy (SD)',
+}
+PROXY_ASSET_SOURCES = {
+    '3663505475':'Planet Jormun proxy texture source',
 }
 EXPORTER = '3350589349'
 
@@ -48,6 +50,8 @@ def main():
           'denylisted_installed':[i for i in DENY if i in mods],
           'proxy_download_required':[i for i in PROXY_PACKS if i not in mods],
           'proxy_pack_ids':list(PROXY_PACKS),
+          'proxy_asset_source_required':[i for i in PROXY_ASSET_SOURCES if i not in mods],
+          'proxy_asset_source_ids':list(PROXY_ASSET_SOURCES),
           'exporter_download_required':[] if EXPORTER in mods else [EXPORTER]}
     dump('pack-plan.json',plan)
     # Read native presets; exact names matter for variants.
