@@ -22,7 +22,7 @@ GENERATED = ROOT / "generated" / "CampaignPlanetProxies"
 BACKUPS = ROOT / "backups"
 STORAGE = Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Storage"
 
-PLANETS = {
+EXPORTED_PLANETS = {
     "Zenitaia": {
         "atmo_color": "(0.45,0.72,1.0,1.0)",
         "atmo_thickness": "1.0",
@@ -36,6 +36,16 @@ PLANETS = {
         "icon": "(1.0,0.35,0.15,1.0)",
     },
 }
+PACKAGED_PLANETS = {
+    "Jormun": {
+        "workshop_id": "3663505475",
+        "atmo_color": "(0.62,0.80,1.0,1.0)",
+        "atmo_thickness": "1.0",
+        "atmo_mult": "1.0",
+        "icon": "(0.45,0.75,1.0,1.0)",
+    }
+}
+PLANETS = {**PACKAGED_PLANETS, **EXPORTED_PLANETS}
 
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
 ET.register_namespace("xsi", XSI)
@@ -54,6 +64,31 @@ def game_path() -> Path | None:
     data = json.loads(inventory.read_text(encoding="utf-8"))
     games = data.get("games") or []
     return Path(games[0]["path"]) if games else None
+
+
+def installed_mod_path(workshop_id: str) -> Path | None:
+    inventory = REPORTS / "inventory.json"
+    if not inventory.is_file():
+        return None
+    data = json.loads(inventory.read_text(encoding="utf-8"))
+    for mod in data.get("mods") or []:
+        if str(mod.get("id")) == str(workshop_id):
+            path = Path(mod["path"])
+            if path.is_dir():
+                return path
+    return None
+
+
+def packaged_proxy_assets(planet: str) -> dict[str, Path | None]:
+    info = PACKAGED_PLANETS[planet]
+    root = installed_mod_path(info["workshop_id"])
+    if root is None:
+        return {"cm": None, "ng": None, "add": None}
+    texture_root = root / "Textures" / "Planets"
+    return {
+        kind: next(iter(sorted(texture_root.glob(f"PlanetProxy_{planet}_{kind}.dds"))), None)
+        for kind in ("cm", "ng", "add")
+    }
 
 
 def find_texconv(explicit: str | None) -> Path:
@@ -119,10 +154,11 @@ def archive_existing(path: Path) -> Path | None:
     return target
 
 
-def build_definition(available_add: set[str]) -> ET.ElementTree:
+def build_definition(available_add: set[str], planets: list[str]) -> ET.ElementTree:
     root = ET.Element("Definitions")
     components = ET.SubElement(root, "EntityComponents")
-    for planet, visual in PLANETS.items():
+    for planet in planets:
+        visual = PLANETS[planet]
         component = ET.SubElement(
             components,
             "EntityComponent",
@@ -155,14 +191,16 @@ def status(planets: list[str]) -> int:
     rows = []
     missing = False
     for planet in planets:
-        row = {"planet": planet}
-        for kind in ("cm", "ng", "add"):
-            found = newest_export(planet, kind)
+        row = {"planet": planet, "source": "workshop" if planet in PACKAGED_PLANETS else "exporter"}
+        assets = packaged_proxy_assets(planet) if planet in PACKAGED_PLANETS else {
+            kind: newest_export(planet, kind) for kind in ("cm", "ng", "add")
+        }
+        for kind, found in assets.items():
             row[kind] = str(found) if found else None
         if not row["cm"] or not row["ng"]:
             missing = True
         rows.append(row)
-    print(json.dumps({"storage": str(STORAGE), "exports": rows}, indent=2))
+    print(json.dumps({"storage": str(STORAGE), "assets": rows}, indent=2))
     return 1 if missing else 0
 
 
@@ -172,16 +210,28 @@ def build(args) -> None:
     if unknown:
         raise RuntimeError("Unsupported proxy target(s): " + ", ".join(unknown))
 
-    exports: dict[str, dict[str, Path | None]] = {}
+    assets: dict[str, dict[str, Path | None]] = {}
+    ready: list[str] = []
+    missing: list[str] = []
     for planet in requested:
-        exports[planet] = {kind: newest_export(planet, kind) for kind in ("cm", "ng", "add")}
-        if not exports[planet]["cm"] or not exports[planet]["ng"]:
-            raise RuntimeError(
-                f"Missing Planet Exporter CM/NG output for {planet}. "
-                f"Run /ExportCM and /ExportNG while {planet} is targeted."
-            )
+        if planet in PACKAGED_PLANETS:
+            assets[planet] = packaged_proxy_assets(planet)
+        else:
+            assets[planet] = {kind: newest_export(planet, kind) for kind in ("cm", "ng", "add")}
+        if assets[planet]["cm"] and assets[planet]["ng"]:
+            ready.append(planet)
+        else:
+            missing.append(planet)
 
-    texconv = find_texconv(args.texconv)
+    if "Jormun" in requested and "Jormun" not in ready:
+        raise RuntimeError(
+            "The Jormun proxy Workshop item 3663505475 is missing its CM/NG DDS files locally."
+        )
+    if not ready:
+        raise RuntimeError("No proxy targets have complete CM/NG assets.")
+
+    needs_texconv = any(p in EXPORTED_PLANETS for p in ready)
+    texconv = find_texconv(args.texconv) if needs_texconv else None
     parent = GENERATED.parent
     parent.mkdir(parents=True, exist_ok=True)
     staging = parent / ".CampaignPlanetProxies.staging"
@@ -193,22 +243,21 @@ def build(args) -> None:
     data.mkdir(parents=True)
 
     available_add: set[str] = set()
-    for planet in requested:
-        convert(texconv, exports[planet]["cm"], textures / f"PlanetProxy_{planet}_cm.dds", True)
-        convert(texconv, exports[planet]["ng"], textures / f"PlanetProxy_{planet}_ng.dds", False)
-        if exports[planet]["add"]:
-            convert(texconv, exports[planet]["add"], textures / f"PlanetProxy_{planet}_add.dds", True)
-            available_add.add(planet)
+    for planet in ready:
+        if planet in PACKAGED_PLANETS:
+            shutil.copy2(assets[planet]["cm"], textures / f"PlanetProxy_{planet}_cm.dds")
+            shutil.copy2(assets[planet]["ng"], textures / f"PlanetProxy_{planet}_ng.dds")
+            if assets[planet]["add"]:
+                shutil.copy2(assets[planet]["add"], textures / f"PlanetProxy_{planet}_add.dds")
+                available_add.add(planet)
+        else:
+            convert(texconv, assets[planet]["cm"], textures / f"PlanetProxy_{planet}_cm.dds", True)
+            convert(texconv, assets[planet]["ng"], textures / f"PlanetProxy_{planet}_ng.dds", False)
+            if assets[planet]["add"]:
+                convert(texconv, assets[planet]["add"], textures / f"PlanetProxy_{planet}_add.dds", True)
+                available_add.add(planet)
 
-    # The campaign currently expects both definitions in one local proxy mod.
-    missing_targets = set(PLANETS) - set(requested)
-    if missing_targets:
-        raise RuntimeError(
-            "Build both campaign proxies together so the generated local mod is complete. Missing: "
-            + ", ".join(sorted(missing_targets))
-        )
-
-    definition = build_definition(available_add)
+    definition = build_definition(available_add, ready)
     definition.write(data / "PlanetProxyDefaults.sbc", encoding="utf-8", xml_declaration=True)
 
     # Validate every texture referenced by the generated SBC before replacing the prior build.
@@ -228,8 +277,9 @@ def build(args) -> None:
     print(json.dumps({
         "built": str(GENERATED),
         "backup": str(backup) if backup else None,
-        "texconv": str(texconv),
-        "planets": requested,
+        "texconv": str(texconv) if texconv else None,
+        "planets": ready,
+        "waiting_for_exports": missing,
         "additive_textures": sorted(available_add),
         "next": [
             "py scripts\\prepare_pack.py",
