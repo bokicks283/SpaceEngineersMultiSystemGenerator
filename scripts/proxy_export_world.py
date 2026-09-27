@@ -7,6 +7,7 @@ import argparse
 import datetime
 import json
 import os
+import re
 import shutil
 import subprocess
 import xml.etree.ElementTree as ET
@@ -25,17 +26,20 @@ WORLD_NAME = "Proxy Export Workbench 2026-09-27"
 WORKSHOP_IDS = ["3350589349", "2200451495", "3695766186", "3489648084"]
 LOCAL_MOD = "ProxyExportBootstrap"
 
+# Base colors approximate the installed CM textures sampled at 64x64. Glow is
+# authored for hot/lava materials because the exporter uses a single scalar per
+# voxel subtype; it cannot derive a spatial emissive map from the source DDS.
 VOXELS = {
-    "Zenit_Grass": ((0.22, 0.48, 0.18), 0.05, 0.00),
-    "Zenit_OCSand": ((0.68, 0.58, 0.42), 0.03, 0.00),
-    "ZenitLavaGravel": ((0.24, 0.16, 0.12), 0.05, 0.05),
-    "ZenitHotRock": ((0.15, 0.09, 0.07), 0.08, 0.18),
-    "ZenitLavaRockOC": ((0.38, 0.12, 0.04), 0.10, 0.65),
-    "ZenitLavaRockSurface": ((0.48, 0.16, 0.05), 0.10, 0.85),
-    "RelBasalt": ((0.12, 0.13, 0.14), 0.06, 0.00),
-    "RelBedrock": ((0.24, 0.22, 0.20), 0.04, 0.00),
-    "RelMagma": ((0.95, 0.24, 0.03), 0.12, 1.00),
-    "RelRock": ((0.19, 0.17, 0.16), 0.05, 0.00),
+    "Zenit_Grass": ((0.23, 0.36, 0.26), 0.05, 0.00),
+    "Zenit_OCSand": ((0.70, 0.44, 0.20), 0.03, 0.00),
+    "ZenitLavaGravel": ((0.12, 0.12, 0.13), 0.05, 0.08),
+    "ZenitHotRock": ((0.07, 0.06, 0.06), 0.08, 0.18),
+    "ZenitLavaRockOC": ((0.10, 0.09, 0.09), 0.10, 0.65),
+    "ZenitLavaRockSurface": ((0.18, 0.09, 0.05), 0.10, 0.85),
+    "RelBasalt": ((0.15, 0.15, 0.15), 0.06, 0.00),
+    "RelBedrock": ((0.16, 0.16, 0.16), 0.04, 0.00),
+    "RelMagma": ((0.75, 0.21, 0.06), 0.12, 1.00),
+    "RelRock": ((0.15, 0.15, 0.15), 0.05, 0.00),
 }
 
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
@@ -124,13 +128,19 @@ def validate_xml_types(path: Path):
 
 def validate_world(world: Path):
     expected = [(wid + ".sbm", wid, "Steam") for wid in WORKSHOP_IDS]
-    expected.append((LOCAL_MOD, "0", ""))
+    # After a successful launch Space Engineers adds this installed dependency
+    # and writes PublishedServiceName=Steam on the local helper entry.
+    loaded_dependency = ("758597413.sbm", "758597413", "Steam")
     for file in save_files(world):
         validate_xml_types(file)
         root = ET.parse(file).getroot()
-        actual = [(m.findtext("Name"), m.findtext("PublishedFileId", "0"),
+        actual = [(m.findtext("Name"), m.findtext("PublishedFileId"),
                    m.findtext("PublishedServiceName", "")) for m in root.findall("./Mods/ModItem")]
-        if actual != expected:
+        if (actual[:len(expected)] != expected or
+                len(actual) not in (len(expected) + 1, len(expected) + 2) or
+                actual[len(expected)][0:2] != (LOCAL_MOD, None) or
+                actual[len(expected)][2] not in ("", "Steam") or
+                (len(actual) == len(expected) + 2 and actual[-1] != loaded_dependency)):
             raise RuntimeError(f"{file.name}: unexpected workbench mod list: {actual}")
         if root.findtext("./Settings/GameMode") != "Creative":
             raise RuntimeError(f"{file.name}: workbench must be Creative")
@@ -140,7 +150,7 @@ def validate_world(world: Path):
     if len(sectors) != 1:
         raise RuntimeError("Expected exactly one workbench sector")
     validate_xml_types(sectors[0])
-    for wid in WORKSHOP_IDS:
+    for wid in WORKSHOP_IDS + ["758597413"]:
         if not Path(workshop_map()[wid]["path"]).is_dir():
             raise RuntimeError("Missing Workshop mod: " + wid)
     if not list((MOD_ROOT / LOCAL_MOD / "Data" / "Scripts").rglob("*.cs")):
@@ -272,6 +282,96 @@ def set_existing(root, names, value):
     node.text = str(value)
 
 
+def parse_exporter_config(config: Path) -> ET.ElementTree:
+    """Handle exporter files whose UTF-16 declaration disagrees with UTF-8 bytes."""
+    raw = config.read_bytes()
+    try:
+        return ET.ElementTree(ET.fromstring(raw))
+    except ET.ParseError as original_error:
+        # Only recover an ASCII-compatible XML stream that falsely claims UTF-16/32.
+        # Real UTF-16 (with or without a BOM) is handled by the normal parser.
+        if raw.startswith((b"\xff\xfe", b"\xfe\xff")) or b"\x00" in raw[:128]:
+            raise
+        ascii_bytes = raw.removeprefix(b"\xef\xbb\xbf")
+        declaration = re.match(br"<\?xml\s+[^?]*\?>", ascii_bytes)
+        if not declaration or not re.search(br"encoding\s*=\s*['\"]utf-(?:16|32)['\"]", declaration.group(), re.I):
+            raise
+        try:
+            ascii_bytes.decode("utf-8")
+        except UnicodeDecodeError:
+            raise original_error
+        corrected = re.sub(br"(encoding\s*=\s*['\"])utf-(?:16|32)(['\"])",
+                           br"\g<1>utf-8\2", declaration.group(), flags=re.I)
+        return ET.ElementTree(ET.fromstring(corrected + ascii_bytes[declaration.end():]))
+
+
+def require_exporter_schema(root):
+    if root.tag != "PlanetUnwrapperSettingsConfig":
+        raise RuntimeError("Unexpected Planet Exporter config root: " + root.tag)
+    for name in ("SamplingWidth", "SamplingHeight", "ScaleReductionTexCM",
+                 "ScaleReductionTexNG", "ScaleReductionTexADD", "ModdedVoxelInfoList"):
+        if len(root.findall(name)) != 1:
+            raise RuntimeError("Expected exactly one Planet Exporter field: " + name)
+    voxel_list = root.find("ModdedVoxelInfoList")
+    if any(entry.tag != "VoxelInfo" or entry.find("VoxelName") is None or
+           entry.find("VoxelColor") is None or entry.find("VoxelGloss") is None or
+           entry.find("VoxelAdditive") is None for entry in voxel_list):
+        raise RuntimeError("Unexpected Planet Exporter VoxelInfo schema")
+    return voxel_list
+
+
+def configure_file(config: Path):
+    raw = config.read_bytes()
+    tree = parse_exporter_config(config)
+    root = tree.getroot()
+    voxel_list = require_exporter_schema(root)
+
+    # SD settings recommended by the exporter author.
+    set_existing(root, ["SamplingWidth"], 4096)
+    set_existing(root, ["SamplingHeight"], 2048)
+    set_existing(root, ["ScaleReductionTexCM"], 1)
+    set_existing(root, ["ScaleReductionTexNG"], 2)
+    set_existing(root, ["ScaleReductionTexADD"], 2)
+
+    existing = {child.findtext("VoxelName"): child for child in voxel_list}
+    if len(existing) != len(voxel_list):
+        raise RuntimeError("Duplicate names in Planet Exporter ModdedVoxelInfoList")
+    for name, (rgb, gloss, additive) in VOXELS.items():
+        entry = existing.get(name)
+        if entry is None:
+            entry = ET.SubElement(voxel_list, "VoxelInfo")
+            ET.SubElement(entry, "VoxelName").text = name
+            ET.SubElement(entry, "VoxelColor")
+            ET.SubElement(entry, "VoxelGloss")
+            ET.SubElement(entry, "VoxelAdditive")
+        entry.find("VoxelColor").attrib.update({
+            "X": f"{rgb[0]:.4f}", "Y": f"{rgb[1]:.4f}", "Z": f"{rgb[2]:.4f}",
+        })
+        entry.find("VoxelGloss").text = f"{gloss:.4f}"
+        entry.find("VoxelAdditive").text = f"{additive:.4f}"
+
+    # The exporter normally includes these namespace declarations on its root.
+    # ElementTree otherwise drops declarations used only in attribute values.
+    for prefix in ("xsd", "xsi"):
+        match = re.search(rb"\bxmlns:" + prefix.encode() + rb"\s*=\s*(['\"])(.*?)\1", raw[:512])
+        if match:
+            uri = match.group(2).decode("ascii")
+            if not any("{" + uri + "}" in e.tag or any("{" + uri + "}" in k for k in e.attrib)
+                       for e in root.iter()):
+                root.set("xmlns:" + prefix, uri)
+    ET.indent(tree)
+    temp = config.with_suffix(".xml.rsg-tmp")
+    try:
+        tree.write(temp, encoding="utf-8", xml_declaration=True)
+        reparsed = ET.parse(temp)
+        require_exporter_schema(reparsed.getroot())
+        if not temp.read_bytes().startswith(b"<?xml version='1.0' encoding='utf-8'?>"):
+            raise RuntimeError("Rewritten exporter config has a mismatched encoding declaration")
+        os.replace(temp, config)
+    finally:
+        temp.unlink(missing_ok=True)
+
+
 def configure():
     ensure_closed()
     world = source_world().parent / WORLD_NAME
@@ -280,41 +380,7 @@ def configure():
 
     config = exporter_config(world)
     backup = archive(config.parent, "PlanetExporter-config-before-campaign-patch")
-    tree = ET.parse(config)
-    root = tree.getroot()
-
-    # SD settings recommended by the exporter author.
-    set_existing(root, ["SamplingWidth", "ExportWidth"], 4096)
-    set_existing(root, ["SamplingHeight", "ExportHeight"], 2048)
-    set_existing(root, ["ScaleReductionTexCM"], 1)
-    set_existing(root, ["ScaleReductionTexNG"], 2)
-    set_existing(root, ["ScaleReductionTexADD"], 2)
-
-    voxel_list = root.find(".//ModdedVoxelInfoList")
-    if voxel_list is None:
-        raise RuntimeError("Exporter config has no ModdedVoxelInfoList.")
-
-    for child in list(voxel_list):
-        name = child.findtext("VoxelName")
-        if name in VOXELS:
-            voxel_list.remove(child)
-
-    for name, (rgb, gloss, additive) in VOXELS.items():
-        entry = ET.SubElement(voxel_list, "VoxelInfo")
-        ET.SubElement(entry, "VoxelName").text = name
-        ET.SubElement(entry, "VoxelColor", {
-            "X": f"{rgb[0]:.4f}",
-            "Y": f"{rgb[1]:.4f}",
-            "Z": f"{rgb[2]:.4f}",
-        })
-        ET.SubElement(entry, "VoxelGloss").text = f"{gloss:.4f}"
-        ET.SubElement(entry, "VoxelAdditive").text = f"{additive:.4f}"
-
-    ET.indent(tree)
-    temp = config.with_suffix(".xml.rsg-tmp")
-    tree.write(temp, encoding="utf-8", xml_declaration=True)
-    ET.parse(temp)
-    os.replace(temp, config)
+    configure_file(config)
 
     print(json.dumps({
         "config": str(config),
