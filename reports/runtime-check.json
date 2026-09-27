@@ -1,0 +1,504 @@
+{
+  "log": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers_20260927_030308730.log",
+  "modified": 1790493074.1974144,
+  "relevant_count": 54,
+  "error_count": 27,
+  "errors": [
+    {
+      "line": 4768,
+      "text": "2026-09-27 03:05:31.861 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 4794,
+      "text": "2026-09-27 03:05:31.863 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5474,
+      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5478,
+      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5482,
+      "text": "2026-09-27 03:05:31.907 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5564,
+      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5568,
+      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5572,
+      "text": "2026-09-27 03:05:31.911 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5829,
+      "text": "2026-09-27 03:05:31.922 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 6882,
+      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6885,
+      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6888,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6891,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6894,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6897,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6900,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6903,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6906,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7709,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7712,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7715,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7718,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7721,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7724,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7727,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7730,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7733,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    }
+  ],
+  "relevant": [
+    {
+      "line": 595,
+      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3361803398, title = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+    },
+    {
+      "line": 596,
+      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3351055036, title = 'Real Solar Systems'"
+    },
+    {
+      "line": 598,
+      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3232085677, title = 'Real Gas Giants'"
+    },
+    {
+      "line": 602,
+      "text": "2026-09-27 03:04:53.245 - Thread:  11 ->     Up to date mod: Id = 3152436752, title = 'Real Stars'"
+    },
+    {
+      "line": 819,
+      "text": "2026-09-27 03:05:27.113 - Thread:   1 ->     Script loaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 820,
+      "text": "2026-09-27 03:05:27.114 - Thread:   1 ->     Script loaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 831,
+      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 849,
+      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3152436752, Filename = '3152436752.sbm', Name = 'Real Stars'"
+    },
+    {
+      "line": 850,
+      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3351055036, Filename = '3351055036.sbm', Name = 'Real Solar Systems'"
+    },
+    {
+      "line": 851,
+      "text": "2026-09-27 03:05:27.277 - Thread:   1 ->        Id = Steam:3232085677, Filename = '3232085677.sbm', Name = 'Real Gas Giants'"
+    },
+    {
+      "line": 875,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+    },
+    {
+      "line": 876,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
+    },
+    {
+      "line": 955,
+      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
+    },
+    {
+      "line": 4768,
+      "text": "2026-09-27 03:05:31.861 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 4794,
+      "text": "2026-09-27 03:05:31.863 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5474,
+      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5478,
+      "text": "2026-09-27 03:05:31.906 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5482,
+      "text": "2026-09-27 03:05:31.907 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5564,
+      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5568,
+      "text": "2026-09-27 03:05:31.910 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5572,
+      "text": "2026-09-27 03:05:31.911 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 5829,
+      "text": "2026-09-27 03:05:31.922 - Thread:   1 ->     MOD_ERROR: Terran Titans - Naval Blocks"
+    },
+    {
+      "line": 6882,
+      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6885,
+      "text": "2026-09-27 03:05:32.669 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6888,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6891,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6894,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6897,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6900,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6903,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6906,
+      "text": "2026-09-27 03:05:32.670 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 6923,
+      "text": "2026-09-27 03:05:35.688 - Thread:   1 ->  Registered modules from: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6924,
+      "text": "2026-09-27 03:05:35.690 - Thread:   1 ->  Registered modules from: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6935,
+      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7237,
+      "text": "   at RealSolarSystems.RealSolarSystemsCore.LoadData() : "
+    },
+    {
+      "line": 7239,
+      "text": "   at RealSolarSystems.RealSolarSystemsCore.LoadData() : "
+    },
+    {
+      "line": 7241,
+      "text": "   at RealGasGiants.RealGasGiantsCore.LoadData() : "
+    },
+    {
+      "line": 7302,
+      "text": "2026-09-27 03:05:37.134 - Thread:   1 ->      Init ExceptionHandler"
+    },
+    {
+      "line": 7310,
+      "text": "2026-09-27 03:05:37.937 - Thread:   1 ->      Init RealSolarSystemsCore"
+    },
+    {
+      "line": 7311,
+      "text": "2026-09-27 03:05:37.937 - Thread:   1 ->      Init RealGasGiantsCore"
+    },
+    {
+      "line": 7338,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init RandomSectorGeneratorSession"
+    },
+    {
+      "line": 7426,
+      "text": "2026-09-27 03:05:40.279 - Thread:   1 ->  Registering WaterAPI for Mod 'RealSolarSystems'"
+    },
+    {
+      "line": 7709,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7712,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7715,
+      "text": "2026-09-27 03:11:13.091 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7718,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7721,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7724,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7727,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7730,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7733,
+      "text": "2026-09-27 03:11:13.092 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 7759,
+      "text": "2026-09-27 03:11:13.354 - Thread:   1 ->  Script unloaded: 3351055036.sbm_RealSolarSystems, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7760,
+      "text": "2026-09-27 03:11:13.354 - Thread:   1 ->  Script unloaded: 3232085677.sbm_RealGasGiants, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7771,
+      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    }
+  ],
+  "rsg_context": [
+    {
+      "line": 828,
+      "text": "2026-09-27 03:05:27.117 - Thread:   1 ->     Script loaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 829,
+      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 830,
+      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 831,
+      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 832,
+      "text": "2026-09-27 03:05:27.118 - Thread:   1 ->     Script loaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 833,
+      "text": "2026-09-27 03:05:27.130 - Thread:   1 ->  MyScriptManager.LoadData() - END"
+    },
+    {
+      "line": 834,
+      "text": "2026-09-27 03:05:27.130 - Thread:   1 ->  MyDefinitionManager.LoadData() - START"
+    },
+    {
+      "line": 873,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3690317665, Filename = '3690317665.sbm', Name = 'AquaExpansion'"
+    },
+    {
+      "line": 874,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:2899106264, Filename = '2899106264.sbm', Name = 'Terran Titans - Naval Blocks'"
+    },
+    {
+      "line": 875,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3361803398, Filename = '3361803398.sbm', Name = '\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi'"
+    },
+    {
+      "line": 876,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'RandomSectorGenerator', Name = 'RandomSectorGenerator'"
+    },
+    {
+      "line": 877,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignScienceCompatibility', Name = 'CampaignScienceCompatibility'"
+    },
+    {
+      "line": 878,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:0, Filename = 'CampaignPlanetProxies', Name = 'CampaignPlanetProxies'"
+    },
+    {
+      "line": 879,
+      "text": "2026-09-27 03:05:27.278 - Thread:   1 ->        Id = Steam:3706927250, Filename = '3706927250.sbm', Name = 'Terran Titans - Naval Advanced Systems'"
+    },
+    {
+      "line": 952,
+      "text": "2026-09-27 03:05:30.952 - Thread:   1 ->     DefinitionManager - Loading 42 file(s)"
+    },
+    {
+      "line": 953,
+      "text": "2026-09-27 03:05:30.991 - Thread:   1 ->     S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\Prefabs\\"
+    },
+    {
+      "line": 954,
+      "text": "2026-09-27 03:05:30.991 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
+    },
+    {
+      "line": 955,
+      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\RandomSectorGenerator\\Data\\Prefabs\\"
+    },
+    {
+      "line": 956,
+      "text": "2026-09-27 03:05:30.992 - Thread:   1 ->     DefinitionManager - Loading 0 file(s)"
+    },
+    {
+      "line": 957,
+      "text": "2026-09-27 03:05:30.993 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\CampaignScienceCompatibility\\Data\\Prefabs\\"
+    },
+    {
+      "line": 958,
+      "text": "2026-09-27 03:05:30.993 - Thread:   1 ->     DefinitionManager - Loading 1 file(s)"
+    },
+    {
+      "line": 6932,
+      "text": "2026-09-27 03:05:35.694 - Thread:   1 ->  Registered modules from: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6933,
+      "text": "2026-09-27 03:05:35.753 - Thread:   1 ->  Registered modules from: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6934,
+      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6935,
+      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6936,
+      "text": "2026-09-27 03:05:35.756 - Thread:   1 ->  Registered modules from: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6937,
+      "text": "2026-09-27 03:05:35.758 - Thread:   1 ->  Registered modules from: SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 6938,
+      "text": "2026-09-27 03:05:35.764 - Thread:   1 ->  Registered modules from: Sandbox.Game, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7335,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init WaterModAPI"
+    },
+    {
+      "line": 7336,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NAS_Cable_Session"
+    },
+    {
+      "line": 7337,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NAS_Catapult_Session"
+    },
+    {
+      "line": 7338,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init RandomSectorGeneratorSession"
+    },
+    {
+      "line": 7339,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init WaterModAPI"
+    },
+    {
+      "line": 7340,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init AfterburnerManager"
+    },
+    {
+      "line": 7341,
+      "text": "2026-09-27 03:05:37.940 - Thread:   1 ->      Init NASApiSession"
+    },
+    {
+      "line": 7768,
+      "text": "2026-09-27 03:11:13.356 - Thread:   1 ->  Script unloaded: 2596208372.sbm_AiEnabled, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7769,
+      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 3690317665.sbm_AquaExpansion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7770,
+      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 2899106264.sbm_TTNavalBlocks, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7771,
+      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: RandomSectorGenerator_RandomSectorGenerator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7772,
+      "text": "2026-09-27 03:11:13.357 - Thread:   1 ->  Script unloaded: 3706927250.sbm_TTNAS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 7773,
+      "text": "2026-09-27 03:11:13.358 - Thread:   1 ->  Network readers disposed"
+    },
+    {
+      "line": 7774,
+      "text": "2026-09-27 03:11:13.358 - Thread:   1 ->  MyDefinitionManager.PreloadDefinitions() - START"
+    }
+  ]
+}
