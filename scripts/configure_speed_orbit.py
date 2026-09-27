@@ -1,8 +1,9 @@
-"""Apply the initial campaign RTS speed profile to the clean disposable world.
+"""Apply the campaign speed profile to the clean disposable world.
 
-This script intentionally changes only Relative Top Speed's generated world
-configuration. Aerodynamic Physics is left to initialize after RTS on the next
-load, while Real Orbits and RSS keep their speed overrides disabled.
+Relative Top Speed owns the 1,500 m/s grid ceiling. If Aerodynamic Physics has
+already generated dragsettings.xml, its SimulationMaxSpeed is set to 400 m/s
+for the campaign's atmospheric/reentry scaling. Real Orbits and RSS keep their
+speed overrides disabled.
 """
 import json
 import os
