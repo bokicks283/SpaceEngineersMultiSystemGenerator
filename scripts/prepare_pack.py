@@ -4,7 +4,12 @@ from pathlib import Path
 from audit import ROOT, OUT, ALLOW, DENY, dump, scan
 
 CUTS = {'2195637331','2644430625','3309805284','3486181518','3515518898','3684013414'}
-EXTRA = {'3690317665':'AquaExpansion', '2899106264':'Terran Titans Naval Blocks'}
+EXTRA = {
+    '3690317665':'AquaExpansion',
+    '2899106264':'Terran Titans Naval Blocks',
+    '1359618037':'Relative Top Speed',
+    '571920453':'Aerodynamic Physics',
+}
 TITLES = {'2941085186':'Kerbin', '2961923776':'Aulden', '2961924256':'Seren'}
 PROXY_PACKS = {
     '3361803398':'RSS Proxy Pack: Orlunda and Komorebi (SD)',

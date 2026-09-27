@@ -69,6 +69,8 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3362332228 — Orlunda (Sideways)
 - 3690317665 — AquaExpansion
 - 2899106264 — Terran Titans - Naval Blocks
+- 1359618037 — Relative Top Speed
+- 571920453 — Aerodynamic Physics
 - 2941085186 — Kerbin
 - 2961923776 — Planet Aulden
 - 3361803398 — "Real Solar Systems" Proxy Pack: Orlunda and Komorebi
