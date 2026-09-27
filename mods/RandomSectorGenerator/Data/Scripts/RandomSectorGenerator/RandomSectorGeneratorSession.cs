@@ -63,27 +63,11 @@ namespace RandomSectorGenerator
         private bool _adoptionNoticeShown;
         private bool _startTeleportDone;
         private bool _autoAttempted;
+        private bool _runtimeDefinitionsLogged;
 
         public override void LoadData()
         {
             _state = ReadState();
-
-            try
-            {
-                List<MyPlanetGeneratorDefinition> startupDefs = GetUsablePlanetDefinitions();
-                HashSet<string> startupNames = new HashSet<string>(
-                    startupDefs.Select(x => x.Id.SubtypeId.ToString()),
-                    StringComparer.Ordinal);
-                List<string> startupMissing = RequiredCustomPlanets.Where(x => !startupNames.Contains(x)).OrderBy(x => x).ToList();
-                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions loaded: " +
-                    string.Join(", ", RequiredCustomPlanets.Where(startupNames.Contains).OrderBy(x => x)));
-                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions missing: " +
-                    (startupMissing.Count == 0 ? "<none>" : string.Join(", ", startupMissing)));
-            }
-            catch (Exception e)
-            {
-                MyLog.Default.WriteLineAndConsole("[RSG] Failed to audit runtime planet definitions: " + e);
-            }
 
             // The offline handoff writes the pending payload to the checkpoint AFTER
             // the first save and game exit. RSS then reads it normally on next load.
@@ -114,6 +98,12 @@ namespace RandomSectorGenerator
                 if (!_realStars.IsReady && !_realStars.Compromised) _realStars.Load();
                 if (!_realGasGiants.IsReady && !_realGasGiants.Compromised) _realGasGiants.Load();
                 if (!_rss.IsReady && !_rss.Compromised) _rss.Load();
+            }
+
+            if (!_runtimeDefinitionsLogged && _ticks >= 120)
+            {
+                _runtimeDefinitionsLogged = true;
+                AuditRuntimePlanetDefinitions();
             }
 
             if (_pendingAdoptionCheck && _state != null && _state.PendingApply)
@@ -224,6 +214,31 @@ namespace RandomSectorGenerator
             string blackHole = SelectBlackHoleSkin(skins);
             Show("Gas giant skins: " + (skins.Count == 0 ? "<none>" : string.Join(", ", skins)));
             Show("Black-hole candidate: " + (blackHole ?? "<none found>"));
+        }
+
+        private void AuditRuntimePlanetDefinitions()
+        {
+            try
+            {
+                List<MyPlanetGeneratorDefinition> defs = GetUsablePlanetDefinitions();
+                HashSet<string> loaded = new HashSet<string>(
+                    defs.Select(x => x.Id.SubtypeId.ToString()),
+                    StringComparer.Ordinal);
+                List<string> missing = RequiredCustomPlanets
+                    .Where(x => !loaded.Contains(x))
+                    .OrderBy(x => x)
+                    .ToList();
+
+                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions loaded (" +
+                    (RequiredCustomPlanets.Count - missing.Count) + "/" + RequiredCustomPlanets.Count + "): " +
+                    string.Join(", ", RequiredCustomPlanets.Where(loaded.Contains).OrderBy(x => x)));
+                MyLog.Default.WriteLineAndConsole("[RSG] Required custom planet definitions missing: " +
+                    (missing.Count == 0 ? "<none>" : string.Join(", ", missing)));
+            }
+            catch (Exception e)
+            {
+                MyLog.Default.WriteLineAndConsole("[RSG] Failed to audit runtime planet definitions: " + e);
+            }
         }
 
         private void ShowPlanetDefinitions()
