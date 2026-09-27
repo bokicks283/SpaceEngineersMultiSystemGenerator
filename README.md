@@ -132,3 +132,28 @@ The generated files under `reports/` are machine-specific evidence. Re-run the a
 - Water Mod behavior on Jormun/Zenitaia.
 - Scientific Progress discovery behavior on all selected bodies.
 - MES/Assertive/Abandoned/AiEnabled planetary spawning around RSS physical voxel planets. RSS places physical voxel planets far enough from origin that MES precision remains a known acceptance risk; no untested range tweak is presented here as a fix.
+
+
+## First disarmed speed/orbit runtime gate
+
+Before arming RSG, load `RSG Disposable Clean 2026-09-27` once with the final
+pack. Run:
+
+```text
+/rsg status
+/rsg planets
+/rsg skins
+/rts config
+```
+
+Do **not** run `/rsg generate` or `/SetupRealOrbits` during this validation.
+Save, fully exit Space Engineers, then run:
+
+```powershell
+py scripts\runtime_check.py
+py scripts\speed_orbit_runtime.py
+```
+
+`runtime_check.py` captures RSG/RSS plus RTS, Aerodynamic Physics, and Real
+Orbits startup/error context. `speed_orbit_runtime.py` is read-only and
+reports the actual per-world configuration files that the first load created.

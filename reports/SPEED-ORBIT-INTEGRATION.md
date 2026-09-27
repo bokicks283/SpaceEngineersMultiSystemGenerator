@@ -42,3 +42,36 @@ The source-overlap classifications are:
 - RSS speed limits: compatible by default/config because every emitted global and per-body speed override is `-1`.
 - RSS plus Real Orbits: compatible by explicit API integration, with orbital behavior and velocity transforms requiring later runtime validation.
 - Aero plus RSS frame transitions: no direct integration or definite conflict was found; requires later runtime validation.
+
+
+## First disarmed runtime gate
+
+The clean disposable save is synced with RTS, Aerodynamic Physics, Real Orbits,
+RSS, and the final 18-body campaign pool. Keep RSG disarmed for this test.
+
+In game:
+
+1. Load `RSG Disposable Clean 2026-09-27` and let normal mod/session
+   initialization finish.
+2. Run `/rsg status`, `/rsg planets`, and `/rsg skins`.
+3. Run `/rts config` and keep the displayed active configuration available for
+   comparison with the generated storage file.
+4. Do **not** run `/rsg generate` or `/SetupRealOrbits`.
+5. Save and fully exit Space Engineers.
+
+From the repository root after exit:
+
+```powershell
+py scripts\runtime_check.py
+py scripts\speed_orbit_runtime.py
+```
+
+The first load should create RTS and Real Orbits world-storage configuration.
+Aerodynamic Physics may legitimately have no `dragsettings.xml` on a listen
+host because this installed version does not persist defaults merely from a
+normal load. The inspector treats that case as informational rather than a
+failure.
+
+Do not tune the 1,500 m/s campaign ceiling before this gate. The next decision
+uses the actual active RTS XML plus the runtime/config report; Real Orbits
+speed multipliers remain disabled and RSS speed overrides remain `-1`.

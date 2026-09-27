@@ -47,6 +47,7 @@ def main():
     for t in trees:
         actual=[e.findtext('PublishedFileId') for e in t.findall('./Mods/ModItem') if e.find('PublishedFileId') is not None]
         world_sync_pending |= actual != ids
+    assert not world_sync_pending, 'Clean disposable world mod list is not synced to the selected campaign pack'
     assert get_variable(trees[0],RSG_KEY)=='blocked-proxies'
     raw=(world/'Sandbox.sbc').read_text(encoding='utf-8')
     assert 'xmlns:xsd="http://www.w3.org/2001/XMLSchema"' in raw and 'xsi:type="xsd:string"' in raw

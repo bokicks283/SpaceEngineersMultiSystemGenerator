@@ -18,6 +18,12 @@ KEYWORDS = [
     "RealStars",
     "Real Gas Giants",
     "RealGasGiants",
+    "Relative Top Speed",
+    "RelativeTopSpeed",
+    "Aerodynamic Physics",
+    "SEDrag",
+    "Real Orbits",
+    "RealisticGravity",
     "MOD_ERROR",
     "Compilation",
     "compile",
@@ -61,6 +67,8 @@ ERROR_PATTERNS = [
     re.compile(r"ProxyExportBootstrap.*\b(error|failed|exception)\b", re.I),
     re.compile(r"\[PEX\].*\b(error|failed|exception)\b", re.I),
     re.compile(r"\b(load|loading).*\b(world|save).*\b(error|failed|exception)\b", re.I),
+    re.compile(r"(?:RelativeTopSpeed|Relative Top Speed|SEDrag|Aerodynamic Physics|RealisticGravity|Real Orbits).*\b(error|failed|failure|exception)\b", re.I),
+    re.compile(r"\b(error|failed|failure|exception)\b.*(?:RelativeTopSpeed|Relative Top Speed|SEDrag|Aerodynamic Physics|RealisticGravity|Real Orbits)", re.I),
 ]
 
 CAMPAIGN_ISSUES = [
@@ -103,6 +111,20 @@ def main():
                 context_indexes.add(j)
     context = [{"line": i + 1, "text": lines[i]} for i in sorted(context_indexes)]
 
+    speed_orbit_indexes = set()
+    integration_markers = (
+        "relativetop", "relative top speed", "aerodynamic physics",
+        "sedrag", "real orbits", "realisticgravity"
+    )
+    for row in relevant:
+        if any(marker in row["text"].lower() for marker in integration_markers):
+            idx = row["line"] - 1
+            for j in range(max(0, idx - 3), min(len(lines), idx + 4)):
+                speed_orbit_indexes.add(j)
+    speed_orbit_context = [
+        {"line": i + 1, "text": lines[i]} for i in sorted(speed_orbit_indexes)
+    ]
+
     error_context_indexes = set()
     for row in errors:
         idx = row["line"] - 1
@@ -121,6 +143,7 @@ def main():
         "error_context": error_context[-1200:],
         "relevant": relevant[-1000:],
         "rsg_context": context[-400:],
+        "speed_orbit_context": speed_orbit_context[-400:],
     }
     out = REPORTS / "runtime-check.json"
     out.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
