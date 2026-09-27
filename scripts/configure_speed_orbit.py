@@ -139,9 +139,9 @@ def verify_real_orbits(world):
         text, _ = read_mod_text(path)
         hint = str(path.parent).lower() + "\n" + text.lower()
         if ("realisticgravity" in hint or
-                "overrideplanetgravityfalloff" in hint or
-                "largegridmaxspeedmultiplier" in hint or
-                "smallgridmaxspeedmultiplier" in hint):
+                "overridecreatedplanetgravityfalloff" in hint or
+                "globalmaxspeedmultiplier_largegrid" in hint or
+                "globalmaxspeedmultiplier_smallgrid" in hint):
             candidates.append((path, text))
     if len(candidates) != 1:
         raise RuntimeError(
@@ -149,28 +149,19 @@ def verify_real_orbits(world):
         )
     path, text = candidates[0]
     values = {}
-    for tag in ("LargeGridMaxSpeedMultiplier", "SmallGridMaxSpeedMultiplier"):
+    for tag in (
+        "GlobalMaxSpeedMultiplier_LargeGrid",
+        "GlobalMaxSpeedMultiplier_SmallGrid",
+    ):
         raw = read_tag(text, tag)
         if raw is None:
-            # The installed Real Orbits source defaults both multipliers to -1
-            # and may omit default-valued fields from the serialized Config.xml.
-            # Omitted therefore means the speed override remains disabled.
-            values[tag] = {
-                "serialized": None,
-                "effective": -1.0,
-                "state": "omitted; audited default disabled",
-            }
-            continue
+            raise RuntimeError(f"Real Orbits config is missing {tag}")
         value = float(raw)
         if value > 0:
             raise RuntimeError(
                 f"Real Orbits {tag}={value} would compete with RTS; expected disabled <= 0"
             )
-        values[tag] = {
-            "serialized": value,
-            "effective": value,
-            "state": "explicitly disabled",
-        }
+        values[tag] = value
     return str(path.relative_to(world)), values
 
 
