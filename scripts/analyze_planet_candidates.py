@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from audit import ROOT, OUT
+from audit import ROOT, OUT, scan
 
 DEFAULT_IDS = ["2941085186", "2961923776", "2961924256"]
 KNOWN_TITLES = {"2941085186": "Kerbin", "2961923776": "Aulden", "2961924256": "Seren"}
@@ -34,7 +34,12 @@ def main():
         for name in re.findall(r"PlanetBiomePresetType_([^<]+)", local_file.read_text(encoding="utf-8")):
             local_science.add(name)
     proxy = {}
-    for m in inventory["mods"]:
+    proxy_sources = list(inventory["mods"])
+    generated_proxy = ROOT / "generated/CampaignPlanetProxies"
+    if "CampaignPlanetProxies" in plan["local"] and (generated_proxy / "Data/PlanetProxyDefaults.sbc").is_file():
+        proxy_sources.append(dict(id="local:CampaignPlanetProxies", **scan(generated_proxy)))
+        active_ids.add("local:CampaignPlanetProxies")
+    for m in proxy_sources:
         for p in m["proxies"]:
             targets = re.findall(r"PlanetDefaults:\s*([^\r\n]+)", p.get("description") or "")
             if not targets and p["subtype"].startswith("PlanetProxyType_"):

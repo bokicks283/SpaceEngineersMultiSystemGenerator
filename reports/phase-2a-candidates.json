@@ -76,15 +76,21 @@
     },
     "proxies": {
       "Kerbin - Vanilla Version": [],
-      "Kerbin - Water Mod Ready": []
+      "Kerbin - Water Mod Ready": [
+        {
+          "mod": "local:CampaignPlanetProxies",
+          "subtype": "PlanetProxyType_Kerbin - Water Mod Ready",
+          "active": true
+        }
+      ]
     },
     "proxy_count": {
       "Kerbin - Vanilla Version": 0,
-      "Kerbin - Water Mod Ready": 0
+      "Kerbin - Water Mod Ready": 1
     },
     "export_required": {
       "Kerbin - Vanilla Version": true,
-      "Kerbin - Water Mod Ready": true
+      "Kerbin - Water Mod Ready": false
     },
     "scan_errors": []
   },
@@ -145,13 +151,19 @@
       "Aulden": "local"
     },
     "proxies": {
-      "Aulden": []
+      "Aulden": [
+        {
+          "mod": "local:CampaignPlanetProxies",
+          "subtype": "PlanetProxyType_Aulden",
+          "active": true
+        }
+      ]
     },
     "proxy_count": {
-      "Aulden": 0
+      "Aulden": 1
     },
     "export_required": {
-      "Aulden": true
+      "Aulden": false
     },
     "scan_errors": []
   },
@@ -182,13 +194,19 @@
       "Seren": "local"
     },
     "proxies": {
-      "Seren": []
+      "Seren": [
+        {
+          "mod": "local:CampaignPlanetProxies",
+          "subtype": "PlanetProxyType_Seren",
+          "active": true
+        }
+      ]
     },
     "proxy_count": {
-      "Seren": 0
+      "Seren": 1
     },
     "export_required": {
-      "Seren": true
+      "Seren": false
     },
     "scan_errors": []
   }

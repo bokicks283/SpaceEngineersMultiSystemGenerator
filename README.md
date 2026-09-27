@@ -1,6 +1,6 @@
 # Space Engineers Multi-System Generator
 
-Status: **bootstrap implementation is ready for local re-audit and disposable-world testing; generation remains disarmed until proxy coverage is complete.**
+Status: **all selected RSS proxies are built and installed; disposable-world runtime validation is next. Generation remains disarmed.**
 
 This repository owns the local compatibility/configuration work for a heavily modded Space Engineers survival campaign built around Real Solar Systems (RSS), Real Stars, Real Gas Giants, Scientific Progress, Water Mod, MES, and a one-shot Random Sector Generator (RSG).
 
@@ -23,9 +23,9 @@ Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded 
 
 - Cauldron System bundles exact proxies for its four bodies.
 - Orlunda Sideways: Workshop proxy pack **3361803398**.
-- Jormun: Workshop proxy **3663505475**.
-- Zenitaia, Relicta, Kerbin - Water Mod Ready, Aulden, and Seren currently
-  require exported/local RSS proxies. `reports/coverage.json` is authoritative.
+- Jormun: local proxy built from Workshop texture source **3663505475**.
+- Zenitaia, Relicta, Kerbin - Water Mod Ready, Aulden, and Seren use the
+  generated local RSS proxy mod. `reports/coverage.json` is authoritative.
 - RSS itself includes one proxy for each vanilla planet. The installed vanilla
   HD pack 3381681547 stays inactive because it would duplicate those proxies.
 - RSS Planet Exporter: **3350589349**.
@@ -35,7 +35,7 @@ Do not arm a disposable world until `reports/coverage.json` reports exactly one 
 ### Building the missing local proxies
 
 The isolated workbench and generated helper take their export targets from
-`reports/coverage.json`. After exporting each missing planet at 120 km, run:
+selected bodies without Workshop proxies. After exporting each planet at 120 km, run:
 
 ```powershell
 py scripts\build_exported_proxies.py status

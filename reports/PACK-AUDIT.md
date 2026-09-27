@@ -13,17 +13,17 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 | Teal-WaterMod | no | 0 | native |
 | Teralis - City Planet | no | 0 | native |
 | Jormun | yes | 1 | local authored preset |
-| Zenitaia | yes | 0 | local authored preset |
+| Zenitaia | yes | 1 | local authored preset |
 | OrlundaSide | yes | 1 | native |
 | Komorebi | no | 1 | native |
 | Nivis | no | 0 | generic fallback |
-| Relicta | yes | 0 | local authored preset |
+| Relicta | yes | 1 | local authored preset |
 | Sulfate | no | 0 | generic fallback |
 | unavailable | no | 0 | unavailable |
 | Kerbin - Vanilla Version | no | 0 | generic fallback |
-| Kerbin - Water Mod Ready | yes | 0 | local authored preset |
-| Aulden | yes | 0 | local authored preset |
-| Seren | yes | 0 | local authored preset |
+| Kerbin - Water Mod Ready | yes | 1 | local authored preset |
+| Aulden | yes | 1 | local authored preset |
+| Seren | yes | 1 | local authored preset |
 | EarthLike | yes | 1 | native |
 | Moon | yes | 1 | native |
 | Mars | yes | 1 | native |
@@ -89,6 +89,6 @@ MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained
 ## Limits
 
 Phase 2A adds all four omitted vanilla planets plus the verified zero-material Kerbin water variant, Aulden, and Seren. No installed distinct +1/+2 candidate was found. Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus remain excluded for the material budget.
-RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and Jormun uses its dedicated source. Zenitaia, Relicta, Kerbin, Aulden, and Seren require one batch export. The campaign world remains disarmed until coverage is exact.
+RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and Jormun uses its dedicated texture source. The exported local proxies bring selected static coverage to 19/19; the campaign world remains disarmed pending in-game validation.
 Voxel modifiers are excluded. No subtype duplicates were found in the selected local definitions. Unique subtype union is independent of override precedence. The old test save contained stale Workshop entries and was not edited; its static voxel estimate is a lower bound. The original was preserved in timestamped ZIPs.
 The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.

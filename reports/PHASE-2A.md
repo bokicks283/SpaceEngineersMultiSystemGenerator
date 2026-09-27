@@ -55,4 +55,21 @@ generated or armed. Planet Exporter is only in the isolated workbench.
 Offline RSG and helper compilation, `verify_local.py`, workbench validation,
 material union, science presence, and proxy uniqueness pass. The expanded
 planet pool and the three new export targets have not yet been tested in game.
-The CM/NG/ADD TGA files for the five missing proxies do not exist yet.
+At this stage, the CM/NG/ADD TGA files for the five missing proxies had not
+yet been exported.
+
+## Export completion — 2026-09-27
+
+The five bodies above were exported from the isolated workbench and built into
+`generated/CampaignPlanetProxies` alongside Jormun's packaged source. The
+generated mod is installed locally. CM and NG exist for all five; ADD exists
+for Zenitaia and Relicta. Planet Exporter did not create ADD for Kerbin,
+Aulden, or Seren. Their proxy definitions omit the optional ADD texture.
+
+All generated CM and ADD textures are BC7 sRGB; NG textures are BC7 linear.
+CM maps are 2048 × 1024 with 12 mips, and NG/ADD maps are 1024 × 512 with
+11 mips. Every generated texture reference resolves, and selected static
+proxy coverage is now **19 / 19**, with no duplicate active definitions.
+The selected voxel union remains **117 / 128**. The disposable audit world
+was synced and remains disarmed; in-game RSG, RSS, water, science, and MES
+validation has not yet occurred.

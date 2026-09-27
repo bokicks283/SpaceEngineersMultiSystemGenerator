@@ -1,316 +1,960 @@
 {
-  "log": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers_20260927_033923799.log",
-  "modified": 1790494845.4747088,
-  "relevant_count": 14,
-  "error_count": 8,
+  "log": "C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers_20260927_161957963.log",
+  "modified": 1790540988.8933778,
+  "relevant_count": 147,
+  "error_count": 18,
   "errors": [
     {
-      "line": 494,
-      "text": "2026-09-27 03:40:19.621 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 1135,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 495,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1138,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 505,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 1141,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 509,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1144,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 524,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 1147,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 525,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1150,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 535,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 1153,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 539,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1156,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1159,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1791,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1794,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1797,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1800,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1803,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1806,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1809,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1812,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1815,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
     }
   ],
   "error_context": [
     {
-      "line": 490,
-      "text": "2026-09-27 03:40:04.254 - Thread:  12 ->     GetWorldInfoFromDirectory (Exists: True) 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840'"
+      "line": 1131,
+      "text": "2026-09-27 16:21:55.366 - Thread:   1 ->     MyAudio.UnloadData - START"
     },
     {
-      "line": 491,
-      "text": "2026-09-27 03:40:04.312 - Thread:  12 ->  Loading available saves - END"
+      "line": 1132,
+      "text": "2026-09-27 16:21:55.369 - Thread:   1 ->     MyAudio.UnloadData - END"
     },
     {
-      "line": 492,
-      "text": "2026-09-27 03:40:04.670 - Thread:   1 ->  MyGuiScreenProgressAsync MyGuiScreenBase.UnloadContent"
+      "line": 1133,
+      "text": "2026-09-27 16:21:55.369 - Thread:   1 ->     MyAudio.LoadData - START"
     },
     {
-      "line": 493,
-      "text": "2026-09-27 03:40:18.820 - Thread:   1 ->  MyGuiScreenProgress MyGuiScreenBase.LoadContent"
+      "line": 1134,
+      "text": "2026-09-27 16:21:55.395 - Thread:   1 ->        MyAudio.CreateX3DAudio - Device: default - Channels #: 2 - Sample rate: 48000"
     },
     {
-      "line": 494,
-      "text": "2026-09-27 03:40:19.621 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 1135,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 495,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1136,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 496,
-      "text": "   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)"
+      "line": 1137,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->          Unable to find audio file: 'MusConcert_2', 'MUS\\MusConcert\\10YA_Track2_mix2.wav'"
     },
     {
-      "line": 497,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2437_Object(Boolean isNullable, Boolean checkType)"
+      "line": 1138,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 498,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2458_EntryOfStringObject(Boolean checkType)"
+      "line": 1139,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 499,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2459_Item(Boolean isNullable, Boolean checkType)"
+      "line": 1140,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->          Unable to find audio file: 'MusConcert_3', 'MUS\\MusConcert\\10YA_Track3_mix1.wav'"
     },
     {
-      "line": 500,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2460_MyObjectBuilder_ScriptManager(Boolean isNullable, Boolean checkType)"
+      "line": 1141,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 501,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2527_MyObjectBuilder_Checkpoint(Boolean isNullable, Boolean checkType)"
+      "line": 1142,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 502,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read7145_MyObjectBuilder_Checkpoint()"
+      "line": 1143,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_4', 'MUS\\MusConcert\\10YA_Track4_mix1.wav'"
     },
     {
-      "line": 503,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.MyObjectBuilder_CheckpointSerializer.Deserialize(XmlSerializationReader reader)"
+      "line": 1144,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 504,
-      "text": "   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)"
+      "line": 1145,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 505,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 1146,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_5', 'MUS\\MusConcert\\10YA_Track5_mix1.wav'"
     },
     {
-      "line": 506,
-      "text": "   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)"
+      "line": 1147,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 507,
-      "text": "   at VRage.ObjectBuilders.Private.MyObjectBuilderSerializerKeen.DeserializeXML(Stream reader, MyObjectBuilder_Base& objectBuilder, Type builderType, Dictionary`2 typeOverrideMap)"
+      "line": 1148,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 508,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  InnerException: "
+      "line": 1149,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_6', 'MUS\\MusConcert\\10YA_Track6_mix1.wav'"
     },
     {
-      "line": 509,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1150,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 510,
-      "text": "   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)"
+      "line": 1151,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 511,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2437_Object(Boolean isNullable, Boolean checkType)"
+      "line": 1152,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_7', 'MUS\\MusConcert\\10YA_Track7_mix1.wav'"
     },
     {
-      "line": 512,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2458_EntryOfStringObject(Boolean checkType)"
+      "line": 1153,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 513,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2459_Item(Boolean isNullable, Boolean checkType)"
+      "line": 1154,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 514,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2460_MyObjectBuilder_ScriptManager(Boolean isNullable, Boolean checkType)"
+      "line": 1155,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_8', 'MUS\\MusConcert\\10YA_Track8_mix1.wav'"
     },
     {
-      "line": 515,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2527_MyObjectBuilder_Checkpoint(Boolean isNullable, Boolean checkType)"
+      "line": 1156,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 516,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read7145_MyObjectBuilder_Checkpoint()"
+      "line": 1157,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 520,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  LoadSandbox() - Start"
+      "line": 1158,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_9', 'MUS\\MusConcert\\10YA_Track9_mix1.wav'"
     },
     {
-      "line": 521,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  LoadSession() - Start"
+      "line": 1159,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
     },
     {
-      "line": 522,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27"
+      "line": 1160,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 523,
-      "text": "2026-09-27 03:40:19.658 - Thread:  30 ->  Loading Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox_config.sbc"
+      "line": 1161,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->          Unable to find audio file: 'MusConcert_10', 'MUS\\MusConcert\\10YA_Track10_mix1.wav'"
     },
     {
-      "line": 524,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 1162,
+      "text": "2026-09-27 16:21:55.444 - Thread:   1 ->     MyAudio.LoadData - END"
     },
     {
-      "line": 525,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1163,
+      "text": "2026-09-27 16:21:55.451 - Thread:   1 ->  MyDefinitionManager.LoadData() - END"
     },
     {
-      "line": 526,
-      "text": "   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)"
+      "line": 1164,
+      "text": "2026-09-27 16:21:55.454 - Thread:   1 ->  Registered modules from: VRage.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 527,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2437_Object(Boolean isNullable, Boolean checkType)"
+      "line": 1165,
+      "text": "2026-09-27 16:21:55.476 - Thread:   1 ->  Registered modules from: Sandbox.Graphics, Version=0.1.1.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 528,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2458_EntryOfStringObject(Boolean checkType)"
+      "line": 1166,
+      "text": "2026-09-27 16:21:55.476 - Thread:   1 ->  Registered modules from: Sandbox.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 529,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2459_Item(Boolean isNullable, Boolean checkType)"
+      "line": 1787,
+      "text": "2026-09-27 16:29:34.132 - Thread:   1 ->  MyAudio.UnloadData - START"
     },
     {
-      "line": 530,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2460_MyObjectBuilder_ScriptManager(Boolean isNullable, Boolean checkType)"
+      "line": 1788,
+      "text": "2026-09-27 16:29:34.135 - Thread:   1 ->  MyAudio.UnloadData - END"
     },
     {
-      "line": 531,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2527_MyObjectBuilder_Checkpoint(Boolean isNullable, Boolean checkType)"
+      "line": 1789,
+      "text": "2026-09-27 16:29:34.135 - Thread:   1 ->  MyAudio.LoadData - START"
     },
     {
-      "line": 532,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read7145_MyObjectBuilder_Checkpoint()"
+      "line": 1790,
+      "text": "2026-09-27 16:29:34.165 - Thread:   1 ->     MyAudio.CreateX3DAudio - Device: default - Channels #: 2 - Sample rate: 48000"
     },
     {
-      "line": 533,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.MyObjectBuilder_CheckpointSerializer.Deserialize(XmlSerializationReader reader)"
+      "line": 1791,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 534,
-      "text": "   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)"
+      "line": 1792,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 535,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 1793,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       Unable to find audio file: 'MusConcert_2', 'MUS\\MusConcert\\10YA_Track2_mix2.wav'"
     },
     {
-      "line": 536,
-      "text": "   at System.Xml.Serialization.XmlSerializer.Deserialize(XmlReader xmlReader, String encodingStyle, XmlDeserializationEvents events)"
+      "line": 1794,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 537,
-      "text": "   at VRage.ObjectBuilders.Private.MyObjectBuilderSerializerKeen.DeserializeXML(Stream reader, MyObjectBuilder_Base& objectBuilder, Type builderType, Dictionary`2 typeOverrideMap)"
+      "line": 1795,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 538,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  InnerException: "
+      "line": 1796,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       Unable to find audio file: 'MusConcert_3', 'MUS\\MusConcert\\10YA_Track3_mix1.wav'"
     },
     {
-      "line": 539,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 1797,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 540,
-      "text": "   at System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(String value, Boolean decodeName)"
+      "line": 1798,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 541,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2437_Object(Boolean isNullable, Boolean checkType)"
+      "line": 1799,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->       Unable to find audio file: 'MusConcert_4', 'MUS\\MusConcert\\10YA_Track4_mix1.wav'"
     },
     {
-      "line": 542,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2458_EntryOfStringObject(Boolean checkType)"
+      "line": 1800,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 543,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2459_Item(Boolean isNullable, Boolean checkType)"
+      "line": 1801,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
     },
     {
-      "line": 544,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2460_MyObjectBuilder_ScriptManager(Boolean isNullable, Boolean checkType)"
+      "line": 1802,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_5', 'MUS\\MusConcert\\10YA_Track5_mix1.wav'"
     },
     {
-      "line": 545,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read2527_MyObjectBuilder_Checkpoint(Boolean isNullable, Boolean checkType)"
+      "line": 1803,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
     },
     {
-      "line": 546,
-      "text": "   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReader1.Read7145_MyObjectBuilder_Checkpoint()"
+      "line": 1804,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 1805,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_6', 'MUS\\MusConcert\\10YA_Track6_mix1.wav'"
+    },
+    {
+      "line": 1806,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1807,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 1808,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_7', 'MUS\\MusConcert\\10YA_Track7_mix1.wav'"
+    },
+    {
+      "line": 1809,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1810,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 1811,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_8', 'MUS\\MusConcert\\10YA_Track8_mix1.wav'"
+    },
+    {
+      "line": 1812,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1813,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 1814,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_9', 'MUS\\MusConcert\\10YA_Track9_mix1.wav'"
+    },
+    {
+      "line": 1815,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1816,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\Audio_music.sbc"
+    },
+    {
+      "line": 1817,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->       Unable to find audio file: 'MusConcert_10', 'MUS\\MusConcert\\10YA_Track10_mix1.wav'"
+    },
+    {
+      "line": 1818,
+      "text": "2026-09-27 16:29:34.216 - Thread:   1 ->  MyAudio.LoadData - END"
+    },
+    {
+      "line": 1819,
+      "text": "2026-09-27 16:29:34.216 - Thread:   1 ->  MyConfig.Save() - START"
+    },
+    {
+      "line": 1820,
+      "text": "2026-09-27 16:29:34.216 - Thread:   1 ->     Path: C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\SpaceEngineers.cfg"
+    },
+    {
+      "line": 1821,
+      "text": "2026-09-27 16:29:34.217 - Thread:   1 ->  MyConfig.Save() - END"
+    },
+    {
+      "line": 1822,
+      "text": "2026-09-27 16:29:34.220 - Thread:   1 ->  Unloading Procedural World Generator"
     }
   ],
   "relevant": [
     {
-      "line": 494,
-      "text": "2026-09-27 03:40:19.621 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 550,
+      "text": "2026-09-27 16:21:47.889 - Thread:   3 ->  Loading Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox_config.sbc"
     },
     {
-      "line": 495,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 554,
+      "text": "2026-09-27 16:21:47.891 - Thread:   3 ->  C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27"
     },
     {
-      "line": 505,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 555,
+      "text": "2026-09-27 16:21:47.891 - Thread:   3 ->  Loading Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox_config.sbc"
     },
     {
-      "line": 508,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  InnerException: "
+      "line": 556,
+      "text": "2026-09-27 16:21:47.917 - Thread:   3 ->  Loading Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox_config.sbc"
     },
     {
-      "line": 509,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 571,
+      "text": "2026-09-27 16:21:48.584 - Thread:  11 ->     Up to date mod: Id = 3350589349, title = 'Planet Exporter (Real Solar Systems)'"
     },
     {
-      "line": 519,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  Failed to deserialize file 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox.sbc'"
+      "line": 572,
+      "text": "2026-09-27 16:21:48.584 - Thread:  11 ->     Up to date mod: Id = 2961924256, title = 'Planet Seren'"
     },
     {
-      "line": 522,
-      "text": "2026-09-27 03:40:19.657 - Thread:  30 ->  C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27"
+      "line": 573,
+      "text": "2026-09-27 16:21:48.584 - Thread:  11 ->     Up to date mod: Id = 2961923776, title = 'Planet Aulden'"
     },
     {
-      "line": 523,
-      "text": "2026-09-27 03:40:19.658 - Thread:  30 ->  Loading Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox_config.sbc"
+      "line": 574,
+      "text": "2026-09-27 16:21:48.585 - Thread:  11 ->     Up to date mod: Id = 2941085186, title = 'Kerbin'"
     },
     {
-      "line": 524,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  ERROR: Exception during objectbuilder read! (xml): MyObjectBuilder_Checkpoint"
+      "line": 588,
+      "text": "2026-09-27 16:21:48.833 - Thread:   1 ->  Loading session: C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27"
     },
     {
-      "line": 525,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: There is an error in the XML document. ---> System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 592,
+      "text": "2026-09-27 16:21:48.922 - Thread:   1 ->     Name = Proxy Export Workbench 2026-09-27"
     },
     {
-      "line": 535,
-      "text": "   --- End of inner exception stack trace ---"
+      "line": 596,
+      "text": "2026-09-27 16:21:48.922 - Thread:   1 ->     CurrentPath = C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27"
     },
     {
-      "line": 538,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  InnerException: "
+      "line": 599,
+      "text": "2026-09-27 16:21:48.922 - Thread:   1 ->     ThumbPath = C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\thumb.jpg"
     },
     {
-      "line": 539,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Exception occurred: System.InvalidOperationException: Namespace prefix 'xsd' is not defined."
+      "line": 762,
+      "text": "2026-09-27 16:21:52.365 - Thread:   1 ->     Script loaded: ProxyExportBootstrap_ProxyExportBootstrap, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     },
     {
-      "line": 549,
-      "text": "2026-09-27 03:40:19.673 - Thread:  30 ->  Failed to deserialize file 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Sandbox.sbc'"
+      "line": 770,
+      "text": "2026-09-27 16:21:52.519 - Thread:   1 ->        Id = Steam:3350589349, Filename = '3350589349.sbm', Name = 'Planet Exporter (Real Solar Systems)'"
+    },
+    {
+      "line": 774,
+      "text": "2026-09-27 16:21:52.519 - Thread:   1 ->        Id = Steam:2941085186, Filename = '2941085186.sbm', Name = 'Kerbin'"
+    },
+    {
+      "line": 775,
+      "text": "2026-09-27 16:21:52.519 - Thread:   1 ->        Id = Steam:2961923776, Filename = '2961923776.sbm', Name = 'Planet Aulden'"
+    },
+    {
+      "line": 776,
+      "text": "2026-09-27 16:21:52.519 - Thread:   1 ->        Id = Steam:2961924256, Filename = '2961924256.sbm', Name = 'Planet Seren'"
+    },
+    {
+      "line": 778,
+      "text": "2026-09-27 16:21:52.519 - Thread:   1 ->        Id = Steam:0, Filename = 'ProxyExportBootstrap', Name = 'ProxyExportBootstrap'"
+    },
+    {
+      "line": 798,
+      "text": "2026-09-27 16:21:55.048 - Thread:   1 ->     C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Mods\\ProxyExportBootstrap\\Data\\Prefabs\\"
+    },
+    {
+      "line": 880,
+      "text": "2026-09-27 16:21:55.089 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 883,
+      "text": "2026-09-27 16:21:55.089 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/EarthFarClouds_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 886,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 889,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 892,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 895,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 898,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 901,
+      "text": "2026-09-27 16:21:55.090 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Landsky_texture_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia"
+    },
+    {
+      "line": 916,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 917,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 918,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 919,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 920,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 921,
+      "text": "2026-09-27 16:21:55.097 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 922,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 923,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 924,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 925,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 926,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 927,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 928,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 929,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 930,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 931,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 932,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 933,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 934,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 935,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 936,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 937,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 938,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Vanilla Version.sbc"
+    },
+    {
+      "line": 939,
+      "text": "2026-09-27 16:21:55.098 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Vanilla Version"
+    },
+    {
+      "line": 940,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 941,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 942,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 943,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 944,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 945,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 946,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 947,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 948,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 949,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 950,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 951,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 952,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 953,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 954,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 955,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 956,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 957,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 958,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 959,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 960,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_alphamask.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 961,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->     mod_warning: Kerbin"
+    },
+    {
+      "line": 962,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186\\Data\\Kerbin - Water Mod Ready.sbc"
+    },
+    {
+      "line": 963,
+      "text": "2026-09-27 16:21:55.099 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/MartianSky02_cm.dds file in mod and game folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Kerbin - Water Mod Ready"
+    },
+    {
+      "line": 964,
+      "text": "2026-09-27 16:21:55.100 - Thread:   1 ->     Loading planet definitions Planet Aulden"
+    },
+    {
+      "line": 966,
+      "text": "2026-09-27 16:21:55.101 - Thread:   1 ->     Loading planet definitions Planet Seren"
+    },
+    {
+      "line": 967,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->     mod_warning: Planet Seren"
+    },
+    {
+      "line": 968,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc"
+    },
+    {
+      "line": 969,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Seren_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Seren"
+    },
+    {
+      "line": 970,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->     mod_warning: Planet Seren"
+    },
+    {
+      "line": 971,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc"
+    },
+    {
+      "line": 972,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Seren_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Seren"
+    },
+    {
+      "line": 973,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->     mod_warning: Planet Seren"
+    },
+    {
+      "line": 974,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc"
+    },
+    {
+      "line": 975,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Seren_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Seren"
+    },
+    {
+      "line": 976,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->     mod_warning: Planet Seren"
+    },
+    {
+      "line": 977,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc"
+    },
+    {
+      "line": 978,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Seren_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Seren"
+    },
+    {
+      "line": 979,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->     mod_warning: Planet Seren"
+    },
+    {
+      "line": 980,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       in file: S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data\\Seren.sbc"
+    },
+    {
+      "line": 981,
+      "text": "2026-09-27 16:21:55.102 - Thread:   1 ->       Missing Textures/Models/Environment/Sky/Seren_alphamask.dds file in mod folder for planet MyObjectBuilder_PlanetGeneratorDefinition/Seren"
+    },
+    {
+      "line": 1135,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1138,
+      "text": "2026-09-27 16:21:55.435 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1141,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1144,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1147,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1150,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1153,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1156,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1159,
+      "text": "2026-09-27 16:21:55.436 - Thread:   1 ->        MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1170,
+      "text": "2026-09-27 16:21:55.494 - Thread:   1 ->  Registered modules from: ProxyExportBootstrap_ProxyExportBootstrap, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    },
+    {
+      "line": 1305,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLike'"
+    },
+    {
+      "line": 1306,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeModExample'"
+    },
+    {
+      "line": 1307,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/EarthLikeTutorial'"
+    },
+    {
+      "line": 1308,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Pertam'"
+    },
+    {
+      "line": 1309,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Triton'"
+    },
+    {
+      "line": 1310,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/WaterWorld'"
+    },
+    {
+      "line": 1311,
+      "text": "2026-09-27 16:21:55.701 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Planet Agaris'"
+    },
+    {
+      "line": 1368,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienFogLight'"
+    },
+    {
+      "line": 1369,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienFogHeavy'"
+    },
+    {
+      "line": 1376,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienRainLight'"
+    },
+    {
+      "line": 1377,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienRainHeavy'"
+    },
+    {
+      "line": 1380,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienThunderstormLight'"
+    },
+    {
+      "line": 1381,
+      "text": "2026-09-27 16:21:55.702 - Thread:   1 ->  WaterMod: Loaded Weather Config 'AlienThunderstormHeavy'"
+    },
+    {
+      "line": 1388,
+      "text": "2026-09-27 16:21:55.707 - Thread:   1 ->  WaterMod: Loaded Planet Config 'MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia'"
+    },
+    {
+      "line": 1389,
+      "text": "2026-09-27 16:21:55.707 - Thread:   1 ->  WaterMod: Planet config MyObjectBuilder_PlanetGeneratorDefinition/Zenitaia has a malformed texture! Setting to default."
+    },
+    {
+      "line": 1411,
+      "text": "2026-09-27 16:21:55.847 - Thread:   1 ->      Init ProxyExportBootstrapSession"
+    },
+    {
+      "line": 1478,
+      "text": "2026-09-27 16:21:55.871 - Thread:   1 ->      Loading voxel 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Zenitaia-521536889d120000.vx2'"
+    },
+    {
+      "line": 1479,
+      "text": "2026-09-27 16:21:55.871 - Thread:  12 ->      Loading voxel 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\Relicta-45018795d120000.vx2'"
+    },
+    {
+      "line": 1491,
+      "text": "2026-09-27 16:21:57.841 - Thread:   1 ->  OnEntityInitialized PEX_Relicta (MyPlanet, 5071481802718252283)"
+    },
+    {
+      "line": 1494,
+      "text": "2026-09-27 16:21:57.842 - Thread:   1 ->  OnEntityInitialized PEX_Zenitaia (MyPlanet, -249496657024159179)"
+    },
+    {
+      "line": 1532,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_front!"
+    },
+    {
+      "line": 1534,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_back!"
+    },
+    {
+      "line": 1536,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_left!"
+    },
+    {
+      "line": 1538,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_right!"
+    },
+    {
+      "line": 1540,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_up!"
+    },
+    {
+      "line": 1542,
+      "text": "2026-09-27 16:22:13.389 - Thread:   1 ->  Error: Cannot build prunning tree for heightmap face Steam:2961923776.sbm:Aulden_down!"
+    },
+    {
+      "line": 1545,
+      "text": "2026-09-27 16:22:13.704 - Thread:   1 ->  Error: Could not load texture S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256\\Data/PlanetDataFiles\\Seren\\front, no suitable format found. "
+    },
+    {
+      "line": 1546,
+      "text": "2026-09-27 16:22:13.704 - Thread:   1 ->  Error loading heightmap Seren, using fallback instead. See rest of log for details."
+    },
+    {
+      "line": 1634,
+      "text": "2026-09-27 16:26:49.298 - Thread:  11 ->     Saving Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new\\Sandbox_config.sbc"
+    },
+    {
+      "line": 1635,
+      "text": "2026-09-27 16:26:49.302 - Thread:  11 ->     Info: GridStorage: copied 0 grid file(s) from 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27' to 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new'"
+    },
+    {
+      "line": 1665,
+      "text": "2026-09-27 16:27:43.554 - Thread:   1 ->  Debug: Attempting to spawn planetary installation 'P29_WreckedHopper' at 'PEX_Kerbin - Water Mod Ready'"
+    },
+    {
+      "line": 1754,
+      "text": "2026-09-27 16:29:32.729 - Thread:  12 ->     Saving Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new\\Sandbox_config.sbc"
+    },
+    {
+      "line": 1755,
+      "text": "2026-09-27 16:29:32.733 - Thread:  12 ->     Info: GridStorage: copied 0 grid file(s) from 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27' to 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new'"
+    },
+    {
+      "line": 1767,
+      "text": "2026-09-27 16:29:33.963 - Thread:  11 ->     Saving Sandbox world configuration file C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new\\Sandbox_config.sbc"
+    },
+    {
+      "line": 1768,
+      "text": "2026-09-27 16:29:33.966 - Thread:  11 ->     Info: GridStorage: copied 0 grid file(s) from 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27' to 'C:\\Users\\Rim28\\AppData\\Roaming\\SpaceEngineers\\Saves\\76561198045624840\\Proxy Export Workbench 2026-09-27\\.new'"
+    },
+    {
+      "line": 1791,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1794,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1797,
+      "text": "2026-09-27 16:29:34.206 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1800,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1803,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1806,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1809,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1812,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1815,
+      "text": "2026-09-27 16:29:34.207 - Thread:   1 ->     MOD_ERROR: Unknown"
+    },
+    {
+      "line": 1827,
+      "text": "2026-09-27 16:29:34.255 - Thread:   1 ->  Script unloaded: ProxyExportBootstrap_ProxyExportBootstrap, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     }
   ],
   "rsg_context": []

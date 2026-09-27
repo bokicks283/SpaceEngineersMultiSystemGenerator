@@ -71,11 +71,17 @@ ET.register_namespace("xsi", XSI)
 
 def selected_targets() -> list[str]:
     coverage = json.loads((REPORTS / "coverage.json").read_text(encoding="utf-8"))
-    missing = [c["planet"] for c in coverage if c["selected"] and c["active_proxy_count"] == 0]
-    unsupported = sorted(set(missing) - set(EXPORTED_PLANETS))
+    plan = json.loads((REPORTS / "pack-plan.json").read_text(encoding="utf-8"))
+    active_workshop = {m["id"] for m in plan["selected_workshop"]}
+    # Local generated proxies are the output of this build, not a reason to
+    # omit their source planets on the next build.
+    exports = [c["planet"] for c in coverage if c["selected"] and
+               not any(p["mod"] in active_workshop for p in c["proxy_candidates"]) and
+               c["planet"] not in PACKAGED_PLANETS]
+    unsupported = sorted(set(exports) - set(EXPORTED_PLANETS))
     if unsupported:
         raise RuntimeError("Selected proxy export has no visual profile: " + ", ".join(unsupported))
-    return list(PACKAGED_PLANETS) + missing
+    return list(PACKAGED_PLANETS) + exports
 
 
 def newest_export(planet: str, kind: str) -> Path | None:

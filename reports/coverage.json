@@ -123,8 +123,18 @@
     "id": "3695766186",
     "planet": "Zenitaia",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Zenitaia",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Zenitaia_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Zenitaia_ng.dds\n\t\t\tPlanetTexture_add: Textures\\Planets\\PlanetProxy_Zenitaia_add.dds\n\t\t\tAtmoColor: (0.45,0.72,1.0,1.0)\n\t\t\tAtmoThickness: 1.0\n\t\t\tAtmoColorMult: 1.1\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.4,0.8,1.0,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
@@ -183,8 +193,18 @@
     "id": "3489648084",
     "planet": "Relicta",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Relicta",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Relicta_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Relicta_ng.dds\n\t\t\tPlanetTexture_add: Textures\\Planets\\PlanetProxy_Relicta_add.dds\n\t\t\tAtmoColor: (0.85,0.28,0.12,1.0)\n\t\t\tAtmoThickness: 0.98\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (1.0,0.35,0.15,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
@@ -223,8 +243,18 @@
     "id": "2941085186",
     "planet": "Kerbin - Water Mod Ready",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Kerbin - Water Mod Ready",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Kerbin - Water Mod Ready_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Kerbin - Water Mod Ready_ng.dds\n\t\t\tAtmoColor: (0.55,0.76,1.0,1.0)\n\t\t\tAtmoThickness: 1.0\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.35,0.70,0.95,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
@@ -233,8 +263,18 @@
     "id": "2961923776",
     "planet": "Aulden",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Aulden",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Aulden_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Aulden_ng.dds\n\t\t\tAtmoColor: (0.65,0.78,0.9,1.0)\n\t\t\tAtmoThickness: 1.0\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.7,0.85,0.95,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
@@ -243,8 +283,18 @@
     "id": "2961924256",
     "planet": "Seren",
     "selected": true,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
+    "proxy_candidates": [
+      {
+        "mod": "local:CampaignPlanetProxies",
+        "root": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies",
+        "subtype": "PlanetProxyType_Seren",
+        "file": "C:\\Users\\Rim28\\Projects\\SpaceEngineerMods\\generated\\CampaignPlanetProxies\\Data\\PlanetProxyDefaults.sbc",
+        "type": "Inventory",
+        "enabled": "true",
+        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Seren_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Seren_ng.dds\n\t\t\tAtmoColor: (0.55,0.35,0.8,1.0)\n\t\t\tAtmoThickness: 0.7\n\t\t\tAtmoColorMult: 1.0\n\t\t\tAtmoInZoneMult: 1\n\t\t\tScale: 0.99\n\t\t\tScaleFadeMin: 0.7\n\t\t\tEditorIconColor: (0.55,0.55,0.9,1.0)\n\t  "
+      }
+    ],
+    "active_proxy_count": 1,
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
