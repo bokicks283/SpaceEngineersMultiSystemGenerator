@@ -142,6 +142,7 @@ foreach ($mod in $plan.selected_workshop) {
     }
 }
 
+Invoke-Checked 'Patch Terminus accretion-disk rotation' { py scripts\apply_terminus_rotation.py }
 Invoke-Checked 'Sync pending RSG save mod lists' { py scripts\sync_pending_world_mods.py }
 
 Write-Host ''
