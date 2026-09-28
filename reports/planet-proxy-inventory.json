@@ -1,5 +1,24 @@
 [
   {
+    "id": "2178783350",
+    "title": "Small Spiders",
+    "planets": [
+      {
+        "subtype": "SmallSPiderFake",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2178783350\\Data\\PlanetGeneratorFake.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": null,
+        "gravity": "1.0",
+        "oxygen": null
+      }
+    ],
+    "proxies": [],
+    "denylisted": false,
+    "desired_planet": false,
+    "active_in_existing_world": true
+  },
+  {
     "id": "2195637331",
     "title": "Teralis - City Planet",
     "planets": [
@@ -333,6 +352,25 @@
         "description": "\n\t\t\tPlanetDefaults: Pertam\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Pertam_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Pertam_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.6\n\t\t\tAtmoColor: (0.5,0.8,1.0,1.0)\n\t\t\tAtmoThickness: 0.97\n\t\t\tAtmoColorMult: 8.0\n\t\t\tEditorIconColor: (1.0,1.0,0.7,1.0)\n\t "
       }
     ],
+    "denylisted": false,
+    "desired_planet": false,
+    "active_in_existing_world": false
+  },
+  {
+    "id": "3481843850",
+    "title": null,
+    "planets": [
+      {
+        "subtype": "Terminus (Black Hole)",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3481843850\\Data\\Terminus.sbc",
+        "type": "PlanetGeneratorDefinition",
+        "enabled": "true",
+        "atmosphere": "true",
+        "gravity": "100000",
+        "oxygen": "0"
+      }
+    ],
+    "proxies": [],
     "denylisted": false,
     "desired_planet": false,
     "active_in_existing_world": false

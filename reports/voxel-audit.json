@@ -1,9 +1,19 @@
 {
   "existing": {
     "vanilla": 62,
-    "effective_unique_subtypes": 117,
-    "headroom_to_128": 11,
+    "effective_unique_subtypes": 120,
+    "headroom_to_128": 8,
     "per_mod": [
+      {
+        "id": "1608841667",
+        "title": "Daily Needs Survival Kit ( DNSK - Mk 4.2 )",
+        "definitions": 11,
+        "nonvanilla": [
+          "Carbon_01",
+          "Phosphorus_01",
+          "Potassium_01"
+        ]
+      },
       {
         "id": "3362332228",
         "title": "Orlunda (Sideways)",
@@ -102,7 +112,143 @@
         ]
       }
     ],
-    "duplicates": {},
+    "duplicates": {
+      "Grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Rocks_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ]
+    },
     "definitions": {
       "Stone_01": [
         {
@@ -300,6 +446,20 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Grass bare": [
@@ -318,6 +478,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Grass_old": [
@@ -325,6 +492,13 @@
           "mod": "vanilla",
           "subtype": "Grass_old",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -345,6 +519,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Woods_grass bare": [
@@ -361,6 +542,13 @@
           "mod": "vanilla",
           "subtype": "Rocks_grass",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -417,6 +605,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "AlienGreenGrass bare": [
@@ -471,6 +666,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "AlienRockGrass bare": [
@@ -487,6 +689,13 @@
           "mod": "vanilla",
           "subtype": "AlienOrangeGrass",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -658,6 +867,33 @@
           "mod": "vanilla",
           "subtype": "PertamSand",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Carbon_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Carbon_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Potassium_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Potassium_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Phosphorus_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Phosphorus_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -1161,9 +1397,19 @@
   },
   "desired_with_existing_gameplay": {
     "vanilla": 62,
-    "effective_unique_subtypes": 151,
-    "headroom_to_128": -23,
+    "effective_unique_subtypes": 154,
+    "headroom_to_128": -26,
     "per_mod": [
+      {
+        "id": "1608841667",
+        "title": "Daily Needs Survival Kit ( DNSK - Mk 4.2 )",
+        "definitions": 11,
+        "nonvanilla": [
+          "Carbon_01",
+          "Phosphorus_01",
+          "Potassium_01"
+        ]
+      },
       {
         "id": "2195637331",
         "title": "Teralis - City Planet",
@@ -1317,7 +1563,143 @@
         ]
       }
     ],
-    "duplicates": {},
+    "duplicates": {
+      "Grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_02": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Grass_old": [
+        {
+          "mod": "vanilla",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Woods_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Rocks_grass": [
+        {
+          "mod": "vanilla",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienGreenGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienRockGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "AlienOrangeGrass": [
+        {
+          "mod": "vanilla",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ]
+    },
     "definitions": {
       "Stone_01": [
         {
@@ -1515,6 +1897,20 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Grass bare": [
@@ -1533,6 +1929,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_02",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Grass_old": [
@@ -1540,6 +1943,13 @@
           "mod": "vanilla",
           "subtype": "Grass_old",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Grass_old",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -1560,6 +1970,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Woods_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "Woods_grass bare": [
@@ -1576,6 +1993,13 @@
           "mod": "vanilla",
           "subtype": "Rocks_grass",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "Rocks_grass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -1632,6 +2056,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienGreenGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "AlienGreenGrass bare": [
@@ -1686,6 +2117,13 @@
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienRockGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
         }
       ],
       "AlienRockGrass bare": [
@@ -1702,6 +2140,13 @@
           "mod": "vanilla",
           "subtype": "AlienOrangeGrass",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        },
+        {
+          "mod": "1608841667",
+          "subtype": "AlienOrangeGrass",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
@@ -1873,6 +2318,33 @@
           "mod": "vanilla",
           "subtype": "PertamSand",
           "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Carbon_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Carbon_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Potassium_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Potassium_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Phosphorus_01": [
+        {
+          "mod": "1608841667",
+          "subtype": "Phosphorus_01",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_asteroids.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }
