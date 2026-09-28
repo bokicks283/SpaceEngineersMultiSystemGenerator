@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <DragSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SmallShipMaxSpeed>1500</SmallShipMaxSpeed>
-  <LargeShipMaxSpeed>1500</LargeShipMaxSpeed>
+  <SmallShipMaxSpeed>5000</SmallShipMaxSpeed>
+  <LargeShipMaxSpeed>5000</LargeShipMaxSpeed>
   <AtmosphereExtension>1.5</AtmosphereExtension>
   <EnableCharacterDrag>true</EnableCharacterDrag>
   <DeflectionMult>100</DeflectionMult>
