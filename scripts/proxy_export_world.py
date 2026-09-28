@@ -28,11 +28,17 @@ WORKSHOP_IDS = ["3350589349", "2200451495", "3695766186", "3489648084", "3481843
     json.loads((ROOT / "campaign-planets.json").read_text(encoding="utf-8"))["additional_workshop"]
 )
 LOCAL_MOD = "ProxyExportBootstrap"
+SPECIAL_EXPORT_TARGETS = ["Terminus (Black Hole)"]
 
 
 def export_targets():
     coverage = json.loads((REPORTS / "coverage.json").read_text(encoding="utf-8"))
-    return [row["planet"] for row in coverage if row["selected"] and row["active_proxy_count"] == 0]
+    targets = [row["planet"] for row in coverage
+               if row["selected"] and row["active_proxy_count"] == 0]
+    for name in SPECIAL_EXPORT_TARGETS:
+        if name not in targets:
+            targets.append(name)
+    return targets
 
 # Base colors approximate the installed CM textures sampled at 64x64. Glow is
 # authored for hot/lava materials because the exporter uses a single scalar per
@@ -297,7 +303,7 @@ def prepare(reset: bool):
         "previous_backup": str(backup) if backup else None,
         "bootstrap": str(MOD_ROOT / LOCAL_MOD),
         "workshop_mods": WORKSHOP_IDS,
-        "next": "Load this world once, wait for both planets to spawn, SAVE, then EXIT.",
+        "next": "Load this world once, wait for all export targets to spawn, SAVE, then EXIT.",
     }, indent=2))
 
 
