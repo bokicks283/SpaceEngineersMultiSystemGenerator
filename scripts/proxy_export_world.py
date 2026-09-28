@@ -77,16 +77,52 @@ def workshop_map():
     return {m["id"]: m for m in inventory()["mods"]}
 
 
+def save_profile_root() -> Path:
+    """Choose the active Space Engineers save-profile directory from audited saves."""
+    worlds = inventory()["worlds"]
+    parents = {}
+    for world in worlds:
+        parent = Path(world["file"]).parent.parent.resolve()
+        if SAVE_ROOT.resolve() not in parent.parents and parent != SAVE_ROOT.resolve():
+            continue
+        checkpoint = Path(world["file"])
+        try:
+            modified = checkpoint.stat().st_mtime
+        except OSError:
+            modified = 0
+        count, newest = parents.get(parent, (0, 0))
+        parents[parent] = (count + 1, max(newest, modified))
+
+    if parents:
+        return max(parents, key=lambda p: (parents[p][0], parents[p][1]))
+
+    candidates = [p.resolve() for p in SAVE_ROOT.iterdir() if p.is_dir()] if SAVE_ROOT.is_dir() else []
+    if len(candidates) == 1:
+        return candidates[0]
+    raise RuntimeError(
+        "Could not determine the active Space Engineers save profile. "
+        "Create or save any world once, rerun scripts\\audit.py, and retry."
+    )
+
+
 def source_world() -> Path:
+    """Use an audited Empty World save when present, otherwise the stock game template."""
     worlds = inventory()["worlds"]
     candidates = [
         Path(w["file"]).parent
         for w in worlds
         if w["name"].startswith("Empty World")
     ]
-    if not candidates:
-        raise RuntimeError("No audited Empty World source save was found.")
-    return candidates[0]
+    if candidates:
+        return candidates[0]
+
+    games = inventory().get("games") or []
+    for game in games:
+        candidate = Path(game["path"]) / "Content" / "CustomWorlds" / "Empty World"
+        if (candidate / "Sandbox.sbc").is_file() and (candidate / "Sandbox_config.sbc").is_file():
+            return candidate
+
+    raise RuntimeError("Could not find the installed stock Empty World template.")
 
 
 def existing_workbench() -> Path:
@@ -223,9 +259,15 @@ def repair():
 
 
 def sync():
-    """Expand the existing workbench without discarding spawned planets or Storage."""
+    """Expand an existing workbench, or create it when it does not exist yet."""
     ensure_closed()
-    world = existing_workbench()
+    try:
+        world = existing_workbench()
+    except RuntimeError as exc:
+        if "was not found" not in str(exc):
+            raise
+        prepare(False)
+        return
     if SAVE_ROOT.resolve() not in world.parents or not world.is_dir():
         raise RuntimeError("Expected an existing isolated proxy workbench")
     for f in save_files(world):
@@ -280,7 +322,10 @@ def prepare(reset: bool):
     if has_planet_entities(src):
         raise RuntimeError("Audited Empty World source unexpectedly contains planets.")
 
-    dest = src.parent / WORLD_NAME
+    if SAVE_ROOT.resolve() in src.parents:
+        dest = src.parent / WORLD_NAME
+    else:
+        dest = save_profile_root() / WORLD_NAME
     if dest.exists():
         if not reset:
             raise RuntimeError(
