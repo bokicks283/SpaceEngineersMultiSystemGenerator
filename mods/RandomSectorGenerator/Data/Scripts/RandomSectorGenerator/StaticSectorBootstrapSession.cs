@@ -221,12 +221,16 @@ namespace RandomSectorGenerator
             // Central black hole exists physically now but is only assigned its final
             // hierarchy/orbit role after RSS has adopted all bodies.
             string holeName = GenerateUniqueName(build) + " Abyss";
-            MyPlanet hole = _realGasGiants.SpawnGasGiant(NextParkingPosition(build.Random), 180f,
+            MyPlanet hole = _realGasGiants.SpawnGasGiant(NextParkingPosition(build.Random), 450f,
                 new Vector3I(8, 8, 12), blackHoleSkin, 35f, 2f, 3600f);
             if (hole == null)
                 throw new Exception("Real Gas Giants failed to spawn the central black hole");
             hole.Name = holeName;
             _realGasGiants.SetGasGiantName(hole, holeName);
+            if (!_realGasGiants.SetGasGiantRing(
+                hole, 0, "DefaultBlackHole", new Vector3D(0d, 10d, 1d), new Vector3I(255, 165, 72),
+                2.5f, 0.15f, 1.15f, 8f, 0.75f, 900f, false, false))
+                throw new Exception("Real Gas Giants failed to configure the black-hole accretion disk");
             build.GeneratedEntities.Add(hole);
             build.Root = new PlanNode(holeName, "RealGasGiant", hole.StorageName, "Central Black Hole", hole);
 
