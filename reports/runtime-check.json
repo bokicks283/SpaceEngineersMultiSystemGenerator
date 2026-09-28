@@ -2669,5 +2669,593 @@
       "line": 16695,
       "text": "2026-09-27 20:47:22.163 - Thread:   1 ->  MyDefinitionManager.PreloadDefinitions() - START"
     }
+  ],
+  "voxel_material_reported_count": 164,
+  "voxel_material_parsed_count": 69,
+  "voxel_materials": [
+    {
+      "line": 16321,
+      "index": 0,
+      "name": "Stone_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16322,
+      "index": 1,
+      "name": "Stone_02",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16323,
+      "index": 2,
+      "name": "Stone_03",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16324,
+      "index": 3,
+      "name": "Stone_04",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16325,
+      "index": 4,
+      "name": "Stone_05",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16326,
+      "index": 5,
+      "name": "Iron_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16327,
+      "index": 6,
+      "name": "Iron_02",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16328,
+      "index": 7,
+      "name": "Nickel_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16329,
+      "index": 8,
+      "name": "Cobalt_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16330,
+      "index": 9,
+      "name": "Magnesium_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16331,
+      "index": 10,
+      "name": "Silicon_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16332,
+      "index": 11,
+      "name": "Silver_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16333,
+      "index": 12,
+      "name": "Gold_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16334,
+      "index": 13,
+      "name": "Platinum_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16335,
+      "index": 14,
+      "name": "Uraninite_01",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16336,
+      "index": 15,
+      "name": "Ice_01",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16337,
+      "index": 16,
+      "name": "Ice_02",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16338,
+      "index": 17,
+      "name": "Ice_03",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16339,
+      "index": 18,
+      "name": "SmallMoonRocks",
+      "source": "<BaseGame>",
+      "used_in": "asteroids, meteorites"
+    },
+    {
+      "line": 16340,
+      "index": 19,
+      "name": "DebugMaterial",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16341,
+      "index": 20,
+      "name": "Soil",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16342,
+      "index": 21,
+      "name": "Grass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16343,
+      "index": 22,
+      "name": "Grass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16344,
+      "index": 23,
+      "name": "Grass_02",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16345,
+      "index": 24,
+      "name": "Grass_old",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16346,
+      "index": 25,
+      "name": "Grass_old bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16347,
+      "index": 26,
+      "name": "Woods_grass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16348,
+      "index": 27,
+      "name": "Woods_grass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16349,
+      "index": 28,
+      "name": "Rocks_grass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16350,
+      "index": 29,
+      "name": "Snow",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16351,
+      "index": 30,
+      "name": "Ice",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16352,
+      "index": 31,
+      "name": "Sand_02",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16353,
+      "index": 32,
+      "name": "DesertRocks",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16354,
+      "index": 33,
+      "name": "Stone",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16355,
+      "index": 34,
+      "name": "AlienGreenGrass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16356,
+      "index": 35,
+      "name": "AlienGreenGrass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16357,
+      "index": 36,
+      "name": "AlienIce_03",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16358,
+      "index": 37,
+      "name": "AlienRockyTerrain",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16359,
+      "index": 38,
+      "name": "AlienRockyMountain",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16360,
+      "index": 39,
+      "name": "AlienSand",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16361,
+      "index": 40,
+      "name": "AlienRockGrass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16362,
+      "index": 41,
+      "name": "AlienRockGrass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16363,
+      "index": 42,
+      "name": "AlienOrangeGrass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16364,
+      "index": 43,
+      "name": "AlienOrangeGrass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16365,
+      "index": 44,
+      "name": "AlienIce",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16366,
+      "index": 45,
+      "name": "AlienSnow",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16367,
+      "index": 46,
+      "name": "AlienYellowGrass",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16368,
+      "index": 47,
+      "name": "AlienYellowGrass bare",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16369,
+      "index": 48,
+      "name": "AlienSoil",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16370,
+      "index": 49,
+      "name": "MarsRocks",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16371,
+      "index": 50,
+      "name": "MarsSoil",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16372,
+      "index": 51,
+      "name": "MoonSoil",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16373,
+      "index": 52,
+      "name": "MoonRocks",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16374,
+      "index": 53,
+      "name": "IceEuropa2",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16375,
+      "index": 54,
+      "name": "TritonStone",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16376,
+      "index": 55,
+      "name": "TritonBlend",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16377,
+      "index": 56,
+      "name": "TritonIce",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16378,
+      "index": 57,
+      "name": "CrackedSoil",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16379,
+      "index": 58,
+      "name": "DustyRocks",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16380,
+      "index": 59,
+      "name": "DustyRocks2",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16381,
+      "index": 60,
+      "name": "DustyRocks3",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16382,
+      "index": 61,
+      "name": "PertamSand",
+      "source": "<BaseGame>",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16407,
+      "index": 86,
+      "name": "Salt_Flats_01",
+      "source": "Komorebi (Steam:3309805284)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16408,
+      "index": 87,
+      "name": "Salt_Flats_03",
+      "source": "Komorebi (Steam:3309805284)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16430,
+      "index": 109,
+      "name": "Zenit_Grass",
+      "source": "Planet Zenitaia (Steam:3695766186)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16431,
+      "index": 110,
+      "name": "Zenit_OCSand",
+      "source": "Planet Zenitaia (Steam:3695766186)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16483,
+      "index": 161,
+      "name": "OrlundaLake",
+      "source": "Orlunda (Sideways) (Steam:3362332228)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16484,
+      "index": 162,
+      "name": "Salt_01",
+      "source": "AquaExpansion (Steam:3690317665)",
+      "used_in": "meteorites"
+    },
+    {
+      "line": 16485,
+      "index": 163,
+      "name": "SeaSoil_01",
+      "source": "AquaExpansion (Steam:3690317665)",
+      "used_in": "meteorites"
+    }
+  ],
+  "voxel_materials_by_source": [
+    {
+      "source": "<BaseGame>",
+      "count": 62,
+      "materials": [
+        "Stone_01",
+        "Stone_02",
+        "Stone_03",
+        "Stone_04",
+        "Stone_05",
+        "Iron_01",
+        "Iron_02",
+        "Nickel_01",
+        "Cobalt_01",
+        "Magnesium_01",
+        "Silicon_01",
+        "Silver_01",
+        "Gold_01",
+        "Platinum_01",
+        "Uraninite_01",
+        "Ice_01",
+        "Ice_02",
+        "Ice_03",
+        "SmallMoonRocks",
+        "DebugMaterial",
+        "Soil",
+        "Grass",
+        "Grass bare",
+        "Grass_02",
+        "Grass_old",
+        "Grass_old bare",
+        "Woods_grass",
+        "Woods_grass bare",
+        "Rocks_grass",
+        "Snow",
+        "Ice",
+        "Sand_02",
+        "DesertRocks",
+        "Stone",
+        "AlienGreenGrass",
+        "AlienGreenGrass bare",
+        "AlienIce_03",
+        "AlienRockyTerrain",
+        "AlienRockyMountain",
+        "AlienSand",
+        "AlienRockGrass",
+        "AlienRockGrass bare",
+        "AlienOrangeGrass",
+        "AlienOrangeGrass bare",
+        "AlienIce",
+        "AlienSnow",
+        "AlienYellowGrass",
+        "AlienYellowGrass bare",
+        "AlienSoil",
+        "MarsRocks",
+        "MarsSoil",
+        "MoonSoil",
+        "MoonRocks",
+        "IceEuropa2",
+        "TritonStone",
+        "TritonBlend",
+        "TritonIce",
+        "CrackedSoil",
+        "DustyRocks",
+        "DustyRocks2",
+        "DustyRocks3",
+        "PertamSand"
+      ]
+    },
+    {
+      "source": "AquaExpansion (Steam:3690317665)",
+      "count": 2,
+      "materials": [
+        "Salt_01",
+        "SeaSoil_01"
+      ]
+    },
+    {
+      "source": "Komorebi (Steam:3309805284)",
+      "count": 2,
+      "materials": [
+        "Salt_Flats_01",
+        "Salt_Flats_03"
+      ]
+    },
+    {
+      "source": "Planet Zenitaia (Steam:3695766186)",
+      "count": 2,
+      "materials": [
+        "Zenit_Grass",
+        "Zenit_OCSand"
+      ]
+    },
+    {
+      "source": "Orlunda (Sideways) (Steam:3362332228)",
+      "count": 1,
+      "materials": [
+        "OrlundaLake"
+      ]
+    }
   ]
 }
