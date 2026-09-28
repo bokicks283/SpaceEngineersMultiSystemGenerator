@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RespawnShips>
+    <Ship>
+      <Id>
+        <TypeId>RespawnShipDefinition</TypeId>
+        <SubtypeId>RSGCrashStartLorek</SubtypeId>
+      </Id>
+      <DisplayName>Crash Start - Lorek</DisplayName>
+      <Icon>Textures\GUI\Icons\RespawnShips\RespawnPlanetPod.png</Icon>
+      <CooldownSeconds>0</CooldownSeconds>
+      <Prefab>RespawnPlanetPod</Prefab>
+      <PlanetTypes>
+        <PlanetType>Tellus</PlanetType>
+      </PlanetTypes>
+      <MinimalAirDensity>0.1</MinimalAirDensity>
+      <PlanetDeployAltitude>6000</PlanetDeployAltitude>
+      <UseForPlanetsWithAtmosphere>true</UseForPlanetsWithAtmosphere>
+      <InitialLinearVelocity x="0" y="-60" z="0" />
+      <InitialAngularVelocity x="0" y="0.5" z="0" />
+      <HelpTextLocalizationId>RespawnScreeenHelpTextSpawn</HelpTextLocalizationId>
+    </Ship>
+    <Ship>
+      <Id>
+        <TypeId>RespawnShipDefinition</TypeId>
+        <SubtypeId>RSGCrashStartTalek</SubtypeId>
+      </Id>
+      <DisplayName>Crash Start - Talek (Hard)</DisplayName>
+      <Icon>Textures\GUI\Icons\RespawnShips\RespawnPlanetPod.png</Icon>
+      <CooldownSeconds>0</CooldownSeconds>
+      <Prefab>RespawnPlanetPod</Prefab>
+      <PlanetTypes>
+        <PlanetType>Cauldron</PlanetType>
+      </PlanetTypes>
+      <MinimalAirDensity>0.1</MinimalAirDensity>
+      <PlanetDeployAltitude>6000</PlanetDeployAltitude>
+      <UseForPlanetsWithAtmosphere>true</UseForPlanetsWithAtmosphere>
+      <InitialLinearVelocity x="0" y="-60" z="0" />
+      <InitialAngularVelocity x="0" y="0.5" z="0" />
+      <HelpTextLocalizationId>RespawnScreeenHelpTextSpawn</HelpTextLocalizationId>
+    </Ship>
+  </RespawnShips>
+</Definitions>
