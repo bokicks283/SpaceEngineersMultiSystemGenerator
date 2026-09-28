@@ -1,6 +1,6 @@
 """Apply the campaign speed profile to the clean disposable world.
 
-Relative Top Speed owns the 1,500 m/s grid ceiling. If Aerodynamic Physics has
+Relative Top Speed owns the 5,000 m/s physical grid ceiling. If Aerodynamic Physics has
 already generated dragsettings.xml, its SimulationMaxSpeed is set to 400 m/s
 for the campaign's atmospheric/reentry scaling. Real Orbits and RSS keep their
 speed overrides disabled.
@@ -25,16 +25,16 @@ WORLD = (Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves" /
 AERO_SIMULATION_MAX_SPEED = 400
 
 PROFILE = {
-    "SpeedLimit": 1500,
+    "SpeedLimit": 5000,
     "RemoteControlSpeedLimit": 1000,
     "LargeGrid": {
         "CruiseCurve": [(200000, 1200), (5000000, 850), (8000000, 650)],
-        "MaxBoostSpeed": 1500,
+        "MaxBoostSpeed": 5000,
         "ResistanceMultiplier": 1.5,
     },
     "SmallGrid": {
         "CruiseCurve": [(10000, 1200), (300000, 1000), (400000, 950)],
-        "MaxBoostSpeed": 1500,
+        "MaxBoostSpeed": 5000,
         "ResistanceMultiplier": 1.0,
     },
 }
@@ -253,7 +253,7 @@ def main():
         "aero": aero_result,
         "next": [
             "Load the clean disposable world once; do not arm or generate.",
-            "Run /rts config and confirm SpeedLimit 1500 and RemoteControlSpeedLimit 1000.",
+            "Run /rts config and confirm SpeedLimit 5000 and RemoteControlSpeedLimit 1000.",
             "Confirm Aero SimulationMaxSpeed remains 400 after save/exit.",
             "Save and fully exit Space Engineers.",
             r"py scripts\speed_orbit_runtime.py",
