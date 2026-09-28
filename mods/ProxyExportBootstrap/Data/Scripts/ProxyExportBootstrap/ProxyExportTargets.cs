@@ -9,6 +9,7 @@ namespace ProxyExportBootstrap
             "Relicta",
             "Kerbin - Water Mod Ready",
             "Aulden",
+            "Terminus (Black Hole)",
         };
     }
 }
