@@ -126,6 +126,39 @@ also repairs an older pending save from its durable RSG state before reload.
 
 This avoids modifying/forking RSS.
 
+### Recovering the generated hierarchy after manual RSS adoption
+
+If `/AddStrayPlanets` has already captured the generated bodies and the world
+has subsequently been saved, `scripts/apply_static_sector_plan.py` can restore
+the RSG plan's hierarchy and generated names offline. It does not create or
+move voxel bodies, change `StorageName`/`PlanetGenerator` identity, or touch
+Workshop content.
+
+Space Engineers must be closed. Validate the exact adopted save first:
+
+```powershell
+py scripts\apply_static_sector_plan.py `
+  "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\RSG Static Sector v2 - Pre RSS" `
+  --plan "$env:APPDATA\SpaceEngineers\Saves\76561198045624840\Random Sector 2026-09-28 02-10\Storage\RandomSectorGenerator_RandomSectorGenerator\RandomSectorStaticPlan.tsv" `
+  --dry-run
+```
+
+Remove `--dry-run` only after reviewing every reported identity mapping. The
+write path creates a complete ZIP backup in the saves directory's sibling
+`CodexBackups` folder, validates all staged XML, and replaces only the target
+save's RSS, Real Stars, Real Gas Giants, and sector XML files. It sets each
+mod's one-shot `OverrideFromConfig` flag so the edited files win on the next
+load.
+
+On that first load, inspect `/TSE` for the `Wyaris Abyss` root and the planned
+parent/child tree. Then run `/SetupRealOrbits` once, save, fully exit, reload,
+and recheck the hierarchy and names. Stock respawn-screen labels remain a
+runtime acceptance item; RSS source proves the underlying planet entity name
+changes, but not how every stock UI surface chooses its label.
+
+The source-backed lifecycle and exact preservation rules are documented in
+[RSS Static Sector Lifecycle](reports/RSS-STATIC-SECTOR-LIFECYCLE-2026-09-28.md).
+
 After adoption and final-body verification, a separate
 [Campaign Activation](reports/CAMPAIGN-ACTIVATION.md) phase must test Economy,
 encounters, MES/PvE, and respawn behavior in a QA clone before enabling them
