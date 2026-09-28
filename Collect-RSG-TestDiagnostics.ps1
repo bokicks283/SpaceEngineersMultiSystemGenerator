@@ -32,16 +32,17 @@ $report = Join-Path $Root 'REPORT.txt'
 "Generated: $(Get-Date -Format o)" | Add-Content $report
 "" | Add-Content $report
 
-# Main current log + common exception/crash logs.
+# Current Space Engineers builds use timestamped log names. Collect the
+# newest few so the exact failed run is preserved even if another launch occurs.
 $logCandidates = @(
-    (Join-Path $seRoot 'SpaceEngineers.log'),
-    (Join-Path $seRoot 'SpaceEngineers.log.old')
+    Get-ChildItem -LiteralPath $seRoot -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -like 'SpaceEngineers*.log' } |
+        Sort-Object LastWriteTime -Descending |
+        Select-Object -First 5
 )
-foreach ($file in $logCandidates) {
-    if (Test-Path -LiteralPath $file) {
-        Copy-WithRelativePath -File $file -Base $seRoot -Destination (Join-Path $Out 'AppData-SpaceEngineers')
-        "LOG: $file" | Add-Content $report
-    }
+foreach ($entry in $logCandidates) {
+    Copy-WithRelativePath -File $entry.FullName -Base $seRoot -Destination (Join-Path $Out 'AppData-SpaceEngineers')
+    "LOG: $($entry.FullName)" | Add-Content $report
 }
 
 Get-ChildItem -LiteralPath $seRoot -File -ErrorAction SilentlyContinue |
@@ -130,11 +131,11 @@ foreach ($world in $worldDirs) {
 
 # Relevant log excerpts are convenient for a fast first read, while the full log
 # remains included above.
-$mainLog = Join-Path $seRoot 'SpaceEngineers.log'
-if (Test-Path -LiteralPath $mainLog) {
-    $patterns = 'Random Sector Generator|\[RSG\]|MOD_ERROR|Compilation|compile|Exception|RealSolarSystems|Real Solar Systems|RealGasGiants|Real Stars'
-    Select-String -LiteralPath $mainLog -Pattern $patterns -CaseSensitive:$false -ErrorAction SilentlyContinue |
-        Select-Object -Last 1500 |
+$mainLog = $logCandidates | Select-Object -First 1
+if ($null -ne $mainLog) {
+    $patterns = 'Random Sector Generator|\[RSG\]|MOD_ERROR|Compilation|compile|Exception|RealSolarSystems|Real Solar Systems|RealGasGiants|Real Stars|starter|proxy|zone|gravity|teleport|recover'
+    Select-String -LiteralPath $mainLog.FullName -Pattern $patterns -CaseSensitive:$false -ErrorAction SilentlyContinue |
+        Select-Object -Last 2500 |
         ForEach-Object { $_.Line } |
         Set-Content -LiteralPath (Join-Path $Root 'RelevantLogExcerpt.txt') -Encoding utf8
 }
