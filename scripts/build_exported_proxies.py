@@ -47,6 +47,12 @@ EXPORTED_PLANETS = {
         "atmo_mult": "1.0",
         "icon": "(0.7,0.85,0.95,1.0)",
     },
+    "Terminus (Black Hole)": {
+        "atmo_color": null,
+        "atmo_thickness": null,
+        "atmo_mult": null,
+        "icon": "(0.85,0.32,0.08,1.0)",
+    },
     "Seren": {
         "atmo_color": "(0.55,0.35,0.8,1.0)",
         "atmo_thickness": "0.7",
@@ -64,6 +70,7 @@ PACKAGED_PLANETS = {
     }
 }
 PLANETS = {**PACKAGED_PLANETS, **EXPORTED_PLANETS}
+REQUIRED_SPECIAL_EXPORTS = ["Terminus (Black Hole)"]
 
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
 ET.register_namespace("xsi", XSI)
@@ -81,7 +88,10 @@ def selected_targets() -> list[str]:
     unsupported = sorted(set(exports) - set(EXPORTED_PLANETS))
     if unsupported:
         raise RuntimeError("Selected proxy export has no visual profile: " + ", ".join(unsupported))
-    return list(PACKAGED_PLANETS) + exports
+    return list(PACKAGED_PLANETS) + exports + [
+        planet for planet in REQUIRED_SPECIAL_EXPORTS
+        if planet not in PACKAGED_PLANETS and planet not in exports
+    ]
 
 
 def newest_export(planet: str, kind: str) -> Path | None:
@@ -206,11 +216,14 @@ def build_definition(available_add: set[str], planets: list[str]) -> ET.ElementT
         ]
         if planet in available_add:
             lines.append(f"PlanetTexture_add: Textures\\Planets\\PlanetProxy_{planet}_add.dds")
+        if visual["atmo_color"] is not None:
+            lines += [
+                f"AtmoColor: {visual['atmo_color']}",
+                f"AtmoThickness: {visual['atmo_thickness']}",
+                f"AtmoColorMult: {visual['atmo_mult']}",
+                "AtmoInZoneMult: 1",
+            ]
         lines += [
-            f"AtmoColor: {visual['atmo_color']}",
-            f"AtmoThickness: {visual['atmo_thickness']}",
-            f"AtmoColorMult: {visual['atmo_mult']}",
-            "AtmoInZoneMult: 1",
             "Scale: 0.99",
             "ScaleFadeMin: 0.7",
             f"EditorIconColor: {visual['icon']}",
