@@ -19,7 +19,8 @@
   ],
   "non_catalog_planet_definition_mods": [
     "3152436752",
-    "3232085677"
+    "3232085677",
+    "3481843850"
   ],
   "required_support_workshop": {
     "1608841667": "Daily Needs Survival Kit owns hunger, thirst, and fatigue",
@@ -30,6 +31,7 @@
     "2760086069": "HyperDrive strategic system-to-system travel tier",
     "2802482180": "Damaged Spawnships for campaign crash starts",
     "3361803398": "required SD proxy pack for OrlundaSide",
+    "3481843850": "Terminus black hole used as the campaign central RSS root",
     "3780085631": "System Manager for RSS-aware sector setup and navigation"
   },
   "compatibility_exclusions": {
