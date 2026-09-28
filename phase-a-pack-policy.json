@@ -22,7 +22,9 @@
     "3232085677"
   ],
   "required_support_workshop": {
-    "3361803398": "required SD proxy pack for OrlundaSide"
+    "1965654081": "Rich HUD Master dependency for System Manager",
+    "3361803398": "required SD proxy pack for OrlundaSide",
+    "3780085631": "System Manager for RSS-aware sector setup and navigation"
   },
   "compatibility_exclusions": {
     "2266665708": "known incompatible or obsolete mod excluded by Phase A policy",
