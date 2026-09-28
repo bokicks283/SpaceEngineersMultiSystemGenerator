@@ -14,6 +14,7 @@ namespace RandomSectorGenerator
         private bool _apiInit;
 
         private Func<Vector3D, float, Vector3I, float, float, float, float, float, MyPlanet> _spawnStar;
+        private Func<MyPlanet, MyTuple<bool, float, Vector3I, float, float, float>> _getStarInfo;
         private Func<MyPlanet, string, bool> _setStarName;
 
         public bool IsReady { get; private set; }
@@ -41,12 +42,42 @@ namespace RandomSectorGenerator
             IsReady = false;
             Compromised = false;
             _spawnStar = null;
+            _getStarInfo = null;
             _setStarName = null;
         }
 
         public MyPlanet SpawnStar(Vector3D position, float radiusKm, Vector3I color, float effectBrightness, float lightBrightness, float damageRadiusKm, float gravityStrength, float gravityFalloff)
         {
             return _spawnStar == null ? null : _spawnStar(position, radiusKm, color, effectBrightness, lightBrightness, damageRadiusKm, gravityStrength, gravityFalloff);
+        }
+
+        public bool TryGetStarInfo(MyPlanet planet, out float radiusKm, out Vector3I color, out float effectBrightness, out float lightBrightness, out float damageRadiusKm)
+        {
+            radiusKm = 0f;
+            color = Vector3I.Zero;
+            effectBrightness = 0f;
+            lightBrightness = 0f;
+            damageRadiusKm = 0f;
+            if (_getStarInfo == null || planet == null)
+                return false;
+
+            try
+            {
+                MyTuple<bool, float, Vector3I, float, float, float> info = _getStarInfo(planet);
+                if (!info.Item1)
+                    return false;
+                radiusKm = info.Item2;
+                color = info.Item3;
+                effectBrightness = info.Item4;
+                lightBrightness = info.Item5;
+                damageRadiusKm = info.Item6;
+                return true;
+            }
+            catch
+            {
+                IsReady = false;
+                return false;
+            }
         }
 
         public void SetStarName(MyPlanet planet, string name)
@@ -81,6 +112,7 @@ namespace RandomSectorGenerator
             try
             {
                 _spawnStar = (Func<Vector3D, float, Vector3I, float, float, float, float, float, MyPlanet>)methods["SpawnStar"];
+                _getStarInfo = (Func<MyPlanet, MyTuple<bool, float, Vector3I, float, float, float>>)methods["GetStarInfo"];
                 _setStarName = (Func<MyPlanet, string, bool>)methods["SetStarName"];
                 _apiInit = true;
                 IsReady = true;
