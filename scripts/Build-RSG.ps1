@@ -10,7 +10,7 @@ New-Item -ItemType Directory -Force $out | Out-Null
 $report=Join-Path $root 'reports/build-rsg.txt'
 '' | Set-Content -LiteralPath $report
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET/Framework64/v4.0.30319/csc.exe'
-$refs = @('Sandbox.Common','Sandbox.Game','SpaceEngineers.Game','VRage','VRage.Game','VRage.Library','VRage.Math','VRage.Render','VRage.Scripting','VRage.Input','VRage.Render11','ProtoBuf.Net','ProtoBuf.Net.Core','System.Collections.Immutable')
+$refs = @('Sandbox.Common','Sandbox.Game','SpaceEngineers.Game','SpaceEngineers.ObjectBuilders','VRage','VRage.Game','VRage.Library','VRage.Math','VRage.Render','VRage.Scripting','VRage.Input','VRage.Render11','ProtoBuf.Net','ProtoBuf.Net.Core','System.Collections.Immutable')
 $baseArgs = @('/nologo','/target:library')
 $baseArgs += '/reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8.1\Facades\netstandard.dll'
 foreach ($ref in $refs) { $baseArgs += '/reference:' + (Join-Path $GameBin ($ref + '.dll')) }
