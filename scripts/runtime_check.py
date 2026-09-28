@@ -80,7 +80,7 @@ CAMPAIGN_ISSUES = [
 
 VOXEL_MATERIAL_COUNT_RE = re.compile(r"There's\s+(\d+)\s+voxel materials", re.I)
 VOXEL_MATERIAL_ROW_RE = re.compile(
-    r"#(\d+)\s+'([^']+)'\s+-\s+from:\s+(.*),\s+used in:\s+(.*)\.\s*$"
+    r"#(\d+)\s+'([^']+)'\s+-\s+from:\s+(.*),\s+used in:\s+(.*?)\.?\s*$"
 )
 
 def latest_log():
