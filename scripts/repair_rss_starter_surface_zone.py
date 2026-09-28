@@ -11,6 +11,7 @@ import datetime as dt
 import shutil
 import subprocess
 import sys
+import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -29,6 +30,34 @@ def ensure_game_closed():
     )
     if "SpaceEngineers.exe" in result.stdout:
         raise RuntimeError("Exit Space Engineers before repairing RSS Config.xml.")
+
+
+XML_DECL_RE = re.compile(r'^\s*<\?xml[^>]*\?>\s*', re.IGNORECASE)
+
+
+def read_se_xml(path):
+    """Read SE/mod XML even when its declaration disagrees with the bytes."""
+    raw = path.read_bytes()
+
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")) or b"\x00" in raw[:256]:
+        text = raw.decode("utf-16")
+        encoding = "utf-16"
+    else:
+        text = raw.decode("utf-8-sig")
+        encoding = "utf-8"
+
+    # ElementTree trusts the declaration when parsing bytes. Parse Unicode
+    # without the declaration instead so malformed SE/mod declarations do not
+    # override the encoding we already detected from the file itself.
+    body = XML_DECL_RE.sub("", text, count=1)
+    return ET.fromstring(body), encoding
+
+
+def write_se_xml(path, root, encoding):
+    payload = ET.tostring(root, encoding="unicode")
+    declaration = '<?xml version="1.0" encoding="%s"?>\r\n' % encoding
+    newline_payload = payload.replace("\n", "\r\n")
+    path.write_text(declaration + newline_payload, encoding=encoding, newline="")
 
 
 def child_text(node, name):
@@ -61,14 +90,13 @@ def main():
     if not state_path.is_file():
         raise SystemExit("RSG state not found: " + str(state_path))
 
-    state_root = ET.parse(state_path).getroot()
+    state_root, _ = read_se_xml(state_path)
     starter_name = child_text(state_root, "StartPlanetDisplayName")
     starter_subtype = child_text(state_root, "StartPlanetSubtype")
     if not starter_name or not starter_subtype:
         raise SystemExit("RSG state does not identify the starter planet.")
 
-    tree = ET.parse(config_path)
-    root = tree.getroot()
+    root, config_encoding = read_se_xml(config_path)
 
     matches = []
     for body in root.iter("CelestialBodyConfig"):
@@ -116,10 +144,10 @@ def main():
     backup = config_path.with_name("Config.pre-surface-zone-repair-%s.xml" % stamp)
     shutil.copy2(config_path, backup)
 
-    tree.write(config_path, encoding="utf-16", xml_declaration=True)
+    write_se_xml(config_path, root, config_encoding)
 
     # Verify the written XML is still readable and the requested values persisted.
-    verify = ET.parse(config_path).getroot()
+    verify, _ = read_se_xml(config_path)
     if child_text(verify, "OverrideFromConfig") != "true":
         raise RuntimeError("RSS override flag verification failed.")
 
