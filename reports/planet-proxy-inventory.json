@@ -16,7 +16,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": true,
-    "active_in_existing_world": true
+    "active_in_existing_world": false
   },
   {
     "id": "2644430625",
@@ -35,7 +35,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": true,
-    "active_in_existing_world": true
+    "active_in_existing_world": false
   },
   {
     "id": "2941085186",
@@ -101,7 +101,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": false,
-    "active_in_existing_world": true
+    "active_in_existing_world": false
   },
   {
     "id": "3152436752",
@@ -448,7 +448,7 @@
     "proxies": [],
     "denylisted": true,
     "desired_planet": false,
-    "active_in_existing_world": true
+    "active_in_existing_world": false
   },
   {
     "id": "3618043241",
@@ -486,7 +486,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": true,
-    "active_in_existing_world": true
+    "active_in_existing_world": false
   },
   {
     "id": "3695766186",

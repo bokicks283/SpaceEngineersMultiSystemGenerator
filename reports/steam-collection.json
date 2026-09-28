@@ -1,6 +1,6 @@
 {
   "collection_id": "3808835800",
-  "retrieved_at_utc": "2026-09-28T01:22:11.383734+00:00",
+  "retrieved_at_utc": "2026-09-28T01:59:04.982040+00:00",
   "cache_used": false,
   "child_workshop_ids": [
     "2609118808",
@@ -96,6 +96,14 @@
       "time_updated": 1757447489,
       "file_size": 451003,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "script",
+        "planet",
+        "hud"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2609118808",
       "active": true,
@@ -112,6 +120,14 @@
       "time_updated": 1785172785,
       "file_size": 84394860,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production",
+        "modpack",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3768484204",
       "active": true,
@@ -128,6 +144,14 @@
       "time_updated": 1785312050,
       "file_size": 396518,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Animation",
+        "Other",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3763900368",
       "active": true,
@@ -144,6 +168,12 @@
       "time_updated": 1729664646,
       "file_size": 3072368,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\571920453",
       "active": true,
@@ -160,6 +190,10 @@
       "time_updated": 1790300511,
       "file_size": 1020080,
       "visibility": 0,
+      "tags": [
+        "mod"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1359618037",
       "active": true,
@@ -176,6 +210,12 @@
       "time_updated": 1681420980,
       "file_size": 91685025,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
       "active": true,
@@ -192,6 +232,12 @@
       "time_updated": 1681421035,
       "file_size": 134709778,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961924256",
       "active": false,
@@ -208,6 +254,12 @@
       "time_updated": 1780142964,
       "file_size": 114082998,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186",
       "active": true,
@@ -224,6 +276,13 @@
       "time_updated": 1733783987,
       "file_size": 179261640,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3381681547",
       "active": false,
@@ -240,6 +299,11 @@
       "time_updated": 1731178740,
       "file_size": 117073746,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3350589349",
       "active": false,
@@ -256,6 +320,13 @@
       "time_updated": 1770694101,
       "file_size": 3611031,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "Other",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3663505475",
       "active": false,
@@ -272,6 +343,13 @@
       "time_updated": 1731106835,
       "file_size": 10763984,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
       "active": true,
@@ -288,6 +366,12 @@
       "time_updated": 1758326799,
       "file_size": 138394380,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228",
       "active": true,
@@ -304,6 +388,12 @@
       "time_updated": 1713581322,
       "file_size": 786732782,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2802625870",
       "active": true,
@@ -320,6 +410,12 @@
       "time_updated": 1781006170,
       "file_size": 17112737,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2111073562",
       "active": true,
@@ -336,6 +432,10 @@
       "time_updated": 1668297708,
       "file_size": 245059,
       "visibility": 0,
+      "tags": [
+        "mod"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2754014019",
       "active": true,
@@ -352,6 +452,12 @@
       "time_updated": 1768285115,
       "file_size": 120224426,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3357218025",
       "active": true,
@@ -368,11 +474,16 @@
       "time_updated": 1758277784,
       "file_size": 691671,
       "visibility": 0,
+      "tags": [
+        "ingameScript",
+        "visualization"
+      ],
+      "workshop_content_type": "IngameScript",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\822950976",
-      "active": true,
-      "classification": "normal_collection_mod",
-      "exclusion_reason": null
+      "active": false,
+      "classification": "collection_non_world_content",
+      "exclusion_reason": "IngameScript; not a world mod"
     },
     {
       "id": "3719498498",
@@ -384,6 +495,12 @@
       "time_updated": 1779475005,
       "file_size": 14208729,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3719498498",
       "active": true,
@@ -400,6 +517,11 @@
       "time_updated": 1788567598,
       "file_size": 733370,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2915780227",
       "active": true,
@@ -416,6 +538,11 @@
       "time_updated": 1785250272,
       "file_size": 62065341,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2640137506",
       "active": true,
@@ -432,6 +559,14 @@
       "time_updated": 1764004120,
       "file_size": 290014947,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "modpack",
+        "script",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3154379105",
       "active": true,
@@ -448,6 +583,13 @@
       "time_updated": 1702839500,
       "file_size": 59222383,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "modpack",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2671376862",
       "active": true,
@@ -464,6 +606,13 @@
       "time_updated": 1790511058,
       "file_size": 736384122,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production",
+        "modpack"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2111400196",
       "active": true,
@@ -480,6 +629,12 @@
       "time_updated": 1740294068,
       "file_size": 3165114,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\516770964",
       "active": true,
@@ -496,6 +651,12 @@
       "time_updated": 1645280972,
       "file_size": 289710,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Skybox"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2711430394",
       "active": true,
@@ -512,6 +673,11 @@
       "time_updated": 1740905826,
       "file_size": 1010565,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3382116691",
       "active": true,
@@ -528,6 +694,11 @@
       "time_updated": 1742193799,
       "file_size": 16404643,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3437815208",
       "active": true,
@@ -544,6 +715,12 @@
       "time_updated": 1753905732,
       "file_size": 2395486,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2298956701",
       "active": true,
@@ -560,6 +737,12 @@
       "time_updated": 1780731642,
       "file_size": 62341491,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "aqd"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1939935505",
       "active": true,
@@ -576,6 +759,13 @@
       "time_updated": 1777996152,
       "file_size": 26211176,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "aqd",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2678657382",
       "active": true,
@@ -592,6 +782,14 @@
       "time_updated": 1765104681,
       "file_size": 2112480,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "hud",
+        "Other",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1697184408",
       "active": true,
@@ -608,6 +806,11 @@
       "time_updated": 1709639981,
       "file_size": 412473,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3170315974",
       "active": true,
@@ -624,6 +827,13 @@
       "time_updated": 1758292178,
       "file_size": 8138958,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "script",
+        "hud"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\514062285",
       "active": true,
@@ -640,6 +850,12 @@
       "time_updated": 1706481483,
       "file_size": 186766,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2756894170",
       "active": true,
@@ -656,6 +872,11 @@
       "time_updated": 1770007129,
       "file_size": 622380,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2687324923",
       "active": true,
@@ -672,6 +893,11 @@
       "time_updated": 1788377929,
       "file_size": 18940505,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Other"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3768473558",
       "active": true,
@@ -688,6 +914,13 @@
       "time_updated": 1656466982,
       "file_size": 1558730,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2826996861",
       "active": true,
@@ -704,6 +937,13 @@
       "time_updated": 1656784027,
       "file_size": 2447510,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2825087802",
       "active": true,
@@ -720,6 +960,13 @@
       "time_updated": 1743182628,
       "file_size": 1342461,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "npc",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2803081060",
       "active": true,
@@ -736,6 +983,12 @@
       "time_updated": 1789069490,
       "file_size": 105135649,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3672452327",
       "active": true,
@@ -752,6 +1005,11 @@
       "time_updated": 1738666568,
       "file_size": 162007416,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "modpack"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2816464979",
       "active": true,
@@ -768,6 +1026,8 @@
       "time_updated": 0,
       "file_size": 0,
       "visibility": 0,
+      "tags": [],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3706927250",
       "active": true,
@@ -784,6 +1044,11 @@
       "time_updated": 1776624939,
       "file_size": 193834418,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "modpack"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264",
       "active": true,
@@ -800,6 +1065,12 @@
       "time_updated": 1790519875,
       "file_size": 700472828,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665",
       "active": true,
@@ -816,6 +1087,10 @@
       "time_updated": 1781131326,
       "file_size": 26775932,
       "visibility": 0,
+      "tags": [
+        "mod"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1965654081",
       "active": true,
@@ -832,6 +1107,11 @@
       "time_updated": 1772035396,
       "file_size": 119021535,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084",
       "active": true,
@@ -848,6 +1128,14 @@
       "time_updated": 1774114729,
       "file_size": 415588298,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "planet",
+        "Other",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414",
       "active": false,
@@ -864,6 +1152,13 @@
       "time_updated": 1776682073,
       "file_size": 168951092,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "Other",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186",
       "active": true,
@@ -880,6 +1175,12 @@
       "time_updated": 1764910968,
       "file_size": 729496408,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241",
       "active": true,
@@ -896,6 +1197,12 @@
       "time_updated": 1764819647,
       "file_size": 616073766,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051",
       "active": false,
@@ -912,6 +1219,12 @@
       "time_updated": 1766272041,
       "file_size": 361034005,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331",
       "active": false,
@@ -928,6 +1241,13 @@
       "time_updated": 1786901983,
       "file_size": 276956354,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "planet",
+        "Other"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2200451495",
       "active": true,
@@ -944,6 +1264,12 @@
       "time_updated": 1766271864,
       "file_size": 201731266,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625",
       "active": false,
@@ -960,6 +1286,12 @@
       "time_updated": 1766271661,
       "file_size": 924412285,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
       "active": true,
@@ -976,6 +1308,11 @@
       "time_updated": 1782032329,
       "file_size": 249488,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3731921987",
       "active": true,
@@ -992,6 +1329,12 @@
       "time_updated": 1780400086,
       "file_size": 444904112,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3736894294",
       "active": true,
@@ -1008,6 +1351,11 @@
       "time_updated": 1789932475,
       "file_size": 1121387,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3791989881",
       "active": true,
@@ -1024,6 +1372,14 @@
       "time_updated": 1787071054,
       "file_size": 790372,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "aqd",
+        "QoL",
+        "LCD"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3784633330",
       "active": true,
@@ -1040,6 +1396,11 @@
       "time_updated": 1745859890,
       "file_size": 22825682,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3472275442",
       "active": true,
@@ -1056,6 +1417,12 @@
       "time_updated": 1781298137,
       "file_size": 13853892,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3741238881",
       "active": true,
@@ -1072,6 +1439,12 @@
       "time_updated": 1787215282,
       "file_size": 14536826,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3746220940",
       "active": true,
@@ -1088,6 +1461,11 @@
       "time_updated": 1787343912,
       "file_size": 665699479,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3767444521",
       "active": true,
@@ -1104,6 +1482,12 @@
       "time_updated": 1789291883,
       "file_size": 3798544,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3770315903",
       "active": true,
@@ -1120,6 +1504,12 @@
       "time_updated": 1656713095,
       "file_size": 6343036,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2310821218",
       "active": true,
@@ -1136,6 +1526,14 @@
       "time_updated": 1786676420,
       "file_size": 14306184,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script",
+        "hud",
+        "Other"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597",
       "active": true,
@@ -1152,6 +1550,11 @@
       "time_updated": 1717147457,
       "file_size": 110269450,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2336089504",
       "active": true,
@@ -1168,6 +1571,15 @@
       "time_updated": 1768104167,
       "file_size": 37990919,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Character",
+        "script",
+        "npc",
+        "AI",
+        "OnlyOnPC"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2596208372",
       "active": true,
@@ -1184,6 +1596,8 @@
       "time_updated": 0,
       "file_size": 0,
       "visibility": 0,
+      "tags": [],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3155707452",
       "active": true,
@@ -1200,6 +1614,11 @@
       "time_updated": 1660983814,
       "file_size": 7386835,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2841920953",
       "active": true,
@@ -1216,6 +1635,12 @@
       "time_updated": 1740126001,
       "file_size": 21191673,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2839553181",
       "active": true,
@@ -1232,6 +1657,13 @@
       "time_updated": 1781696505,
       "file_size": 1530245,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script",
+        "modpack"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2391318591",
       "active": true,
@@ -1248,6 +1680,12 @@
       "time_updated": 1707286964,
       "file_size": 544433,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1902970975",
       "active": true,
@@ -1264,6 +1702,13 @@
       "time_updated": 1790497402,
       "file_size": 31418488,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Other",
+        "ServerScripts",
+        "npc"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1521905890",
       "active": true,
@@ -1280,6 +1725,12 @@
       "time_updated": 1769754138,
       "file_size": 349750560,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "asteroid",
+        "planet"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3232085677",
       "active": true,
@@ -1296,6 +1747,11 @@
       "time_updated": 1722841159,
       "file_size": 600097,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "asteroid"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3218645300",
       "active": true,
@@ -1312,6 +1768,8 @@
       "time_updated": 0,
       "file_size": 0,
       "visibility": 0,
+      "tags": [],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3240629702",
       "active": true,
@@ -1328,6 +1786,12 @@
       "time_updated": 1731709387,
       "file_size": 942713,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "Skybox"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3222232482",
       "active": true,
@@ -1344,6 +1808,13 @@
       "time_updated": 1789437060,
       "file_size": 1170407,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Skybox",
+        "planet"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3152436752",
       "active": true,
@@ -1360,6 +1831,12 @@
       "time_updated": 1645658032,
       "file_size": 1118852,
       "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\758597413",
       "active": true,
@@ -1376,6 +1853,13 @@
       "time_updated": 1789429180,
       "file_size": 184436308,
       "visibility": 0,
+      "tags": [
+        "mod",
+        "Skybox",
+        "asteroid",
+        "planet"
+      ],
+      "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
       "active": true,

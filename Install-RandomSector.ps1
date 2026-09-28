@@ -134,11 +134,13 @@ foreach ($mod in $plan.selected_workshop) {
     }
 }
 
+Invoke-Checked 'Sync pending RSG save mod lists' { py scripts\sync_pending_world_mods.py }
+
 Write-Host ''
 Write-Host "Steam collection: $($plan.collection_id)"
 Write-Host "Collection items: $($collection.items.Count)"
 foreach ($item in $collection.items) {
-    $label = if ($item.active) { 'INCLUDED' } elseif ($item.classification -eq 'phase_a_planet_deferred') { 'EXCLUDED' } else { 'BLOCKED' }
+    $label = if ($item.active) { 'INCLUDED' } elseif ($item.classification -in @('phase_a_planet_deferred', 'collection_non_world_content')) { 'EXCLUDED' } else { 'BLOCKED' }
     $reason = if ($item.active) { $item.classification } else { $item.exclusion_reason }
     Write-Host ("{0}: {1} - {2} ({3})" -f $label, $item.id, $item.title, $reason)
 }
@@ -216,8 +218,7 @@ Write-Host ''
 Write-Host 'Random Sector Phase A is installed.' -ForegroundColor Green
 Write-Host 'Next:'
 Write-Host '1. Launch Space Engineers.'
-Write-Host '2. New Game > Custom Game > Random Sector > Start.'
-Write-Host '3. Wait for the Random Sector Generator completion message.'
-Write-Host '4. Save and Exit to Menu once, then reload the same world.'
-Write-Host '5. Run /rsg status. After it reports applied=True, run /SetupRealOrbits once and save.'
+Write-Host '2. Load the existing generated world that is waiting for RSS adoption.'
+Write-Host '3. Run /rsg adoption, then /rsg status.'
+Write-Host '4. After status reports pending=False and applied=True, run /SetupRealOrbits once and save.'
 Write-Host 'Economy remains OFF for Phase A.'

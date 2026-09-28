@@ -1,49 +1,9 @@
 {
   "existing": {
     "vanilla": 62,
-    "effective_unique_subtypes": 157,
-    "headroom_to_128": -29,
+    "effective_unique_subtypes": 117,
+    "headroom_to_128": 11,
     "per_mod": [
-      {
-        "id": "2195637331",
-        "title": "Teralis - City Planet",
-        "definitions": 11,
-        "nonvanilla": [
-          "Concrete_01",
-          "Facade_02",
-          "Greeble_02",
-          "Greeble_02dark",
-          "Greeble_02green",
-          "Greeble_02white",
-          "Greeble_03",
-          "Greeble_04",
-          "Greeble_04dark",
-          "Greeble_04darkroof",
-          "Greeble_concrete"
-        ]
-      },
-      {
-        "id": "2644430625",
-        "title": "Teal - Water Mod",
-        "definitions": 15,
-        "nonvanilla": [
-          "TealBlack_Soil",
-          "TealBlack_Soil_bare",
-          "TealBlueGrass",
-          "TealGravel",
-          "TealIce",
-          "TealRiver",
-          "TealRocksGrass",
-          "TealSea",
-          "TealShore1",
-          "TealShore2",
-          "TealShore3",
-          "TealShore4",
-          "TealShore5",
-          "TealShore6",
-          "TealSnowGrass"
-        ]
-      },
       {
         "id": "3362332228",
         "title": "Orlunda (Sideways)",
@@ -101,22 +61,6 @@
         ]
       },
       {
-        "id": "3617496051",
-        "title": "Planet - Miasma",
-        "definitions": 9,
-        "nonvanilla": [
-          "IceMuddy",
-          "Moss",
-          "MossFlowers",
-          "MuddyDirt",
-          "MuddyDirtBare",
-          "PuddleStone",
-          "Roots",
-          "Roots2",
-          "StoneMoss"
-        ]
-      },
-      {
         "id": "3618043241",
         "title": "Planet - Jormun (Water)",
         "definitions": 12,
@@ -133,21 +77,6 @@
           "StoneDesert",
           "StoneMoss",
           "StoneWhite"
-        ]
-      },
-      {
-        "id": "3684013414",
-        "title": "Planet Nivis",
-        "definitions": 8,
-        "nonvanilla": [
-          "Crev",
-          "FrostSurface",
-          "HRock",
-          "HRockBlend",
-          "IceCliff",
-          "SnowM",
-          "TorrLavaGravel",
-          "TorrLavaRock"
         ]
       },
       {
@@ -173,56 +102,7 @@
         ]
       }
     ],
-    "duplicates": {
-      "Moss": [
-        {
-          "mod": "3617496051",
-          "subtype": "Moss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
-        {
-          "mod": "3618043241",
-          "subtype": "Moss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "MossFlowers": [
-        {
-          "mod": "3617496051",
-          "subtype": "MossFlowers",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
-        {
-          "mod": "3618043241",
-          "subtype": "MossFlowers",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "StoneMoss": [
-        {
-          "mod": "3617496051",
-          "subtype": "StoneMoss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
-        {
-          "mod": "3618043241",
-          "subtype": "StoneMoss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ]
-    },
+    "duplicates": {},
     "definitions": {
       "Stone_01": [
         {
@@ -782,240 +662,6 @@
           "enabled": "true"
         }
       ],
-      "Concrete_01": [
-        {
-          "mod": "2195637331",
-          "subtype": "Concrete_01",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_02": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_02",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_02green": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_02green",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_02white": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_02white",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_02dark": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_02dark",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_03": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_03",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_04": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_04",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_04dark": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_04dark",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_04darkroof": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_04darkroof",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Greeble_concrete": [
-        {
-          "mod": "2195637331",
-          "subtype": "Greeble_concrete",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Facade_02": [
-        {
-          "mod": "2195637331",
-          "subtype": "Facade_02",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2195637331\\Data\\VoxelMaterials_Teralis.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealSea": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealSea",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore1": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore1",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore2": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore2",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore3": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore3",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore4": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore4",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore5": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore5",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealShore6": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealShore6",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealRiver": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealRiver",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealBlueGrass": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealBlueGrass",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealRocksGrass": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealRocksGrass",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealSnowGrass": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealSnowGrass",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealGravel": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealGravel",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealBlack_Soil": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealBlack_Soil",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealBlack_Soil_bare": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealBlack_Soil_bare",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TealIce": [
-        {
-          "mod": "2644430625",
-          "subtype": "TealIce",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2644430625\\Data\\VoxelMaterials_TealW.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
       "OrlundaRedSoil_1": [
         {
           "mod": "3362332228",
@@ -1331,23 +977,7 @@
           "enabled": "true"
         }
       ],
-      "IceMuddy": [
-        {
-          "mod": "3617496051",
-          "subtype": "IceMuddy",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
       "Moss": [
-        {
-          "mod": "3617496051",
-          "subtype": "Moss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
         {
           "mod": "3618043241",
           "subtype": "Moss",
@@ -1358,13 +988,6 @@
       ],
       "MossFlowers": [
         {
-          "mod": "3617496051",
-          "subtype": "MossFlowers",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
-        {
           "mod": "3618043241",
           "subtype": "MossFlowers",
           "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
@@ -1372,59 +995,7 @@
           "enabled": "true"
         }
       ],
-      "MuddyDirt": [
-        {
-          "mod": "3617496051",
-          "subtype": "MuddyDirt",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "MuddyDirtBare": [
-        {
-          "mod": "3617496051",
-          "subtype": "MuddyDirtBare",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "PuddleStone": [
-        {
-          "mod": "3617496051",
-          "subtype": "PuddleStone",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Roots": [
-        {
-          "mod": "3617496051",
-          "subtype": "Roots",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Roots2": [
-        {
-          "mod": "3617496051",
-          "subtype": "Roots2",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
       "StoneMoss": [
-        {
-          "mod": "3617496051",
-          "subtype": "StoneMoss",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3617496051\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        },
         {
           "mod": "3618043241",
           "subtype": "StoneMoss",
@@ -1510,78 +1081,6 @@
           "mod": "3618043241",
           "subtype": "GrassRock4",
           "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TorrLavaGravel": [
-        {
-          "mod": "3684013414",
-          "subtype": "TorrLavaGravel",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "TorrLavaRock": [
-        {
-          "mod": "3684013414",
-          "subtype": "TorrLavaRock",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\Voxel mats torr Volcanic.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "HRock": [
-        {
-          "mod": "3684013414",
-          "subtype": "HRock",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "HRockBlend": [
-        {
-          "mod": "3684013414",
-          "subtype": "HRockBlend",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "Crev": [
-        {
-          "mod": "3684013414",
-          "subtype": "Crev",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "IceCliff": [
-        {
-          "mod": "3684013414",
-          "subtype": "IceCliff",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "FrostSurface": [
-        {
-          "mod": "3684013414",
-          "subtype": "FrostSurface",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
-          "type": "VoxelMaterialDefinition",
-          "enabled": "true"
-        }
-      ],
-      "SnowM": [
-        {
-          "mod": "3684013414",
-          "subtype": "SnowM",
-          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3684013414\\Data\\VoxelMaterials.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }

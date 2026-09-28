@@ -33,13 +33,18 @@ The normal player workflow is:
 1. Launch Space Engineers and choose **New Game > Custom Game > Random Sector**.
 2. Start the world and wait for RSG to report that generation finished.
 3. Save and exit to the menu once, then reload the same world.
-4. Run `/rsg status`. When it reports `applied=True`, run
+4. Run `/rsg adoption`, then `/rsg status`. When status reports
+   `pending=False` and `applied=True`, run
    `/SetupRealOrbits` once and save.
 
 RSG writes RSS's normal persisted configuration variable directly. The normal
 workflow does not use `world_checkpoint.py prepare`, `sync`, `arm`, or `commit`.
 Those commands remain developer/recovery tools. Economy remains disabled for
 Phase A.
+
+Collection entries tagged as IngameScript, Blueprint, Scenario, or other
+non-Mod Workshop content remain visible in the collection report but are not
+inserted into the world's `Mods` list.
 
 This repository owns the local compatibility/configuration work for a heavily modded Space Engineers survival campaign built around Real Solar Systems (RSS), Real Stars, Real Gas Giants, Scientific Progress, Water Mod, MES, and a one-shot Random Sector Generator (RSG).
 

@@ -89,6 +89,7 @@ namespace RandomSectorGenerator
         public string StartPlanetDisplayName;
         public string StartPlanetSubtype;
         public long StartPlanetEntityId;
+        public string StartPlanetStorageName;
         public string RssConfigBase64;
         public string CreatedUtc;
     }

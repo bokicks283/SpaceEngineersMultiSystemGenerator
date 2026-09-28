@@ -1,7 +1,7 @@
 # Selected pack audit
 
 Steam collection: **3808835800** (81 current children; resolved live from Steam.
-Active Workshop mods: **73** (66 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
+Active Workshop mods: **72** (65 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
 
 Selected planet definitions: **18** (8 vanilla, 10 custom).
 
@@ -44,6 +44,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3350589349 — Planet Exporter (Real Solar Systems): Planet Exporter is a proxy-workbench tool and is not a gameplay mod
 - 3663505475 — Planet Jormun - Now with a proxy!: Jormun proxy source is replaced by the generated CampaignPlanetProxies mod
 - 3617496051 — Planet - Miasma: Miasma is blocked by the known incompatible or obsolete Phase A policy
+- 822950976 — Automatic LCDs 2: IngameScript; not a world mod
 
 ## Workshop load-list membership
 
@@ -60,7 +61,6 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 2111073562 — Nanobot Build and Repair System (Maintained) - Nerfed Version
 - 2754014019 — Scope Framework
 - 3357218025 — Consty's HandWeapon Pack (Vanilla)
-- 822950976 — Automatic LCDs 2
 - 3719498498 — RCSP Ground Assault - [MES]
 - 2915780227 — Vanilla+ Framework
 - 2640137506 — Elite Dangerous: FSD Supercruise
@@ -137,4 +137,14 @@ MES, Assertive Combat Systems, Abandoned Settlements, and AiEnabled are retained
 The collection is the desired catalog. Phase A keeps its fixed 18-body pool; other catalog planets remain installed and are reported as inactive instead of being silently enabled.
 RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and the generated local proxy mod supplies Jormun and the remaining exported proxies. Selected static coverage is 18/18.
 No old-save Workshop membership participates in selection. Unique subtype union is independent of override precedence.
+
+## Recorded startup warnings
+
+- Terran Titans Naval Blocks reports missing MWM models.
+- Kerbin and Orlunda report missing sky texture resources.
+- Jormun reports missing cloud alpha masks.
+- Zenitaia reports missing sky textures and a malformed Water Mod texture fallback.
+- Base-game Audio_music.sbc reports missing MusConcert WAV files.
+- DemoComponentDefinition/Default emits a warning.
+These warnings remain recorded for later work; none is currently proven to cause the RSS adoption blocker.
 The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.

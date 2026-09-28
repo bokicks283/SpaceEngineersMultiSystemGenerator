@@ -18,6 +18,30 @@ DETAILS_URL = (
 CACHE = OUT / "steam-collection.json"
 
 
+def classify_content(tags, local):
+    normalized = {str(tag).strip().lower() for tag in tags if str(tag).strip()}
+    if "ingamescript" in normalized:
+        return "IngameScript"
+    if "blueprint" in normalized:
+        return "Blueprint"
+    if "scenario" in normalized:
+        return "Scenario"
+    if "mod" in normalized:
+        return "Mod"
+
+    path = Path(local.get("path", "")) if local else Path()
+    if path.is_dir():
+        if (path / "Script.cs").is_file():
+            return "IngameScript"
+        if (path / "bp.sbc").is_file():
+            return "Blueprint"
+        if (path / "Sandbox.sbc").is_file():
+            return "Scenario"
+        if (path / "Data").is_dir():
+            return "Mod"
+    return "Other"
+
+
 def post_json(url, fields):
     request = urllib.request.Request(
         url,
@@ -79,9 +103,14 @@ def resolve(collection_id, inventory, use_cache=False):
         if report.get("collection_id") != collection_id:
             raise RuntimeError("Cached Steam collection ID does not match " + collection_id)
         report["cache_used"] = True
-        report["items"] = [dict(item, installed=item["id"] in installed,
-                                path=installed.get(item["id"], {}).get("path"))
-                           for item in report["items"]]
+        refreshed = []
+        for item in report["items"]:
+            local = installed.get(item["id"], {})
+            tags = item.get("tags", [])
+            refreshed.append(dict(item, installed=item["id"] in installed,
+                                  path=local.get("path"), tags=tags,
+                                  workshop_content_type=classify_content(tags, local)))
+        report["items"] = refreshed
     else:
         try:
             children, details = fetch(collection_id)
@@ -96,6 +125,7 @@ def resolve(collection_id, inventory, use_cache=False):
             detail = details[published_id]
             local = installed.get(published_id, {})
             title = detail.get("title") or local.get("title")
+            tags = [entry.get("tag") for entry in detail.get("tags", []) if entry.get("tag")]
             items.append({
                 "id": published_id,
                 "sort_order": int(child.get("sortorder", 0)),
@@ -106,6 +136,8 @@ def resolve(collection_id, inventory, use_cache=False):
                 "time_updated": int(detail.get("time_updated", 0) or 0),
                 "file_size": int(detail.get("file_size", 0) or 0),
                 "visibility": int(detail.get("visibility", 0) or 0),
+                "tags": tags,
+                "workshop_content_type": classify_content(tags, local),
                 "installed": published_id in installed,
                 "path": local.get("path"),
                 "active": None,

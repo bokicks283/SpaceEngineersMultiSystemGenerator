@@ -35,9 +35,16 @@ def main():
     non_catalog_planets=set(policy['non_catalog_planet_definition_mods'])
     detected_planet_catalog=set(planet_catalog)
     compatibility_policy=policy['compatibility_exclusions']
-    selected=[]; selected_source={}; phase_planet_exclusions=[]; compatibility_exclusions=[]
+    selected=[]; selected_source={}; phase_planet_exclusions=[]; compatibility_exclusions=[]; non_world_content=[]
     for item in collection['items']:
         id=item['id']; mod=mods[id]
+        content_type=item.get('workshop_content_type','Other')
+        if content_type != 'Mod':
+            non_world_content.append({'id':id,'title':item.get('title') or mod.get('title'),
+                                      'desired':True,'active':False,
+                                      'classification':'collection_non_world_content',
+                                      'reason':content_type+'; not a world mod'})
+            continue
         if id in compatibility_policy:
             compatibility_exclusions.append({'id':id,'title':item.get('title') or mod.get('title'),
                                              'reason':compatibility_policy[id]})
@@ -88,9 +95,13 @@ def main():
     active_collection=set(selected)&{item['id'] for item in collection['items']}
     phase_by_id={item['id']:item for item in phase_planet_exclusions}
     compatibility_by_id={item['id']:item for item in compatibility_exclusions}
+    non_world_by_id={item['id']:item for item in non_world_content}
     for item in collection['items']:
         id=item['id']; item['active']=id in active_collection
-        if id in phase_by_id:
+        if id in non_world_by_id:
+            item['classification']='collection_non_world_content'
+            item['exclusion_reason']=non_world_by_id[id]['reason']
+        elif id in phase_by_id:
             item['classification']='phase_a_planet_deferred'
             item['exclusion_reason']=phase_by_id[id]['reason']
         elif id in compatibility_by_id:
@@ -129,6 +140,7 @@ def main():
           'support_additions':support_additions,
           'phase_a_planet_exclusions':phase_planet_exclusions,
           'compatibility_exclusions':compatibility_exclusions,
+          'collection_non_world_content':non_world_content,
           'missing_collection_items':missing_collection,
           'local':local}
     dump('pack-plan.json',plan)
@@ -222,7 +234,7 @@ def main():
            '| Body | Selected | Active RSS proxies | Science |','|---|---|---:|---|']
     lines += [f"| {c['planet']} | {'yes' if c['selected'] else 'no'} | {c['active_proxy_count']} | {c['science_status']} |" for c in coverage]
     lines+=['','## Collection exclusions','',
-            *['- '+entry['id']+' — '+str(entry['title'])+': '+entry['reason'] for entry in phase_planet_exclusions+compatibility_exclusions],
+            *['- '+entry['id']+' — '+str(entry['title'])+': '+entry['reason'] for entry in phase_planet_exclusions+compatibility_exclusions+non_world_content],
             '', '## Workshop load-list membership','',*['- '+i+' — '+str(mods[i]['title'] or collection_titles.get(i) or TITLES.get(i) or 'title unavailable locally') for i in selected],
             '', '## Local mods', '', *[
                 '- '+name+(
@@ -239,6 +251,14 @@ def main():
             'The collection is the desired catalog. Phase A keeps its fixed 18-body pool; other catalog planets remain installed and are reported as inactive instead of being silently enabled.',
             'RSS itself provides exactly one proxy for every vanilla planet; the installed vanilla HD pack is excluded to prevent duplicates. Cauldron bundles four exact proxies, Orlunda Sideways uses its SD pack, and the generated local proxy mod supplies Jormun and the remaining exported proxies. Selected static coverage is '+str(sum(c['active_proxy_count']==1 for c in selected_bodies))+'/'+str(len(selected_bodies))+'.',
             'No old-save Workshop membership participates in selection. Unique subtype union is independent of override precedence.',
+            '', '## Recorded startup warnings', '',
+            '- Terran Titans Naval Blocks reports missing MWM models.',
+            '- Kerbin and Orlunda report missing sky texture resources.',
+            '- Jormun reports missing cloud alpha masks.',
+            '- Zenitaia reports missing sky textures and a malformed Water Mod texture fallback.',
+            '- Base-game Audio_music.sbc reports missing MusConcert WAV files.',
+            '- DemoComponentDefinition/Default emits a warning.',
+            'These warnings remain recorded for later work; none is currently proven to cause the RSS adoption blocker.',
             'The most recent pre-change game log loaded 189 unique voxel materials from the old pack. The new pack has passed static auditing and offline RSG compilation, but has not been launched, generated, reloaded, or checked for water/science/MES behavior in game.']
     (OUT/'PACK-AUDIT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\r\n')
     print(f'Selected {len(selected)} Workshop mods, voxel total {len(union)}; missing selected proxies: '+', '.join(c['planet'] for c in coverage if c['selected'] and not c['active_proxy_count']))

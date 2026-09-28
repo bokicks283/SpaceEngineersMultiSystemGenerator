@@ -17,6 +17,10 @@ def main():
     assert len(ids)==len(set(ids))
     assert not set(ids)&set(policy['compatibility_exclusions'])
     assert not set(ids)&{item['id'] for item in plan['phase_a_planet_exclusions']}
+    assert not set(ids)&{item['id'] for item in plan['collection_non_world_content']}
+    automatic_lcd=next(item for item in collection['items'] if item['id']=='822950976')
+    assert automatic_lcd['workshop_content_type']=='IngameScript'
+    assert automatic_lcd['classification']=='collection_non_world_content' and not automatic_lcd['active']
     assert {item['id'] for item in collection['items'] if item['active']}<=set(ids)
     allowed={item['id'] for item in collection['items']}
     allowed.update(item['id'] for item in plan['dependency_additions'])

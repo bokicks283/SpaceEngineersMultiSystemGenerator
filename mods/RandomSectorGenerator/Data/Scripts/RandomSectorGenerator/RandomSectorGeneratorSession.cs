@@ -19,7 +19,7 @@ namespace RandomSectorGenerator
     public sealed class RandomSectorGeneratorSession : MySessionComponentBase
     {
         private const string Author = "Random Sector Generator";
-        private const string Version = "0.2.0-audit";
+        private const string Version = "0.2.1-adoption";
         private const string CommandPrefix = "/rsg";
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
@@ -65,6 +65,7 @@ namespace RandomSectorGenerator
         private bool _startTeleportDone;
         private bool _autoAttempted;
         private bool _runtimeDefinitionsLogged;
+        private int _lastAdoptionLogTick = -1800;
 
         public override void LoadData()
         {
@@ -143,13 +144,19 @@ namespace RandomSectorGenerator
 
             if (command == "help")
             {
-                Show("Commands: /rsg status | /rsg skins | /rsg planets | /rsg generate [seed]");
+                Show("Commands: /rsg status | /rsg adoption | /rsg skins | /rsg planets | /rsg generate [seed]");
                 return;
             }
 
             if (command == "status")
             {
                 ShowStatus();
+                return;
+            }
+
+            if (command == "adoption")
+            {
+                ShowAdoptionStatus();
                 return;
             }
 
@@ -398,6 +405,7 @@ namespace RandomSectorGenerator
                 StartPlanetDisplayName = build.StartPlanet.Name,
                 StartPlanetSubtype = starterDefinition.Id.SubtypeId.ToString(),
                 StartPlanetEntityId = build.StartPlanet.EntityId,
+                StartPlanetStorageName = build.StartPlanet.StorageName,
                 RssConfigBase64 = encoded,
                 CreatedUtc = DateTime.UtcNow.ToString("o")
             };
@@ -897,38 +905,213 @@ namespace RandomSectorGenerator
 
         private void CheckRssAdoptionAndFinishBootstrap()
         {
-            if (_ticks < 120)
+            if (_ticks < 120 || _ticks % 60 != 0)
                 return;
 
-            MyPlanet start = FindPlanetByEntityId(_state.StartPlanetEntityId);
-            if (start != null && _rss.IsReady && _rss.IsManagedBody(start))
+            AdoptionStatus adoption = EvaluateAdoption();
+            if (_ticks - _lastAdoptionLogTick >= 1800)
             {
-                foreach (long id in _state.GeneratedEntityIds)
-                {
-                    MyPlanet body = FindPlanetByEntityId(id);
-                    if (body == null || !_rss.IsManagedBody(body)) return;
-                }
-                if (!_startTeleportDone)
-                    _startTeleportDone = TeleportCharacterToRssStarter(start);
-                if (!_startTeleportDone) return;
-                if (!_adoptionNoticeShown)
-                {
-                    _adoptionNoticeShown = true;
-                    Show("RSS successfully adopted the generated sector. Bootstrap is complete.");
-                }
+                _lastAdoptionLogTick = _ticks;
+                MyLog.Default.WriteLineAndConsole("[RSG] Adoption: " + BuildAdoptionSummary(adoption, " | "));
+            }
 
-                _state.PendingApply = false;
-                _state.Applied = true;
-                WriteState(_state);
-                MyAPIGateway.Utilities.SetVariable(ArmKey, "complete");
-                _pendingAdoptionCheck = false;
+            if (!adoption.CanComplete)
+            {
+                if (_ticks == 1800)
+                    Show("RSS adoption is still pending. Run /rsg adoption for blocker details.");
                 return;
             }
 
-            if (_ticks == 1800)
+            if (!_startTeleportDone)
+                _startTeleportDone = TeleportCharacterToRssStarter(adoption.StartPlanet);
+            if (!_startTeleportDone)
+                return;
+            if (!_adoptionNoticeShown)
             {
-                Show("RSS has not adopted this sector yet. Save, exit to menu, and reload once; inspect the log if this persists.");
+                _adoptionNoticeShown = true;
+                Show("RSS successfully adopted the generated sector. Bootstrap is complete.");
             }
+
+            _state.PendingApply = false;
+            _state.Applied = true;
+            WriteState(_state);
+            MyAPIGateway.Utilities.SetVariable(ArmKey, "complete");
+            _pendingAdoptionCheck = false;
+        }
+
+        private AdoptionStatus EvaluateAdoption()
+        {
+            AdoptionStatus status = new AdoptionStatus
+            {
+                Pending = _state != null && _state.PendingApply,
+                Applied = _state != null && _state.Applied,
+                RssReady = _rss.IsReady && !_rss.Compromised
+            };
+
+            if (_state == null || string.IsNullOrWhiteSpace(_state.RssConfigBase64))
+            {
+                status.Error = "persisted RSS handoff payload is missing";
+                return status;
+            }
+
+            RssSettingsWire config;
+            try
+            {
+                byte[] bytes = Convert.FromBase64String(_state.RssConfigBase64);
+                config = MyAPIGateway.Utilities.SerializeFromBinary<RssSettingsWire>(bytes);
+            }
+            catch (Exception e)
+            {
+                status.Error = "persisted RSS handoff payload could not be read: " + e.Message;
+                return status;
+            }
+
+            if (config == null || config.SolarSystems == null)
+            {
+                status.Error = "persisted RSS handoff payload has no solar systems";
+                return status;
+            }
+
+            List<RssBodyWire> serializedBodies = new List<RssBodyWire>();
+            for (int i = 0; i < config.SolarSystems.Count; i++)
+                CollectSerializedBodies(config.SolarSystems[i] == null ? null : config.SolarSystems[i].RootBody, serializedBodies);
+
+            List<MyPlanet> loaded = GetLoadedPlanets();
+            HashSet<long> claimedLegacyIds = new HashSet<long>();
+            HashSet<string> expectedStorageNames = new HashSet<string>(StringComparer.Ordinal);
+            for (int i = 0; i < serializedBodies.Count; i++)
+            {
+                RssBodyWire expected = serializedBodies[i];
+                if (!IsConcreteBodyInstanceName(expected.BodyInstanceName) || !expectedStorageNames.Add(expected.BodyInstanceName))
+                    continue;
+
+                AdoptionBodyStatus body = new AdoptionBodyStatus
+                {
+                    DisplayName = expected.Name,
+                    PlanetTypeId = expected.PlanetTypeId,
+                    StorageName = expected.BodyInstanceName
+                };
+                body.Planet = loaded.FirstOrDefault(x => x != null && string.Equals(x.StorageName, body.StorageName, StringComparison.Ordinal));
+                if (body.Planet != null)
+                {
+                    body.Resolution = "StorageName";
+                }
+                else
+                {
+                    body.Planet = FindLegacyPlanet(expected, loaded, claimedLegacyIds);
+                    if (body.Planet != null)
+                    {
+                        body.Resolution = "legacy EntityId";
+                        claimedLegacyIds.Add(body.Planet.EntityId);
+                    }
+                }
+
+                if (body.Planet != null && status.RssReady)
+                    body.Managed = _rss.IsManagedBody(body.Planet);
+                status.Bodies.Add(body);
+            }
+
+            status.RssReady = _rss.IsReady && !_rss.Compromised;
+            status.StartPlanet = ResolveStarter(status.Bodies, loaded);
+            if (status.StartPlanet != null && status.RssReady)
+            {
+                AdoptionBodyStatus starter = status.Bodies.FirstOrDefault(x => x.Planet == status.StartPlanet);
+                status.StartPlanetManaged = starter != null ? starter.Managed : _rss.IsManagedBody(status.StartPlanet);
+            }
+            return status;
+        }
+
+        private MyPlanet FindLegacyPlanet(RssBodyWire expected, List<MyPlanet> loaded, HashSet<long> claimedLegacyIds)
+        {
+            if (_state == null || _state.GeneratedEntityIds == null)
+                return null;
+
+            for (int i = 0; i < _state.GeneratedEntityIds.Count; i++)
+            {
+                long id = _state.GeneratedEntityIds[i];
+                if (claimedLegacyIds.Contains(id))
+                    continue;
+                MyPlanet planet = loaded.FirstOrDefault(x => x != null && x.EntityId == id);
+                if (planet != null && string.Equals(planet.Name, expected.Name, StringComparison.Ordinal))
+                    return planet;
+            }
+            return null;
+        }
+
+        private MyPlanet ResolveStarter(List<AdoptionBodyStatus> bodies, List<MyPlanet> loaded)
+        {
+            if (_state == null)
+                return null;
+
+            AdoptionBodyStatus match = null;
+            if (!string.IsNullOrWhiteSpace(_state.StartPlanetStorageName))
+                match = bodies.FirstOrDefault(x => string.Equals(x.StorageName, _state.StartPlanetStorageName, StringComparison.Ordinal));
+            if (match == null)
+                match = bodies.FirstOrDefault(x =>
+                    string.Equals(x.DisplayName, _state.StartPlanetDisplayName, StringComparison.Ordinal) &&
+                    string.Equals(x.PlanetTypeId, _state.StartPlanetSubtype, StringComparison.Ordinal));
+            if (match != null && match.Planet != null)
+                return match.Planet;
+
+            MyPlanet legacy = loaded.FirstOrDefault(x => x != null && x.EntityId == _state.StartPlanetEntityId);
+            if (legacy != null)
+                return legacy;
+            return loaded.FirstOrDefault(x => x != null && string.Equals(x.Name, _state.StartPlanetDisplayName, StringComparison.Ordinal));
+        }
+
+        private static void CollectSerializedBodies(RssBodyWire body, List<RssBodyWire> result)
+        {
+            if (body == null)
+                return;
+            result.Add(body);
+            CollectSerializedBodies(body.Sibling, result);
+            if (body.Children == null)
+                return;
+            for (int i = 0; i < body.Children.Count; i++)
+                CollectSerializedBodies(body.Children[i], result);
+        }
+
+        private static bool IsConcreteBodyInstanceName(string value)
+        {
+            return !string.IsNullOrWhiteSpace(value) && !string.Equals(value, "None", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void ShowAdoptionStatus()
+        {
+            AdoptionStatus status = EvaluateAdoption();
+            Show(BuildAdoptionSummary(status, "\n"));
+            if (!string.IsNullOrWhiteSpace(status.Error))
+                Show("Blocker: " + status.Error);
+            for (int i = 0; i < status.Bodies.Count; i++)
+            {
+                AdoptionBodyStatus body = status.Bodies[i];
+                if (body.Planet != null && body.Managed)
+                    continue;
+                string identity = (body.DisplayName ?? "<unnamed>") + " [" + (body.PlanetTypeId ?? "unknown") + "] / " + body.StorageName;
+                if (body.Planet == null)
+                    Show("Blocker: " + identity + " - missing current body");
+                else if (!status.RssReady)
+                    Show("Blocker: " + identity + " - RSS API not ready (found by " + body.Resolution + ")");
+                else
+                    Show("Blocker: " + identity + " - found by " + body.Resolution + ", but RSS reports unmanaged");
+            }
+            if (status.StartPlanet == null)
+                Show("Blocker: starter could not be resolved from persisted display name/type or legacy EntityId");
+        }
+
+        private static string BuildAdoptionSummary(AdoptionStatus status, string separator)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("RSS API: ").Append(status.RssReady ? "ready" : "not ready");
+            sb.Append(separator).Append("Pending: ").Append(status.Pending);
+            sb.Append(separator).Append("Applied: ").Append(status.Applied);
+            sb.Append(separator).Append("Expected bodies: ").Append(status.Bodies.Count);
+            sb.Append(separator).Append("Resolved: ").Append(status.ResolvedCount);
+            sb.Append(separator).Append("Found by StorageName: ").Append(status.StorageNameCount);
+            sb.Append(separator).Append("Found only by legacy EntityId: ").Append(status.LegacyIdCount);
+            sb.Append(separator).Append("RSS-managed: ").Append(status.ManagedCount);
+            sb.Append(separator).Append("Blocking bodies: ").Append(status.BlockingCount);
+            return sb.ToString();
         }
 
         private static bool IsGenerationArmValue(string value)
@@ -1119,6 +1302,41 @@ namespace RandomSectorGenerator
         {
             if (MyAPIGateway.Utilities != null)
                 MyAPIGateway.Utilities.ShowMessage(Author, message);
+        }
+
+        private sealed class AdoptionBodyStatus
+        {
+            public string DisplayName;
+            public string PlanetTypeId;
+            public string StorageName;
+            public MyPlanet Planet;
+            public string Resolution;
+            public bool Managed;
+        }
+
+        private sealed class AdoptionStatus
+        {
+            public bool RssReady;
+            public bool Pending;
+            public bool Applied;
+            public string Error;
+            public readonly List<AdoptionBodyStatus> Bodies = new List<AdoptionBodyStatus>();
+            public MyPlanet StartPlanet;
+            public bool StartPlanetManaged;
+
+            public int ResolvedCount { get { return Bodies.Count(x => x.Planet != null); } }
+            public int StorageNameCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "StorageName", StringComparison.Ordinal)); } }
+            public int LegacyIdCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "legacy EntityId", StringComparison.Ordinal)); } }
+            public int ManagedCount { get { return Bodies.Count(x => x.Managed); } }
+            public int BlockingCount { get { return Bodies.Count(x => x.Planet == null || !x.Managed); } }
+            public bool CanComplete
+            {
+                get
+                {
+                    return string.IsNullOrWhiteSpace(Error) && Pending && !Applied && RssReady &&
+                        Bodies.Count > 0 && BlockingCount == 0 && StartPlanet != null && StartPlanetManaged;
+                }
+            }
         }
 
         private sealed class SectorBuildContext
