@@ -48,9 +48,9 @@ EXPORTED_PLANETS = {
         "icon": "(0.7,0.85,0.95,1.0)",
     },
     "Terminus (Black Hole)": {
-        "atmo_color": null,
-        "atmo_thickness": null,
-        "atmo_mult": null,
+        "atmo_color": None,
+        "atmo_thickness": None,
+        "atmo_mult": None,
         "icon": "(0.85,0.32,0.08,1.0)",
     },
     "Seren": {
