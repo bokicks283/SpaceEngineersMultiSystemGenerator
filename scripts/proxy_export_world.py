@@ -1,7 +1,8 @@
 """Prepare and configure an isolated Planet Exporter workbench world.
 
-This keeps proxy creation separate from the campaign save. The workbench loads only
-Planet Exporter, Water Mod, Zenitaia, Relicta, and the local ProxyExportBootstrap.
+This keeps proxy creation separate from the campaign save. The workbench loads
+Planet Exporter plus the selected export targets, including Terminus, and the local
+ProxyExportBootstrap.
 """
 import argparse
 import datetime
@@ -47,6 +48,7 @@ VOXELS = {
     "RelBedrock": ((0.16, 0.16, 0.16), 0.04, 0.00),
     "RelMagma": ((0.75, 0.21, 0.06), 0.12, 1.00),
     "RelRock": ((0.15, 0.15, 0.15), 0.05, 0.00),
+    "Terminus": ((0.003, 0.003, 0.003), 0.00, 0.00),
 }
 
 XSI = "http://www.w3.org/2001/XMLSchema-instance"
