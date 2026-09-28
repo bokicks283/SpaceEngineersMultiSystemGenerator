@@ -19,9 +19,9 @@ namespace RandomSectorGenerator
     /// otherwise disappear even though RSS still tracks them. This component draws
     /// tiny point-like stars using RSS proxy positions beyond the native glare range.
     ///
-    /// It also draws a small, distant-only S-star cluster around the central black
-    /// hole. These are visual scale cues, not visitable celestial bodies; they fade
-    /// away long before the player reaches the black-hole region.
+    /// The three Terminus companion stars are real Real Stars bodies and therefore
+    /// use the same distant-star path. Terminus itself gets a lightweight distant
+    /// accretion-disk/halo stand-in until RSS swaps to the real body.
     /// </summary>
     [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
     public sealed class CampaignCelestialVisualsSession : MySessionComponentBase
@@ -33,9 +33,10 @@ namespace RandomSectorGenerator
         private const double DistantStarFarEndM = 3000000000d;
         private const double RenderShellDistanceM = 50000d;
 
-        private const double ClusterFadeStartM = 100000000d;
-        private const double ClusterFullM = 150000000d;
-        private const double ClusterFarEndM = 3000000000d;
+        private const double BlackHoleFarEndM = 3000000000d;
+        private const double TerminusDiskPhysicalRadiusM = 1250000d;
+        private const float MinimumDiskRadius = 24f;
+        private const float MaximumDiskRadius = 600f;
 
         private readonly RealStarsClient _realStars = new RealStarsClient();
         private readonly RealSolarSystemsClient _rss = new RealSolarSystemsClient();
@@ -43,17 +44,10 @@ namespace RandomSectorGenerator
 
         private readonly MyStringId _glowMaterial = MyStringId.GetOrCompute("SunBigGlow");
         private readonly MyStringId _rayMaterial = MyStringId.GetOrCompute("SunBigRays");
+        private readonly MyStringId _dotMaterial = MyStringId.GetOrCompute("WhiteDot");
 
         private MyPlanet _blackHole;
         private int _ticks;
-
-        private static readonly SyntheticStar[] SStars =
-        {
-            new SyntheticStar(6000000d, 1200d, 0.10d, 0.25d, new Color(205, 225, 255), 0.80f),
-            new SyntheticStar(9000000d, 2100d, 1.70d, -0.35d, new Color(255, 244, 214), 0.75f),
-            new SyntheticStar(13500000d, 3300d, 3.20d, 0.55d, new Color(190, 215, 255), 0.70f),
-            new SyntheticStar(18000000d, 4800d, 4.80d, -0.70d, new Color(255, 204, 150), 0.65f),
-        };
 
         public override void LoadData()
         {
@@ -93,7 +87,7 @@ namespace RandomSectorGenerator
 
             Vector3D proxyCamera = _rss.GetCurrentCameraProxyPosition();
             DrawRealStars(proxyCamera);
-            DrawSyntheticBlackHoleCluster(proxyCamera);
+            DrawDistantBlackHole(proxyCamera);
         }
 
         private void RefreshBodies()
@@ -186,48 +180,66 @@ namespace RandomSectorGenerator
             }
         }
 
-        private void DrawSyntheticBlackHoleCluster(Vector3D proxyCamera)
+        private void DrawDistantBlackHole(Vector3D proxyCamera)
         {
             if (_blackHole == null || !_blackHole.InScene)
                 return;
 
-            Vector3D blackHolePosition;
-            MatrixD blackHoleRotation;
+            Vector3D proxyPosition;
+            MatrixD proxyRotation;
             double surfaceRange;
             double orbitRange;
-            if (!_rss.TryGetBodyProxyState(_blackHole, out blackHolePosition, out blackHoleRotation,
+            if (!_rss.TryGetBodyProxyState(_blackHole, out proxyPosition, out proxyRotation,
                 out surfaceRange, out orbitRange))
                 return;
 
-            double cameraDistance = Vector3D.Distance(proxyCamera, blackHolePosition);
-            if (cameraDistance <= ClusterFadeStartM || cameraDistance >= ClusterFarEndM)
+            Vector3D toHole = proxyPosition - proxyCamera;
+            double distance = toHole.Length();
+            if (distance < 1d || distance >= BlackHoleFarEndM)
                 return;
 
-            float fade = SmoothStep((float)((cameraDistance - ClusterFadeStartM) /
-                (ClusterFullM - ClusterFadeStartM)));
-            fade = MathHelper.Clamp(fade, 0f, 1f);
+            // Once RSS hands us to the real Terminus orbit zone, its true 3D
+            // accretion disk should be the only black-hole visual.
+            if (orbitRange > 0d && distance <= orbitRange * 1.05d)
+                return;
 
-            double seconds = MyAPIGateway.Session.ElapsedPlayTime.TotalSeconds;
-            for (int i = 0; i < SStars.Length; i++)
-            {
-                SyntheticStar item = SStars[i];
-                double angle = item.Phase + (seconds / item.PeriodSeconds) * Math.PI * 2d;
-                double cos = Math.Cos(angle);
-                double sin = Math.Sin(angle);
+            double fadeSpan = Math.Max(5000000d, orbitRange * 0.5d);
+            float nearFade = orbitRange <= 0d ? 1f : SmoothStep((float)(
+                (distance - orbitRange * 1.05d) / fadeSpan));
+            if (nearFade <= 0.001f)
+                return;
 
-                Vector3D local = new Vector3D(
-                    cos * item.OrbitRadiusM,
-                    sin * item.OrbitRadiusM,
-                    Math.Sin(angle * 0.5d + item.Phase) * item.OrbitRadiusM * 0.12d);
+            Vector3D direction = toHole / distance;
+            MatrixD cameraMatrix = MyAPIGateway.Session.Camera.WorldMatrix;
+            Vector3D drawPosition = cameraMatrix.Translation + direction * RenderShellDistanceM;
 
-                MatrixD tilt = MatrixD.CreateRotationX(item.TiltRadians) *
-                               MatrixD.CreateRotationZ(item.Phase * 0.35d);
-                Vector3D proxyPosition = blackHolePosition + Vector3D.TransformNormal(local, tilt);
+            float diskRadius = (float)(RenderShellDistanceM * TerminusDiskPhysicalRadiusM / distance);
+            diskRadius = MathHelper.Clamp(diskRadius, MinimumDiskRadius, MaximumDiskRadius);
 
-                Color color = item.Color;
-                color *= fade * item.Brightness;
-                DrawPoint(proxyPosition, proxyCamera, color, 10f + i * 1.5f, false);
-            }
+            // Keep the distant representation intentionally understated. It is a
+            // proxy-space landmark, not a replacement for Terminus' actual 3D disk.
+            Vector3 left = (Vector3)cameraMatrix.Left;
+            Vector3 up = (Vector3)cameraMatrix.Up;
+            Vector4 outer = new Vector4(1f, 0.24f, 0.035f, 1f) * (0.34f * nearFade);
+            Vector4 inner = new Vector4(1f, 0.70f, 0.24f, 1f) * (1.25f * nearFade);
+            Vector4 halo = new Vector4(1f, 0.40f, 0.08f, 1f) * (0.16f * nearFade);
+
+            MyTransparentGeometry.AddBillboardOriented(
+                _glowMaterial, halo, drawPosition, left, up, diskRadius * 1.6f,
+                BlendTypeEnum.AdditiveBottom);
+            MyTransparentGeometry.AddBillboardOriented(
+                _dotMaterial, outer, drawPosition, left, up,
+                diskRadius * 1.35f, diskRadius * 0.30f, Vector2.Zero,
+                BlendTypeEnum.AdditiveBottom);
+            MyTransparentGeometry.AddBillboardOriented(
+                _dotMaterial, inner, drawPosition, left, up,
+                diskRadius, diskRadius * 0.16f, Vector2.Zero,
+                BlendTypeEnum.AdditiveBottom);
+            MyTransparentGeometry.AddBillboardOriented(
+                _dotMaterial, new Vector4(0f, 0f, 0f, 1f),
+                drawPosition - direction * 2d, left, up,
+                diskRadius * 0.28f, diskRadius * 0.20f, Vector2.Zero,
+                BlendTypeEnum.Standard);
         }
 
         private void DrawPoint(Vector3D proxyTarget, Vector3D proxyCamera, Color color, float radius, bool addRays)
@@ -260,25 +272,5 @@ namespace RandomSectorGenerator
             return value * value * (3f - 2f * value);
         }
 
-        private struct SyntheticStar
-        {
-            public readonly double OrbitRadiusM;
-            public readonly double PeriodSeconds;
-            public readonly double Phase;
-            public readonly double TiltRadians;
-            public readonly Color Color;
-            public readonly float Brightness;
-
-            public SyntheticStar(double orbitRadiusM, double periodSeconds, double phase,
-                double tiltRadians, Color color, float brightness)
-            {
-                OrbitRadiusM = orbitRadiusM;
-                PeriodSeconds = periodSeconds;
-                Phase = phase;
-                TiltRadians = tiltRadians;
-                Color = color;
-                Brightness = brightness;
-            }
-        }
     }
 }
