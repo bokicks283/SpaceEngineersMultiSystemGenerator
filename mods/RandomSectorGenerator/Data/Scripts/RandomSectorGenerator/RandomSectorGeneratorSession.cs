@@ -1046,12 +1046,8 @@ namespace RandomSectorGenerator
                     PlanetTypeId = expected.PlanetTypeId,
                     StorageName = expected.BodyInstanceName
                 };
-                body.Planet = loaded.FirstOrDefault(x => x != null && string.Equals(x.StorageName, body.StorageName, StringComparison.Ordinal));
-                if (body.Planet != null)
-                {
-                    body.Resolution = "StorageName";
-                }
-                else
+                body.Planet = FindByPersistedStorageName(loaded, body.StorageName, out body.Resolution);
+                if (body.Planet == null)
                 {
                     body.Planet = FindLegacyPlanet(expected, loaded, claimedLegacyIds);
                     if (body.Planet != null)
@@ -1068,9 +1064,11 @@ namespace RandomSectorGenerator
 
             status.RssReady = _rss.IsReady && !_rss.Compromised;
             status.StartPlanet = ResolveStarter(status.Bodies, loaded);
-            status.StartResolvedByStorageName = status.StartPlanet != null && _state != null &&
-                !string.IsNullOrWhiteSpace(_state.StartPlanetStorageName) &&
-                string.Equals(status.StartPlanet.StorageName, _state.StartPlanetStorageName, StringComparison.Ordinal);
+            AdoptionBodyStatus resolvedStarter = status.StartPlanet == null
+                ? null
+                : status.Bodies.FirstOrDefault(x => x.Planet == status.StartPlanet);
+            status.StartResolvedByStorageName = resolvedStarter != null &&
+                IsStorageNameResolution(resolvedStarter.Resolution);
             FindStarterWire(config, status);
             if (status.StartPlanet != null && status.RssReady)
             {
@@ -1117,6 +1115,53 @@ namespace RandomSectorGenerator
                     return match;
             }
             return null;
+        }
+
+        private static MyPlanet FindByPersistedStorageName(List<MyPlanet> loaded, string persistedStorageName, out string resolution)
+        {
+            resolution = null;
+            if (loaded == null || string.IsNullOrWhiteSpace(persistedStorageName))
+                return null;
+
+            MyPlanet exact = loaded.FirstOrDefault(x =>
+                x != null && string.Equals(x.StorageName, persistedStorageName, StringComparison.Ordinal));
+            if (exact != null)
+            {
+                resolution = "StorageName";
+                return exact;
+            }
+
+            List<MyPlanet> suffixed = loaded.Where(x =>
+                x != null && IsNumericStorageSuffixMatch(x.StorageName, persistedStorageName)).ToList();
+            if (suffixed.Count == 1)
+            {
+                resolution = "StorageName suffix";
+                return suffixed[0];
+            }
+
+            return null;
+        }
+
+        private static bool IsNumericStorageSuffixMatch(string runtimeStorageName, string persistedStorageName)
+        {
+            if (string.IsNullOrWhiteSpace(runtimeStorageName) || string.IsNullOrWhiteSpace(persistedStorageName))
+                return false;
+
+            string prefix = persistedStorageName + ".";
+            if (!runtimeStorageName.StartsWith(prefix, StringComparison.Ordinal) || runtimeStorageName.Length == prefix.Length)
+                return false;
+
+            for (int i = prefix.Length; i < runtimeStorageName.Length; i++)
+                if (!char.IsDigit(runtimeStorageName[i]))
+                    return false;
+
+            return true;
+        }
+
+        private static bool IsStorageNameResolution(string resolution)
+        {
+            return string.Equals(resolution, "StorageName", StringComparison.Ordinal) ||
+                string.Equals(resolution, "StorageName suffix", StringComparison.Ordinal);
         }
 
         private MyPlanet FindLegacyPlanet(RssBodyWire expected, List<MyPlanet> loaded, HashSet<long> claimedLegacyIds)
@@ -1700,7 +1745,7 @@ namespace RandomSectorGenerator
             public double OrbitZoneRange;
 
             public int ResolvedCount { get { return Bodies.Count(x => x.Planet != null); } }
-            public int StorageNameCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "StorageName", StringComparison.Ordinal)); } }
+            public int StorageNameCount { get { return Bodies.Count(x => IsStorageNameResolution(x.Resolution)); } }
             public int LegacyIdCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "legacy EntityId", StringComparison.Ordinal)); } }
             public int ManagedCount { get { return Bodies.Count(x => x.Managed); } }
             public int BlockingCount { get { return Bodies.Count(x => x.Planet == null || !x.Managed); } }
