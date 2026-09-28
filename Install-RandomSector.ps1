@@ -171,8 +171,8 @@ try {
 
     $rtsSource = Join-Path $repoRoot 'profiles\RelativeTopSpeed.cfg'
     [xml]$rts = Get-Content -LiteralPath $rtsSource -Raw
-    if ($rts.Settings.SpeedLimit -ne '1500' -or $rts.Settings.RemoteControlSpeedLimit -ne '1000') {
-        throw 'Locked RTS profile is not 1500/1000'
+    if ($rts.Settings.SpeedLimit -ne '5000' -or $rts.Settings.RemoteControlSpeedLimit -ne '1000') {
+        throw 'Locked RTS profile is not 5000/1000'
     }
     $rtsDestDir = Join-Path $globalStorageRoot '1359618037.sbm_RelativeTopSpeed'
     $rtsDest = Join-Path $rtsDestDir 'RelativeTopSpeed.cfg'
