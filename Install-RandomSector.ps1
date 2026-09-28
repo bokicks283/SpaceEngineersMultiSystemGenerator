@@ -128,6 +128,14 @@ $selectedCoverage = @($coverage | Where-Object selected)
 if ($selectedCoverage.Count -ne 18) { throw "Expected 18 selected planets; found $($selectedCoverage.Count)" }
 $badCoverage = @($selectedCoverage | Where-Object { [int]$_.active_proxy_count -ne 1 })
 if ($badCoverage.Count) { throw "Proxy coverage is not exactly one for: $($badCoverage.planet -join ', ')" }
+
+$generatedProxyDefinition = Join-Path $repoRoot 'generated\CampaignPlanetProxies\Data\PlanetProxyDefaults.sbc'
+$terminusProxyId = '<SubtypeId>PlanetProxyType_Terminus (Black Hole)</SubtypeId>'
+if (-not (Test-Path -LiteralPath $generatedProxyDefinition -PathType Leaf) -or
+    -not (Get-Content -LiteralPath $generatedProxyDefinition -Raw).Contains($terminusProxyId)) {
+    throw 'Generated CampaignPlanetProxies is missing the Terminus (Black Hole) RSS proxy. Complete the proxy export/build workflow before installing Random Sector.'
+}
+
 foreach ($mod in $plan.selected_workshop) {
     if (-not (Test-Path -LiteralPath $mod.path -PathType Container)) {
         throw "Required Workshop mod is not installed: $($mod.id) $($mod.title)"
