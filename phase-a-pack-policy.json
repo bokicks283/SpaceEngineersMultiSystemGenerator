@@ -1,0 +1,44 @@
+{
+  "collection_id": "3808835800",
+  "planet_catalog_workshop": [
+    "3576683005",
+    "2644430625",
+    "2195637331",
+    "3618043241",
+    "3695766186",
+    "3362332228",
+    "3309805284",
+    "3684013414",
+    "3489648084",
+    "3515518898",
+    "3486181518",
+    "3617496051",
+    "2941085186",
+    "2961923776",
+    "2961924256"
+  ],
+  "non_catalog_planet_definition_mods": [
+    "3152436752",
+    "3232085677"
+  ],
+  "required_support_workshop": {
+    "3361803398": "required SD proxy pack for OrlundaSide"
+  },
+  "compatibility_exclusions": {
+    "2266665708": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2296726670": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2459246911": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2603627657": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2636128625": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2789619117": "known incompatible or obsolete mod excluded by Phase A policy",
+    "2873186053": "known incompatible or obsolete mod excluded by Phase A policy",
+    "3350589349": "Planet Exporter is a proxy-workbench tool and is not a gameplay mod",
+    "3381681547": "vanilla HD proxy pack duplicates the proxies supplied by Real Solar Systems",
+    "3561998389": "known incompatible or obsolete mod excluded by Phase A policy",
+    "3617008256": "known incompatible or obsolete mod excluded by Phase A policy",
+    "3617040986": "known incompatible or obsolete mod excluded by Phase A policy",
+    "3617496051": "Miasma is blocked by the known incompatible or obsolete Phase A policy",
+    "3618093811": "known incompatible or obsolete mod excluded by Phase A policy",
+    "3663505475": "Jormun proxy source is replaced by the generated CampaignPlanetProxies mod"
+  }
+}

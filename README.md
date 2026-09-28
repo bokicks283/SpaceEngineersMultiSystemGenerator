@@ -10,13 +10,23 @@ Close Space Engineers, open PowerShell in this repository, and run:
 pwsh .\Install-RandomSector.ps1
 ```
 
-The installer discovers the Steam library, audits the fixed 18-body pack,
-compiles and installs the local mods, installs the locked RTS profile, and
-creates `Content\CustomWorlds\Random Sector` from the root files of the stock
-Empty World. It deliberately excludes the stock template's `Storage` and
-`Backup` directories. The installed template starts in Survival with Economy,
-Cargo Ships, Random Encounters, Planetary Encounters, and the global encounter
-cap disabled.
+The installer resolves the current children of Steam collection
+**3808835800** through Steam's public Web API, verifies every collection item
+is installed, applies the explicit Phase A planet/compatibility policy, and
+writes the decision record to `reports/steam-collection.json`. It then audits
+the fixed 18-body pack, compiles and installs the local mods, installs the
+locked RTS profile, and creates `Content\CustomWorlds\Random Sector` from the
+root files of the stock Empty World. It deliberately excludes the stock
+template's `Storage` and `Backup` directories. The installed template starts
+in Survival with Economy, Cargo Ships, Random Encounters, Planetary Encounters,
+and the global encounter cap disabled.
+
+Steam resolution fails closed. If Steam is temporarily unavailable and the
+last successful snapshot is intentionally accepted, rerun with:
+
+```powershell
+pwsh .\Install-RandomSector.ps1 -UseCachedCollection
+```
 
 The normal player workflow is:
 
@@ -46,7 +56,11 @@ The current campaign cut intentionally favors variety rather than maximizing wat
   Pertam) are eligible without adding Workshop voxel materials.
 - Phase 2A also selects the zero-material Kerbin water variant and Aulden.
 
-Teal, Teralis, Komorebi, Nivis, Sulfate, and Acribus are intentionally excluded from this campaign cut. The expected static budget is about **117 unique voxel-material subtypes** after AquaExpansion, but `scripts/audit.py` and `scripts/prepare_pack.py` are authoritative and must be rerun on the actual machine.
+Additional planet catalog items may remain in the Steam collection for future
+campaigns. Phase A reports them as inactive with a reason and keeps the fixed
+18-body pool at about **117 unique voxel-material subtypes** after
+AquaExpansion. `scripts/audit.py`, `scripts/steam_collection.py`, and
+`scripts/prepare_pack.py` are authoritative and rerun on the actual machine.
 
 ## Proxy requirements
 

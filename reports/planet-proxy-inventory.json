@@ -142,25 +142,6 @@
     "active_in_existing_world": true
   },
   {
-    "id": "3309805284",
-    "title": "Komorebi",
-    "planets": [
-      {
-        "subtype": "Komorebi",
-        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3309805284\\Data\\Planet_Komorebi.sbc",
-        "type": "PlanetGeneratorDefinition",
-        "enabled": "true",
-        "atmosphere": "true",
-        "gravity": "1.14",
-        "oxygen": "1"
-      }
-    ],
-    "proxies": [],
-    "denylisted": false,
-    "desired_planet": true,
-    "active_in_existing_world": true
-  },
-  {
     "id": "3351055036",
     "title": "Real Solar Systems",
     "planets": [],
@@ -368,25 +349,6 @@
         "atmosphere": "true",
         "gravity": "1",
         "oxygen": "0.45"
-      }
-    ],
-    "proxies": [],
-    "denylisted": false,
-    "desired_planet": true,
-    "active_in_existing_world": true
-  },
-  {
-    "id": "3515518898",
-    "title": "Moon Sulfate",
-    "planets": [
-      {
-        "subtype": "Sulfate",
-        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3515518898\\Data\\Sulfate.sbc",
-        "type": "PlanetGeneratorDefinition",
-        "enabled": "true",
-        "atmosphere": "true",
-        "gravity": "0.4",
-        "oxygen": "0.0"
       }
     ],
     "proxies": [],

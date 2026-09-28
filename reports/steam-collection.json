@@ -1,6 +1,91 @@
 {
   "collection_id": "3808835800",
-  "collection_items": [
+  "retrieved_at_utc": "2026-09-28T01:20:28.516196+00:00",
+  "cache_used": false,
+  "child_workshop_ids": [
+    "2609118808",
+    "3768484204",
+    "3763900368",
+    "571920453",
+    "1359618037",
+    "2961923776",
+    "2961924256",
+    "2941085186",
+    "3381681547",
+    "3350589349",
+    "3663505475",
+    "3361803398",
+    "3362332228",
+    "2802625870",
+    "2111073562",
+    "2754014019",
+    "3357218025",
+    "822950976",
+    "3719498498",
+    "2915780227",
+    "2640137506",
+    "3154379105",
+    "2671376862",
+    "2111400196",
+    "516770964",
+    "2711430394",
+    "3382116691",
+    "3437815208",
+    "2298956701",
+    "1939935505",
+    "2678657382",
+    "1697184408",
+    "3170315974",
+    "514062285",
+    "2756894170",
+    "2687324923",
+    "3768473558",
+    "2826996861",
+    "2825087802",
+    "2803081060",
+    "3672452327",
+    "2816464979",
+    "3706927250",
+    "2899106264",
+    "3690317665",
+    "1965654081",
+    "3489648084",
+    "3684013414",
+    "3695766186",
+    "3618043241",
+    "3617496051",
+    "2195637331",
+    "2200451495",
+    "2644430625",
+    "3576683005",
+    "3731921987",
+    "3736894294",
+    "3791989881",
+    "3784633330",
+    "3472275442",
+    "3741238881",
+    "3746220940",
+    "3767444521",
+    "3770315903",
+    "2310821218",
+    "3665099597",
+    "2336089504",
+    "2596208372",
+    "3155707452",
+    "2841920953",
+    "2839553181",
+    "2391318591",
+    "1902970975",
+    "1521905890",
+    "3232085677",
+    "3218645300",
+    "3240629702",
+    "3222232482",
+    "3152436752",
+    "758597413",
+    "3351055036"
+  ],
+  "items": [
     {
       "id": "2609118808",
       "sort_order": 0,
@@ -1298,613 +1383,5 @@
       "exclusion_reason": null
     }
   ],
-  "selected_workshop": [
-    {
-      "id": "2609118808",
-      "title": "Real Orbits",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2609118808",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3768484204",
-      "title": "L.Y.N.X Industries - Gas Storage Expansion 2",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3768484204",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3763900368",
-      "title": "Unified Thruster FX",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3763900368",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "571920453",
-      "title": "Aerodynamic Physics",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\571920453",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1359618037",
-      "title": "Relative Top Speed",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1359618037",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2961923776",
-      "title": "Planet Aulden",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2961923776",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Aulden"
-      ]
-    },
-    {
-      "id": "2941085186",
-      "title": "Kerbin",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2941085186",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Kerbin - Water Mod Ready"
-      ]
-    },
-    {
-      "id": "3361803398",
-      "title": "\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3362332228",
-      "title": "Orlunda (Sideways)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "OrlundaSide"
-      ]
-    },
-    {
-      "id": "2802625870",
-      "title": "MES Wreckage",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2802625870",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2111073562",
-      "title": "Nanobot Build and Repair System (Maintained) - Nerfed Version",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2111073562",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2754014019",
-      "title": "Scope Framework",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2754014019",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3357218025",
-      "title": "Consty's HandWeapon Pack (Vanilla)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3357218025",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "822950976",
-      "title": "Automatic LCDs 2",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\822950976",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3719498498",
-      "title": "RCSP Ground Assault - [MES]",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3719498498",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2915780227",
-      "title": "Vanilla+ Framework",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2915780227",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2640137506",
-      "title": "Elite Dangerous: FSD Supercruise",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2640137506",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3154379105",
-      "title": "Defense Shields - v2.2(8)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3154379105",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2671376862",
-      "title": "EDP - More Logistics Options",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2671376862",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2111400196",
-      "title": "Assault Weapons Pack (v1.64 - Blood and Steel)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2111400196",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "516770964",
-      "title": "Attachments - large to small grid without limits!",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\516770964",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2711430394",
-      "title": "AQD - Emissive Colors",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2711430394",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3382116691",
-      "title": "AQD - Markings",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3382116691",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3437815208",
-      "title": "AQD - Airlock Connectors",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3437815208",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2298956701",
-      "title": "AQD - Concrete",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2298956701",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1939935505",
-      "title": "AQD - Armor Expansion",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1939935505",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2678657382",
-      "title": "AQD - Small Grid Expansion",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2678657382",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1697184408",
-      "title": "Build Vision 3.0",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1697184408",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3170315974",
-      "title": "Leak Finder",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3170315974",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "514062285",
-      "title": "Build Info",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\514062285",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2756894170",
-      "title": "Definition Extension API",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2756894170",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2687324923",
-      "title": "[QoL] Radio Spectrometry",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2687324923",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3768473558",
-      "title": "Sorted Cargo Container",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3768473558",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2826996861",
-      "title": "Crew Voices (Attack Robots)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2826996861",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2825087802",
-      "title": "Crew Voices (Psychotic Robots)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2825087802",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2803081060",
-      "title": "Crew Enabled",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2803081060",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3672452327",
-      "title": "RCSP Encounters - [MES]",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3672452327",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2816464979",
-      "title": "Terran Titans - Tactical Warfare Blocks",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2816464979",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3706927250",
-      "title": "Terran Titans - Naval Advanced Systems",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3706927250",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2899106264",
-      "title": "Terran Titans - Naval Blocks",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2899106264",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3690317665",
-      "title": "AquaExpansion",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3690317665",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1965654081",
-      "title": "Rich HUD Master",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1965654081",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3489648084",
-      "title": "Planet Relicta",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3489648084",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Relicta"
-      ]
-    },
-    {
-      "id": "3695766186",
-      "title": "Planet Zenitaia",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3695766186",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Zenitaia"
-      ]
-    },
-    {
-      "id": "3618043241",
-      "title": "Planet - Jormun (Water)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3618043241",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Jormun"
-      ]
-    },
-    {
-      "id": "2200451495",
-      "title": "Water Mod",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2200451495",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3576683005",
-      "title": "Cauldron System",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3576683005",
-      "source": "collection",
-      "classification": "phase_a_planet",
-      "planets": [
-        "Agni",
-        "Cauldron",
-        "Kor",
-        "Tellus"
-      ]
-    },
-    {
-      "id": "3731921987",
-      "title": "Malware's Docking Aid",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3731921987",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3736894294",
-      "title": "Monorail Tracks",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3736894294",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3791989881",
-      "title": "Yoink!",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3791989881",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3784633330",
-      "title": "AQD - LCD Color Profiles",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3784633330",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3472275442",
-      "title": "AQD - Conveyored Pipes",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3472275442",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3741238881",
-      "title": "Pipes Junctions",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3741238881",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3746220940",
-      "title": "Resource Node Miner",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3746220940",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3767444521",
-      "title": "Handheld Hacker Grid Takeover (Version 1.6)",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3767444521",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3770315903",
-      "title": "Humanoid's Retractable Solar Panels",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3770315903",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2310821218",
-      "title": "Abandoned Settlements [v2]",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2310821218",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3665099597",
-      "title": "Scientific Progress",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2336089504",
-      "title": "Bot_spawner",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2336089504",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2596208372",
-      "title": "AiEnabled v1.9",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2596208372",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3155707452",
-      "title": "Assertive Combat Systems Dependency",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3155707452",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2841920953",
-      "title": "Shower Light",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2841920953",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2839553181",
-      "title": "In Depth LCDs",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2839553181",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2391318591",
-      "title": "Assertive Loot",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2391318591",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1902970975",
-      "title": "Assertive Combat Systems",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1902970975",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "1521905890",
-      "title": "Modular Encounters Systems",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1521905890",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3232085677",
-      "title": "Real Gas Giants",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3232085677",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3218645300",
-      "title": "Asteroid Filter API",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3218645300",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3240629702",
-      "title": "Solar Blocks Override",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3240629702",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3222232482",
-      "title": "Visual Overrides API",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3222232482",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3152436752",
-      "title": "Real Stars",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3152436752",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "758597413",
-      "title": "Text HUD API",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\758597413",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3351055036",
-      "title": "Real Solar Systems",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    }
-  ],
-  "dependency_additions": [],
-  "support_additions": [],
-  "phase_a_planet_exclusions": [
-    {
-      "id": "2961924256",
-      "title": "Planet Seren",
-      "planets": [
-        "Seren"
-      ],
-      "desired": true,
-      "active": false,
-      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
-    },
-    {
-      "id": "3684013414",
-      "title": "Planet Nivis",
-      "planets": [
-        "Nivis"
-      ],
-      "desired": true,
-      "active": false,
-      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
-    },
-    {
-      "id": "2195637331",
-      "title": "Teralis - City Planet",
-      "planets": [
-        "Teralis - City Planet"
-      ],
-      "desired": true,
-      "active": false,
-      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
-    },
-    {
-      "id": "2644430625",
-      "title": "Teal - Water Mod",
-      "planets": [
-        "Teal-WaterMod"
-      ],
-      "desired": true,
-      "active": false,
-      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
-    }
-  ],
-  "compatibility_exclusions": [
-    {
-      "id": "3381681547",
-      "title": "\"Real Solar Systems\" Planet Proxies: Vanilla (HD)",
-      "reason": "vanilla HD proxy pack duplicates the proxies supplied by Real Solar Systems"
-    },
-    {
-      "id": "3350589349",
-      "title": "Planet Exporter (Real Solar Systems)",
-      "reason": "Planet Exporter is a proxy-workbench tool and is not a gameplay mod"
-    },
-    {
-      "id": "3663505475",
-      "title": "Planet Jormun - Now with a proxy!",
-      "reason": "Jormun proxy source is replaced by the generated CampaignPlanetProxies mod"
-    },
-    {
-      "id": "3617496051",
-      "title": "Planet - Miasma",
-      "reason": "Miasma is blocked by the known incompatible or obsolete Phase A policy"
-    }
-  ],
-  "missing_collection_items": [],
-  "local": [
-    "RandomSectorGenerator",
-    "CampaignScienceCompatibility",
-    "CampaignPlanetProxies"
-  ]
+  "missing_collection_items": []
 }

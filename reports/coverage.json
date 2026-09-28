@@ -160,26 +160,6 @@
     "science_status": "native"
   },
   {
-    "id": "3309805284",
-    "planet": "Komorebi",
-    "selected": false,
-    "proxy_candidates": [
-      {
-        "mod": "3361803398",
-        "root": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398",
-        "subtype": "PlanetProxyType_Komorebi",
-        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3361803398\\Data\\PlanetProxyDefaults.sbc",
-        "type": "Inventory",
-        "enabled": "true",
-        "description": "\n\t\t\tPlanetTexture_cm: Textures\\Planets\\PlanetProxy_Komorebi_cm.dds\n\t\t\tPlanetTexture_ng: Textures\\Planets\\PlanetProxy_Komorebi_ng.dds\n\t\t\tCloudTexture: EarthLike\n\t\t\tCloudSizeMult: 0.9\n\t\t\tAtmoColor: (0.5,0.85,0.9,1.0)\n\t\t\tAtmoThickness: 0.99\n\t\t\tAtmoColorMult: 5.5\n\t\t\tAtmoInZoneMult: 0.5\n\t\t\tScale: 0.99\n\t\t\tEditorIconColor: (0.7,0.9,0.85,1.0)\n\t  "
-      }
-    ],
-    "active_proxy_count": 1,
-    "science_native": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3665099597\\Data\\DefinitionDefaults_MajorJon.sbc",
-    "science_compatibility": false,
-    "science_status": "native"
-  },
-  {
     "id": "3684013414",
     "planet": "Nivis",
     "selected": false,
@@ -210,24 +190,14 @@
     "science_status": "local authored preset"
   },
   {
-    "id": "3515518898",
-    "planet": "Sulfate",
+    "id": "3617496051",
+    "planet": "Miasma",
     "selected": false,
     "proxy_candidates": [],
     "active_proxy_count": 0,
     "science_native": null,
     "science_compatibility": false,
     "science_status": "generic fallback"
-  },
-  {
-    "id": "3486181518",
-    "planet": "unavailable",
-    "selected": false,
-    "proxy_candidates": [],
-    "active_proxy_count": 0,
-    "science_native": null,
-    "science_compatibility": false,
-    "science_status": "unavailable"
   },
   {
     "id": "2941085186",
@@ -278,6 +248,16 @@
     "science_native": null,
     "science_compatibility": true,
     "science_status": "local authored preset"
+  },
+  {
+    "id": "2961924256",
+    "planet": "Seren",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
   },
   {
     "id": "vanilla",

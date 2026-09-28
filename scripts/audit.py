@@ -22,7 +22,8 @@ def vdf(path):
     return obj()
 
 def dump(name, data):
-    (OUT/name).write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding='utf-8')
+    (OUT/name).write_text(json.dumps(data, indent=2, ensure_ascii=False),
+                          encoding='utf-8', newline='\r\n')
 
 def scan(path):
     result = dict(voxels=[], planets=[], proxies=[], errors=[], dependencies=[], metadata=None)

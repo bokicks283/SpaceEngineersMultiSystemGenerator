@@ -1,6 +1,8 @@
 #Requires -Version 7.0
 [CmdletBinding()]
-param()
+param(
+    [switch]$UseCachedCollection
+)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
@@ -111,11 +113,16 @@ $randomSectorDest = Join-Path $customWorldRoot 'Random Sector'
 New-Item -ItemType Directory -Force -Path $backupRoot, $localModRoot, $globalStorageRoot | Out-Null
 
 Invoke-Checked 'Audit installed content' { py scripts\audit.py }
+$policy = Get-Content (Join-Path $repoRoot 'phase-a-pack-policy.json') -Raw | ConvertFrom-Json
+$collectionArgs = @('scripts\steam_collection.py', '--collection-id', $policy.collection_id)
+if ($UseCachedCollection) { $collectionArgs += '--use-cache' }
+Invoke-Checked 'Resolve Steam collection' { py @collectionArgs }
 Invoke-Checked 'Prepare selected pack' { py scripts\prepare_pack.py }
 
 $plan = Get-Content (Join-Path $repoRoot 'reports\pack-plan.json') -Raw | ConvertFrom-Json
 $voxel = Get-Content (Join-Path $repoRoot 'reports\selected-voxel-audit.json') -Raw | ConvertFrom-Json
 $coverage = Get-Content (Join-Path $repoRoot 'reports\coverage.json') -Raw | ConvertFrom-Json
+$collection = Get-Content (Join-Path $repoRoot 'reports\steam-collection.json') -Raw | ConvertFrom-Json
 if ([int]$voxel.total -gt 120) { throw "Voxel material count $($voxel.total) exceeds 120" }
 $selectedCoverage = @($coverage | Where-Object selected)
 if ($selectedCoverage.Count -ne 18) { throw "Expected 18 selected planets; found $($selectedCoverage.Count)" }
@@ -126,6 +133,25 @@ foreach ($mod in $plan.selected_workshop) {
         throw "Required Workshop mod is not installed: $($mod.id) $($mod.title)"
     }
 }
+
+Write-Host ''
+Write-Host "Steam collection: $($plan.collection_id)"
+Write-Host "Collection items: $($collection.items.Count)"
+foreach ($item in $collection.items) {
+    $label = if ($item.active) { 'INCLUDED' } elseif ($item.classification -eq 'phase_a_planet_deferred') { 'EXCLUDED' } else { 'BLOCKED' }
+    $reason = if ($item.active) { $item.classification } else { $item.exclusion_reason }
+    Write-Host ("{0}: {1} - {2} ({3})" -f $label, $item.id, $item.title, $reason)
+}
+$normalActive = @($collection.items | Where-Object { $_.active -and $_.classification -eq 'normal_collection_mod' }).Count
+$planetActive = @($collection.items | Where-Object { $_.active -and $_.classification -eq 'phase_a_planet' }).Count
+$planetDeferred = @($collection.items | Where-Object classification -eq 'phase_a_planet_deferred').Count
+Write-Host ''
+Write-Host "Normal collection mods active: $normalActive"
+Write-Host "Phase A planet mods active: $planetActive"
+Write-Host "Planet catalog items deferred: $planetDeferred"
+Write-Host "Dependencies added: $($plan.dependency_additions.Count)"
+Write-Host "Local RSG mods: $($plan.local.Count)"
+Write-Host "Voxel materials: $($voxel.total) / $($voxel.budget) Phase A budget"
 
 Invoke-Checked 'Offline compile' { pwsh -NoProfile -File scripts\Build-RSG.ps1 }
 
