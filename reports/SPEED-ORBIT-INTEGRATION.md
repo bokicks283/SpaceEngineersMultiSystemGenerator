@@ -72,6 +72,24 @@ host because this installed version does not persist defaults merely from a
 normal load. The inspector treats that case as informational rather than a
 failure.
 
-Do not tune the 1,500 m/s campaign ceiling before this gate. The next decision
-uses the actual active RTS XML plus the runtime/config report; Real Orbits
-speed multipliers remain disabled and RSS speed overrides remain `-1`.
+## Campaign high-speed decision (2026-09-28)
+
+Runtime testing rejected FSD Supercruise for the campaign travel layer because it
+moves grids by repeated position changes rather than ordinary physical velocity,
+which makes Real Orbits telemetry unusable while supercruise is active.
+
+The campaign now uses a **5,000 m/s RTS physical hard ceiling** for player-driven
+grids. The existing mass-based cruise curves remain intentionally much lower;
+5 km/s is a high-end boost ceiling, not the normal cruise speed of every ship.
+`RemoteControlSpeedLimit` remains 1,000 m/s during the first safety pass so
+autopilot/remote grids are not immediately exposed to the full tunneling risk.
+
+Aerodynamic Physics' Small/Large ship limit profile is raised to 5,000 m/s while
+`SimulationMaxSpeed` remains 400 for the existing atmosphere/reentry scaling.
+Real Orbits speed multipliers and RSS speed overrides remain disabled so RTS is
+the single speed-limit owner.
+
+High-speed collision mitigation is a separate acceptance gate. Start with
+Kinetic Devastation plus its Bigger Explosions support dependency, then add a
+local predictive-safety patch if needed. System-to-system travel should use a
+true Jump Drive/Hyperdrive rather than continuous supercruise.
