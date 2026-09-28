@@ -35,6 +35,7 @@ namespace RandomSectorGenerator
         private const string PlanTsvFileName = "RandomSectorStaticPlan.tsv";
 
         private const int MaximumPlanetDefinitions = 24;
+        private const int TerminusDiameterKm = 500;
         private const double ParkingRadiusMin = 650000000d;
         private const double ParkingRadiusMax = 1125000000d;
         private const double ParkingSeparation = 30000000d;
@@ -56,6 +57,26 @@ namespace RandomSectorGenerator
             "Outer",
             "Remote",
             "Hostile Inner"
+        };
+
+        // Cinematic S-star cluster around Terminus. These intentionally use short
+        // periods so their motion is visible from other systems rather than only
+        // on multi-hour time scales.
+        private static readonly float[] BlackHoleCompanionOrbitMeters =
+        {
+            20000000f, 35000000f, 55000000f
+        };
+
+        private static readonly float[] BlackHoleCompanionPeriodSeconds =
+        {
+            1200f, 2100f, 3600f
+        };
+
+        private static readonly Vector3I[] BlackHoleCompanionColors =
+        {
+            new Vector3I(190, 220, 255),
+            new Vector3I(255, 185, 110),
+            new Vector3I(255, 245, 225)
         };
 
         private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(
@@ -169,20 +190,21 @@ namespace RandomSectorGenerator
                 definitions.Remove(starterDefinition);
                 definitions.Insert(0, starterDefinition);
 
+                MyPlanetGeneratorDefinition terminusDefinition = GetTerminusDefinition();
+                if (terminusDefinition == null)
+                    throw new Exception("Terminus planet definition is missing; Workshop 3481843850 must be active");
+
                 List<string> skins = _realGasGiants.GetSkins();
-                string blackHoleSkin = skins == null ? null :
-                    skins.FirstOrDefault(x => string.Equals(x, "DefaultBlackHole", StringComparison.OrdinalIgnoreCase));
-                if (blackHoleSkin == null)
-                    throw new Exception("verified DefaultBlackHole skin is unavailable");
-                List<string> normalGasSkins = skins
+                List<string> normalGasSkins = (skins ?? new List<string>())
                     .Where(x => !string.IsNullOrWhiteSpace(x) &&
                                 x.IndexOf("blackhole", StringComparison.OrdinalIgnoreCase) < 0)
                     .ToList();
 
-                BuildBodies(build, definitions, starterDefinition, blackHoleSkin, normalGasSkins);
+                BuildBodies(build, definitions, starterDefinition, terminusDefinition, normalGasSkins);
 
-                if (build.Root == null || build.StarterPlanet == null || build.Stars.Count != 4)
-                    throw new Exception("static sector did not produce its required black-hole root, four stars, and starter");
+                if (build.Root == null || build.StarterPlanet == null || build.Stars.Count != 4 ||
+                    build.BlackHoleCompanions.Count != 3)
+                    throw new Exception("static sector did not produce Terminus, four systems, three S-stars, and starter");
 
                 WritePlan(build);
 
@@ -191,7 +213,7 @@ namespace RandomSectorGenerator
                     Complete = true,
                     Seed = seed,
                     BodyCount = build.AllNodes.Count,
-                    TerrestrialCount = definitions.Count,
+                    TerrestrialCount = definitions.Count + 1,
                     StarterName = build.StarterPlanet.Name,
                     StarterSubtype = starterDefinition.Id.SubtypeId.ToString(),
                     CreatedUtc = DateTime.UtcNow.ToString("o")
@@ -199,8 +221,8 @@ namespace RandomSectorGenerator
                 WriteState(_state);
                 MyAPIGateway.Utilities.SetVariable(ArmKey, CompleteArmValue);
 
-                Show("Static sector generated: 4 star systems + central black hole.");
-                Show("All " + definitions.Count + " terrestrial worlds exist as real static planets.");
+                Show("Static sector generated: 4 star systems + Terminus + 3 fast S-stars.");
+                Show("All " + definitions.Count + " campaign worlds plus Terminus exist as real static planets.");
                 Show("Setup character intentionally left at the original safe spawn. Do not use planetary respawn entries during bootstrap.");
                 Show("SAVE and reload, run /AddStrayPlanets, then configure RSS from RandomSectorStaticPlan.tsv. Do not start survival yet.");
             }
@@ -216,31 +238,49 @@ namespace RandomSectorGenerator
         }
 
         private void BuildBodies(SectorBuild build, List<MyPlanetGeneratorDefinition> definitions,
-            MyPlanetGeneratorDefinition starterDefinition, string blackHoleSkin, List<string> normalGasSkins)
+            MyPlanetGeneratorDefinition starterDefinition, MyPlanetGeneratorDefinition terminusDefinition,
+            List<string> normalGasSkins)
         {
-            // Central black hole exists physically now but is only assigned its final
-            // hierarchy/orbit role after RSS has adopted all bodies.
-            string holeName = GenerateUniqueName(build) + " Abyss";
-            MyPlanet hole = _realGasGiants.SpawnGasGiant(NextParkingPosition(build.Random), 450f,
-                new Vector3I(8, 8, 12), blackHoleSkin, 35f, 2f, 3600f);
+            // Terminus is the physical central root. RSS adopts it like any other
+            // planet while CampaignCelestialVisuals supplies a distant proxy disk.
+            const string holeName = "Wyaris Abyss";
+            build.UsedNames.Add("Wyaris");
+            MyPlanet hole = SpawnPlanet(terminusDefinition, holeName, TerminusDiameterKm, build.Random);
             if (hole == null)
-                throw new Exception("Real Gas Giants failed to spawn the central black hole");
-            hole.Name = holeName;
-            _realGasGiants.SetGasGiantName(hole, holeName);
-            if (!_realGasGiants.SetGasGiantRing(
-                hole, 0, "DefaultBlackHole", new Vector3D(0d, 10d, 1d), new Vector3I(255, 165, 72),
-                2.5f, 0.15f, 1.15f, 8f, 0.75f, 900f, false, false))
-                throw new Exception("Real Gas Giants failed to configure the black-hole accretion disk");
+                throw new Exception("failed to spawn Terminus central black hole");
             build.GeneratedEntities.Add(hole);
-            build.Root = new PlanNode(holeName, "RealGasGiant", hole.StorageName, "Central Black Hole", hole);
+            build.Root = new PlanNode(holeName, terminusDefinition.Id.SubtypeId.ToString(),
+                hole.StorageName, "Central Black Hole", hole);
+
+            // Three compact S-stars orbit Terminus quickly enough to visibly move
+            // from distant systems. They intentionally do not own planets.
+            for (int i = 0; i < BlackHoleCompanionOrbitMeters.Length; i++)
+            {
+                string name = "Wyaris S" + (i + 1) + " Star";
+                float radiusKm = 26f + i * 5f;
+                float brightness = 1.0f + (2 - i) * 0.2f;
+                MyPlanet star = _realStars.SpawnStar(NextParkingPosition(build.Random), radiusKm,
+                    BlackHoleCompanionColors[i], brightness, brightness,
+                    radiusKm * 2.5f, 6f, 7f);
+                if (star == null)
+                    throw new Exception("Real Stars failed to spawn Terminus companion " + (i + 1));
+                star.Name = name;
+                _realStars.SetStarName(star, name);
+                build.GeneratedEntities.Add(star);
+
+                PlanNode node = new PlanNode(name, "RealStar", star.StorageName, "Black Hole Companion Star", star);
+                SetFastCompanionOrbit(node, i, build.Random);
+                AddChild(build.Root, node);
+                build.BlackHoleCompanions.Add(node);
+            }
 
             for (int i = 0; i < 4; i++)
             {
                 string name = GenerateUniqueName(build) + " Star";
-                float radiusKm = 45f + (float)build.Random.NextDouble() * 35f;
-                float brightness = 0.8f + (float)build.Random.NextDouble() * 0.8f;
+                float radiusKm = 90f + (float)build.Random.NextDouble() * 70f;
+                float brightness = 0.9f + (float)build.Random.NextDouble() * 0.8f;
                 MyPlanet star = _realStars.SpawnStar(NextParkingPosition(build.Random), radiusKm,
-                    RandomStarColor(build.Random), brightness, brightness, radiusKm * 3f, 10f, 7f);
+                    RandomStarColor(build.Random), brightness, brightness, radiusKm * 2.5f, 10f, 7f);
                 if (star == null)
                     throw new Exception("Real Stars failed to spawn star " + i);
                 star.Name = name;
@@ -331,7 +371,8 @@ namespace RandomSectorGenerator
             }
 
             build.AllNodes.Insert(0, build.Root);
-            build.AllNodes.InsertRange(1, build.Stars);
+            build.AllNodes.InsertRange(1, build.BlackHoleCompanions);
+            build.AllNodes.InsertRange(1 + build.BlackHoleCompanions.Count, build.Stars);
             foreach (PlanNode giant in build.GasGiants.Values)
                 if (!build.AllNodes.Contains(giant)) build.AllNodes.Add(giant);
         }
@@ -367,6 +408,17 @@ namespace RandomSectorGenerator
             child.Roll = (float)(rng.NextDouble() * 6d - 3d);
             child.Yaw = (float)(rng.NextDouble() * 360d);
             child.OrbitalPeriod = Math.Max(3600f, semimajorAxis / 400f);
+            child.OrbitalPeriodOffset = (float)(rng.NextDouble() * Math.PI * 2d);
+        }
+
+        private static void SetFastCompanionOrbit(PlanNode child, int index, Random rng)
+        {
+            child.SemimajorAxis = BlackHoleCompanionOrbitMeters[index];
+            child.Eccentricity = 0.02f + index * 0.03f;
+            child.Pitch = new[] { 12f, -21f, 31f }[index];
+            child.Roll = new[] { -8f, 17f, -26f }[index];
+            child.Yaw = (float)(rng.NextDouble() * 360d);
+            child.OrbitalPeriod = BlackHoleCompanionPeriodSeconds[index];
             child.OrbitalPeriodOffset = (float)(rng.NextDouble() * Math.PI * 2d);
         }
 
@@ -498,6 +550,26 @@ namespace RandomSectorGenerator
                 })
                 .OrderBy(x => x.Id.SubtypeId.ToString(), StringComparer.OrdinalIgnoreCase)
                 .ToList();
+        }
+
+        private static MyPlanetGeneratorDefinition GetTerminusDefinition()
+        {
+            List<MyPlanetGeneratorDefinition> candidates = MyDefinitionManager.Static.GetPlanetsGeneratorsDefinitions()
+                .Where(def => def != null &&
+                    def.Id.SubtypeId.ToString().IndexOf("Terminus", StringComparison.OrdinalIgnoreCase) >= 0)
+                .OrderBy(def => def.Id.SubtypeId.ToString(), StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            MyPlanetGeneratorDefinition exact = candidates.FirstOrDefault(def =>
+                string.Equals(def.Id.SubtypeId.ToString(), "Terminus", StringComparison.OrdinalIgnoreCase));
+            if (exact != null)
+                return exact;
+            if (candidates.Count == 1)
+                return candidates[0];
+            if (candidates.Count > 1)
+                throw new Exception("multiple Terminus-like planet definitions are loaded: " +
+                    string.Join(", ", candidates.Select(x => x.Id.SubtypeId.ToString())));
+            return null;
         }
 
         private static MyPlanetGeneratorDefinition ChooseStarterDefinition(List<MyPlanetGeneratorDefinition> defs)
@@ -633,6 +705,7 @@ namespace RandomSectorGenerator
             public readonly List<MyPlanet> GeneratedEntities = new List<MyPlanet>();
             public readonly List<PlanNode> AllNodes = new List<PlanNode>();
             public readonly List<PlanNode> Stars = new List<PlanNode>();
+            public readonly List<PlanNode> BlackHoleCompanions = new List<PlanNode>();
             public readonly Dictionary<int, PlanNode> GasGiants = new Dictionary<int, PlanNode>();
             public readonly Dictionary<int, PlanNode> LastDirectPlanet = new Dictionary<int, PlanNode>();
             public readonly HashSet<string> UsedNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
