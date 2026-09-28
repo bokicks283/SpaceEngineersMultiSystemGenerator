@@ -135,7 +135,6 @@ foreach ($mod in $plan.selected_workshop) {
 }
 
 Invoke-Checked 'Sync pending RSG save mod lists' { py scripts\sync_pending_world_mods.py }
-Invoke-Checked 'Restore pending RSS handoffs' { py scripts\sync_pending_rss_handoff.py }
 
 Write-Host ''
 Write-Host "Steam collection: $($plan.collection_id)"
@@ -218,10 +217,11 @@ finally {
 Write-Host ''
 Write-Host 'Random Sector Phase A is installed.' -ForegroundColor Green
 Write-Host 'Next:'
-Write-Host '1. Launch Space Engineers.'
-Write-Host '2. Load the existing generated world that is waiting for RSS adoption.'
-Write-Host '3. Run /rsg adoption, then /rsg recoverstarter in the existing adopted test world.'
-Write-Host '4. Confirm recovery places you on Tellus with stable gravity; remain in-world long enough to test Crew Enabled cleanup.'
-Write-Host '5. Only after that succeeds, create one fresh Random Sector and validate normal adoption.'
-Write-Host '6. After the fresh status reports pending=False and applied=True, run /SetupRealOrbits once and save.'
-Write-Host 'Economy remains OFF for Phase A.'
+Write-Host '1. Launch Space Engineers and create a fresh Random Sector world.'
+Write-Host '2. Wait for static generation to complete; the setup character remains at the original safe spawn.'
+Write-Host '3. Save, exit to menu, and reload that same save.'
+Write-Host '4. Run /AddStrayPlanets. Do not use planetary respawn entries during bootstrap.'
+Write-Host '5. Verify adopted bodies in /TSE without manually assigning hierarchy, then save and exit Space Engineers.'
+Write-Host '6. Run Collect-RSG-TestDiagnostics.ps1 so RSS config + RandomSectorStaticPlan can be inspected for automated hierarchy setup.'
+Write-Host '7. Only after RSS hierarchy is verified: /SetupRealOrbits, Economy, final starter/crash scenario.'
+Write-Host 'Economy remains OFF during bootstrap.'
