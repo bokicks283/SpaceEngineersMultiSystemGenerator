@@ -78,7 +78,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 
 ## Local mods
 
-- RandomSectorGenerator: one-shot armed disposable-world bootstrap, pending RSS checkpoint handoff, spoiler manifest.
+- RandomSectorGenerator: one-shot Random Sector bootstrap, direct persisted RSS handoff, spoiler manifest.
 - CampaignScienceCompatibility: authored Cauldron, Jormun, Relicta, Zenitaia, Kerbin, and Aulden biome presets.
 - CampaignPlanetProxies: generated RSS proxy definitions/assets for campaign planets.
 

@@ -15,7 +15,7 @@
         "StateFlags": "4",
         "installdir": "SpaceEngineers",
         "LastUpdated": "1786907475",
-        "LastPlayed": "1790541663",
+        "LastPlayed": "1790555616",
         "SizeOnDisk": "44818048736",
         "StagingSize": "0",
         "buildid": "24675677",
@@ -573,9 +573,9 @@
         "SizeOnDisk": "11196592988",
         "NeedsUpdate": "0",
         "NeedsDownload": "0",
-        "TimeLastUpdated": "1790545726",
+        "TimeLastUpdated": "1790553494",
         "TimeLastFullCheck": "1790526958",
-        "TimeLastAppRan": "1790541663",
+        "TimeLastAppRan": "1790548882",
         "LastBuildID": "24675677",
         "WorkshopItemsInstalled": {
           "514062285": {
@@ -1014,7 +1014,7 @@
           "571920453": {
             "manifest": "2994852692838573870",
             "timeupdated": "1729664646",
-            "timetouched": "0",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1729664646",
             "latest_manifest": "2994852692838573870"
@@ -1022,7 +1022,7 @@
           "758597413": {
             "manifest": "8144833970592824204",
             "timeupdated": "1645658032",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1645658032",
             "latest_manifest": "8144833970592824204"
@@ -1038,7 +1038,7 @@
           "1359618037": {
             "manifest": "6308461083459712307",
             "timeupdated": "1790300511",
-            "timetouched": "0",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1790300511",
             "latest_manifest": "6308461083459712307"
@@ -1046,7 +1046,7 @@
           "1521905890": {
             "manifest": "4630850694432945299",
             "timeupdated": "1790497402",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1790497402",
             "latest_manifest": "4630850694432945299"
@@ -1062,7 +1062,7 @@
           "1902970975": {
             "manifest": "310538505680153076",
             "timeupdated": "1707286964",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1707286964",
             "latest_manifest": "310538505680153076"
@@ -1078,7 +1078,7 @@
           "1965654081": {
             "manifest": "7484952797562693667",
             "timeupdated": "1781131326",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781131326",
             "latest_manifest": "7484952797562693667"
@@ -1110,7 +1110,7 @@
           "2200451495": {
             "manifest": "2741414223314794091",
             "timeupdated": "1786901983",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1786901983",
             "latest_manifest": "2741414223314794091"
@@ -1126,7 +1126,7 @@
           "2310821218": {
             "manifest": "2788547210435434460",
             "timeupdated": "1656713095",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1656713095",
             "latest_manifest": "2788547210435434460"
@@ -1134,7 +1134,7 @@
           "2336089504": {
             "manifest": "782100663735002106",
             "timeupdated": "1717147457",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1717147457",
             "latest_manifest": "782100663735002106"
@@ -1142,7 +1142,7 @@
           "2391318591": {
             "manifest": "4034709890756492085",
             "timeupdated": "1781696505",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781696505",
             "latest_manifest": "4034709890756492085"
@@ -1150,7 +1150,7 @@
           "2596208372": {
             "manifest": "344933508815538535",
             "timeupdated": "1768104167",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1768104167",
             "latest_manifest": "344933508815538535"
@@ -1158,7 +1158,7 @@
           "2609118808": {
             "manifest": "1770221276592596632",
             "timeupdated": "1757447489",
-            "timetouched": "0",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1757447489",
             "latest_manifest": "1770221276592596632"
@@ -1222,7 +1222,7 @@
           "2756894170": {
             "manifest": "6577106617031406808",
             "timeupdated": "1706481483",
-            "timetouched": "1790492670",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1706481483",
             "latest_manifest": "6577106617031406808"
@@ -1270,7 +1270,7 @@
           "2839553181": {
             "manifest": "2347446847716228533",
             "timeupdated": "1740126001",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1740126001",
             "latest_manifest": "2347446847716228533"
@@ -1278,7 +1278,7 @@
           "2841920953": {
             "manifest": "3763551835488781720",
             "timeupdated": "1660983814",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1660983814",
             "latest_manifest": "3763551835488781720"
@@ -1286,7 +1286,7 @@
           "2899106264": {
             "manifest": "8757177408897277947",
             "timeupdated": "1776624939",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1776624939",
             "latest_manifest": "8757177408897277947"
@@ -1302,7 +1302,7 @@
           "2941085186": {
             "manifest": "5139271581256677673",
             "timeupdated": "1780142964",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1780142964",
             "latest_manifest": "5139271581256677673"
@@ -1310,7 +1310,7 @@
           "2961923776": {
             "manifest": "1973380583509266548",
             "timeupdated": "1681420980",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1681420980",
             "latest_manifest": "1973380583509266548"
@@ -1326,7 +1326,7 @@
           "3152436752": {
             "manifest": "6849314283325612300",
             "timeupdated": "1789437060",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789437060",
             "latest_manifest": "6849314283325612300"
@@ -1342,7 +1342,7 @@
           "3155707452": {
             "manifest": "4435772518236600376",
             "timeupdated": "1759026630",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1759026630",
             "latest_manifest": "4435772518236600376"
@@ -1358,7 +1358,7 @@
           "3218645300": {
             "manifest": "660258419898439794",
             "timeupdated": "1722841159",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1722841159",
             "latest_manifest": "660258419898439794"
@@ -1366,7 +1366,7 @@
           "3222232482": {
             "manifest": "3858324822946197786",
             "timeupdated": "1731709387",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731709387",
             "latest_manifest": "3858324822946197786"
@@ -1374,7 +1374,7 @@
           "3232085677": {
             "manifest": "7309797073453642140",
             "timeupdated": "1769754138",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1769754138",
             "latest_manifest": "7309797073453642140"
@@ -1382,7 +1382,7 @@
           "3240629702": {
             "manifest": "3634428776801030349",
             "timeupdated": "1785189141",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1785189141",
             "latest_manifest": "3634428776801030349"
@@ -1406,7 +1406,7 @@
           "3351055036": {
             "manifest": "654691035657927225",
             "timeupdated": "1789429180",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789429180",
             "latest_manifest": "654691035657927225"
@@ -1422,7 +1422,7 @@
           "3361803398": {
             "manifest": "6119685640767316233",
             "timeupdated": "1731106835",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1731106835",
             "latest_manifest": "6119685640767316233"
@@ -1430,7 +1430,7 @@
           "3362332228": {
             "manifest": "3397757138131943930",
             "timeupdated": "1758326799",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1758326799",
             "latest_manifest": "3397757138131943930"
@@ -1462,7 +1462,7 @@
           "3472275442": {
             "manifest": "770371675746351761",
             "timeupdated": "1745859890",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1745859890",
             "latest_manifest": "770371675746351761"
@@ -1470,7 +1470,7 @@
           "3489648084": {
             "manifest": "9203020772835891881",
             "timeupdated": "1772035396",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1772035396",
             "latest_manifest": "9203020772835891881"
@@ -1486,7 +1486,7 @@
           "3576683005": {
             "manifest": "6445329570615327690",
             "timeupdated": "1766271661",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1766271661",
             "latest_manifest": "6445329570615327690"
@@ -1502,7 +1502,7 @@
           "3618043241": {
             "manifest": "6011129296201092341",
             "timeupdated": "1764910968",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1764910968",
             "latest_manifest": "6011129296201092341"
@@ -1518,7 +1518,7 @@
           "3665099597": {
             "manifest": "8315911484051020153",
             "timeupdated": "1786676420",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1786676420",
             "latest_manifest": "8315911484051020153"
@@ -1542,7 +1542,7 @@
           "3690317665": {
             "manifest": "7177730067797974940",
             "timeupdated": "1790519875",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1790519875",
             "latest_manifest": "7177730067797974940"
@@ -1550,7 +1550,7 @@
           "3695766186": {
             "manifest": "5474360216637276388",
             "timeupdated": "1776682073",
-            "timetouched": "1790541434",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1776682073",
             "latest_manifest": "5474360216637276388"
@@ -1558,7 +1558,7 @@
           "3706927250": {
             "manifest": "5202300668134011602",
             "timeupdated": "1782561326",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1782561326",
             "latest_manifest": "5202300668134011602"
@@ -1574,7 +1574,7 @@
           "3731921987": {
             "manifest": "301856979576999737",
             "timeupdated": "1782032329",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1782032329",
             "latest_manifest": "301856979576999737"
@@ -1582,7 +1582,7 @@
           "3736894294": {
             "manifest": "7251214043632587668",
             "timeupdated": "1780400086",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1780400086",
             "latest_manifest": "7251214043632587668"
@@ -1590,7 +1590,7 @@
           "3741238881": {
             "manifest": "4360658005300696358",
             "timeupdated": "1781298137",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1781298137",
             "latest_manifest": "4360658005300696358"
@@ -1598,7 +1598,7 @@
           "3746220940": {
             "manifest": "6552576263556833690",
             "timeupdated": "1787215282",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787215282",
             "latest_manifest": "6552576263556833690"
@@ -1614,7 +1614,7 @@
           "3767444521": {
             "manifest": "4180830671179822467",
             "timeupdated": "1787343912",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787343912",
             "latest_manifest": "4180830671179822467"
@@ -1638,7 +1638,7 @@
           "3770315903": {
             "manifest": "6048234901374581415",
             "timeupdated": "1789291883",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789291883",
             "latest_manifest": "6048234901374581415"
@@ -1646,7 +1646,7 @@
           "3784633330": {
             "manifest": "3288109282359364240",
             "timeupdated": "1787071054",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1787071054",
             "latest_manifest": "3288109282359364240"
@@ -1654,7 +1654,7 @@
           "3791989881": {
             "manifest": "8664544747371685708",
             "timeupdated": "1789932475",
-            "timetouched": "1790492693",
+            "timetouched": "1790548769",
             "subscribedby": "85359112",
             "latest_timeupdated": "1789932475",
             "latest_manifest": "8664544747371685708"
@@ -1694,7 +1694,7 @@
     },
     {
       "id": "1359618037",
-      "title": null,
+      "title": "Relative Top Speed",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1359618037",
       "desired_planet": false,
       "denylisted": false,
@@ -1995,7 +1995,7 @@
     },
     {
       "id": "2609118808",
-      "title": null,
+      "title": "Real Orbits",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2609118808",
       "desired_planet": false,
       "denylisted": false,
@@ -2208,11 +2208,11 @@
     },
     {
       "id": "2756894170",
-      "title": null,
+      "title": "Definition Extension API",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2756894170",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -4005,7 +4005,7 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3706927250",
       "desired_planet": false,
       "denylisted": false,
-      "active_in_existing_world": false,
+      "active_in_existing_world": true,
       "voxels": [],
       "planets": [],
       "proxies": [],
@@ -6143,7 +6143,7 @@
     },
     {
       "id": "571920453",
-      "title": null,
+      "title": "Aerodynamic Physics",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\571920453",
       "desired_planet": false,
       "denylisted": false,
@@ -7471,13 +7471,28 @@
           "PublishedServiceName": "Steam"
         },
         {
-          "Name": "RandomSectorGenerator"
+          "Name": "RandomSectorGenerator",
+          "PublishedServiceName": "Steam"
         },
         {
-          "Name": "CampaignScienceCompatibility"
+          "Name": "CampaignScienceCompatibility",
+          "PublishedServiceName": "Steam"
         },
         {
-          "Name": "CampaignPlanetProxies"
+          "Name": "CampaignPlanetProxies",
+          "PublishedServiceName": "Steam"
+        },
+        {
+          "Name": "2756894170.sbm",
+          "PublishedFileId": "2756894170",
+          "PublishedServiceName": "Steam",
+          "IsDependency": "true"
+        },
+        {
+          "Name": "3706927250.sbm",
+          "PublishedFileId": "3706927250",
+          "PublishedServiceName": "Steam",
+          "IsDependency": "true"
         }
       ]
     }
