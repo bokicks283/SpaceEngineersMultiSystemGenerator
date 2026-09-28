@@ -20,6 +20,7 @@ from world_checkpoint import (
 )
 
 TEMPLATE_NAME = "Random Sector"
+TEMPLATE_DESCRIPTION = "One-shot generated Random Sector campaign"
 TEMPLATE_ARM_VALUE = "random-sector-template-v1"
 ROOT_FILES = (
     "Sandbox.sbc",
@@ -140,7 +141,13 @@ def build(game_root, output):
         tree = ET.parse(path)
         root = tree.getroot()
         set_text(root, "SessionName", TEMPLATE_NAME)
-        set_text(root, "Description", "One-shot generated Random Sector campaign")
+        set_text(root, "Description", TEMPLATE_DESCRIPTION)
+        if name == "Sandbox_config.sbc":
+            # New Game renders these identifier fields instead of SessionName and
+            # Description. Use literal fallback text so this copied stock world
+            # does not appear as a second localized "Empty World" card.
+            set_text(root, "ScenarioName", TEMPLATE_NAME)
+            set_text(root, "DescriptionId", TEMPLATE_DESCRIPTION)
         settings = root.find("Settings")
         if settings is None:
             raise RuntimeError("Template has no Settings: " + name)
@@ -185,6 +192,13 @@ def validate(template):
         root = tree.getroot()
         if root.findtext("SessionName") != TEMPLATE_NAME:
             raise RuntimeError("Wrong SessionName in " + name)
+        if root.findtext("Description") != TEMPLATE_DESCRIPTION:
+            raise RuntimeError("Wrong Description in " + name)
+        if name == "Sandbox_config.sbc":
+            if root.findtext("ScenarioName") != TEMPLATE_NAME:
+                raise RuntimeError("Wrong ScenarioName in " + name)
+            if root.findtext("DescriptionId") != TEMPLATE_DESCRIPTION:
+                raise RuntimeError("Wrong DescriptionId in " + name)
         settings = root.find("Settings")
         for key, value in PRE_ACTIVATION_SETTINGS.items():
             if settings.findtext(key) != value:
