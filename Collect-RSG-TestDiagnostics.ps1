@@ -71,7 +71,10 @@ if (Test-Path -LiteralPath $saveRoot) {
         Where-Object {
             $_.Name -in @(
                 'RandomSectorGenerator.State.xml',
-                'RandomSectorGenerator.Manifest.txt'
+                'RandomSectorGenerator.Manifest.txt',
+                'RandomSectorStaticBootstrap.State.xml',
+                'RandomSectorStaticPlan.txt',
+                'RandomSectorStaticPlan.tsv'
             )
         }
 }
