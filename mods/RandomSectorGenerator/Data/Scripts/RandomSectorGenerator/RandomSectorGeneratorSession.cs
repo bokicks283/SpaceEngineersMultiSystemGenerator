@@ -619,7 +619,7 @@ namespace RandomSectorGenerator
                 int diameterKm = moon ? build.Random.Next(19, 41) : build.Random.Next(60, 121);
                 float radiusMeters = diameterKm * 500f;
                 string displayName = GenerateUniqueName(build);
-                RssBodyWire body = CreateTerrestrialBody(def.Id.SubtypeId.ToString(), displayName, radiusMeters, build.Random);
+                RssBodyWire body = CreateTerrestrialBody(def, displayName, radiusMeters, build.Random);
 
                 if (isStarter)
                 {
@@ -674,19 +674,29 @@ namespace RandomSectorGenerator
             return desiredCenter - offset;
         }
 
-        private RssBodyWire CreateTerrestrialBody(string subtype, string name, float radiusMeters, Random rng)
+        private RssBodyWire CreateTerrestrialBody(MyPlanetGeneratorDefinition def, string name, float radiusMeters, Random rng)
         {
             RssBodyWire body = new RssBodyWire();
             body.BodyInstanceName = "None"; // RSS requires a non-null string during its legacy-name migration step.
             body.Name = name;
-            body.PlanetTypeId = subtype;
+            body.PlanetTypeId = def.Id.SubtypeId.ToString();
             body.PlanetProxyScale = 1f;
             body.AsteroidsEnabled = true;
             body.PlanetOrbitZoneRadius = Math.Max(radiusMeters * 5f, 500000f);
+
+            // The RSS surface zone must enclose the actual voxel terrain, not merely
+            // the nominal planet radius. Otherwise a legitimate mountain/surface
+            // point can sit outside the SURFACE zone and RSS will never transition
+            // the player from proxy space to the physical voxel planet.
+            float hillFraction = Math.Max(0f, def.HillParams.Max);
+            float terrainOuterRadius = radiusMeters * (1f + hillFraction);
+            float transitionMargin = Math.Max(1000f, radiusMeters * 0.05f);
+            float surfaceZoneRadius = terrainOuterRadius + transitionMargin;
+
             body.TerrestrialPlanetInfo = new RssTerrestrialWire
             {
                 RadiusKm = radiusMeters * 0.001f,
-                PlanetSurfaceZoneRadius = radiusMeters,
+                PlanetSurfaceZoneRadius = surfaceZoneRadius,
                 PlanetProxyFadeoutHeightMult = 0f,
                 PlanetRotationPeriod = rng.Next(3600, 18001),
                 PlanetRotationPeriodOffset = (float)(rng.NextDouble() * Math.PI * 2d),
