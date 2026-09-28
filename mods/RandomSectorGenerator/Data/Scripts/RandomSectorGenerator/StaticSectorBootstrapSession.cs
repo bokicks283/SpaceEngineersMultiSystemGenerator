@@ -109,14 +109,19 @@ namespace RandomSectorGenerator
                 return;
 
             string armed;
-            if (!_claimed && _ticks >= 60 &&
-                MyAPIGateway.Utilities.GetVariable(ArmKey, out armed) &&
-                (string.Equals(armed, TemplateArmValue, StringComparison.Ordinal) ||
-                 string.Equals(armed, "armed", StringComparison.Ordinal)))
+            if (!_claimed && _ticks >= 60 && MyAPIGateway.Utilities.GetVariable(ArmKey, out armed))
             {
-                MyAPIGateway.Utilities.SetVariable(ArmKey, ClaimedArmValue);
-                _claimed = true;
-                MyLog.Default.WriteLineAndConsole("[RSG Static] Claimed fresh Random Sector template.");
+                if (string.Equals(armed, ClaimedArmValue, StringComparison.Ordinal))
+                {
+                    _claimed = true;
+                }
+                else if (string.Equals(armed, TemplateArmValue, StringComparison.Ordinal) ||
+                         string.Equals(armed, "armed", StringComparison.Ordinal))
+                {
+                    MyAPIGateway.Utilities.SetVariable(ArmKey, ClaimedArmValue);
+                    _claimed = true;
+                    MyLog.Default.WriteLineAndConsole("[RSG Static] Claimed fresh Random Sector template.");
+                }
             }
 
             if (!_attempted && _claimed && _ticks >= 600 &&
@@ -170,7 +175,9 @@ namespace RandomSectorGenerator
                 if (blackHoleSkin == null)
                     throw new Exception("verified DefaultBlackHole skin is unavailable");
                 List<string> normalGasSkins = skins
-                    .Where(x => !string.Equals(x, blackHoleSkin, StringComparison.OrdinalIgnoreCase)).ToList();
+                    .Where(x => !string.IsNullOrWhiteSpace(x) &&
+                                x.IndexOf("blackhole", StringComparison.OrdinalIgnoreCase) < 0)
+                    .ToList();
 
                 BuildBodies(build, definitions, starterDefinition, blackHoleSkin, normalGasSkins);
 
@@ -192,9 +199,9 @@ namespace RandomSectorGenerator
                 WriteState(_state);
                 MyAPIGateway.Utilities.SetVariable(ArmKey, CompleteArmValue);
 
-                TeleportToStaticStarter(build.StarterPlanet);
                 Show("Static sector generated: 4 star systems + central black hole.");
                 Show("All " + definitions.Count + " terrestrial worlds exist as real static planets.");
+                Show("Setup character intentionally left at the original safe spawn. Do not use planetary respawn entries during bootstrap.");
                 Show("SAVE and reload, run /AddStrayPlanets, then configure RSS from RandomSectorStaticPlan.tsv. Do not start survival yet.");
             }
             catch (Exception e)
