@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using VRage.Game.Components;
 using VRage.Game.ModAPI;
+using VRage.ModAPI;
+using VRage.Utils;
 using VRageMath;
 
 namespace RandomSectorGenerator
@@ -457,8 +459,8 @@ namespace RandomSectorGenerator
                 ? null : MyAPIGateway.Session.Player.Character;
             if (character == null || planet == null) return;
 
-            Vector3D center = planet.WorldAABB.Center;
-            double radius = planet.WorldAABB.HalfExtents.Max();
+            Vector3D center = ((IMyEntity)planet).WorldAABB.Center;
+            double radius = ((IMyEntity)planet).WorldAABB.HalfExtents.Max();
             Vector3D probe = center + Vector3D.Up * (radius + 5000d);
             Vector3D surface = planet.GetClosestSurfacePointGlobal(probe);
             Vector3D up = Vector3D.Normalize(surface - center);
