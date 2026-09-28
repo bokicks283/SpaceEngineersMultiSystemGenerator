@@ -78,6 +78,11 @@ CAMPAIGN_ISSUES = [
     ("speed_definition_conflict", "blocking", re.compile(r"(?:max(?:imum)?\s+(?:grid\s+)?velocity|speed.definition).*(?:conflict|duplicate|failed|error)", re.I)),
 ]
 
+VOXEL_MATERIAL_COUNT_RE = re.compile(r"There's\s+(\d+)\s+voxel materials", re.I)
+VOXEL_MATERIAL_ROW_RE = re.compile(
+    r"#(\d+)\s+'([^']+)'\s+-\s+from:\s+(.*),\s+used in:\s+(.*)\.\s*$"
+)
+
 def latest_log():
     logs = [p for p in SE.glob("SpaceEngineers*.log") if p.is_file()]
     if not logs:
@@ -132,6 +137,38 @@ def main():
             error_context_indexes.add(j)
     error_context = [{"line": i + 1, "text": lines[i]} for i in sorted(error_context_indexes)]
 
+    voxel_material_reported_count = None
+    voxel_materials = []
+    voxel_sources = {}
+    for i, line in enumerate(lines):
+        count_match = VOXEL_MATERIAL_COUNT_RE.search(line)
+        if count_match:
+            voxel_material_reported_count = int(count_match.group(1))
+
+        row_match = VOXEL_MATERIAL_ROW_RE.search(line)
+        if not row_match:
+            continue
+
+        row = {
+            "line": i + 1,
+            "index": int(row_match.group(1)),
+            "name": row_match.group(2),
+            "source": row_match.group(3).strip(),
+            "used_in": row_match.group(4).strip(),
+        }
+        voxel_materials.append(row)
+
+        source = row["source"]
+        bucket = voxel_sources.setdefault(source, {"count": 0, "materials": []})
+        bucket["count"] += 1
+        bucket["materials"].append(row["name"])
+
+    voxel_source_summary = [
+        {"source": source, "count": data["count"], "materials": data["materials"]}
+        for source, data in voxel_sources.items()
+    ]
+    voxel_source_summary.sort(key=lambda row: (-row["count"], row["source"].lower()))
+
     result = {
         "log": str(log),
         "modified": log.stat().st_mtime,
@@ -144,6 +181,10 @@ def main():
         "relevant": relevant[-1000:],
         "rsg_context": context[-400:],
         "speed_orbit_context": speed_orbit_context[-400:],
+        "voxel_material_reported_count": voxel_material_reported_count,
+        "voxel_material_parsed_count": len(voxel_materials),
+        "voxel_materials": voxel_materials,
+        "voxel_materials_by_source": voxel_source_summary,
     }
     out = REPORTS / "runtime-check.json"
     out.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8", newline="\n")
@@ -153,6 +194,9 @@ def main():
         "relevant_count": len(relevant),
         "error_count": len(errors),
         "campaign_issue_count": len(campaign_issues),
+        "voxel_material_reported_count": voxel_material_reported_count,
+        "voxel_material_parsed_count": len(voxel_materials),
+        "voxel_materials_by_source": voxel_source_summary,
         "report": str(out),
         "last_relevant": relevant[-20:],
         "last_error_context": error_context[-80:],
