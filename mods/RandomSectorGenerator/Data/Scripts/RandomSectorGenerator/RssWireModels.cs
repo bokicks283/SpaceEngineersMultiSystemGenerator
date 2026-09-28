@@ -80,6 +80,7 @@ namespace RandomSectorGenerator
         public List<long> GeneratedEntityIds = new List<long>();
         public bool PendingApply;
         public bool Applied;
+        public bool StaticSectorReady;
         public int Seed;
         public int StellarSystemCount;
         public int PlanetDefinitionCount;
