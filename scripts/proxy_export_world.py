@@ -23,7 +23,7 @@ SAVE_ROOT = Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves"
 MOD_ROOT = Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Mods"
 BACKUPS = ROOT / "backups"
 
-WORLD_NAME = "Proxy Export Workbench 2026-09-27"
+WORLD_NAME = "Proxy Export Workbench"
 WORKSHOP_IDS = ["3350589349", "2200451495", "3695766186", "3489648084", "3481843850"] + list(
     json.loads((ROOT / "campaign-planets.json").read_text(encoding="utf-8"))["additional_workshop"]
 )

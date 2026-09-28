@@ -298,12 +298,12 @@ def commit(world):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)
-    a=sub.add_parser('prepare');a.add_argument('source',type=Path);a.add_argument('--name',default='RSG Disposable Audit 2026-09-27')
+    a=sub.add_parser('prepare');a.add_argument('source',type=Path);a.add_argument('--name',default='RSG Disposable Audit')
     b=sub.add_parser('commit');b.add_argument('world',type=Path)
     c=sub.add_parser('arm');c.add_argument('world',type=Path)
     d=sub.add_parser('sync');d.add_argument('world',type=Path)
     e=sub.add_parser('prepare-stock');e.add_argument('reference_world',type=Path)
-    e.add_argument('--name',default='RSG Disposable Clean 2026-09-27')
+    e.add_argument('--name',default='RSG Disposable Clean')
     args=p.parse_args()
     if args.command=='prepare':prepare(args.source,args.name)
     elif args.command=='arm':arm(args.world)

@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "reports"
 WORLD = (Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves" /
-         "76561198045624840" / "RSG Disposable Clean 2026-09-27")
+         "76561198045624840" / "RSG Disposable")
 
 MOD_IDS = {
     "rts": "1359618037",

@@ -20,7 +20,7 @@ from world_checkpoint import (
 )
 
 WORLD = (Path(os.environ["APPDATA"]) / "SpaceEngineers" / "Saves" /
-         "76561198045624840" / "RSG Disposable Clean 2026-09-27")
+         "76561198045624840" / "RSG Disposable")
 
 AERO_SIMULATION_MAX_SPEED = 400
 
