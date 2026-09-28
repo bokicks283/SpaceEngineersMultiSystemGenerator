@@ -16,8 +16,9 @@ namespace ProxyExportBootstrap
     public sealed class ProxyExportBootstrapSession : MySessionComponentBase
     {
         private const string Author = "Proxy Export Bootstrap";
-        private const string SpawnKey = "PEX_BootstrapSpawned_v2";
+        private const string SpawnKey = "PEX_BootstrapSpawned_v3";
         private const float DiameterMeters = 120000f;
+        private const double TerminusCenterDistance = 10000000d;
 
         private int _ticks;
         private bool _chatRegistered;
@@ -30,9 +31,18 @@ namespace ProxyExportBootstrap
             var result = new Dictionary<string, Vector3D>(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < ProxyExportTargets.Names.Length; i++)
             {
+                string name = ProxyExportTargets.Names[i];
+                if (string.Equals(name, "Terminus (Black Hole)", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Keep the black hole's enormous decorative cloud/disk layers
+                    // isolated from the ordinary planet export stations.
+                    result.Add(name, new Vector3D(TerminusCenterDistance, 0d, 0d));
+                    continue;
+                }
+
                 double distance = 400000d * (i / 2 + 1);
                 double x = i % 2 == 0 ? distance : -distance;
-                result.Add(ProxyExportTargets.Names[i], new Vector3D(x, 0d, 0d));
+                result.Add(name, new Vector3D(x, 0d, 0d));
             }
             return result;
         }
