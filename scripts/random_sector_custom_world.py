@@ -22,6 +22,7 @@ from world_checkpoint import (
 TEMPLATE_NAME = "Random Sector"
 TEMPLATE_DESCRIPTION = "One-shot generated Random Sector campaign"
 TEMPLATE_ARM_VALUE = "random-sector-template-v1"
+TEMPLATE_THUMB = ROOT / "assets" / "random-sector-thumb.jpg"
 ROOT_FILES = (
     "Sandbox.sbc",
     "Sandbox_config.sbc",
@@ -124,6 +125,7 @@ def build(game_root, output):
     before = tree_hash(empty_world)
     for name in ROOT_FILES:
         shutil.copy2(empty_world / name, output / name)
+    shutil.copy2(TEMPLATE_THUMB, output / "thumb.jpg")
 
     drag_xml = (ROOT / "profiles" / "AerodynamicPhysics.dragsettings.xml").read_text(encoding="utf-8")
     drag = ET.fromstring(drag_xml)
@@ -185,6 +187,9 @@ def validate(template):
         raise RuntimeError("Random Sector is missing files: " + ", ".join(missing))
     if (template / "Storage").exists() or (template / "Backup").exists():
         raise RuntimeError("Reusable Random Sector must not contain Storage or Backup")
+    if hashlib.sha256((template / "thumb.jpg").read_bytes()).digest() != \
+            hashlib.sha256(TEMPLATE_THUMB.read_bytes()).digest():
+        raise RuntimeError("Random Sector thumbnail does not match the project asset")
     workshop, voxel_total, selected_count = load_inputs()
     expected_ids = [item["id"] for item in workshop]
     for name in ("Sandbox.sbc", "Sandbox_config.sbc"):
