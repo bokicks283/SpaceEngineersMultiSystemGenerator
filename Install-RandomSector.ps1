@@ -135,6 +135,7 @@ foreach ($mod in $plan.selected_workshop) {
 }
 
 Invoke-Checked 'Sync pending RSG save mod lists' { py scripts\sync_pending_world_mods.py }
+Invoke-Checked 'Restore pending RSS handoffs' { py scripts\sync_pending_rss_handoff.py }
 
 Write-Host ''
 Write-Host "Steam collection: $($plan.collection_id)"

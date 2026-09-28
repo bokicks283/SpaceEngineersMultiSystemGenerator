@@ -120,6 +120,10 @@ persisted variable and adopts the bodies. RSG marks bootstrap complete only
 after every generated body is RSS-managed and the player can be moved to the
 starter proxy.
 
+While adoption is pending, RSG reasserts that payload during save so RSS's
+pre-adoption runtime configuration cannot overwrite the handoff. The installer
+also repairs an older pending save from its durable RSG state before reload.
+
 This avoids modifying/forking RSS.
 
 After adoption and final-body verification, a separate

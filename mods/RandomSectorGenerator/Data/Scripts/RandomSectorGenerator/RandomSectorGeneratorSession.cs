@@ -19,7 +19,7 @@ namespace RandomSectorGenerator
     public sealed class RandomSectorGeneratorSession : MySessionComponentBase
     {
         private const string Author = "Random Sector Generator";
-        private const string Version = "0.2.1-adoption";
+        private const string Version = "0.2.2-handoff";
         private const string CommandPrefix = "/rsg";
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
@@ -77,6 +77,7 @@ namespace RandomSectorGenerator
             if (_state != null && _state.PendingApply && !string.IsNullOrWhiteSpace(_state.RssConfigBase64))
             {
                 _pendingAdoptionCheck = true;
+                MyAPIGateway.Utilities.SetVariable(RssConfigKey, _state.RssConfigBase64);
                 MyLog.Default.WriteLineAndConsole("[RSG] Checking pending sector adoption from the persisted RSS handoff.");
             }
 
@@ -118,6 +119,22 @@ namespace RandomSectorGenerator
             {
                 _autoAttempted = true;
                 GenerateSector(unchecked((int)DateTime.UtcNow.Ticks));
+            }
+        }
+
+        public override void SaveData()
+        {
+            base.SaveData();
+
+            // RSS also writes this variable while saving. While adoption is pending,
+            // the durable RSG payload must be the final value persisted so the next
+            // load receives the generated hierarchy instead of RSS's pre-adoption
+            // runtime/default configuration.
+            if (IsServer() && _state != null && _state.PendingApply && !_state.Applied &&
+                !string.IsNullOrWhiteSpace(_state.RssConfigBase64))
+            {
+                MyAPIGateway.Utilities.SetVariable(RssConfigKey, _state.RssConfigBase64);
+                MyLog.Default.WriteLineAndConsole("[RSG] Reasserted pending RSS handoff during save.");
             }
         }
 
