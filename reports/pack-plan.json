@@ -2310,10 +2310,23 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
       "source": "collection",
       "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3780085631",
+      "title": "System Manager",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3780085631",
+      "source": "rsg_support",
+      "classification": "required_support"
     }
   ],
   "dependency_additions": [],
-  "support_additions": [],
+  "support_additions": [
+    {
+      "id": "3780085631",
+      "title": "System Manager",
+      "reason": "System Manager for RSS-aware sector setup and navigation"
+    }
+  ],
   "phase_a_planet_exclusions": [
     {
       "id": "2961924256",

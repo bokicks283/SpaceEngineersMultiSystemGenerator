@@ -1,7 +1,7 @@
 # Selected pack audit
 
 Steam collection: **3808835800** (81 current children; resolved live from Steam.
-Active Workshop mods: **72** (65 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
+Active Workshop mods: **73** (65 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
 
 Selected planet definitions: **18** (8 vanilla, 10 custom).
 
@@ -120,6 +120,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3152436752 — Real Stars
 - 758597413 — Text HUD API
 - 3351055036 — Real Solar Systems
+- 3780085631 — System Manager
 
 ## Local mods
 
