@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using VRage;
+using VRage.ModAPI;
 using VRageMath;
 
 namespace RandomSectorGenerator
@@ -15,6 +16,9 @@ namespace RandomSectorGenerator
         private bool _apiInit;
 
         private Func<MyPlanet, MyTuple<bool, double, double>> _getBodyZoneRange;
+        private Func<MyPlanet, Vector3D> _getBodyProxyPosition;
+        private Func<MyPlanet, MatrixD> _getBodyProxyRotation;
+        private Func<IMyEntity, MyTuple<bool, MyPlanet, bool>> _getEntityZone;
         private Func<MyPlanet, bool, Vector3D, Vector3D> _convertPlanetPosToProxy;
 
         public bool IsReady { get; private set; }
@@ -42,7 +46,59 @@ namespace RandomSectorGenerator
             IsReady = false;
             Compromised = false;
             _getBodyZoneRange = null;
+            _getBodyProxyPosition = null;
+            _getBodyProxyRotation = null;
+            _getEntityZone = null;
             _convertPlanetPosToProxy = null;
+        }
+
+        public bool TryGetBodyProxyState(MyPlanet planet, out Vector3D position, out MatrixD rotation, out double surfaceZoneRange, out double orbitZoneRange)
+        {
+            position = Vector3D.Zero;
+            rotation = MatrixD.Identity;
+            surfaceZoneRange = 0d;
+            orbitZoneRange = 0d;
+            if (!IsReady || Compromised || planet == null || _getBodyProxyPosition == null ||
+                _getBodyProxyRotation == null || _getBodyZoneRange == null)
+                return false;
+
+            try
+            {
+                MyTuple<bool, double, double> range = _getBodyZoneRange(planet);
+                if (!range.Item1)
+                    return false;
+                position = _getBodyProxyPosition(planet);
+                rotation = _getBodyProxyRotation(planet);
+                surfaceZoneRange = range.Item2;
+                orbitZoneRange = range.Item3;
+                return true;
+            }
+            catch
+            {
+                IsReady = false;
+                return false;
+            }
+        }
+
+        public bool TryGetEntityZone(IMyEntity entity, out MyPlanet planet, out bool isSurface)
+        {
+            planet = null;
+            isSurface = false;
+            if (!IsReady || Compromised || entity == null || _getEntityZone == null)
+                return false;
+
+            try
+            {
+                MyTuple<bool, MyPlanet, bool> zone = _getEntityZone(entity);
+                planet = zone.Item2;
+                isSurface = zone.Item3;
+                return zone.Item1;
+            }
+            catch
+            {
+                IsReady = false;
+                return false;
+            }
         }
 
         public bool IsManagedBody(MyPlanet planet)
@@ -106,6 +162,9 @@ namespace RandomSectorGenerator
             try
             {
                 _getBodyZoneRange = (Func<MyPlanet, MyTuple<bool, double, double>>)methods["GetBodyZoneRange"];
+                _getBodyProxyPosition = (Func<MyPlanet, Vector3D>)methods["GetBodyProxyPosition"];
+                _getBodyProxyRotation = (Func<MyPlanet, MatrixD>)methods["GetBodyProxyRotation"];
+                _getEntityZone = (Func<IMyEntity, MyTuple<bool, MyPlanet, bool>>)methods["GetEntityZone"];
                 _convertPlanetPosToProxy = (Func<MyPlanet, bool, Vector3D, Vector3D>)methods["ConvertPlanetPosToProxy"];
                 _apiInit = true;
                 IsReady = true;

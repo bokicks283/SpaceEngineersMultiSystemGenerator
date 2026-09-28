@@ -19,13 +19,15 @@ namespace RandomSectorGenerator
     public sealed class RandomSectorGeneratorSession : MySessionComponentBase
     {
         private const string Author = "Random Sector Generator";
-        private const string Version = "0.2.2-handoff";
+        private const string Version = "0.2.3-readiness";
         private const string CommandPrefix = "/rsg";
         private const string StateFileName = "RandomSectorGenerator.State.xml";
         private const string ManifestFileName = "RandomSectorGenerator.Manifest.txt";
         private const string ArmKey = "RSG_DisposableBootstrap_v1";
         private const string RssConfigKey = "RealSolarSystemsSettings_Config_xml";
         private const string TemplateArmValue = "random-sector-template-v1";
+        private const int MinimumRssProxyTick = 360;
+        private const int RequiredProxyStableChecks = 3;
         private static readonly HashSet<string> RequiredCustomPlanets = new HashSet<string>(
             CampaignPlanetPool.RequiredCustom, StringComparer.Ordinal);
 
@@ -66,6 +68,15 @@ namespace RandomSectorGenerator
         private bool _autoAttempted;
         private bool _runtimeDefinitionsLogged;
         private int _lastAdoptionLogTick = -1800;
+        private string _proxySampleStorageName;
+        private Vector3D _lastProxySamplePosition;
+        private Vector3D _lastProxySampleForward;
+        private Vector3D _lastProxySampleUp;
+        private int _proxyStableChecks;
+        private int _lastProxySampleTick = -1;
+        private Vector3D _starterTeleportTarget;
+        private bool _recoveryRequested;
+        private bool _recoveryTeleportDone;
 
         public override void LoadData()
         {
@@ -111,6 +122,14 @@ namespace RandomSectorGenerator
 
             if (_pendingAdoptionCheck && _state != null && _state.PendingApply)
                 CheckRssAdoptionAndFinishBootstrap();
+
+            if (_state != null && _state.Applied && _ticks >= MinimumRssProxyTick && _ticks % 60 == 0)
+            {
+                AdoptionStatus adoption = EvaluateAdoption();
+                UpdateStarterProxyReadiness(adoption);
+                if (_recoveryRequested)
+                    ProcessStarterRecovery(adoption);
+            }
 
             string armed;
             if (!_autoAttempted && IsServer() && _ticks >= 600 && _realStars.IsReady && _realGasGiants.IsReady && _rss.IsReady &&
@@ -161,7 +180,7 @@ namespace RandomSectorGenerator
 
             if (command == "help")
             {
-                Show("Commands: /rsg status | /rsg adoption | /rsg skins | /rsg planets | /rsg generate [seed]");
+                Show("Commands: /rsg status | /rsg adoption | /rsg recoverstarter | /rsg skins | /rsg planets | /rsg generate [seed]");
                 return;
             }
 
@@ -174,6 +193,12 @@ namespace RandomSectorGenerator
             if (command == "adoption")
             {
                 ShowAdoptionStatus();
+                return;
+            }
+
+            if (command == "recoverstarter")
+            {
+                RequestStarterRecovery();
                 return;
             }
 
@@ -926,13 +951,14 @@ namespace RandomSectorGenerator
                 return;
 
             AdoptionStatus adoption = EvaluateAdoption();
+            UpdateStarterProxyReadiness(adoption);
             if (_ticks - _lastAdoptionLogTick >= 1800)
             {
                 _lastAdoptionLogTick = _ticks;
                 MyLog.Default.WriteLineAndConsole("[RSG] Adoption: " + BuildAdoptionSummary(adoption, " | "));
             }
 
-            if (!adoption.CanComplete)
+            if (!adoption.CanBeginTeleport)
             {
                 if (_ticks == 1800)
                     Show("RSS adoption is still pending. Run /rsg adoption for blocker details.");
@@ -940,9 +966,21 @@ namespace RandomSectorGenerator
             }
 
             if (!_startTeleportDone)
-                _startTeleportDone = TeleportCharacterToRssStarter(adoption.StartPlanet);
-            if (!_startTeleportDone)
+            {
+                string teleportError;
+                _startTeleportDone = TryTeleportCharacterToRssStarter(adoption, out _starterTeleportTarget, out teleportError);
+                if (!_startTeleportDone)
+                    LogAdoptionRetry("starter teleport failed: " + teleportError);
                 return;
+            }
+
+            string validationError;
+            if (!ValidateStarterDestination(adoption, out validationError))
+            {
+                _startTeleportDone = false;
+                LogAdoptionRetry("starter teleport validation failed: " + validationError);
+                return;
+            }
             if (!_adoptionNoticeShown)
             {
                 _adoptionNoticeShown = true;
@@ -1030,12 +1068,55 @@ namespace RandomSectorGenerator
 
             status.RssReady = _rss.IsReady && !_rss.Compromised;
             status.StartPlanet = ResolveStarter(status.Bodies, loaded);
+            status.StartResolvedByStorageName = status.StartPlanet != null && _state != null &&
+                !string.IsNullOrWhiteSpace(_state.StartPlanetStorageName) &&
+                string.Equals(status.StartPlanet.StorageName, _state.StartPlanetStorageName, StringComparison.Ordinal);
+            FindStarterWire(config, status);
             if (status.StartPlanet != null && status.RssReady)
             {
                 AdoptionBodyStatus starter = status.Bodies.FirstOrDefault(x => x.Planet == status.StartPlanet);
                 status.StartPlanetManaged = starter != null ? starter.Managed : _rss.IsManagedBody(status.StartPlanet);
             }
+            ApplyCachedProxyReadiness(status);
             return status;
+        }
+
+        private void FindStarterWire(RssSettingsWire config, AdoptionStatus status)
+        {
+            if (_state == null || config == null || config.SolarSystems == null)
+                return;
+
+            for (int i = 0; i < config.SolarSystems.Count; i++)
+            {
+                RssSolarSystemWire system = config.SolarSystems[i];
+                RssBodyWire match = FindSerializedBody(system == null ? null : system.RootBody, _state.StartPlanetStorageName);
+                if (match == null)
+                    continue;
+                status.StartSystemPosition = system.Position;
+                status.StartExpectedOrbiting = match.OrbitInfo != null;
+                status.StartSemimajorAxis = match.OrbitInfo == null ? 0d : match.OrbitInfo.SemimajorAxis;
+                return;
+            }
+        }
+
+        private static RssBodyWire FindSerializedBody(RssBodyWire body, string storageName)
+        {
+            if (body == null || string.IsNullOrWhiteSpace(storageName))
+                return null;
+            if (string.Equals(body.BodyInstanceName, storageName, StringComparison.Ordinal))
+                return body;
+            RssBodyWire match = FindSerializedBody(body.Sibling, storageName);
+            if (match != null)
+                return match;
+            if (body.Children == null)
+                return null;
+            for (int i = 0; i < body.Children.Count; i++)
+            {
+                match = FindSerializedBody(body.Children[i], storageName);
+                if (match != null)
+                    return match;
+            }
+            return null;
         }
 
         private MyPlanet FindLegacyPlanet(RssBodyWire expected, List<MyPlanet> loaded, HashSet<long> claimedLegacyIds)
@@ -1096,6 +1177,7 @@ namespace RandomSectorGenerator
         private void ShowAdoptionStatus()
         {
             AdoptionStatus status = EvaluateAdoption();
+            UpdateStarterProxyReadiness(status);
             Show(BuildAdoptionSummary(status, "\n"));
             if (!string.IsNullOrWhiteSpace(status.Error))
                 Show("Blocker: " + status.Error);
@@ -1114,9 +1196,11 @@ namespace RandomSectorGenerator
             }
             if (status.StartPlanet == null)
                 Show("Blocker: starter could not be resolved from persisted display name/type or legacy EntityId");
+            else if (!status.StartResolvedByStorageName)
+                Show("Blocker: starter did not resolve through its persisted StorageName");
         }
 
-        private static string BuildAdoptionSummary(AdoptionStatus status, string separator)
+        private string BuildAdoptionSummary(AdoptionStatus status, string separator)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("RSS API: ").Append(status.RssReady ? "ready" : "not ready");
@@ -1128,7 +1212,103 @@ namespace RandomSectorGenerator
             sb.Append(separator).Append("Found only by legacy EntityId: ").Append(status.LegacyIdCount);
             sb.Append(separator).Append("RSS-managed: ").Append(status.ManagedCount);
             sb.Append(separator).Append("Blocking bodies: ").Append(status.BlockingCount);
+            sb.Append(separator).Append("Starter proxy: ").Append(status.ProxyReady ? "ready" : "not ready");
+            sb.Append(separator).Append("Proxy stable: ").Append(status.ProxyStable ? "yes" : "no");
+            sb.Append(separator).Append("Starter teleport: ").Append(status.Applied ? "complete" : (_startTeleportDone ? "validating" : "pending"));
             return sb.ToString();
+        }
+
+        private void UpdateStarterProxyReadiness(AdoptionStatus status)
+        {
+            if (status == null || _lastProxySampleTick == _ticks)
+                return;
+            if (_lastProxySampleTick >= 0 && _ticks - _lastProxySampleTick < 30)
+            {
+                ApplyCachedProxyReadiness(status);
+                return;
+            }
+            _lastProxySampleTick = _ticks;
+
+            if (_ticks < MinimumRssProxyTick || !status.RssReady || status.StartPlanet == null || !status.StartPlanetManaged)
+            {
+                ResetProxyReadiness();
+                ApplyCachedProxyReadiness(status);
+                return;
+            }
+
+            Vector3D position;
+            MatrixD rotation;
+            double surfaceRange;
+            double orbitRange;
+            if (!_rss.TryGetBodyProxyState(status.StartPlanet, out position, out rotation, out surfaceRange, out orbitRange) ||
+                !IsFinite(position) || !IsValidRotation(rotation) || !IsFinite(surfaceRange) || surfaceRange <= 0d ||
+                !IsFinite(orbitRange) || orbitRange < surfaceRange)
+            {
+                ResetProxyReadiness();
+                ApplyCachedProxyReadiness(status);
+                return;
+            }
+
+            double originGuard = Math.Max(1000d, Math.Abs(status.StartSemimajorAxis) * 0.1d);
+            if (status.StartExpectedOrbiting && Vector3D.Distance(position, status.StartSystemPosition) < originGuard)
+            {
+                ResetProxyReadiness();
+                ApplyCachedProxyReadiness(status);
+                return;
+            }
+
+            string storageName = status.StartPlanet.StorageName;
+            double allowedStep = Math.Max(50000d, orbitRange * 0.25d);
+            Vector3D currentForward = Vector3D.Normalize(rotation.Forward);
+            Vector3D currentUp = Vector3D.Normalize(rotation.Up);
+            if (string.Equals(_proxySampleStorageName, storageName, StringComparison.Ordinal) &&
+                IsFinite(_lastProxySamplePosition) && Vector3D.Distance(position, _lastProxySamplePosition) <= allowedStep &&
+                Vector3D.Dot(currentForward, _lastProxySampleForward) > 0.95d &&
+                Vector3D.Dot(currentUp, _lastProxySampleUp) > 0.95d)
+                _proxyStableChecks++;
+            else
+                _proxyStableChecks = 1;
+
+            _proxySampleStorageName = storageName;
+            _lastProxySamplePosition = position;
+            _lastProxySampleForward = currentForward;
+            _lastProxySampleUp = currentUp;
+            status.ProxyPosition = position;
+            status.ProxyRotation = rotation;
+            status.SurfaceZoneRange = surfaceRange;
+            status.OrbitZoneRange = orbitRange;
+            status.ProxyReady = true;
+            status.ProxyStable = _proxyStableChecks >= RequiredProxyStableChecks;
+        }
+
+        private void ApplyCachedProxyReadiness(AdoptionStatus status)
+        {
+            if (status == null || status.StartPlanet == null ||
+                !string.Equals(_proxySampleStorageName, status.StartPlanet.StorageName, StringComparison.Ordinal))
+                return;
+
+            Vector3D position;
+            MatrixD rotation;
+            double surfaceRange;
+            double orbitRange;
+            if (!_rss.TryGetBodyProxyState(status.StartPlanet, out position, out rotation, out surfaceRange, out orbitRange) ||
+                !IsFinite(position) || !IsValidRotation(rotation))
+                return;
+            status.ProxyPosition = position;
+            status.ProxyRotation = rotation;
+            status.SurfaceZoneRange = surfaceRange;
+            status.OrbitZoneRange = orbitRange;
+            status.ProxyReady = true;
+            status.ProxyStable = _proxyStableChecks >= RequiredProxyStableChecks;
+        }
+
+        private void ResetProxyReadiness()
+        {
+            _proxySampleStorageName = null;
+            _lastProxySamplePosition = Vector3D.Zero;
+            _lastProxySampleForward = Vector3D.Zero;
+            _lastProxySampleUp = Vector3D.Zero;
+            _proxyStableChecks = 0;
         }
 
         private static bool IsGenerationArmValue(string value)
@@ -1195,29 +1375,197 @@ namespace RandomSectorGenerator
             }
         }
 
-        private bool TeleportCharacterToRssStarter(MyPlanet planet)
+        private bool TryTeleportCharacterToRssStarter(AdoptionStatus adoption, out Vector3D target, out string error)
         {
+            target = Vector3D.Zero;
+            error = null;
+            MyPlanet planet = adoption == null ? null : adoption.StartPlanet;
             IMyCharacter character = MyAPIGateway.Session == null || MyAPIGateway.Session.Player == null ? null : MyAPIGateway.Session.Player.Character;
             if (character == null || planet == null)
+            {
+                error = "player character or starter body is unavailable";
                 return false;
+            }
+            if (!adoption.ProxyReady || !adoption.ProxyStable)
+            {
+                error = "starter proxy is not ready and stable";
+                return false;
+            }
 
             Vector3D center = ((IMyEntity)planet).WorldAABB.Center;
             Vector3D radial = Vector3D.Up;
             double radius = ((IMyEntity)planet).WorldAABB.HalfExtents.Max();
             Vector3D probe = center + radial * (radius + 5000d);
-            Vector3D trueSurface = planet.GetClosestSurfacePointGlobal(probe) + radial * 8d;
+            Vector3D physicalSurface = planet.GetClosestSurfacePointGlobal(probe);
+            radial = Vector3D.Normalize(physicalSurface - center);
+            Vector3D trueSurface = physicalSurface + radial * 8d;
             Vector3D proxySurface;
             if (!_rss.TryConvertSurfaceToProxy(planet, trueSurface, out proxySurface))
+            {
+                error = "RSS surface conversion failed";
                 return false;
+            }
 
-            Vector3D forward = Vector3D.CalculatePerpendicularVector(radial);
-            character.Teleport(MatrixD.CreateWorld(proxySurface, forward, radial), null, true);
+            if (!IsFinite(proxySurface))
+            {
+                error = "RSS returned a non-finite surface position";
+                return false;
+            }
+
+            Vector3D logicalUp = proxySurface - adoption.ProxyPosition;
+            double logicalRadius = logicalUp.Length();
+            if (!IsFinite(logicalRadius) || logicalRadius < 100d || logicalRadius > adoption.SurfaceZoneRange)
+            {
+                error = "converted surface position is outside the starter surface zone";
+                return false;
+            }
+            logicalUp /= logicalRadius;
+
+            // RSS converts true-space offsets into its logical surface frame with
+            // the inverse of GetBodyProxyRotation. Apply the same transform to
+            // the player basis instead of reusing true-space Up.
+            MatrixD inverseProxyRotation = MatrixD.Invert(adoption.ProxyRotation);
+            Vector3D trueForward = Vector3D.CalculatePerpendicularVector(radial);
+            Vector3D logicalForward = Vector3D.Rotate(trueForward, inverseProxyRotation);
+            logicalForward -= logicalUp * Vector3D.Dot(logicalForward, logicalUp);
+            if (!IsFinite(logicalForward) || logicalForward.LengthSquared() < 0.25d)
+                logicalForward = Vector3D.CalculatePerpendicularVector(logicalUp);
+            else
+                logicalForward.Normalize();
+
+            Vector3D before = character.WorldAABB.Center;
+            character.Teleport(MatrixD.CreateWorld(proxySurface, logicalForward, logicalUp), null, true);
             if (character.Physics != null)
             {
                 character.Physics.LinearVelocity = Vector3.Zero;
                 character.Physics.AngularVelocity = Vector3.Zero;
             }
+            target = proxySurface;
+            MyLog.Default.WriteLineAndConsole("[RSG] Starter teleport: tick=" + _ticks +
+                " physicalCenter=" + center + " physicalSurface=" + trueSurface +
+                " proxyCenter=" + adoption.ProxyPosition + " proxySurface=" + proxySurface +
+                " proxyRotation=" + adoption.ProxyRotation + " playerBefore=" + before +
+                " playerAfter=" + character.WorldAABB.Center);
             return true;
+        }
+
+        private bool ValidateStarterDestination(AdoptionStatus adoption, out string error)
+        {
+            error = null;
+            IMyCharacter character = MyAPIGateway.Session == null || MyAPIGateway.Session.Player == null ? null : MyAPIGateway.Session.Player.Character;
+            if (character == null || adoption == null || adoption.StartPlanet == null)
+            {
+                error = "player character or starter body is unavailable";
+                return false;
+            }
+
+            Vector3D playerPosition = character.WorldAABB.Center;
+            if (!IsFinite(playerPosition))
+            {
+                error = "player position is non-finite";
+                return false;
+            }
+
+            MyPlanet zonePlanet;
+            bool isSurface;
+            if (!_rss.TryGetEntityZone(character as IMyEntity, out zonePlanet, out isSurface))
+            {
+                error = "RSS has not assigned the player to a logical zone";
+                return false;
+            }
+            if (zonePlanet != adoption.StartPlanet || !isSurface)
+            {
+                error = "player is not in the starter surface zone";
+                return false;
+            }
+
+            double distance = Vector3D.Distance(playerPosition, adoption.ProxyPosition);
+            if (!IsFinite(distance) || distance < 100d || distance > adoption.SurfaceZoneRange)
+            {
+                error = "player is outside the starter surface-zone bounds";
+                return false;
+            }
+
+            MyLog.Default.WriteLineAndConsole("[RSG] Starter teleport validation succeeded: tick=" + _ticks +
+                " player=" + playerPosition + " target=" + _starterTeleportTarget + " surfaceZone=true");
+            return true;
+        }
+
+        private void RequestStarterRecovery()
+        {
+            if (!IsServer())
+            {
+                Show("Starter recovery is host-only.");
+                return;
+            }
+            if (_state == null || !_state.Applied)
+            {
+                Show("Starter recovery is available only after RSS adoption is complete.");
+                return;
+            }
+            if (_recoveryRequested)
+            {
+                Show("Starter recovery is already waiting for RSS readiness.");
+                return;
+            }
+
+            _recoveryRequested = true;
+            _recoveryTeleportDone = false;
+            Show("Starter recovery queued; waiting for the RSS starter proxy.");
+        }
+
+        private void ProcessStarterRecovery(AdoptionStatus adoption)
+        {
+            if (adoption == null || !adoption.RssReady || adoption.StartPlanet == null || !adoption.StartResolvedByStorageName || !adoption.StartPlanetManaged ||
+                !adoption.ProxyReady || !adoption.ProxyStable)
+                return;
+
+            if (!_recoveryTeleportDone)
+            {
+                string teleportError;
+                _recoveryTeleportDone = TryTeleportCharacterToRssStarter(adoption, out _starterTeleportTarget, out teleportError);
+                if (!_recoveryTeleportDone)
+                    LogAdoptionRetry("starter recovery failed: " + teleportError);
+                return;
+            }
+
+            string validationError;
+            if (!ValidateStarterDestination(adoption, out validationError))
+            {
+                _recoveryTeleportDone = false;
+                LogAdoptionRetry("starter recovery validation failed: " + validationError);
+                return;
+            }
+
+            _recoveryRequested = false;
+            _recoveryTeleportDone = false;
+            Show("Starter recovery complete.");
+        }
+
+        private void LogAdoptionRetry(string reason)
+        {
+            if (_ticks - _lastAdoptionLogTick < 300)
+                return;
+            _lastAdoptionLogTick = _ticks;
+            MyLog.Default.WriteLineAndConsole("[RSG] Adoption retry pending: " + reason);
+        }
+
+        private static bool IsFinite(double value)
+        {
+            return !double.IsNaN(value) && !double.IsInfinity(value);
+        }
+
+        private static bool IsFinite(Vector3D value)
+        {
+            return IsFinite(value.X) && IsFinite(value.Y) && IsFinite(value.Z);
+        }
+
+        private static bool IsValidRotation(MatrixD value)
+        {
+            Vector3D forward = value.Forward;
+            Vector3D up = value.Up;
+            return IsFinite(forward) && IsFinite(up) && forward.LengthSquared() > 0.25d &&
+                up.LengthSquared() > 0.25d && Math.Abs(Vector3D.Dot(Vector3D.Normalize(forward), Vector3D.Normalize(up))) < 0.01d;
         }
 
         private PendingSectorState ReadState()
@@ -1339,19 +1687,30 @@ namespace RandomSectorGenerator
             public string Error;
             public readonly List<AdoptionBodyStatus> Bodies = new List<AdoptionBodyStatus>();
             public MyPlanet StartPlanet;
+            public bool StartResolvedByStorageName;
             public bool StartPlanetManaged;
+            public Vector3D StartSystemPosition;
+            public bool StartExpectedOrbiting;
+            public double StartSemimajorAxis;
+            public bool ProxyReady;
+            public bool ProxyStable;
+            public Vector3D ProxyPosition;
+            public MatrixD ProxyRotation;
+            public double SurfaceZoneRange;
+            public double OrbitZoneRange;
 
             public int ResolvedCount { get { return Bodies.Count(x => x.Planet != null); } }
             public int StorageNameCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "StorageName", StringComparison.Ordinal)); } }
             public int LegacyIdCount { get { return Bodies.Count(x => string.Equals(x.Resolution, "legacy EntityId", StringComparison.Ordinal)); } }
             public int ManagedCount { get { return Bodies.Count(x => x.Managed); } }
             public int BlockingCount { get { return Bodies.Count(x => x.Planet == null || !x.Managed); } }
-            public bool CanComplete
+            public bool CanBeginTeleport
             {
                 get
                 {
                     return string.IsNullOrWhiteSpace(Error) && Pending && !Applied && RssReady &&
-                        Bodies.Count > 0 && BlockingCount == 0 && StartPlanet != null && StartPlanetManaged;
+                        Bodies.Count > 0 && BlockingCount == 0 && StartPlanet != null && StartResolvedByStorageName && StartPlanetManaged &&
+                        ProxyReady && ProxyStable;
                 }
             }
         }

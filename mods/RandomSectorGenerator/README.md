@@ -72,9 +72,13 @@ After RSG generates:
 2. Save and exit to the menu.
 3. Reload the world.
 4. RSS adopts/spawns the configured bodies.
-5. RSG verifies all pre-spawned bodies are RSS-managed, moves the player to the
-   starter proxy, marks the bootstrap applied, and changes the arm value to
-   `complete`.
+5. RSG verifies all pre-spawned bodies are RSS-managed and waits for a finite,
+   valid starter proxy state that remains stable across consecutive checks.
+6. RSG converts a physical surface point and player orientation into the RSS
+   proxy frame, moves the player, and verifies RSS assigned the player to the
+   starter surface zone.
+7. Only after that validation does RSG mark the bootstrap applied and change
+   the arm value to `complete`.
 
 RSG should remain in the save until adoption has been verified. Removing it afterward is a later acceptance test, not an assumption.
 
@@ -83,12 +87,19 @@ RSG should remain in the save until adoption has been verified. Removing it afte
 ```text
 /rsg help
 /rsg status
+/rsg adoption
+/rsg recoverstarter
 /rsg skins
 /rsg planets
 /rsg generate [seed]
 ```
 
 Manual `/rsg generate` is still subject to every safety gate above.
+
+`/rsg recoverstarter` is a host-only recovery for an already adopted save. It
+waits for the same proxy-readiness checks, repeats the corrected starter
+teleport, and validates the RSS surface zone without changing the generated
+hierarchy or the adoption flags.
 
 ## Known acceptance risks
 
