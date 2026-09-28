@@ -16,6 +16,8 @@ namespace RandomSectorGenerator
         private bool _apiInit;
 
         private Func<MyPlanet, MyTuple<bool, double, double>> _getBodyZoneRange;
+        private Func<Vector3D> _getCurrentCameraPos;
+        private Func<Vector3D, Vector3D> _convertRealPosToProxy;
         private Func<MyPlanet, Vector3D> _getBodyProxyPosition;
         private Func<MyPlanet, MatrixD> _getBodyProxyRotation;
         private Func<IMyEntity, MyTuple<bool, MyPlanet, bool>> _getEntityZone;
@@ -46,10 +48,31 @@ namespace RandomSectorGenerator
             IsReady = false;
             Compromised = false;
             _getBodyZoneRange = null;
+            _getCurrentCameraPos = null;
+            _convertRealPosToProxy = null;
             _getBodyProxyPosition = null;
             _getBodyProxyRotation = null;
             _getEntityZone = null;
             _convertPlanetPosToProxy = null;
+        }
+
+        public Vector3D GetCurrentCameraProxyPosition()
+        {
+            if (!IsReady || Compromised)
+                return MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero;
+
+            try
+            {
+                Vector3D current = _getCurrentCameraPos == null
+                    ? (MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero)
+                    : _getCurrentCameraPos();
+                return _convertRealPosToProxy == null ? current : _convertRealPosToProxy(current);
+            }
+            catch
+            {
+                IsReady = false;
+                return MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero;
+            }
         }
 
         public bool TryGetBodyProxyState(MyPlanet planet, out Vector3D position, out MatrixD rotation, out double surfaceZoneRange, out double orbitZoneRange)
@@ -162,6 +185,8 @@ namespace RandomSectorGenerator
             try
             {
                 _getBodyZoneRange = (Func<MyPlanet, MyTuple<bool, double, double>>)methods["GetBodyZoneRange"];
+                _getCurrentCameraPos = (Func<Vector3D>)methods["GetCurrentCameraPos"];
+                _convertRealPosToProxy = (Func<Vector3D, Vector3D>)methods["ConvertRealPosToProxy"];
                 _getBodyProxyPosition = (Func<MyPlanet, Vector3D>)methods["GetBodyProxyPosition"];
                 _getBodyProxyRotation = (Func<MyPlanet, MatrixD>)methods["GetBodyProxyRotation"];
                 _getEntityZone = (Func<IMyEntity, MyTuple<bool, MyPlanet, bool>>)methods["GetEntityZone"];
