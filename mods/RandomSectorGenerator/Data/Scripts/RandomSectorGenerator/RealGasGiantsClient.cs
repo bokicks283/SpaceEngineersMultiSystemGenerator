@@ -15,6 +15,7 @@ namespace RandomSectorGenerator
 
         private Func<Vector3D, float, Vector3I, string, float, float, float, MyPlanet> _spawnGasGiant;
         private Func<MyPlanet, string, bool> _setGasGiantName;
+        private Func<MyPlanet, int, string, Vector3D, Vector3I, float, float, float, float, float, float, bool, bool, bool> _setGasGiantRing;
         private Func<List<string>> _getGasGiantSkinList;
 
         public bool IsReady { get; private set; }
@@ -43,6 +44,7 @@ namespace RandomSectorGenerator
             Compromised = false;
             _spawnGasGiant = null;
             _setGasGiantName = null;
+            _setGasGiantRing = null;
             _getGasGiantSkinList = null;
         }
 
@@ -55,6 +57,15 @@ namespace RandomSectorGenerator
         {
             if (_setGasGiantName != null && planet != null)
                 _setGasGiantName(planet, name);
+        }
+
+        public bool SetGasGiantRing(MyPlanet planet, int index, string skin, Vector3D normal, Vector3I color,
+            float lightMultiplier, float shadowMultiplier, float innerScale, float outerScale,
+            float layerSpacingScale, float rotationPeriodSeconds, bool constrainAsteroids, bool shadowOnRing)
+        {
+            return _setGasGiantRing != null && planet != null &&
+                _setGasGiantRing(planet, index, skin, normal, color, lightMultiplier, shadowMultiplier,
+                    innerScale, outerScale, layerSpacingScale, rotationPeriodSeconds, constrainAsteroids, shadowOnRing);
         }
 
         public List<string> GetSkins()
@@ -89,6 +100,7 @@ namespace RandomSectorGenerator
             {
                 _spawnGasGiant = (Func<Vector3D, float, Vector3I, string, float, float, float, MyPlanet>)methods["SpawnGasGiant"];
                 _setGasGiantName = (Func<MyPlanet, string, bool>)methods["SetGasGiantConfig_Name"];
+                _setGasGiantRing = (Func<MyPlanet, int, string, Vector3D, Vector3I, float, float, float, float, float, float, bool, bool, bool>)methods["SetGasGiantConfig_RingInfo"];
                 _getGasGiantSkinList = (Func<List<string>>)methods["GetGasGiantSkinList"];
                 _apiInit = true;
                 IsReady = true;
