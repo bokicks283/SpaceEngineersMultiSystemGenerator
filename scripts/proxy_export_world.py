@@ -89,6 +89,37 @@ def source_world() -> Path:
     return candidates[0]
 
 
+def existing_workbench() -> Path:
+    """Locate the existing proxy workbench directly by its saved SessionName."""
+    candidates = []
+    if SAVE_ROOT.is_dir():
+        for checkpoint in SAVE_ROOT.rglob("Sandbox.sbc"):
+            if "Backup" in checkpoint.parts:
+                continue
+            try:
+                if ET.parse(checkpoint).findtext("SessionName") == WORLD_NAME:
+                    candidates.append(checkpoint.parent.resolve())
+            except (ET.ParseError, OSError):
+                continue
+
+    unique = sorted(set(candidates), key=lambda p: str(p).lower())
+    if not unique:
+        raise RuntimeError(
+            f"Existing proxy workbench {WORLD_NAME!r} was not found under {SAVE_ROOT}. "
+            "If it was deleted, recreate it with the prepare command."
+        )
+    if len(unique) != 1:
+        raise RuntimeError(
+            "Multiple proxy workbenches have the same SessionName:\n  " +
+            "\n  ".join(str(path) for path in unique)
+        )
+
+    world = unique[0]
+    if SAVE_ROOT.resolve() not in world.parents:
+        raise RuntimeError("Proxy workbench resolved outside the Space Engineers save root.")
+    return world
+
+
 def archive(path: Path, label: str) -> Path:
     BACKUPS.mkdir(exist_ok=True)
     stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -180,7 +211,7 @@ def validate_world(world: Path):
 def repair():
     """Repair saves written before the namespace-preserving writer was used."""
     ensure_closed()
-    world = (source_world().parent / WORLD_NAME).resolve()
+    world = existing_workbench()
     if SAVE_ROOT.resolve() not in world.parents or not world.is_dir():
         raise RuntimeError("Workbench save is missing or outside the save root")
     backup = archive(world, "ProxyExportWorkbench-before-namespace-repair")
@@ -194,7 +225,7 @@ def repair():
 def sync():
     """Expand the existing workbench without discarding spawned planets or Storage."""
     ensure_closed()
-    world = (source_world().parent / WORLD_NAME).resolve()
+    world = existing_workbench()
     if SAVE_ROOT.resolve() not in world.parents or not world.is_dir():
         raise RuntimeError("Expected an existing isolated proxy workbench")
     for f in save_files(world):
@@ -426,7 +457,7 @@ def configure_file(config: Path):
 
 def configure():
     ensure_closed()
-    world = source_world().parent / WORLD_NAME
+    world = existing_workbench()
     if not world.is_dir():
         raise RuntimeError("Proxy export workbench does not exist. Run prepare first.")
 
@@ -447,20 +478,30 @@ def configure():
 
 
 def status():
-    world = source_world().parent / WORLD_NAME
+    try:
+        world = existing_workbench()
+    except RuntimeError as exc:
+        print(json.dumps({
+            "world_exists": False,
+            "world": None,
+            "bootstrap_installed": (MOD_ROOT / LOCAL_MOD).is_dir(),
+            "export_targets": export_targets(),
+            "world_status": str(exc),
+        }, indent=2))
+        return
+
     result = {
-        "world_exists": world.is_dir(),
+        "world_exists": True,
         "world": str(world),
         "bootstrap_installed": (MOD_ROOT / LOCAL_MOD).is_dir(),
         "export_targets": export_targets(),
     }
-    if world.is_dir():
-        try:
-            cfg = exporter_config(world)
-            result["exporter_config"] = str(cfg)
-        except Exception as e:
-            result["exporter_config"] = None
-            result["config_status"] = str(e)
+    try:
+        cfg = exporter_config(world)
+        result["exporter_config"] = str(cfg)
+    except Exception as e:
+        result["exporter_config"] = None
+        result["config_status"] = str(e)
     print(json.dumps(result, indent=2))
 
 
@@ -487,7 +528,7 @@ def main():
     elif args.command == "sync":
         sync()
     elif args.command == "validate":
-        print(json.dumps(validate_world(source_world().parent / WORLD_NAME), indent=2))
+        print(json.dumps(validate_world(existing_workbench()), indent=2))
     else:
         status()
 
