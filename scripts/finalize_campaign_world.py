@@ -103,6 +103,10 @@ def tune_real_orbits(world: Path) -> None:
     path = scoped(world, "2609118808", "Config.xml")
     text, encoding = read_mod_text(path)
     text = replace_tag(text, "CharacterGravityMultiplier", 1)
+    # /SetupRealOrbits has already written inverse-square (2.0) values to the
+    # campaign bodies. Stop Real Orbits from flattening our deliberate star and
+    # Terminus exceptions back to 2.0 on every load.
+    text = replace_tag(text, "OverridePlanetGravityFalloff", "false")
     write_mod_atomic(path, text, encoding)
 
 
@@ -114,6 +118,17 @@ def tune_real_stars(world: Path) -> None:
     text = replace_tag(text, "OverrideFromConfig", "true")
     text = replace_tag(text, "LensFlareOpacityMult", 2)
     text = replace_tag(text, "LensFlareSizeMult", 2)
+
+    # Real Stars defaults these campaign stars to falloff 7. Lower them by one
+    # for a somewhat longer stellar gravity reach without making them remotely
+    # as broad as inverse-square planetary gravity.
+    pattern = re.compile(
+        r"(<StarInfo\b[^>]*>.*?<GravityFalloff>)([^<]+)(</GravityFalloff>.*?</StarInfo>)",
+        re.I | re.S,
+    )
+    text, count = pattern.subn(r"\g<1>6\g<3>", text)
+    if count != 7:
+        raise RuntimeError(f"Expected 7 Real Stars entries; found {count}")
     write_mod_atomic(path, text, encoding)
 
 
@@ -142,6 +157,19 @@ def tune_rss(world: Path) -> int:
     text = pattern.sub(edit, text)
     if count != 18:
         raise RuntimeError(f"Expected 18 terrestrial bodies; found {count}")
+
+    # Terminus keeps its own steep/localized field instead of the 2.0 value
+    # written by /SetupRealOrbits. 3.8 prevents the root black hole from
+    # producing measurable gravity across the whole campaign sector.
+    root_pattern = re.compile(
+        r'(<RootBody\b[^>]*>.*?<Name>Wyaris Abyss</Name>.*?<TerrestrialPlanetInfo>.*?'
+        r'<GravityFalloff>)([^<]+)(</GravityFalloff>)',
+        re.I | re.S,
+    )
+    text, root_count = root_pattern.subn(r"\g<1>3.8\g<3>", text, count=1)
+    if root_count != 1:
+        raise RuntimeError("Could not locate Wyaris Abyss gravity falloff in RSS config")
+
     write_mod_atomic(path, text, encoding)
     return count
 
@@ -257,6 +285,16 @@ def validate(world: Path) -> None:
     rss, _ = read_mod_text(scoped(world, "3351055036", "Config.xml"))
     if rss.count("<TerrestrialPlanetInfo>") != 18 or "<OverrideFromConfig>true</OverrideFromConfig>" not in rss:
         raise RuntimeError("RSS finalization readback failed")
+    if "<Name>Wyaris Abyss</Name>" not in rss or "<GravityFalloff>3.8</GravityFalloff>" not in rss:
+        raise RuntimeError("Terminus gravity profile did not stick")
+
+    stars, _ = read_mod_text(scoped(world, "3152436752", "Config.xml"))
+    if len(re.findall(r"<StarInfo\b", stars, re.I)) != 7 or len(re.findall(r"<GravityFalloff>6</GravityFalloff>", stars, re.I)) != 7:
+        raise RuntimeError("Real Stars gravity profile did not stick")
+
+    orbits, _ = read_mod_text(scoped(world, "2609118808", "Config.xml"))
+    if "<OverridePlanetGravityFalloff>false</OverridePlanetGravityFalloff>" not in orbits:
+        raise RuntimeError("Real Orbits gravity override did not stick")
 
 
 def main() -> None:
