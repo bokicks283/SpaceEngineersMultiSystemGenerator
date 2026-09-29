@@ -63,9 +63,17 @@ namespace RandomSectorGenerator
 
             try
             {
-                Vector3D current = _getCurrentCameraPos == null
-                    ? GetFallbackCameraPosition()
-                    : _getCurrentCameraPos();
+                // RSS's GetCurrentCameraPos already returns the camera in the
+                // current logical/proxy coordinate frame. Converting it again via
+                // ConvertRealPosToProxy double-transforms the camera and makes
+                // nearby bodies appear astronomically far away to visual helpers.
+                if (_getCurrentCameraPos != null)
+                    return _getCurrentCameraPos();
+
+                // Fallback for an older/incomplete endpoint: only convert the raw
+                // Space Engineers camera position when RSS does not provide its
+                // own logical camera position.
+                Vector3D current = GetFallbackCameraPosition();
                 return _convertRealPosToProxy == null ? current : _convertRealPosToProxy(current);
             }
             catch
