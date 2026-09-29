@@ -1,18 +1,4 @@
 
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(62,45): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(62,46): error CS1003: Syntax error, ':' expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(62,53): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(62,54): error CS1003: Syntax error, ':' expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,45): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,46): error CS1003: Syntax error, ':' expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,53): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,54): error CS1003: Syntax error, ':' expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,79): error CS1002: ; expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,79): error CS1525: Invalid expression term ')'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(67,80): error CS1002: ; expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(68,21): error CS1525: Invalid expression term ':'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(68,23): error CS1002: ; expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(74,45): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(74,46): error CS1003: Syntax error, ':' expected
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(74,53): error CS1525: Invalid expression term '.'
-mods\RandomSectorGenerator\Data\Scripts\RandomSectorGenerator\RealSolarSystemsClient.cs(74,54): error CS1003: Syntax error, ':' expected
+RandomSectorGenerator offline CLR compilation passed.
+ProxyExportBootstrap offline CLR compilation passed.
+In-game script whitelist and runtime validation are still required.
