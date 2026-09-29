@@ -509,7 +509,7 @@ namespace RandomSectorGenerator
                 float radiusKm = 45f + (float)build.Random.NextDouble() * 35f;
                 float brightness = 0.8f + (float)build.Random.NextDouble() * 0.8f;
 
-                MyPlanet star = _realStars.SpawnStar(truePos, radiusKm, color, brightness, brightness, radiusKm * 3f, 10f, 7f);
+                MyPlanet star = _realStars.SpawnStar(truePos, radiusKm, color, brightness, brightness, radiusKm * 3f, 10f, 6f);
                 if (star == null)
                     throw new Exception("Real Stars SpawnStar returned null for system " + i);
 
