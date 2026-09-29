@@ -188,7 +188,7 @@ namespace RandomSectorGenerator
 
                 MyPlanetGeneratorDefinition starterDefinition = ChooseStarterDefinition(definitions);
                 if (starterDefinition == null)
-                    throw new Exception("no approved starter (Tellus or EarthLike) is available");
+                    throw new Exception("no approved starter (Zenitaia, Jormun, Kerbin Water, Tellus, or EarthLike) is available");
                 definitions.Remove(starterDefinition);
                 definitions.Insert(0, starterDefinition);
 
