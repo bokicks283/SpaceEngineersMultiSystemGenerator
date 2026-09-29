@@ -36,8 +36,12 @@ namespace RandomSectorGenerator
         // 50 km shell their ~12 m minimum radius was sub-pixel at common FOVs,
         // which caused severe alias shimmer/flicker while the camera moved.
         private const double DistantStarRenderShellDistanceM = 20000d;
-        private const float DistantStarMinimumRadius = 18f;
-        private const float DistantStarMaximumRadius = 48f;
+        // These are apparent billboard radii on the 20 km camera shell, not
+        // physical star radii. A ~50 m radius is roughly a 5-7 pixel glow at
+        // common 16:9 FOVs, which keeps million-kilometre stars visible without
+        // turning them into nearby suns.
+        private const float DistantStarMinimumRadius = 52f;
+        private const float DistantStarMaximumRadius = 115f;
 
         private const double BlackHoleFarEndM = 3000000000d;
         private const double BlackHoleRenderShellDistanceM = 50000d;
@@ -174,7 +178,11 @@ namespace RandomSectorGenerator
                     continue;
 
                 float brightness = MathHelper.Clamp(effectBrightness, 0.4f, 2f);
-                float radius = (float)Math.Sqrt(NativeGlareRangeM / distance) * 44f;
+
+                // Preserve a readable point-source glare across the campaign's
+                // million-kilometre scale. Pure angular/physical sizing becomes
+                // sub-pixel long before a luminous star should disappear to the eye.
+                float radius = (float)Math.Sqrt(NativeGlareRangeM / distance) * 92f;
                 radius = MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
 
                 Color drawColor = new Color(
@@ -183,7 +191,7 @@ namespace RandomSectorGenerator
                     (byte)MathHelper.Clamp(color.Z, 0, 255));
                 drawColor *= fade * MathHelper.Clamp(brightness / 1.5f, 0.45f, 1f);
 
-                DrawPoint(proxyPosition, proxyCamera, drawColor, radius, true);
+                DrawPoint(proxyPosition, proxyCamera, drawColor, radius, distance < 500000000d);
             }
         }
 
@@ -265,9 +273,9 @@ namespace RandomSectorGenerator
             // texture lands between screen pixels. The glow/rays then provide shape
             // without being responsible for the entire apparent brightness.
             Color core = color;
-            core *= 1.15f;
+            core *= 1.25f;
             MyTransparentGeometry.AddBillboardOriented(
-                _dotMaterial, core, drawPosition, left, up, radius * 0.42f,
+                _dotMaterial, core, drawPosition, left, up, radius * 0.48f,
                 BlendTypeEnum.AdditiveBottom);
 
             MyTransparentGeometry.AddBillboardOriented(
@@ -277,9 +285,9 @@ namespace RandomSectorGenerator
             if (addRays)
             {
                 Color rays = color;
-                rays *= 0.18f;
+                rays *= 0.12f;
                 MyTransparentGeometry.AddBillboardOriented(
-                    _rayMaterial, rays, drawPosition, left, up, radius * 1.5f,
+                    _rayMaterial, rays, drawPosition, left, up, radius * 1.35f,
                     BlendTypeEnum.AdditiveBottom);
             }
         }
