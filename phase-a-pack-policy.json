@@ -51,5 +51,7 @@
     "3617496051": "Miasma is blocked by the known incompatible or obsolete Phase A policy",
     "3618093811": "known incompatible or obsolete mod excluded by Phase A policy",
     "3663505475": "Jormun proxy source is replaced by the generated CampaignPlanetProxies mod"
-  }
+  },
+  "voxel_budget": 124,
+  "engine_voxel_limit": 128
 }
