@@ -123,8 +123,12 @@ def main():
                               'count':len(names),'nonvanilla':sorted(names-base),'incremental':len(names-union)})
         union.update(names)
         for d in m['voxels']: owners[d['subtype']].append(dict(mod=id,**d))
-    assert len(union)<=120, f'Unsafe selected pack: {len(union)}'
-    vox={'vanilla':len(base),'total':len(union),'headroom':128-len(union),'budget':120,'per_mod':contributions,
+    voxel_budget=int(policy.get('voxel_budget',120))
+    engine_voxel_limit=int(policy.get('engine_voxel_limit',128))
+    assert voxel_budget < engine_voxel_limit, 'Voxel budget must remain below the engine limit'
+    assert len(union)<=voxel_budget, f'Unsafe selected pack: {len(union)} > budget {voxel_budget}'
+    assert len(union)<engine_voxel_limit, f'Unsafe selected pack: {len(union)} >= engine limit {engine_voxel_limit}'
+    vox={'vanilla':len(base),'total':len(union),'headroom':engine_voxel_limit-len(union),'budget':voxel_budget,'per_mod':contributions,
          'duplicates':{k:v for k,v in owners.items() if len(v)>1},'subtypes':sorted(union),
          'qualification':'Static local SBC union; runtime definition mutations, dependency expansion, load precedence and engine indexing still require in-game verification.'}
     dump('selected-voxel-audit.json',vox)
@@ -235,7 +239,7 @@ def main():
            ('cached snapshot explicitly selected).' if collection.get('cache_used') else 'resolved live from Steam.'),
            f'Active Workshop mods: **{len(selected)}** ({normal_active} normal collection mods, {planet_active} Phase A planet mods, {len(dependency_additions)} dependency additions).',
            '',f'Selected planet definitions: **{len(selected_bodies)}** ({len(pool["vanilla"])} vanilla, {len(selected_bodies)-len(pool["vanilla"])} custom).',
-           '',f'Static voxel total: **{len(union)}** = {len(base)} vanilla + {len(union-base)} additions; **{128-len(union)}** headroom against 128 and {120-len(union)} below the conservative budget of 120. Expanded-pool runtime validation pending.','',
+           '',f'Static voxel total: **{len(union)}** = {len(base)} vanilla + {len(union-base)} additions; **{engine_voxel_limit-len(union)}** headroom against {engine_voxel_limit} and {voxel_budget-len(union)} below the conservative budget of {voxel_budget}. Expanded-pool runtime validation pending.','',
            '| Body | Selected | Active RSS proxies | Science |','|---|---|---:|---|']
     lines += [f"| {c['planet']} | {'yes' if c['selected'] else 'no'} | {c['active_proxy_count']} | {c['science_status']} |" for c in coverage]
     lines+=['','## Collection exclusions','',
