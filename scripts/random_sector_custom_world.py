@@ -103,8 +103,11 @@ def load_inputs():
         raise RuntimeError("Selected Workshop list is missing a required speed/orbit mod")
     if DENIED_SPEED_MODS.intersection(ids):
         raise RuntimeError("A Midspace fixed-speed mod is selected")
-    if voxel["total"] > 120:
-        raise RuntimeError("Voxel material count exceeds Phase A budget: %s" % voxel["total"])
+    if voxel["total"] > voxel["budget"]:
+        raise RuntimeError(
+            "Voxel material count exceeds Phase A budget: %s > %s"
+            % (voxel["total"], voxel["budget"])
+        )
     selected = [entry for entry in coverage if entry["selected"]]
     bad_proxy = [entry["planet"] for entry in selected if entry["active_proxy_count"] != 1]
     if bad_proxy:
