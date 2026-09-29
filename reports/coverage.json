@@ -260,6 +260,16 @@
     "science_status": "generic fallback"
   },
   {
+    "id": "2178783350",
+    "planet": "SmallSPiderFake",
+    "selected": false,
+    "proxy_candidates": [],
+    "active_proxy_count": 0,
+    "science_native": null,
+    "science_compatibility": false,
+    "science_status": "generic fallback"
+  },
+  {
     "id": "vanilla",
     "planet": "EarthLike",
     "selected": true,

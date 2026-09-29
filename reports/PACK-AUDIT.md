@@ -1,11 +1,11 @@
 # Selected pack audit
 
-Steam collection: **3808835800** (81 current children; resolved live from Steam.
-Active Workshop mods: **73** (65 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
+Steam collection: **3808835800** (106 current children; resolved live from Steam.
+Active Workshop mods: **92** (85 normal collection mods, 7 Phase A planet mods, 0 dependency additions).
 
 Selected planet definitions: **18** (8 vanilla, 10 custom).
 
-Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against 128 and 3 below the conservative budget of 120. Expanded-pool runtime validation pending.
+Static voxel total: **121** = 62 vanilla + 59 additions; **7** headroom against 128 and 3 below the conservative budget of 124. Expanded-pool runtime validation pending.
 
 | Body | Selected | Active RSS proxies | Science |
 |---|---|---:|---|
@@ -25,6 +25,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 | Kerbin - Water Mod Ready | yes | 1 | local authored preset |
 | Aulden | yes | 1 | local authored preset |
 | Seren | no | 0 | generic fallback |
+| SmallSPiderFake | no | 0 | generic fallback |
 | EarthLike | yes | 1 | native |
 | Moon | yes | 1 | native |
 | Mars | yes | 1 | native |
@@ -36,6 +37,7 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 
 ## Collection exclusions
 
+- 2178783350 — Small Spiders: planet catalog item excluded from Phase A active pool / voxel budget
 - 2961924256 — Planet Seren: planet catalog item excluded from Phase A active pool / voxel budget
 - 3684013414 — Planet Nivis: planet catalog item excluded from Phase A active pool / voxel budget
 - 2195637331 — Teralis - City Planet: planet catalog item excluded from Phase A active pool / voxel budget
@@ -43,11 +45,36 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3381681547 — "Real Solar Systems" Planet Proxies: Vanilla (HD): vanilla HD proxy pack duplicates the proxies supplied by Real Solar Systems
 - 3350589349 — Planet Exporter (Real Solar Systems): Planet Exporter is a proxy-workbench tool and is not a gameplay mod
 - 3663505475 — Planet Jormun - Now with a proxy!: Jormun proxy source is replaced by the generated CampaignPlanetProxies mod
+- 2640137506 — Elite Dangerous: FSD Supercruise: FSD Supercruise removed after runtime testing: teleport-step movement conflicts with physical Real Orbits travel
 - 3617496051 — Planet - Miasma: Miasma is blocked by the known incompatible or obsolete Phase A policy
+- 3717371162 — (NO DLC) Edu Garnette-Class Corvette: Blueprint; not a world mod
+- 2207000616 — UAS Tayet - Aerospace Scout Corvette (Vanilla/Survival Ready/Optional Scripts/No DLC): Blueprint; not a world mod
+- 2473856121 — Cepheus S-30 Draco: Blueprint; not a world mod
 - 822950976 — Automatic LCDs 2: IngameScript; not a world mod
 
 ## Workshop load-list membership
 
+- 3481843850 — Terminus - Black Hole
+- 3042717202 — Environmentalframework BETA
+- 3203875976 — Nuclear Weapons Expanded V1.4.1
+- 3241326439 — Eclipses
+- 3410188001 — HUD Compass (RSS Ver.)
+- 2760086069 — HyperDrive
+- 2802482180 — Damaged Spawnships
+- 1608841667 — Daily Needs Survival Kit ( DNSK - Mk 4.2 )
+- 945655546 — Bring Back Cyberhounds
+- 2747715235 — Populated Worlds Creatures Ai Enabled NPCs
+- 2667547195 — Bigger Explosions
+- 2649159807 — Kinetic Devastation
+- 3775914515 — Survival Symmetry
+- 3787831860 — HopelessEncounters
+- 3738633660 — Orbital NPC Spawns
+- 3749868699 — Resource Radar - [RR] Tag
+- 3786742159 — CelestialCartographer
+- 3622757513 — Modular Powercore Batteries
+- 3769619096 — Tiered Modular Power Extension
+- 3772020047 — Toya's Economy Additions
+- 3780085631 — System Manager
 - 2609118808 — Real Orbits
 - 3768484204 — L.Y.N.X Industries - Gas Storage Expansion 2
 - 3763900368 — Unified Thruster FX
@@ -63,7 +90,6 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3357218025 — Consty's HandWeapon Pack (Vanilla)
 - 3719498498 — RCSP Ground Assault - [MES]
 - 2915780227 — Vanilla+ Framework
-- 2640137506 — Elite Dangerous: FSD Supercruise
 - 3154379105 — Defense Shields - v2.2(8)
 - 2671376862 — EDP - More Logistics Options
 - 2111400196 — Assault Weapons Pack (v1.64 - Blood and Steel)
@@ -120,7 +146,6 @@ Static voxel total: **117** = 62 vanilla + 55 additions; **11** headroom against
 - 3152436752 — Real Stars
 - 758597413 — Text HUD API
 - 3351055036 — Real Solar Systems
-- 3780085631 — System Manager
 
 ## Local mods
 

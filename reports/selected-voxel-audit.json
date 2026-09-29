@@ -1,9 +1,162 @@
 {
   "vanilla": 62,
-  "total": 117,
-  "headroom": 11,
-  "budget": 120,
+  "total": 121,
+  "headroom": 7,
+  "budget": 124,
   "per_mod": [
+    {
+      "id": "3481843850",
+      "title": "Terminus - Black Hole",
+      "count": 1,
+      "nonvanilla": [
+        "Terminus"
+      ],
+      "incremental": 1
+    },
+    {
+      "id": "3042717202",
+      "title": "Environmentalframework BETA",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3203875976",
+      "title": "Nuclear Weapons Expanded V1.4.1",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3241326439",
+      "title": "Eclipses",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3410188001",
+      "title": "HUD Compass (RSS Ver.)",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2760086069",
+      "title": "HyperDrive",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2802482180",
+      "title": "Damaged Spawnships",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "1608841667",
+      "title": "Daily Needs Survival Kit ( DNSK - Mk 4.2 )",
+      "count": 11,
+      "nonvanilla": [
+        "Carbon_01",
+        "Phosphorus_01",
+        "Potassium_01"
+      ],
+      "incremental": 3
+    },
+    {
+      "id": "945655546",
+      "title": "Bring Back Cyberhounds",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2747715235",
+      "title": "Populated Worlds Creatures Ai Enabled NPCs",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2667547195",
+      "title": "Bigger Explosions",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "2649159807",
+      "title": "Kinetic Devastation",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3775914515",
+      "title": "Survival Symmetry",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3787831860",
+      "title": "HopelessEncounters",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3738633660",
+      "title": "Orbital NPC Spawns",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3749868699",
+      "title": "Resource Radar - [RR] Tag",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3786742159",
+      "title": "CelestialCartographer",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3622757513",
+      "title": "Modular Powercore Batteries",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3769619096",
+      "title": "Tiered Modular Power Extension",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3772020047",
+      "title": "Toya's Economy Additions",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
+    {
+      "id": "3780085631",
+      "title": "System Manager",
+      "count": 0,
+      "nonvanilla": [],
+      "incremental": 0
+    },
     {
       "id": "2609118808",
       "title": "Real Orbits",
@@ -115,13 +268,6 @@
     {
       "id": "2915780227",
       "title": "Vanilla+ Framework",
-      "count": 0,
-      "nonvanilla": [],
-      "incremental": 0
-    },
-    {
-      "id": "2640137506",
-      "title": "Elite Dangerous: FSD Supercruise",
       "count": 0,
       "nonvanilla": [],
       "incremental": 0
@@ -568,16 +714,145 @@
       "count": 0,
       "nonvanilla": [],
       "incremental": 0
-    },
-    {
-      "id": "3780085631",
-      "title": "System Manager",
-      "count": 0,
-      "nonvanilla": [],
-      "incremental": 0
     }
   ],
-  "duplicates": {},
+  "duplicates": {
+    "Grass": [
+      {
+        "mod": "vanilla",
+        "subtype": "Grass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Grass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\CropGrowers\\CROPGROWER_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Grass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "Grass_02": [
+      {
+        "mod": "vanilla",
+        "subtype": "Grass_02",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Grass_02",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "Grass_old": [
+      {
+        "mod": "vanilla",
+        "subtype": "Grass_old",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Grass_old",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "Woods_grass": [
+      {
+        "mod": "vanilla",
+        "subtype": "Woods_grass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Woods_grass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "Rocks_grass": [
+      {
+        "mod": "vanilla",
+        "subtype": "Rocks_grass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "Rocks_grass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "AlienGreenGrass": [
+      {
+        "mod": "vanilla",
+        "subtype": "AlienGreenGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "AlienGreenGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "AlienRockGrass": [
+      {
+        "mod": "vanilla",
+        "subtype": "AlienRockGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "AlienRockGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ],
+    "AlienOrangeGrass": [
+      {
+        "mod": "vanilla",
+        "subtype": "AlienOrangeGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\common\\SpaceEngineers\\Content\\Data\\VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      },
+      {
+        "mod": "1608841667",
+        "subtype": "AlienOrangeGrass",
+        "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667\\Data\\LifeSupports\\LIFESUPPORT_VoxelMaterials_planetary.sbc",
+        "type": "VoxelMaterialDefinition",
+        "enabled": "true"
+      }
+    ]
+  },
   "subtypes": [
     "Agni_Black_Lava_01",
     "Agni_Black_Lava_02",
@@ -602,6 +877,7 @@
     "AlienSoil",
     "AlienYellowGrass",
     "AlienYellowGrass bare",
+    "Carbon_01",
     "Cauldron",
     "Cobalt_01",
     "Coral",
@@ -652,7 +928,9 @@
     "OrlundaRedSoil_3",
     "OrlundaSnow",
     "PertamSand",
+    "Phosphorus_01",
     "Platinum_01",
+    "Potassium_01",
     "RelBasalt",
     "RelBedrock",
     "RelMagma",
@@ -683,6 +961,7 @@
     "Tellus_Red_grass",
     "Tellus_Sandy_grass",
     "Tellus_VolcanoRock",
+    "Terminus",
     "TritonBlend",
     "TritonIce",
     "TritonStone",

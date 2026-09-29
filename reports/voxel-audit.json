@@ -1,8 +1,8 @@
 {
   "existing": {
     "vanilla": 62,
-    "effective_unique_subtypes": 120,
-    "headroom_to_128": 8,
+    "effective_unique_subtypes": 121,
+    "headroom_to_128": 7,
     "per_mod": [
       {
         "id": "1608841667",
@@ -28,6 +28,14 @@
           "OrlundaRedSoil_3",
           "OrlundaSnow",
           "Woods_grass_long"
+        ]
+      },
+      {
+        "id": "3481843850",
+        "title": "Terminus - Black Hole",
+        "definitions": 1,
+        "nonvanilla": [
+          "Terminus"
         ]
       },
       {
@@ -979,6 +987,15 @@
           "enabled": "true"
         }
       ],
+      "Terminus": [
+        {
+          "mod": "3481843850",
+          "subtype": "Terminus",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3481843850\\Data\\VoxelMaterials_Terminus.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
       "RelBasalt": [
         {
           "mod": "3489648084",
@@ -1397,8 +1414,8 @@
   },
   "desired_with_existing_gameplay": {
     "vanilla": 62,
-    "effective_unique_subtypes": 154,
-    "headroom_to_128": -26,
+    "effective_unique_subtypes": 155,
+    "headroom_to_128": -27,
     "per_mod": [
       {
         "id": "1608841667",
@@ -1464,6 +1481,14 @@
           "OrlundaRedSoil_3",
           "OrlundaSnow",
           "Woods_grass_long"
+        ]
+      },
+      {
+        "id": "3481843850",
+        "title": "Terminus - Black Hole",
+        "definitions": 1,
+        "nonvanilla": [
+          "Terminus"
         ]
       },
       {
@@ -2660,6 +2685,15 @@
           "mod": "3362332228",
           "subtype": "OrlundaLake",
           "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3362332228\\Data\\VoxelMaterials_Orlunda.sbc",
+          "type": "VoxelMaterialDefinition",
+          "enabled": "true"
+        }
+      ],
+      "Terminus": [
+        {
+          "mod": "3481843850",
+          "subtype": "Terminus",
+          "file": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3481843850\\Data\\VoxelMaterials_Terminus.sbc",
           "type": "VoxelMaterialDefinition",
           "enabled": "true"
         }

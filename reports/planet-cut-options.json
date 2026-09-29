@@ -21,6 +21,16 @@
   ],
   "deferred_collection_planets": [
     {
+      "id": "2178783350",
+      "title": "Small Spiders",
+      "planets": [
+        "SmallSPiderFake"
+      ],
+      "desired": true,
+      "active": false,
+      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
+    },
+    {
       "id": "2961924256",
       "title": "Planet Seren",
       "planets": [

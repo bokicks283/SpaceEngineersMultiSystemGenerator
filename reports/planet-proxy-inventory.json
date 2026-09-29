@@ -358,7 +358,7 @@
   },
   {
     "id": "3481843850",
-    "title": null,
+    "title": "Terminus - Black Hole",
     "planets": [
       {
         "subtype": "Terminus (Black Hole)",
@@ -373,7 +373,7 @@
     "proxies": [],
     "denylisted": false,
     "desired_planet": false,
-    "active_in_existing_world": false
+    "active_in_existing_world": true
   },
   {
     "id": "3489648084",

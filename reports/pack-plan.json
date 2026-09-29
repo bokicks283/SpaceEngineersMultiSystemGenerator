@@ -2,8 +2,575 @@
   "collection_id": "3808835800",
   "collection_items": [
     {
-      "id": "2609118808",
+      "id": "3481843850",
       "sort_order": 0,
+      "title": "Terminus - Black Hole",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1747305778,
+      "file_size": 63899582,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "planet",
+        "Other",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3481843850",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3042717202",
+      "sort_order": 1,
+      "title": "Environmentalframework BETA",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1699996360,
+      "file_size": 331168,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3042717202",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3203875976",
+      "sort_order": 2,
+      "title": "Nuclear Weapons Expanded V1.4.1",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1774780689,
+      "file_size": 26256351,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Production",
+        "script",
+        "modpack",
+        "Other",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3203875976",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3241326439",
+      "sort_order": 3,
+      "title": "Eclipses",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1755820757,
+      "file_size": 595188,
+      "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "Skybox",
+        "planet"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3241326439",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3410188001",
+      "sort_order": 4,
+      "title": "HUD Compass (RSS Ver.)",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1737248585,
+      "file_size": 3129603,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "hud"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3410188001",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2760086069",
+      "sort_order": 5,
+      "title": "HyperDrive",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1645398185,
+      "file_size": 12397434,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2760086069",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2802482180",
+      "sort_order": 6,
+      "title": "Damaged Spawnships",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1666420806,
+      "file_size": 910616,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Respawn Ship",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2802482180",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "1608841667",
+      "sort_order": 7,
+      "title": "Daily Needs Survival Kit ( DNSK - Mk 4.2 )",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1729025270,
+      "file_size": 305988548,
+      "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "Block",
+        "Character",
+        "Production",
+        "modpack",
+        "hud",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2178783350",
+      "sort_order": 8,
+      "title": "Small Spiders",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1756763753,
+      "file_size": 7734028,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2178783350",
+      "active": false,
+      "classification": "phase_a_planet_deferred",
+      "exclusion_reason": "planet catalog item excluded from Phase A active pool / voxel budget"
+    },
+    {
+      "id": "945655546",
+      "sort_order": 9,
+      "title": "Bring Back Cyberhounds",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1664834133,
+      "file_size": 9584620,
+      "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "Character"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\945655546",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2747715235",
+      "sort_order": 10,
+      "title": "Populated Worlds Creatures Ai Enabled NPCs",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1646167773,
+      "file_size": 3130216,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2747715235",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2667547195",
+      "sort_order": 11,
+      "title": "Bigger Explosions",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1772232869,
+      "file_size": 71017353,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Other",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2667547195",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2649159807",
+      "sort_order": 12,
+      "title": "Kinetic Devastation",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1638143132,
+      "file_size": 620156,
+      "visibility": 0,
+      "tags": [
+        "Other",
+        "mod",
+        "Block",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2649159807",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3775914515",
+      "sort_order": 13,
+      "title": "Survival Symmetry",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1790059553,
+      "file_size": 594698,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script",
+        "Other"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3775914515",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3787831860",
+      "sort_order": 14,
+      "title": "HopelessEncounters",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1790179949,
+      "file_size": 12045064,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "Other",
+        "npc",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3787831860",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3738633660",
+      "sort_order": 15,
+      "title": "Orbital NPC Spawns",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1786161049,
+      "file_size": 3491458,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "ServerScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3738633660",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3749868699",
+      "sort_order": 16,
+      "title": "Resource Radar - [RR] Tag",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1788225436,
+      "file_size": 485012,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3749868699",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3786742159",
+      "sort_order": 17,
+      "title": "CelestialCartographer",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1787939039,
+      "file_size": 1127494,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "hud"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3786742159",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3622757513",
+      "sort_order": 18,
+      "title": "Modular Powercore Batteries",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1777915319,
+      "file_size": 24458570,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Other"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3622757513",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3769619096",
+      "sort_order": 19,
+      "title": "Tiered Modular Power Extension",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1784822371,
+      "file_size": 23444271,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "script"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3769619096",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3772020047",
+      "sort_order": 20,
+      "title": "Toya's Economy Additions",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1785064531,
+      "file_size": 36311753,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "Block",
+        "Respawn Ship",
+        "Other",
+        "npc",
+        "NoScripts"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3772020047",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "3717371162",
+      "sort_order": 21,
+      "title": "(NO DLC) Edu Garnette-Class Corvette",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1777593556,
+      "file_size": 4888203,
+      "visibility": 0,
+      "tags": [
+        "blueprint",
+        "ship",
+        "large_grid",
+        "safe"
+      ],
+      "workshop_content_type": "Blueprint",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3717371162",
+      "active": false,
+      "classification": "collection_non_world_content",
+      "exclusion_reason": "Blueprint; not a world mod"
+    },
+    {
+      "id": "2207000616",
+      "sort_order": 22,
+      "title": "UAS Tayet - Aerospace Scout Corvette (Vanilla/Survival Ready/Optional Scripts/No DLC)",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1612978538,
+      "file_size": 1768847,
+      "visibility": 0,
+      "tags": [
+        "blueprint",
+        "ship",
+        "large_grid",
+        "safe"
+      ],
+      "workshop_content_type": "Blueprint",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2207000616",
+      "active": false,
+      "classification": "collection_non_world_content",
+      "exclusion_reason": "Blueprint; not a world mod"
+    },
+    {
+      "id": "2473856121",
+      "sort_order": 23,
+      "title": "Cepheus S-30 Draco",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1619907538,
+      "file_size": 998621,
+      "visibility": 0,
+      "tags": [
+        "blueprint",
+        "ship",
+        "large_grid",
+        "safe"
+      ],
+      "workshop_content_type": "Blueprint",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2473856121",
+      "active": false,
+      "classification": "collection_non_world_content",
+      "exclusion_reason": "Blueprint; not a world mod"
+    },
+    {
+      "id": "3780085631",
+      "sort_order": 24,
+      "title": "System Manager",
+      "steam_result": 1,
+      "consumer_app_id": 244850,
+      "creator_app_id": 244850,
+      "time_updated": 1786900472,
+      "file_size": 8896708,
+      "visibility": 0,
+      "tags": [
+        "mod",
+        "script",
+        "hud",
+        "ServerScripts",
+        "cleanup"
+      ],
+      "workshop_content_type": "Mod",
+      "installed": true,
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3780085631",
+      "active": true,
+      "classification": "normal_collection_mod",
+      "exclusion_reason": null
+    },
+    {
+      "id": "2609118808",
+      "sort_order": 25,
       "title": "Real Orbits",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -27,7 +594,7 @@
     },
     {
       "id": "3768484204",
-      "sort_order": 1,
+      "sort_order": 26,
       "title": "L.Y.N.X Industries - Gas Storage Expansion 2",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -51,7 +618,7 @@
     },
     {
       "id": "3763900368",
-      "sort_order": 2,
+      "sort_order": 27,
       "title": "Unified Thruster FX",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -75,7 +642,7 @@
     },
     {
       "id": "571920453",
-      "sort_order": 3,
+      "sort_order": 28,
       "title": "Aerodynamic Physics",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -97,7 +664,7 @@
     },
     {
       "id": "1359618037",
-      "sort_order": 4,
+      "sort_order": 29,
       "title": "Relative Top Speed",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -117,7 +684,7 @@
     },
     {
       "id": "2961923776",
-      "sort_order": 5,
+      "sort_order": 30,
       "title": "Planet Aulden",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -139,7 +706,7 @@
     },
     {
       "id": "2961924256",
-      "sort_order": 6,
+      "sort_order": 31,
       "title": "Planet Seren",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -161,7 +728,7 @@
     },
     {
       "id": "2941085186",
-      "sort_order": 7,
+      "sort_order": 32,
       "title": "Kerbin",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -183,7 +750,7 @@
     },
     {
       "id": "3381681547",
-      "sort_order": 8,
+      "sort_order": 33,
       "title": "\"Real Solar Systems\" Planet Proxies: Vanilla (HD)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -206,7 +773,7 @@
     },
     {
       "id": "3350589349",
-      "sort_order": 9,
+      "sort_order": 34,
       "title": "Planet Exporter (Real Solar Systems)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -227,7 +794,7 @@
     },
     {
       "id": "3663505475",
-      "sort_order": 10,
+      "sort_order": 35,
       "title": "Planet Jormun - Now with a proxy!",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -250,7 +817,7 @@
     },
     {
       "id": "3361803398",
-      "sort_order": 11,
+      "sort_order": 36,
       "title": "\"Real Solar Systems\" Proxy Pack: Orlunda and Komorebi",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -273,7 +840,7 @@
     },
     {
       "id": "3362332228",
-      "sort_order": 12,
+      "sort_order": 37,
       "title": "Orlunda (Sideways)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -295,7 +862,7 @@
     },
     {
       "id": "2802625870",
-      "sort_order": 13,
+      "sort_order": 38,
       "title": "MES Wreckage",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -317,7 +884,7 @@
     },
     {
       "id": "2111073562",
-      "sort_order": 14,
+      "sort_order": 39,
       "title": "Nanobot Build and Repair System (Maintained) - Nerfed Version",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -339,7 +906,7 @@
     },
     {
       "id": "2754014019",
-      "sort_order": 15,
+      "sort_order": 40,
       "title": "Scope Framework",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -359,7 +926,7 @@
     },
     {
       "id": "3357218025",
-      "sort_order": 16,
+      "sort_order": 41,
       "title": "Consty's HandWeapon Pack (Vanilla)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -381,7 +948,7 @@
     },
     {
       "id": "822950976",
-      "sort_order": 17,
+      "sort_order": 42,
       "title": "Automatic LCDs 2",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -402,7 +969,7 @@
     },
     {
       "id": "3719498498",
-      "sort_order": 18,
+      "sort_order": 43,
       "title": "RCSP Ground Assault - [MES]",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -424,7 +991,7 @@
     },
     {
       "id": "2915780227",
-      "sort_order": 19,
+      "sort_order": 44,
       "title": "Vanilla+ Framework",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -445,7 +1012,7 @@
     },
     {
       "id": "2640137506",
-      "sort_order": 20,
+      "sort_order": 45,
       "title": "Elite Dangerous: FSD Supercruise",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -460,13 +1027,13 @@
       "workshop_content_type": "Mod",
       "installed": true,
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2640137506",
-      "active": true,
-      "classification": "normal_collection_mod",
-      "exclusion_reason": null
+      "active": false,
+      "classification": "compatibility_exclusion",
+      "exclusion_reason": "FSD Supercruise removed after runtime testing: teleport-step movement conflicts with physical Real Orbits travel"
     },
     {
       "id": "3154379105",
-      "sort_order": 21,
+      "sort_order": 46,
       "title": "Defense Shields - v2.2(8)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -490,7 +1057,7 @@
     },
     {
       "id": "2671376862",
-      "sort_order": 22,
+      "sort_order": 47,
       "title": "EDP - More Logistics Options",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -513,7 +1080,7 @@
     },
     {
       "id": "2111400196",
-      "sort_order": 23,
+      "sort_order": 48,
       "title": "Assault Weapons Pack (v1.64 - Blood and Steel)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -536,7 +1103,7 @@
     },
     {
       "id": "516770964",
-      "sort_order": 24,
+      "sort_order": 49,
       "title": "Attachments - large to small grid without limits!",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -558,7 +1125,7 @@
     },
     {
       "id": "2711430394",
-      "sort_order": 25,
+      "sort_order": 50,
       "title": "AQD - Emissive Colors",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -580,7 +1147,7 @@
     },
     {
       "id": "3382116691",
-      "sort_order": 26,
+      "sort_order": 51,
       "title": "AQD - Markings",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -601,7 +1168,7 @@
     },
     {
       "id": "3437815208",
-      "sort_order": 27,
+      "sort_order": 52,
       "title": "AQD - Airlock Connectors",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -622,7 +1189,7 @@
     },
     {
       "id": "2298956701",
-      "sort_order": 28,
+      "sort_order": 53,
       "title": "AQD - Concrete",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -644,7 +1211,7 @@
     },
     {
       "id": "1939935505",
-      "sort_order": 29,
+      "sort_order": 54,
       "title": "AQD - Armor Expansion",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -666,7 +1233,7 @@
     },
     {
       "id": "2678657382",
-      "sort_order": 30,
+      "sort_order": 55,
       "title": "AQD - Small Grid Expansion",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -689,7 +1256,7 @@
     },
     {
       "id": "1697184408",
-      "sort_order": 31,
+      "sort_order": 56,
       "title": "Build Vision 3.0",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -713,7 +1280,7 @@
     },
     {
       "id": "3170315974",
-      "sort_order": 32,
+      "sort_order": 57,
       "title": "Leak Finder",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -734,7 +1301,7 @@
     },
     {
       "id": "514062285",
-      "sort_order": 33,
+      "sort_order": 58,
       "title": "Build Info",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -757,7 +1324,7 @@
     },
     {
       "id": "2756894170",
-      "sort_order": 34,
+      "sort_order": 59,
       "title": "Definition Extension API",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -779,7 +1346,7 @@
     },
     {
       "id": "2687324923",
-      "sort_order": 35,
+      "sort_order": 60,
       "title": "[QoL] Radio Spectrometry",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -800,7 +1367,7 @@
     },
     {
       "id": "3768473558",
-      "sort_order": 36,
+      "sort_order": 61,
       "title": "Sorted Cargo Container",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -821,7 +1388,7 @@
     },
     {
       "id": "2826996861",
-      "sort_order": 37,
+      "sort_order": 62,
       "title": "Crew Voices (Attack Robots)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -844,7 +1411,7 @@
     },
     {
       "id": "2825087802",
-      "sort_order": 38,
+      "sort_order": 63,
       "title": "Crew Voices (Psychotic Robots)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -867,7 +1434,7 @@
     },
     {
       "id": "2803081060",
-      "sort_order": 39,
+      "sort_order": 64,
       "title": "Crew Enabled",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -890,7 +1457,7 @@
     },
     {
       "id": "3672452327",
-      "sort_order": 40,
+      "sort_order": 65,
       "title": "RCSP Encounters - [MES]",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -912,7 +1479,7 @@
     },
     {
       "id": "2816464979",
-      "sort_order": 41,
+      "sort_order": 66,
       "title": "Terran Titans - Tactical Warfare Blocks",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -933,7 +1500,7 @@
     },
     {
       "id": "3706927250",
-      "sort_order": 42,
+      "sort_order": 67,
       "title": "Terran Titans - Naval Advanced Systems",
       "steam_result": 9,
       "consumer_app_id": 0,
@@ -951,7 +1518,7 @@
     },
     {
       "id": "2899106264",
-      "sort_order": 43,
+      "sort_order": 68,
       "title": "Terran Titans - Naval Blocks",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -972,7 +1539,7 @@
     },
     {
       "id": "3690317665",
-      "sort_order": 44,
+      "sort_order": 69,
       "title": "AquaExpansion",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -994,7 +1561,7 @@
     },
     {
       "id": "1965654081",
-      "sort_order": 45,
+      "sort_order": 70,
       "title": "Rich HUD Master",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1014,7 +1581,7 @@
     },
     {
       "id": "3489648084",
-      "sort_order": 46,
+      "sort_order": 71,
       "title": "Planet Relicta",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1035,7 +1602,7 @@
     },
     {
       "id": "3684013414",
-      "sort_order": 47,
+      "sort_order": 72,
       "title": "Planet Nivis",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1059,7 +1626,7 @@
     },
     {
       "id": "3695766186",
-      "sort_order": 48,
+      "sort_order": 73,
       "title": "Planet Zenitaia",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1082,7 +1649,7 @@
     },
     {
       "id": "3618043241",
-      "sort_order": 49,
+      "sort_order": 74,
       "title": "Planet - Jormun (Water)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1104,7 +1671,7 @@
     },
     {
       "id": "3617496051",
-      "sort_order": 50,
+      "sort_order": 75,
       "title": "Planet - Miasma",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1126,7 +1693,7 @@
     },
     {
       "id": "2195637331",
-      "sort_order": 51,
+      "sort_order": 76,
       "title": "Teralis - City Planet",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1148,7 +1715,7 @@
     },
     {
       "id": "2200451495",
-      "sort_order": 52,
+      "sort_order": 77,
       "title": "Water Mod",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1171,7 +1738,7 @@
     },
     {
       "id": "2644430625",
-      "sort_order": 53,
+      "sort_order": 78,
       "title": "Teal - Water Mod",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1193,7 +1760,7 @@
     },
     {
       "id": "3576683005",
-      "sort_order": 54,
+      "sort_order": 79,
       "title": "Cauldron System",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1215,7 +1782,7 @@
     },
     {
       "id": "3731921987",
-      "sort_order": 55,
+      "sort_order": 80,
       "title": "Malware's Docking Aid",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1236,7 +1803,7 @@
     },
     {
       "id": "3736894294",
-      "sort_order": 56,
+      "sort_order": 81,
       "title": "Monorail Tracks",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1258,7 +1825,7 @@
     },
     {
       "id": "3791989881",
-      "sort_order": 57,
+      "sort_order": 82,
       "title": "Yoink!",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1279,7 +1846,7 @@
     },
     {
       "id": "3784633330",
-      "sort_order": 58,
+      "sort_order": 83,
       "title": "AQD - LCD Color Profiles",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1303,7 +1870,7 @@
     },
     {
       "id": "3472275442",
-      "sort_order": 59,
+      "sort_order": 84,
       "title": "AQD - Conveyored Pipes",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1324,7 +1891,7 @@
     },
     {
       "id": "3741238881",
-      "sort_order": 60,
+      "sort_order": 85,
       "title": "Pipes Junctions",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1346,7 +1913,7 @@
     },
     {
       "id": "3746220940",
-      "sort_order": 61,
+      "sort_order": 86,
       "title": "Resource Node Miner",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1368,7 +1935,7 @@
     },
     {
       "id": "3767444521",
-      "sort_order": 62,
+      "sort_order": 87,
       "title": "Handheld Hacker Grid Takeover (Version 1.6)",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1389,7 +1956,7 @@
     },
     {
       "id": "3770315903",
-      "sort_order": 63,
+      "sort_order": 88,
       "title": "Humanoid's Retractable Solar Panels",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1411,7 +1978,7 @@
     },
     {
       "id": "2310821218",
-      "sort_order": 64,
+      "sort_order": 89,
       "title": "Abandoned Settlements [v2]",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1433,7 +2000,7 @@
     },
     {
       "id": "3665099597",
-      "sort_order": 65,
+      "sort_order": 90,
       "title": "Scientific Progress",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1457,7 +2024,7 @@
     },
     {
       "id": "2336089504",
-      "sort_order": 66,
+      "sort_order": 91,
       "title": "Bot_spawner",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1478,7 +2045,7 @@
     },
     {
       "id": "2596208372",
-      "sort_order": 67,
+      "sort_order": 92,
       "title": "AiEnabled v1.9",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1503,7 +2070,7 @@
     },
     {
       "id": "3155707452",
-      "sort_order": 68,
+      "sort_order": 93,
       "title": "Assertive Combat Systems Dependency",
       "steam_result": 9,
       "consumer_app_id": 0,
@@ -1521,7 +2088,7 @@
     },
     {
       "id": "2841920953",
-      "sort_order": 69,
+      "sort_order": 94,
       "title": "Shower Light",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1542,7 +2109,7 @@
     },
     {
       "id": "2839553181",
-      "sort_order": 70,
+      "sort_order": 95,
       "title": "In Depth LCDs",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1564,7 +2131,7 @@
     },
     {
       "id": "2391318591",
-      "sort_order": 71,
+      "sort_order": 96,
       "title": "Assertive Loot",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1587,7 +2154,7 @@
     },
     {
       "id": "1902970975",
-      "sort_order": 72,
+      "sort_order": 97,
       "title": "Assertive Combat Systems",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1609,7 +2176,7 @@
     },
     {
       "id": "1521905890",
-      "sort_order": 73,
+      "sort_order": 98,
       "title": "Modular Encounters Systems",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1632,7 +2199,7 @@
     },
     {
       "id": "3232085677",
-      "sort_order": 74,
+      "sort_order": 99,
       "title": "Real Gas Giants",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1654,7 +2221,7 @@
     },
     {
       "id": "3218645300",
-      "sort_order": 75,
+      "sort_order": 100,
       "title": "Asteroid Filter API",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1675,7 +2242,7 @@
     },
     {
       "id": "3240629702",
-      "sort_order": 76,
+      "sort_order": 101,
       "title": "Solar Blocks Override",
       "steam_result": 9,
       "consumer_app_id": 0,
@@ -1693,7 +2260,7 @@
     },
     {
       "id": "3222232482",
-      "sort_order": 77,
+      "sort_order": 102,
       "title": "Visual Overrides API",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1715,7 +2282,7 @@
     },
     {
       "id": "3152436752",
-      "sort_order": 78,
+      "sort_order": 103,
       "title": "Real Stars",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1738,7 +2305,7 @@
     },
     {
       "id": "758597413",
-      "sort_order": 79,
+      "sort_order": 104,
       "title": "Text HUD API",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1760,7 +2327,7 @@
     },
     {
       "id": "3351055036",
-      "sort_order": 80,
+      "sort_order": 105,
       "title": "Real Solar Systems",
       "steam_result": 1,
       "consumer_app_id": 244850,
@@ -1783,6 +2350,153 @@
     }
   ],
   "selected_workshop": [
+    {
+      "id": "3481843850",
+      "title": "Terminus - Black Hole",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3481843850",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3042717202",
+      "title": "Environmentalframework BETA",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3042717202",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3203875976",
+      "title": "Nuclear Weapons Expanded V1.4.1",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3203875976",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3241326439",
+      "title": "Eclipses",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3241326439",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3410188001",
+      "title": "HUD Compass (RSS Ver.)",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3410188001",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "2760086069",
+      "title": "HyperDrive",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2760086069",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "2802482180",
+      "title": "Damaged Spawnships",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2802482180",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "1608841667",
+      "title": "Daily Needs Survival Kit ( DNSK - Mk 4.2 )",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\1608841667",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "945655546",
+      "title": "Bring Back Cyberhounds",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\945655546",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "2747715235",
+      "title": "Populated Worlds Creatures Ai Enabled NPCs",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2747715235",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "2667547195",
+      "title": "Bigger Explosions",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2667547195",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "2649159807",
+      "title": "Kinetic Devastation",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2649159807",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3775914515",
+      "title": "Survival Symmetry",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3775914515",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3787831860",
+      "title": "HopelessEncounters",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3787831860",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3738633660",
+      "title": "Orbital NPC Spawns",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3738633660",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3749868699",
+      "title": "Resource Radar - [RR] Tag",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3749868699",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3786742159",
+      "title": "CelestialCartographer",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3786742159",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3622757513",
+      "title": "Modular Powercore Batteries",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3622757513",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3769619096",
+      "title": "Tiered Modular Power Extension",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3769619096",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3772020047",
+      "title": "Toya's Economy Additions",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3772020047",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
+    {
+      "id": "3780085631",
+      "title": "System Manager",
+      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3780085631",
+      "source": "collection",
+      "classification": "normal_collection_mod"
+    },
     {
       "id": "2609118808",
       "title": "Real Orbits",
@@ -1894,13 +2608,6 @@
       "id": "2915780227",
       "title": "Vanilla+ Framework",
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2915780227",
-      "source": "collection",
-      "classification": "normal_collection_mod"
-    },
-    {
-      "id": "2640137506",
-      "title": "Elite Dangerous: FSD Supercruise",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\2640137506",
       "source": "collection",
       "classification": "normal_collection_mod"
     },
@@ -2310,24 +3017,21 @@
       "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3351055036",
       "source": "collection",
       "classification": "normal_collection_mod"
-    },
-    {
-      "id": "3780085631",
-      "title": "System Manager",
-      "path": "S:\\SteamLibrary\\steamapps\\workshop\\content\\244850\\3780085631",
-      "source": "rsg_support",
-      "classification": "required_support"
     }
   ],
   "dependency_additions": [],
-  "support_additions": [
-    {
-      "id": "3780085631",
-      "title": "System Manager",
-      "reason": "System Manager for RSS-aware sector setup and navigation"
-    }
-  ],
+  "support_additions": [],
   "phase_a_planet_exclusions": [
+    {
+      "id": "2178783350",
+      "title": "Small Spiders",
+      "planets": [
+        "SmallSPiderFake"
+      ],
+      "desired": true,
+      "active": false,
+      "reason": "planet catalog item excluded from Phase A active pool / voxel budget"
+    },
     {
       "id": "2961924256",
       "title": "Planet Seren",
@@ -2386,12 +3090,41 @@
       "reason": "Jormun proxy source is replaced by the generated CampaignPlanetProxies mod"
     },
     {
+      "id": "2640137506",
+      "title": "Elite Dangerous: FSD Supercruise",
+      "reason": "FSD Supercruise removed after runtime testing: teleport-step movement conflicts with physical Real Orbits travel"
+    },
+    {
       "id": "3617496051",
       "title": "Planet - Miasma",
       "reason": "Miasma is blocked by the known incompatible or obsolete Phase A policy"
     }
   ],
   "collection_non_world_content": [
+    {
+      "id": "3717371162",
+      "title": "(NO DLC) Edu Garnette-Class Corvette",
+      "desired": true,
+      "active": false,
+      "classification": "collection_non_world_content",
+      "reason": "Blueprint; not a world mod"
+    },
+    {
+      "id": "2207000616",
+      "title": "UAS Tayet - Aerospace Scout Corvette (Vanilla/Survival Ready/Optional Scripts/No DLC)",
+      "desired": true,
+      "active": false,
+      "classification": "collection_non_world_content",
+      "reason": "Blueprint; not a world mod"
+    },
+    {
+      "id": "2473856121",
+      "title": "Cepheus S-30 Draco",
+      "desired": true,
+      "active": false,
+      "classification": "collection_non_world_content",
+      "reason": "Blueprint; not a world mod"
+    },
     {
       "id": "822950976",
       "title": "Automatic LCDs 2",
