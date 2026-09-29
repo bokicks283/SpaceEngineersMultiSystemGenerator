@@ -262,7 +262,7 @@ namespace RandomSectorGenerator
                 float brightness = 1.0f + (2 - i) * 0.2f;
                 MyPlanet star = _realStars.SpawnStar(NextParkingPosition(build.Random), radiusKm,
                     BlackHoleCompanionColors[i], brightness, brightness,
-                    radiusKm * 2.5f, 6f, 7f);
+                    radiusKm * 2.5f, 6f, 6f);
                 if (star == null)
                     throw new Exception("Real Stars failed to spawn Terminus companion " + (i + 1));
                 star.Name = name;
@@ -281,7 +281,7 @@ namespace RandomSectorGenerator
                 float radiusKm = 90f + (float)build.Random.NextDouble() * 70f;
                 float brightness = 0.9f + (float)build.Random.NextDouble() * 0.8f;
                 MyPlanet star = _realStars.SpawnStar(NextParkingPosition(build.Random), radiusKm,
-                    RandomStarColor(build.Random), brightness, brightness, radiusKm * 2.5f, 10f, 7f);
+                    RandomStarColor(build.Random), brightness, brightness, radiusKm * 2.5f, 10f, 6f);
                 if (star == null)
                     throw new Exception("Real Stars failed to spawn star " + i);
                 star.Name = name;
