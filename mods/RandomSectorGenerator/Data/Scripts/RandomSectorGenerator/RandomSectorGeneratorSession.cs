@@ -181,13 +181,20 @@ namespace RandomSectorGenerator
 
             if (command == "help")
             {
-                Show("Commands: /rsg status | /rsg adoption | /rsg recoverstarter | /rsg skins | /rsg planets | /rsg generate [seed]");
+                Show("Commands: /rsg status | /rsg visuals | /rsg adoption | /rsg recoverstarter | /rsg skins | /rsg planets | /rsg generate [seed]");
                 return;
             }
 
             if (command == "status")
             {
                 ShowStatus();
+                return;
+            }
+
+            if (command == "visuals")
+            {
+                CampaignCelestialVisualsSession visuals = CampaignCelestialVisualsSession.Instance;
+                Show(visuals == null ? "Celestial visuals session is not loaded." : visuals.GetDiagnosticSummary());
                 return;
             }
 
