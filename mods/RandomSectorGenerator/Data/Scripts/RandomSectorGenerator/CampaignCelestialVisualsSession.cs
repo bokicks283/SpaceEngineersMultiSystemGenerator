@@ -26,6 +26,8 @@ namespace RandomSectorGenerator
     [MySessionComponentDescriptor(MyUpdateOrder.AfterSimulation)]
     public sealed class CampaignCelestialVisualsSession : MySessionComponentBase
     {
+        public static CampaignCelestialVisualsSession Instance { get; private set; }
+
         private const double NativeGlareRangeM = 200000000d;
         private const double DistantStarFadeStartM = 175000000d;
         private const double DistantStarFullM = 225000000d;
@@ -62,6 +64,7 @@ namespace RandomSectorGenerator
 
         public override void LoadData()
         {
+            Instance = this;
             _realStars.Load();
             _rss.Load();
         }
@@ -72,6 +75,8 @@ namespace RandomSectorGenerator
             _rss.Unload();
             _stars.Clear();
             _blackHole = null;
+            if (Instance == this)
+                Instance = null;
         }
 
         public override void UpdateAfterSimulation()
@@ -290,6 +295,61 @@ namespace RandomSectorGenerator
                     _rayMaterial, rays, drawPosition, left, up, radius * 1.35f,
                     BlendTypeEnum.AdditiveBottom);
             }
+        }
+
+        public string GetDiagnosticSummary()
+        {
+            if (!_realStars.IsReady || !_rss.IsReady)
+            {
+                return "Celestial visuals: Real Stars=" + (_realStars.IsReady ? "ready" : "not ready") +
+                    ", RSS=" + (_rss.IsReady ? "ready" : "not ready") +
+                    ", detectedStars=" + _stars.Count;
+            }
+
+            RefreshBodies();
+            Vector3D proxyCamera = _rss.GetCurrentCameraProxyPosition();
+            List<string> lines = new List<string>();
+            lines.Add("Celestial visuals: detectedStars=" + _stars.Count +
+                ", RS=ready, RSS=ready, shell=" + (DistantStarRenderShellDistanceM / 1000d).ToString("0") + " km");
+
+            int reported = 0;
+            for (int i = 0; i < _stars.Count && reported < 12; i++)
+            {
+                MyPlanet star = _stars[i];
+                if (star == null)
+                    continue;
+
+                Vector3D proxyPosition;
+                MatrixD proxyRotation;
+                double surfaceRange;
+                double orbitRange;
+                if (!_rss.TryGetBodyProxyState(star, out proxyPosition, out proxyRotation,
+                    out surfaceRange, out orbitRange))
+                {
+                    lines.Add((star.Name ?? "<unnamed>") + ": RSS proxy state unavailable");
+                    reported++;
+                    continue;
+                }
+
+                double distance = Vector3D.Distance(proxyCamera, proxyPosition);
+                float radius = (float)Math.Sqrt(NativeGlareRangeM / Math.Max(1d, distance)) * 92f;
+                radius = MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
+                string mode = distance <= DistantStarFadeStartM ? "native-only" :
+                    (distance >= DistantStarFarEndM ? "culled" : "extended");
+
+                lines.Add((star.Name ?? "<unnamed>") +
+                    ": " + (distance / 1000d).ToString("0.0") + " km" +
+                    ", radius=" + radius.ToString("0.0") +
+                    ", mode=" + mode);
+                reported++;
+            }
+
+            if (_blackHole == null)
+                lines.Add("Terminus: not detected");
+            else
+                lines.Add("Terminus: detected");
+
+            return string.Join("\n", lines.ToArray());
         }
 
         private static float SmoothStep(float value)
