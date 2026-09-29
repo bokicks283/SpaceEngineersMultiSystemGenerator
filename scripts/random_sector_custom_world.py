@@ -133,8 +133,8 @@ def build(game_root, output):
     drag_xml = (ROOT / "profiles" / "AerodynamicPhysics.dragsettings.xml").read_text(encoding="utf-8")
     drag = ET.fromstring(drag_xml)
     expected_drag = {
-        "SmallShipMaxSpeed": "1500",
-        "LargeShipMaxSpeed": "1500",
+        "SmallShipMaxSpeed": "5000",
+        "LargeShipMaxSpeed": "5000",
         "SimulationMaxSpeed": "400",
     }
     for name, expected in expected_drag.items():
@@ -230,8 +230,8 @@ def validate(template):
     drag_xml = get_variable(checkpoint, DRAG_KEY)
     drag = ET.fromstring(drag_xml or "")
     if (drag.findtext("SmallShipMaxSpeed"), drag.findtext("LargeShipMaxSpeed"),
-            drag.findtext("SimulationMaxSpeed")) != ("1500", "1500", "400"):
-        raise RuntimeError("Random Sector Aero profile is not locked to 1500/1500/400")
+            drag.findtext("SimulationMaxSpeed")) != ("5000", "5000", "400"):
+        raise RuntimeError("Random Sector Aero profile is not locked to 5000/5000/400")
     sector = ET.parse(template / "SANDBOX_0_0_0_.sbs").getroot()
     xsi = "http://www.w3.org/2001/XMLSchema-instance"
     if any("Planet" in (node.get("{%s}type" % xsi) or "")
