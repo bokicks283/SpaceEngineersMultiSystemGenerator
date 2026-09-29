@@ -211,6 +211,34 @@ def apply_orbit(body: ET.Element, row: PlanRow) -> None:
     insert_before(body, orbit, ("ParticleInfoConfig", "FunctionalZoneInfoConfig", "SpecialInfoConfig", "SiblingWeight", "Sibling", "Children"))
 
 
+def required_root_orbit_zone(rows: list[PlanRow]) -> float:
+    """Return a root ORBIT-zone radius large enough to contain the whole planned sector.
+
+    RSS uses nested orbit zones as coordinate frames. Keeping the fixed Terminus
+    root's zone around every descendant means normal campaign space remains in
+    Terminus's real-body frame instead of proxy space, while child bodies can
+    still transition into their own nested zones.
+    """
+    by_parent: dict[str, list[PlanRow]] = {}
+    root = next(row for row in rows if not row.parent)
+    for row in rows:
+        if row.parent:
+            by_parent.setdefault(row.parent, []).append(row)
+
+    def descendant_extent(name: str) -> float:
+        maximum = 0.0
+        for child in by_parent.get(name, []):
+            semimajor = abs(float(child.semimajor_axis))
+            eccentricity = max(0.0, float(child.eccentricity))
+            child_extent = descendant_extent(child.name)
+            maximum = max(maximum, semimajor * (1.0 + eccentricity) + child_extent)
+        return maximum
+
+    planned_extent = descendant_extent(root.name)
+    # Ten percent provides room for body zones, terrain, and numerical drift.
+    return max(5_000_000.0, planned_extent * 1.10)
+
+
 def index_by_plan_identity(rows: list[PlanRow], nodes: list[ET.Element], identity_getter, label: str):
     identities = [identity_getter(node) for node in nodes]
     if any(not value for value in identities):
@@ -261,6 +289,15 @@ def update_rss(root: ET.Element, rows: list[PlanRow]):
 
     root_row = next(row for row in rows if not row.parent)
     _, root_body = indexed[root_row.storage_name]
+
+    # Terminus is a fixed campaign root. Envelop the entire hierarchy in its
+    # ORBIT zone so RSS keeps players in the real Terminus coordinate frame.
+    # This avoids showing the parked real black hole beside a tiny proxy while
+    # retaining normal nested RSS zones for every moving child body.
+    root_orbit_zone = required_root_orbit_zone(rows)
+    set_direct_text(root_body, "PlanetOrbitZoneRadius",
+                    format(root_orbit_zone, ".9g"))
+
     solar_systems = root.find("SolarSystems")
     assert solar_systems is not None
     solar_systems.clear()
@@ -271,7 +308,7 @@ def update_rss(root: ET.Element, rows: list[PlanRow]):
     root_body.tag = "RootBody"
     system.append(root_body)
     set_direct_text(root, "OverrideFromConfig", "true")
-    return indexed, by_name
+    return indexed, by_name, root_orbit_zone
 
 
 def update_sector(root: ET.Element, rows: list[PlanRow]):
@@ -363,7 +400,7 @@ def execute(save_arg: Path, plan_arg: Path | None, dry_run: bool) -> dict:
     save, plan_path, paths = resolve_paths(save_arg, plan_arg)
     rows = load_plan(plan_path)
     parsed = {key: read_se_xml(path) for key, path in paths.items()}
-    rss_index, _ = update_rss(parsed["rss"][0], rows)
+    rss_index, _, root_orbit_zone = update_rss(parsed["rss"][0], rows)
     sector_index = update_sector(parsed["sector"][0], rows)
     update_named_config(parsed["stars"][0], rows, "StarInfo", "StarName", "StarCustomName", {"RealStar"}, "Real Stars")
     # Real Stars also owns terrestrial day-cycle records.
@@ -401,6 +438,7 @@ def execute(save_arg: Path, plan_arg: Path | None, dry_run: bool) -> dict:
         "dry_run": dry_run,
         "body_count": len(rows),
         "root_position": [0, 0, 0],
+        "root_orbit_zone_m": root_orbit_zone,
         "backup": None if backup is None else str(backup),
         "mappings": report_rows,
         "next": "Load once, verify /TSE, save/exit, then run /SetupRealOrbits and save." if not dry_run else "No files changed.",
@@ -412,6 +450,7 @@ def print_report(report: dict) -> None:
     print("Plan:", report["plan"])
     print("Mode:", "DRY RUN" if report["dry_run"] else "APPLIED")
     print("Root logical position: 0,0,0")
+    print("Root ORBIT zone: %.0f km" % (report["root_orbit_zone_m"] / 1000.0))
     print("StorageName -> generated name -> parent")
     for row in report["mappings"]:
         print(f"  {row['storage_name']} -> {row['generated_name']} -> {row['parent']}")
