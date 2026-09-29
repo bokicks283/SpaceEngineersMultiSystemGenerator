@@ -123,7 +123,12 @@ $plan = Get-Content (Join-Path $repoRoot 'reports\pack-plan.json') -Raw | Conver
 $voxel = Get-Content (Join-Path $repoRoot 'reports\selected-voxel-audit.json') -Raw | ConvertFrom-Json
 $coverage = Get-Content (Join-Path $repoRoot 'reports\coverage.json') -Raw | ConvertFrom-Json
 $collection = Get-Content (Join-Path $repoRoot 'reports\steam-collection.json') -Raw | ConvertFrom-Json
-if ([int]$voxel.total -gt 120) { throw "Voxel material count $($voxel.total) exceeds 120" }
+if ([int]$voxel.total -gt [int]$voxel.budget) {
+    throw "Voxel material count $($voxel.total) exceeds Phase A budget $($voxel.budget)"
+}
+if ([int]$voxel.total -ge [int]$policy.engine_voxel_limit) {
+    throw "Voxel material count $($voxel.total) reaches/exceeds engine limit $($policy.engine_voxel_limit)"
+}
 $selectedCoverage = @($coverage | Where-Object selected)
 if ($selectedCoverage.Count -ne 18) { throw "Expected 18 selected planets; found $($selectedCoverage.Count)" }
 $badCoverage = @($selectedCoverage | Where-Object { [int]$_.active_proxy_count -ne 1 })
