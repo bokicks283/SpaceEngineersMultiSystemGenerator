@@ -172,6 +172,33 @@ def tune_rss(world: Path) -> int:
     path = scoped(world, "3351055036", "Config.xml")
     text, encoding = read_mod_text(path)
     text = replace_tag(text, "OverrideFromConfig", "true")
+
+    # RSS stores Terminus as a terrestrial-style body too, so the campaign has
+    # 19 TerrestrialPlanetInfo records total: 18 normal worlds + Wyaris Abyss.
+    # Protect the root record while applying ordinary planet surface-zone tuning.
+    root_info_pattern = re.compile(
+        r'(<RootBody\\b[^>]*>.*?<Name>Wyaris Abyss</Name>.*?)(<TerrestrialPlanetInfo>.*?</TerrestrialPlanetInfo>)',
+        re.I | re.S,
+    )
+    root_match = root_info_pattern.search(text)
+    if root_match is None:
+        raise RuntimeError("Could not locate Wyaris Abyss terrestrial info in RSS config")
+
+    root_info = root_match.group(2)
+    root_falloff = re.search(r"(<GravityFalloff>)([^<]+)(</GravityFalloff>)", root_info, re.I)
+    if root_falloff is None:
+        raise RuntimeError("Wyaris Abyss lacks GravityFalloff")
+    root_info = (
+        root_info[:root_falloff.start(2)] +
+        "3.8" +
+        root_info[root_falloff.end(2):]
+    )
+
+    root_token = "__RSG_TERMINUS_ROOT_INFO__"
+    if root_token in text:
+        raise RuntimeError("Unexpected Terminus placeholder collision")
+    text = text[:root_match.start(2)] + root_token + text[root_match.end(2):]
+
     pattern = re.compile(r"(<TerrestrialPlanetInfo>)(.*?)(</TerrestrialPlanetInfo>)", re.I | re.S)
     count = 0
 
@@ -192,19 +219,11 @@ def tune_rss(world: Path) -> int:
 
     text = pattern.sub(edit, text)
     if count != 18:
-        raise RuntimeError(f"Expected 18 terrestrial bodies; found {count}")
+        raise RuntimeError(f"Expected 18 normal terrestrial bodies plus Terminus; found {count} normal bodies")
 
-    # Terminus keeps its own steep/localized field instead of the 2.0 value
-    # written by /SetupRealOrbits. 3.8 prevents the root black hole from
-    # producing measurable gravity across the whole campaign sector.
-    root_pattern = re.compile(
-        r'(<RootBody\b[^>]*>.*?<Name>Wyaris Abyss</Name>.*?<TerrestrialPlanetInfo>.*?'
-        r'<GravityFalloff>)([^<]+)(</GravityFalloff>)',
-        re.I | re.S,
-    )
-    text, root_count = root_pattern.subn(r"\g<1>3.8\g<3>", text, count=1)
-    if root_count != 1:
-        raise RuntimeError("Could not locate Wyaris Abyss gravity falloff in RSS config")
+    text = text.replace(root_token, root_info, 1)
+    if text.count(root_token):
+        raise RuntimeError("Terminus placeholder restoration failed")
 
     write_mod_atomic(path, text, encoding)
     return count
@@ -319,7 +338,7 @@ def validate(world: Path) -> None:
         if root.findtext("Settings/EnableEconomy") != "true" or root.findtext("Settings/FoodConsumptionRate") != "0":
             raise RuntimeError(f"{filename}: final world settings did not stick")
     rss, _ = read_mod_text(scoped(world, "3351055036", "Config.xml"))
-    if rss.count("<TerrestrialPlanetInfo>") != 18 or "<OverrideFromConfig>true</OverrideFromConfig>" not in rss:
+    if rss.count("<TerrestrialPlanetInfo>") != 19 or "<OverrideFromConfig>true</OverrideFromConfig>" not in rss:
         raise RuntimeError("RSS finalization readback failed")
     if "<Name>Wyaris Abyss</Name>" not in rss or "<GravityFalloff>3.8</GravityFalloff>" not in rss:
         raise RuntimeError("Terminus gravity profile did not stick")
@@ -355,10 +374,23 @@ def main() -> None:
     if not world.is_dir() or not (world / "Sandbox.sbc").is_file():
         raise SystemExit("ERROR: incomplete Space Engineers save: " + str(world))
     rss, _ = read_mod_text(scoped(world, "3351055036", "Config.xml"))
-    if rss.count("<TerrestrialPlanetInfo>") != 18:
-        raise RuntimeError("This is not the validated 18-body campaign save")
+    if rss.count("<TerrestrialPlanetInfo>") != 19:
+        raise RuntimeError("This is not the validated campaign save (expected 18 normal worlds + Terminus)")
     if args.dry_run:
+        # Structural preflight only; no files are changed.
+        if "<Name>Wyaris Abyss</Name>" not in rss:
+            raise RuntimeError("Wyaris Abyss root is missing from RSS config")
+        stars, _ = read_mod_text(scoped(world, "3152436752", "Config.xml"))
+        if len(re.findall(r"<StarInfo\\b", stars, re.I)) != 7:
+            raise RuntimeError("Expected 7 campaign stars")
+        giants, _ = read_mod_text(scoped(world, "3232085677", "Config.xml"))
+        for name in ("Koreus Giant", "Saion Giant"):
+            if name not in giants:
+                raise RuntimeError(f"Expected campaign gas giant is missing: {name}")
         print("DRY RUN OK:", world)
+        print("RSS terrestrial records: 19 (18 normal worlds + Terminus)")
+        print("Campaign stars: 7")
+        print("Campaign gas giants: Koreus Giant, Saion Giant")
         return
 
     backup = archive(world, "World-before-campaign-finalization")
