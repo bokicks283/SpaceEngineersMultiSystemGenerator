@@ -56,11 +56,11 @@ namespace RandomSectorGenerator
         private readonly List<MyPlanet> _stars = new List<MyPlanet>();
 
         private readonly MyStringId _glowMaterial = MyStringId.GetOrCompute("SunBigGlow");
-        private readonly MyStringId _rayMaterial = MyStringId.GetOrCompute("SunBigRays");
         private readonly MyStringId _dotMaterial = MyStringId.GetOrCompute("WhiteDot");
 
         private MyPlanet _blackHole;
         private int _ticks;
+        private long _drawCalls;
 
         public override void LoadData()
         {
@@ -95,11 +95,19 @@ namespace RandomSectorGenerator
                     _rss.Load();
             }
 
-            if (!_realStars.IsReady || !_rss.IsReady)
+            if (_realStars.IsReady && ((_ticks % 600) == 1 || (_stars.Count == 0 && _ticks > 120)))
+                RefreshBodies();
+        }
+
+        public override void Draw()
+        {
+            if (MyAPIGateway.Utilities == null || MyAPIGateway.Utilities.IsDedicated ||
+                MyAPIGateway.Session == null || MyAPIGateway.Session.Camera == null)
                 return;
 
-            if ((_ticks % 600) == 1 || (_stars.Count == 0 && _ticks > 120))
-                RefreshBodies();
+            _drawCalls++;
+            if (!_realStars.IsReady || !_rss.IsReady)
+                return;
 
             Vector3D proxyCamera = _rss.GetCurrentCameraProxyPosition();
             DrawRealStars(proxyCamera);
@@ -124,8 +132,10 @@ namespace RandomSectorGenerator
                 float effectBrightness;
                 float lightBrightness;
                 float damageRadiusKm;
-                if (_realStars.TryGetStarInfo(planet, out radiusKm, out color, out effectBrightness,
-                    out lightBrightness, out damageRadiusKm))
+                bool hasStarInfo = _realStars.TryGetStarInfo(planet, out radiusKm, out color,
+                    out effectBrightness, out lightBrightness, out damageRadiusKm);
+                if (hasStarInfo || (planet.Generator != null &&
+                    string.Equals(planet.Generator.Id.SubtypeName, "RealStar", StringComparison.Ordinal)))
                 {
                     _stars.Add(planet);
                     continue;
@@ -169,16 +179,7 @@ namespace RandomSectorGenerator
                     out lightBrightness, out damageRadiusKm))
                     continue;
 
-                float nearFade = SmoothStep((float)((distance - DistantStarFadeStartM) /
-                    (DistantStarFullM - DistantStarFadeStartM)));
-                float farFade = 1f;
-                if (distance > DistantStarFarFadeStartM)
-                {
-                    farFade = 1f - SmoothStep((float)((distance - DistantStarFarFadeStartM) /
-                        (DistantStarFarEndM - DistantStarFarFadeStartM)));
-                }
-
-                float fade = MathHelper.Clamp(nearFade * farFade, 0f, 1f);
+                float fade = CalculateExtendedFade(distance);
                 if (fade <= 0.001f)
                     continue;
 
@@ -187,8 +188,7 @@ namespace RandomSectorGenerator
                 // Preserve a readable point-source glare across the campaign's
                 // million-kilometre scale. Pure angular/physical sizing becomes
                 // sub-pixel long before a luminous star should disappear to the eye.
-                float radius = (float)Math.Sqrt(NativeGlareRangeM / distance) * 92f;
-                radius = MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
+                float radius = CalculateBillboardRadius(distance);
 
                 Color drawColor = new Color(
                     (byte)MathHelper.Clamp(color.X, 0, 255),
@@ -196,7 +196,7 @@ namespace RandomSectorGenerator
                     (byte)MathHelper.Clamp(color.Z, 0, 255));
                 drawColor *= fade * MathHelper.Clamp(brightness / 1.5f, 0.45f, 1f);
 
-                DrawPoint(proxyPosition, proxyCamera, drawColor, radius, distance < 500000000d);
+                DrawPoint(proxyPosition, proxyCamera, drawColor, radius);
             }
         }
 
@@ -262,7 +262,7 @@ namespace RandomSectorGenerator
                 BlendTypeEnum.Standard);
         }
 
-        private void DrawPoint(Vector3D proxyTarget, Vector3D proxyCamera, Color color, float radius, bool addRays)
+        private void DrawPoint(Vector3D proxyTarget, Vector3D proxyCamera, Color color, float radius)
         {
             Vector3D direction = proxyTarget - proxyCamera;
             double length = direction.Normalize();
@@ -287,37 +287,49 @@ namespace RandomSectorGenerator
                 _glowMaterial, color, drawPosition, left, up, radius,
                 BlendTypeEnum.AdditiveBottom);
 
-            if (addRays)
-            {
-                Color rays = color;
-                rays *= 0.12f;
-                MyTransparentGeometry.AddBillboardOriented(
-                    _rayMaterial, rays, drawPosition, left, up, radius * 1.35f,
-                    BlendTypeEnum.AdditiveBottom);
-            }
         }
 
         public string GetDiagnosticSummary()
         {
-            if (!_realStars.IsReady || !_rss.IsReady)
+            List<string> lines = new List<string>();
+            if (_realStars.IsReady)
+                RefreshBodies();
+
+            lines.Add("loaded=true" +
+                ", drawCallbackSeen=" + (_drawCalls > 0 ? "true" : "false") +
+                ", drawCalls=" + _drawCalls +
+                ", updateTicks=" + _ticks);
+            lines.Add("Real Stars: ready=" + _realStars.IsReady +
+                ", compromised=" + _realStars.Compromised);
+            lines.Add("RSS: ready=" + _rss.IsReady +
+                ", compromised=" + _rss.Compromised);
+            lines.Add("detectedCampaignStars=" + _stars.Count +
+                ", renderShellKm=" + (DistantStarRenderShellDistanceM / 1000d).ToString("0"));
+
+            if (!_rss.IsReady)
             {
-                return "Celestial visuals: Real Stars=" + (_realStars.IsReady ? "ready" : "not ready") +
-                    ", RSS=" + (_rss.IsReady ? "ready" : "not ready") +
-                    ", detectedStars=" + _stars.Count;
+                for (int i = 0; i < _stars.Count; i++)
+                {
+                    MyPlanet detected = _stars[i];
+                    bool hasStarInfo = HasStarInfo(detected);
+                    lines.Add(GetStarDiagnosticName(detected) +
+                        ": realStarsInfo=" + hasStarInfo +
+                        ", proxyState=false, distanceKm=n/a, native=n/a, extended=n/a, radiusM=n/a");
+                }
+
+                LogDiagnostic(lines);
+                return string.Join("\n", lines.ToArray());
             }
 
-            RefreshBodies();
             Vector3D proxyCamera = _rss.GetCurrentCameraProxyPosition();
-            List<string> lines = new List<string>();
-            lines.Add("Celestial visuals: detectedStars=" + _stars.Count +
-                ", RS=ready, RSS=ready, shell=" + (DistantStarRenderShellDistanceM / 1000d).ToString("0") + " km");
 
-            int reported = 0;
-            for (int i = 0; i < _stars.Count && reported < 12; i++)
+            for (int i = 0; i < _stars.Count; i++)
             {
                 MyPlanet star = _stars[i];
                 if (star == null)
                     continue;
+
+                bool hasStarInfo = HasStarInfo(star);
 
                 Vector3D proxyPosition;
                 MatrixD proxyRotation;
@@ -326,22 +338,26 @@ namespace RandomSectorGenerator
                 if (!_rss.TryGetBodyProxyState(star, out proxyPosition, out proxyRotation,
                     out surfaceRange, out orbitRange))
                 {
-                    lines.Add((star.Name ?? "<unnamed>") + ": RSS proxy state unavailable");
-                    reported++;
+                    lines.Add(GetStarDiagnosticName(star) +
+                        ": realStarsInfo=" + hasStarInfo +
+                        ", proxyState=false, distanceKm=n/a, native=n/a, extended=n/a, radiusM=n/a");
                     continue;
                 }
 
                 double distance = Vector3D.Distance(proxyCamera, proxyPosition);
-                float radius = (float)Math.Sqrt(NativeGlareRangeM / Math.Max(1d, distance)) * 92f;
-                radius = MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
-                string mode = distance <= DistantStarFadeStartM ? "native-only" :
-                    (distance >= DistantStarFarEndM ? "culled" : "extended");
+                float radius = CalculateBillboardRadius(distance);
+                float extendedFade = CalculateExtendedFade(distance);
+                bool nativeActive = hasStarInfo && distance <= NativeGlareRangeM;
+                bool extendedActive = hasStarInfo && extendedFade > 0.001f;
 
-                lines.Add((star.Name ?? "<unnamed>") +
-                    ": " + (distance / 1000d).ToString("0.0") + " km" +
-                    ", radius=" + radius.ToString("0.0") +
-                    ", mode=" + mode);
-                reported++;
+                lines.Add(GetStarDiagnosticName(star) +
+                    ": realStarsInfo=" + hasStarInfo +
+                    ", proxyState=true" +
+                    ", distanceKm=" + (distance / 1000d).ToString("0.0") +
+                    ", native=" + (nativeActive ? "active" : "inactive") +
+                    ", extended=" + (extendedActive ? "active" : "inactive") +
+                    ", extendedFade=" + extendedFade.ToString("0.000") +
+                    ", radiusM=" + radius.ToString("0.0"));
             }
 
             if (_blackHole == null)
@@ -349,7 +365,56 @@ namespace RandomSectorGenerator
             else
                 lines.Add("Terminus: detected");
 
+            LogDiagnostic(lines);
             return string.Join("\n", lines.ToArray());
+        }
+
+        private bool HasStarInfo(MyPlanet star)
+        {
+            float radiusKm;
+            Vector3I color;
+            float effectBrightness;
+            float lightBrightness;
+            float damageRadiusKm;
+            return _realStars.TryGetStarInfo(star, out radiusKm, out color, out effectBrightness,
+                out lightBrightness, out damageRadiusKm);
+        }
+
+        private static string GetStarDiagnosticName(MyPlanet star)
+        {
+            if (star == null)
+                return "<null>";
+
+            return (star.Name ?? "<unnamed>") + " [" + (star.StorageName ?? "no-storage-name") + "]";
+        }
+
+        private static float CalculateBillboardRadius(double distance)
+        {
+            float radius = (float)Math.Sqrt(NativeGlareRangeM / Math.Max(1d, distance)) * 92f;
+            return MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
+        }
+
+        private static float CalculateExtendedFade(double distance)
+        {
+            if (distance <= DistantStarFadeStartM || distance >= DistantStarFarEndM)
+                return 0f;
+
+            float nearFade = SmoothStep((float)((distance - DistantStarFadeStartM) /
+                (DistantStarFullM - DistantStarFadeStartM)));
+            float farFade = 1f;
+            if (distance > DistantStarFarFadeStartM)
+            {
+                farFade = 1f - SmoothStep((float)((distance - DistantStarFarFadeStartM) /
+                    (DistantStarFarEndM - DistantStarFarFadeStartM)));
+            }
+
+            return MathHelper.Clamp(nearFade * farFade, 0f, 1f);
+        }
+
+        private static void LogDiagnostic(List<string> lines)
+        {
+            for (int i = 0; i < lines.Count; i++)
+                MyLog.Default.WriteLineAndConsole("[RSG Visuals] " + lines[i]);
         }
 
         private static float SmoothStep(float value)

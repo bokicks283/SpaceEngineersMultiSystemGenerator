@@ -63,17 +63,14 @@ namespace RandomSectorGenerator
 
             try
             {
-                // RSS's GetCurrentCameraPos already returns the camera in the
-                // current logical/proxy coordinate frame. Converting it again via
-                // ConvertRealPosToProxy double-transforms the camera and makes
-                // nearby bodies appear astronomically far away to visual helpers.
-                if (_getCurrentCameraPos != null)
-                    return _getCurrentCameraPos();
-
-                // Fallback for an older/incomplete endpoint: only convert the raw
-                // Space Engineers camera position when RSS does not provide its
-                // own logical camera position.
-                Vector3D current = GetFallbackCameraPosition();
+                // RSS exposes the camera in the current physical/true-space frame.
+                // During a zone transfer it briefly substitutes the just-converted
+                // physical camera position, but it is still not bodyPosition proxy
+                // space. ConvertRealPosToProxy performs the required current-zone
+                // center, surface-rotation, and proxy-scale conversion.
+                Vector3D current = _getCurrentCameraPos == null
+                    ? GetFallbackCameraPosition()
+                    : _getCurrentCameraPos();
                 return _convertRealPosToProxy == null ? current : _convertRealPosToProxy(current);
             }
             catch
