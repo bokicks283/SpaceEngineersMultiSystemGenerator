@@ -197,8 +197,11 @@ namespace RandomSectorGenerator
                     throw new Exception("Terminus planet definition is missing; Workshop 3481843850 must be active");
 
                 List<string> skins = _realGasGiants.GetSkins();
+                HashSet<string> safeGasGiantSkins = new HashSet<string>(
+                    new[] { "Default1", "Default2", "DefaultJupiter", "DefaultSaturn" },
+                    StringComparer.OrdinalIgnoreCase);
                 List<string> normalGasSkins = (skins ?? new List<string>())
-                    .Where(IsNormalGasGiantSkin)
+                    .Where(x => !string.IsNullOrWhiteSpace(x) && safeGasGiantSkins.Contains(x))
                     .ToList();
 
                 BuildBodies(build, definitions, starterDefinition, terminusDefinition, normalGasSkins);
