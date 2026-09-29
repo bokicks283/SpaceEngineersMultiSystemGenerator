@@ -50,11 +50,11 @@ This repository owns the local compatibility/configuration work for a heavily mo
 
 ## Selected planet pack
 
-The current campaign cut intentionally favors variety rather than maximizing water worlds:
+The current campaign cut favors variety while prioritizing a Water Mod-capable starter:
 
 - **Cauldron System** — Cauldron, Tellus, Agni, Kor
 - **Jormun** — water/river world
-- **Zenitaia** — tropical/deep-ocean world
+- **Zenitaia** — tropical/deep-ocean world; preferred campaign starter
 - **Orlunda (Sideways)** — RSS-friendly tidally locked world
 - **Relicta** — hostile volcanic/radiation world
 - All eight vanilla planets (EarthLike, Moon, Mars, Europa, Alien, Titan, Triton,
