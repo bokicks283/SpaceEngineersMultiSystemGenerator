@@ -35,6 +35,7 @@ namespace RandomSectorGenerator
         private const string PlanTsvFileName = "RandomSectorStaticPlan.tsv";
 
         private const int MaximumPlanetDefinitions = 24;
+        private const int VoxelMaterialSafetyBudget = 124;
         private const int TerminusDiameterKm = 500;
         private const double ParkingRadiusMin = 650000000d;
         private const double ParkingRadiusMax = 1125000000d;
@@ -166,8 +167,9 @@ namespace RandomSectorGenerator
 
                 int materialCount = MyDefinitionManager.Static.GetVoxelMaterialDefinitions()
                     .Select(x => x.Id.SubtypeName).Distinct().Count();
-                if (materialCount > 120)
-                    throw new Exception("loaded voxel material count " + materialCount + " exceeds 120");
+                if (materialCount > VoxelMaterialSafetyBudget)
+                    throw new Exception("loaded voxel material count " + materialCount +
+                        " exceeds safety budget " + VoxelMaterialSafetyBudget);
 
                 List<MyPlanet> existing = GetLoadedPlanets();
                 if (existing.Count > 0)
