@@ -400,7 +400,7 @@ namespace RandomSectorGenerator
             MyPlanetGeneratorDefinition starterDefinition = ChooseStarterDefinition(definitions);
             if (starterDefinition == null)
             {
-                Show("Generation refused: no approved starter (Tellus or EarthLike) is available.");
+                Show("Generation refused: no approved starter (Zenitaia, Jormun, Kerbin Water, Tellus, or EarthLike) is available.");
                 return;
             }
             definitions.Remove(starterDefinition);
@@ -836,7 +836,14 @@ namespace RandomSectorGenerator
 
         private static MyPlanetGeneratorDefinition ChooseStarterDefinition(List<MyPlanetGeneratorDefinition> defs)
         {
-            string[] preferred = { "Tellus", "EarthLike" };
+            string[] preferred =
+            {
+                "Zenitaia",
+                "Jormun",
+                "Kerbin - Water Mod Ready",
+                "Tellus",
+                "EarthLike"
+            };
             for (int i = 0; i < preferred.Length; i++)
             {
                 MyPlanetGeneratorDefinition match = defs.FirstOrDefault(d => string.Equals(d.Id.SubtypeId.ToString(), preferred[i], StringComparison.Ordinal));
