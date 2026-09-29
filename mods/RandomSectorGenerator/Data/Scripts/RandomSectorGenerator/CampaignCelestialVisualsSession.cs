@@ -31,9 +31,16 @@ namespace RandomSectorGenerator
         private const double DistantStarFullM = 225000000d;
         private const double DistantStarFarFadeStartM = 2500000000d;
         private const double DistantStarFarEndM = 3000000000d;
-        private const double RenderShellDistanceM = 50000d;
+
+        // Keep distant stars on a relatively close camera shell. At the previous
+        // 50 km shell their ~12 m minimum radius was sub-pixel at common FOVs,
+        // which caused severe alias shimmer/flicker while the camera moved.
+        private const double DistantStarRenderShellDistanceM = 20000d;
+        private const float DistantStarMinimumRadius = 18f;
+        private const float DistantStarMaximumRadius = 48f;
 
         private const double BlackHoleFarEndM = 3000000000d;
+        private const double BlackHoleRenderShellDistanceM = 50000d;
         private const double TerminusDiskPhysicalRadiusM = 1250000d;
         private const float MinimumDiskRadius = 24f;
         private const float MaximumDiskRadius = 600f;
@@ -167,8 +174,8 @@ namespace RandomSectorGenerator
                     continue;
 
                 float brightness = MathHelper.Clamp(effectBrightness, 0.4f, 2f);
-                float radius = (float)Math.Sqrt(NativeGlareRangeM / distance) * 34f;
-                radius = MathHelper.Clamp(radius, 12f, 32f);
+                float radius = (float)Math.Sqrt(NativeGlareRangeM / distance) * 44f;
+                radius = MathHelper.Clamp(radius, DistantStarMinimumRadius, DistantStarMaximumRadius);
 
                 Color drawColor = new Color(
                     (byte)MathHelper.Clamp(color.X, 0, 255),
@@ -211,9 +218,9 @@ namespace RandomSectorGenerator
 
             Vector3D direction = toHole / distance;
             MatrixD cameraMatrix = MyAPIGateway.Session.Camera.WorldMatrix;
-            Vector3D drawPosition = cameraMatrix.Translation + direction * RenderShellDistanceM;
+            Vector3D drawPosition = cameraMatrix.Translation + direction * BlackHoleRenderShellDistanceM;
 
-            float diskRadius = (float)(RenderShellDistanceM * TerminusDiskPhysicalRadiusM / distance);
+            float diskRadius = (float)(BlackHoleRenderShellDistanceM * TerminusDiskPhysicalRadiusM / distance);
             diskRadius = MathHelper.Clamp(diskRadius, MinimumDiskRadius, MaximumDiskRadius);
 
             // Keep the distant representation intentionally understated. It is a
@@ -250,19 +257,30 @@ namespace RandomSectorGenerator
                 return;
 
             MatrixD cameraMatrix = MyAPIGateway.Session.Camera.WorldMatrix;
-            Vector3D drawPosition = cameraMatrix.Translation + direction * RenderShellDistanceM;
+            Vector3D drawPosition = cameraMatrix.Translation + direction * DistantStarRenderShellDistanceM;
             Vector3 left = (Vector3)cameraMatrix.Left;
             Vector3 up = (Vector3)cameraMatrix.Up;
 
+            // A small solid core keeps the star visible even when the soft glow
+            // texture lands between screen pixels. The glow/rays then provide shape
+            // without being responsible for the entire apparent brightness.
+            Color core = color;
+            core *= 1.15f;
             MyTransparentGeometry.AddBillboardOriented(
-                _glowMaterial, color, drawPosition, left, up, radius, BlendTypeEnum.AdditiveBottom);
+                _dotMaterial, core, drawPosition, left, up, radius * 0.42f,
+                BlendTypeEnum.AdditiveBottom);
+
+            MyTransparentGeometry.AddBillboardOriented(
+                _glowMaterial, color, drawPosition, left, up, radius,
+                BlendTypeEnum.AdditiveBottom);
 
             if (addRays)
             {
                 Color rays = color;
-                rays *= 0.35f;
+                rays *= 0.18f;
                 MyTransparentGeometry.AddBillboardOriented(
-                    _rayMaterial, rays, drawPosition, left, up, radius * 1.8f, BlendTypeEnum.AdditiveBottom);
+                    _rayMaterial, rays, drawPosition, left, up, radius * 1.5f,
+                    BlendTypeEnum.AdditiveBottom);
             }
         }
 
