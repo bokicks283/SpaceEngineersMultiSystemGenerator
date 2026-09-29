@@ -48,6 +48,7 @@ namespace RandomSectorGenerator
         };
 
         private const int MaximumPlanetDefinitions = 24;
+        private const int VoxelMaterialSafetyBudget = 124;
         private const double SystemSpacingMin = 6000000000d;   // 6 million km
         private const double SystemSpacingMax = 12000000000d;  // 12 million km
         private const double TrueSpaceMinRadius = 650000000d;  // RSS true-space parking area
@@ -345,9 +346,10 @@ namespace RandomSectorGenerator
                 }
             }
             int materialCount = MyDefinitionManager.Static.GetVoxelMaterialDefinitions().Select(x => x.Id.SubtypeName).Distinct().Count();
-            if (materialCount > 120)
+            if (materialCount > VoxelMaterialSafetyBudget)
             {
-                Show("Generation refused: loaded voxel material count " + materialCount + " exceeds the safety budget of 120.");
+                Show("Generation refused: loaded voxel material count " + materialCount +
+                     " exceeds the safety budget of " + VoxelMaterialSafetyBudget + ".");
                 return;
             }
 
