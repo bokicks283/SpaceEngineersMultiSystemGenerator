@@ -576,7 +576,14 @@ namespace RandomSectorGenerator
 
         private static MyPlanetGeneratorDefinition ChooseStarterDefinition(List<MyPlanetGeneratorDefinition> defs)
         {
-            string[] preferred = { "Tellus", "EarthLike" };
+            string[] preferred =
+            {
+                "Zenitaia",
+                "Jormun",
+                "Kerbin - Water Mod Ready",
+                "Tellus",
+                "EarthLike"
+            };
             for (int i = 0; i < preferred.Length; i++)
             {
                 MyPlanetGeneratorDefinition found = defs.FirstOrDefault(x =>
