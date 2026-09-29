@@ -177,7 +177,7 @@ def tune_rss(world: Path) -> int:
     # 19 TerrestrialPlanetInfo records total: 18 normal worlds + Wyaris Abyss.
     # Protect the root record while applying ordinary planet surface-zone tuning.
     root_info_pattern = re.compile(
-        r'(<RootBody\\b[^>]*>.*?<Name>Wyaris Abyss</Name>.*?)(<TerrestrialPlanetInfo>.*?</TerrestrialPlanetInfo>)',
+        r'(<RootBody\b[^>]*>.*?<Name>Wyaris Abyss</Name>.*?)(<TerrestrialPlanetInfo>.*?</TerrestrialPlanetInfo>)',
         re.I | re.S,
     )
     root_match = root_info_pattern.search(text)
