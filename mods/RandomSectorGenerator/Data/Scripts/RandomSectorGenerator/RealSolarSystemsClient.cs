@@ -59,20 +59,27 @@ namespace RandomSectorGenerator
         public Vector3D GetCurrentCameraProxyPosition()
         {
             if (!IsReady || Compromised)
-                return MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero;
+                return GetFallbackCameraPosition();
 
             try
             {
                 Vector3D current = _getCurrentCameraPos == null
-                    ? (MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero)
+                    ? GetFallbackCameraPosition()
                     : _getCurrentCameraPos();
                 return _convertRealPosToProxy == null ? current : _convertRealPosToProxy(current);
             }
             catch
             {
                 IsReady = false;
-                return MyAPIGateway.Session?.Camera?.Position ?? Vector3D.Zero;
+                return GetFallbackCameraPosition();
             }
+        }
+
+        private static Vector3D GetFallbackCameraPosition()
+        {
+            if (MyAPIGateway.Session == null || MyAPIGateway.Session.Camera == null)
+                return Vector3D.Zero;
+            return MyAPIGateway.Session.Camera.Position;
         }
 
         public bool TryGetBodyProxyState(MyPlanet planet, out Vector3D position, out MatrixD rotation, out double surfaceZoneRange, out double orbitZoneRange)
