@@ -138,8 +138,8 @@ def tune_real_gas_giants(world: Path) -> None:
     text = replace_tag(text, "OverrideFromConfig", "true")
 
     desired = {
-        "Koreus Giant": "DefaultJupiter",
-        "Saion Giant": "DefaultSaturn",
+        "Koreus Giant": "Cauldron",
+        "Saion Giant": "Default2",
     }
     pattern = re.compile(r"(<GasGiantConfigInfo\b[^>]*>)(.*?)(</GasGiantConfigInfo>)", re.I | re.S)
     seen = set()
@@ -368,7 +368,7 @@ def validate(world: Path) -> None:
     giants, _ = read_mod_text(scoped(world, "3232085677", "Config.xml"))
     if "<OverrideFromConfig>true</OverrideFromConfig>" not in giants:
         raise RuntimeError("Real Gas Giants import override did not stick")
-    for name, skin in (("Koreus Giant", "DefaultJupiter"), ("Saion Giant", "DefaultSaturn")):
+    for name, skin in (("Koreus Giant", "Cauldron"), ("Saion Giant", "Default2")):
         pattern = re.compile(
             r"<GasGiantConfigInfo\b[^>]*>.*?<PlanetCustomName>" + re.escape(name) +
             r"</PlanetCustomName>.*?<PlanetSkin>" + re.escape(skin) + r"</PlanetSkin>.*?</GasGiantConfigInfo>",
