@@ -415,7 +415,12 @@ namespace RandomSectorGenerator
 
             List<string> skins = _realGasGiants.GetSkins();
             string blackHoleSkin = SelectBlackHoleSkin(skins);
-            List<string> normalGasSkins = skins.Where(x => !string.Equals(x, blackHoleSkin, StringComparison.OrdinalIgnoreCase)).ToList();
+            HashSet<string> safeGasGiantSkins = new HashSet<string>(
+                new[] { "Default1", "Default2", "DefaultJupiter", "DefaultSaturn" },
+                StringComparer.OrdinalIgnoreCase);
+            List<string> normalGasSkins = skins
+                .Where(x => !string.IsNullOrWhiteSpace(x) && safeGasGiantSkins.Contains(x))
+                .ToList();
 
             if (blackHoleSkin == null)
             {
