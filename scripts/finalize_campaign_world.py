@@ -132,6 +132,42 @@ def tune_real_stars(world: Path) -> None:
     write_mod_atomic(path, text, encoding)
 
 
+def tune_real_gas_giants(world: Path) -> None:
+    path = scoped(world, "3232085677", "Config.xml")
+    text, encoding = read_mod_text(path)
+    text = replace_tag(text, "OverrideFromConfig", "true")
+
+    desired = {
+        "Koreus Giant": "DefaultJupiter",
+        "Saion Giant": "DefaultSaturn",
+    }
+    pattern = re.compile(r"(<GasGiantConfigInfo\b[^>]*>)(.*?)(</GasGiantConfigInfo>)", re.I | re.S)
+    seen = set()
+
+    def edit(match: re.Match) -> str:
+        block = match.group(2)
+        name_match = re.search(r"<PlanetCustomName>([^<]+)</PlanetCustomName>", block, re.I)
+        if not name_match:
+            return match.group(0)
+        name = name_match.group(1)
+        skin = desired.get(name)
+        if skin is None:
+            return match.group(0)
+
+        skin_match = re.search(r"(<PlanetSkin>)([^<]+)(</PlanetSkin>)", block, re.I)
+        if not skin_match:
+            raise RuntimeError(f"{name} lacks PlanetSkin")
+        block = block[:skin_match.start(2)] + skin + block[skin_match.end(2):]
+        seen.add(name)
+        return match.group(1) + block + match.group(3)
+
+    text = pattern.sub(edit, text)
+    missing = set(desired) - seen
+    if missing:
+        raise RuntimeError("Missing expected campaign gas giants: " + ", ".join(sorted(missing)))
+    write_mod_atomic(path, text, encoding)
+
+
 def tune_rss(world: Path) -> int:
     path = scoped(world, "3351055036", "Config.xml")
     text, encoding = read_mod_text(path)
@@ -296,6 +332,18 @@ def validate(world: Path) -> None:
     if "<OverridePlanetGravityFalloff>false</OverridePlanetGravityFalloff>" not in orbits:
         raise RuntimeError("Real Orbits gravity override did not stick")
 
+    giants, _ = read_mod_text(scoped(world, "3232085677", "Config.xml"))
+    if "<OverrideFromConfig>true</OverrideFromConfig>" not in giants:
+        raise RuntimeError("Real Gas Giants import override did not stick")
+    for name, skin in (("Koreus Giant", "DefaultJupiter"), ("Saion Giant", "DefaultSaturn")):
+        pattern = re.compile(
+            r"<GasGiantConfigInfo\b[^>]*>.*?<PlanetCustomName>" + re.escape(name) +
+            r"</PlanetCustomName>.*?<PlanetSkin>" + re.escape(skin) + r"</PlanetSkin>.*?</GasGiantConfigInfo>",
+            re.I | re.S,
+        )
+        if not pattern.search(giants):
+            raise RuntimeError(f"{name} gas giant skin did not stick")
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -318,6 +366,7 @@ def main() -> None:
     tune_rts(world)
     tune_real_orbits(world)
     tune_real_stars(world)
+    tune_real_gas_giants(world)
     body_count = tune_rss(world)
     damaged = tune_damaged_spawnships(world)
     travel = create_travel_config(world)
