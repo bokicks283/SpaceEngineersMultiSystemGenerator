@@ -198,8 +198,7 @@ namespace RandomSectorGenerator
 
                 List<string> skins = _realGasGiants.GetSkins();
                 List<string> normalGasSkins = (skins ?? new List<string>())
-                    .Where(x => !string.IsNullOrWhiteSpace(x) &&
-                                x.IndexOf("blackhole", StringComparison.OrdinalIgnoreCase) < 0)
+                    .Where(IsNormalGasGiantSkin)
                     .ToList();
 
                 BuildBodies(build, definitions, starterDefinition, terminusDefinition, normalGasSkins);
@@ -377,6 +376,26 @@ namespace RandomSectorGenerator
             build.AllNodes.InsertRange(1 + build.BlackHoleCompanions.Count, build.Stars);
             foreach (PlanNode giant in build.GasGiants.Values)
                 if (!build.AllNodes.Contains(giant)) build.AllNodes.Add(giant);
+        }
+
+        private static bool IsNormalGasGiantSkin(string skin)
+        {
+            if (string.IsNullOrWhiteSpace(skin))
+                return false;
+
+            // Real Gas Giants skin names are not required to use one separator
+            // convention. Normalize punctuation/whitespace so "Black Hole",
+            // "Black_Hole", and "Black-Hole" cannot enter the normal giant pool.
+            StringBuilder normalized = new StringBuilder(skin.Length);
+            for (int i = 0; i < skin.Length; i++)
+            {
+                char ch = skin[i];
+                if (char.IsLetterOrDigit(ch))
+                    normalized.Append(char.ToLowerInvariant(ch));
+            }
+
+            string key = normalized.ToString();
+            return key.IndexOf("blackhole", StringComparison.Ordinal) < 0;
         }
 
         private MyPlanet SpawnPlanet(MyPlanetGeneratorDefinition def, string displayName, int diameterKm, Random rng)
