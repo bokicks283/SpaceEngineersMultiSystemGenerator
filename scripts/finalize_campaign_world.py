@@ -344,8 +344,22 @@ def validate(world: Path) -> None:
         raise RuntimeError("Terminus gravity profile did not stick")
 
     stars, _ = read_mod_text(scoped(world, "3152436752", "Config.xml"))
-    if len(re.findall(r"<StarInfo\b", stars, re.I)) != 7 or len(re.findall(r"<GravityFalloff>6</GravityFalloff>", stars, re.I)) != 7:
-        raise RuntimeError("Real Stars gravity profile did not stick")
+    try:
+        stars_root = ET.fromstring(re.sub(
+            r'^\s*<\?xml[^>]*\?>\s*', '', stars, count=1, flags=re.I
+        ))
+    except ET.ParseError as exc:
+        raise RuntimeError(f"Could not parse Real Stars Config.xml: {exc}") from exc
+    star_nodes = stars_root.findall(".//StarInfo")
+    if len(star_nodes) != 7:
+        raise RuntimeError(f"Real Stars gravity validation found {len(star_nodes)} stars instead of 7")
+    bad_falloff = [
+        node.findtext("StarCustomName") or node.get("StarName") or "<unnamed>"
+        for node in star_nodes
+        if node.findtext("GravityFalloff") != "6"
+    ]
+    if bad_falloff:
+        raise RuntimeError("Real Stars gravity falloff did not stick for: " + ", ".join(bad_falloff))
 
     orbits, _ = read_mod_text(scoped(world, "2609118808", "Config.xml"))
     if "<OverridePlanetGravityFalloff>false</OverridePlanetGravityFalloff>" not in orbits:
@@ -381,8 +395,23 @@ def main() -> None:
         if "<Name>Wyaris Abyss</Name>" not in rss:
             raise RuntimeError("Wyaris Abyss root is missing from RSS config")
         stars, _ = read_mod_text(scoped(world, "3152436752", "Config.xml"))
-        if len(re.findall(r"<StarInfo\\b", stars, re.I)) != 7:
-            raise RuntimeError("Expected 7 campaign stars")
+        try:
+            stars_root = ET.fromstring(re.sub(
+                r'^\s*<\?xml[^>]*\?>\s*', '', stars, count=1, flags=re.I
+            ))
+        except ET.ParseError as exc:
+            raise RuntimeError(f"Could not parse Real Stars Config.xml: {exc}") from exc
+        star_nodes = stars_root.findall(".//StarInfo")
+        star_names = [
+            node.findtext("StarCustomName") or node.get("StarName") or "<unnamed>"
+            for node in star_nodes
+        ]
+        if len(star_nodes) != 7:
+            raise RuntimeError(
+                f"Expected 7 campaign stars; found {len(star_nodes)}: " +
+                (", ".join(star_names) if star_names else "<none>")
+            )
+
         giants, _ = read_mod_text(scoped(world, "3232085677", "Config.xml"))
         for name in ("Koreus Giant", "Saion Giant"):
             if name not in giants:
